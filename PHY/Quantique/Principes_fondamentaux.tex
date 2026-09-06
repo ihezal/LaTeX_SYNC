@@ -1,0 +1,47 @@
+\section{Principes fondamentaux}
+
+\subsection{Espace des états}
+
+\begin{omed}{Principe 1}
+    À chaque système physique est associé un espace de Hilbert complexe $\mathcal{E}_H$, l’état physique du système étant entièrement défini par un ket normé $\ket{\psi} \in \mathcal{E}_H$.
+\end{omed}
+
+\subsection{Mesure}
+
+On se place premièrement dans le cas \textbf{non-dégénéré}.
+
+\begin{omed}{Principe 2}
+    \begin{enumerate}[label=($p_{\arabic*}$)]
+        \item À toute grandeur physique $A$ on associe un opérateur linéaire hermitien $\hat{A}$ de $\mathcal{E}_H$ appelé \textbf{observable}. On suppose ici que le spectre de $\hat{A}$ est \textit{discret} et \textit{non-dégénéré}.
+        \item Une mesure de $A$ ne peut donner comme résultat qu’une valeur propre $a_n$ de $\hat{A}$.
+        \item Pour un système se trouvant dans l’état $\ket{\psi}$, la probabilité de mesurer $a_n$ est
+              \[ \mathbb{P}(a_n) := \abs{\spr{\psi_n}{\psi}}^2 \]
+              où $\ket{\psi_n}$ est le vecteur propre associé à la valeur propre $a_n$.
+        \item Si la mesure de $A$ donne $a_n$, alors le système est dans l’état $\ket{\psi_n}$ après mesure.
+    \end{enumerate}
+\end{omed}
+
+Dans le cas général,
+
+\begin{omed}{Principe 2}
+    \begin{enumerate}[label=($p_{\arabic*}$)]
+        \item À toute grandeur physique $A$ on associe un opérateur linéaire hermitien $\hat{A}$ de $\mathcal{E}_H$ appelé \textbf{observable}. On suppose ici que le spectre de $\hat{A}$ est de spectre discret.
+        \item Une mesure de $A$ ne peut donner comme résultat qu’une valeur propre $a_n$ de $\hat{A}$.
+        \item Pour un système se trouvant dans l’état $\ket{\psi}$, la probabilité de mesurer $a_n$ est
+              \[ \mathbb{P}(a_n) := \bra{\psi} \hat{P}_n \ket{\psi} = \nor{\hat{P}_n \ket{\psi}}^2 \]
+              où $\hat{P}_n$ est le projecteur sur le sous-espace propre associé à la valeur propre $a_n$.
+        \item Si la mesure de $A$ donne $a_n$, alors le système après mesure est dans l’état
+              \[ \ket{\psi'} = \frac{\hat{P}_n \ket{\psi}}{\nor{\hat{P}_n \ket{\psi}}} \]
+    \end{enumerate}
+\end{omed}
+
+\subsection{Évolution temporelle}
+
+\begin{omed}{Principe 3}
+    L’évolution de l’état $\ket{\psi(t)}$ du système est gouvernée par l’\textbf{équation de Schrödinger}
+    \[ i\hbar \frac{\text{d}\ket{\psi(t)}}{\text{d}t} = \hat{H}(t) \ket{\psi(t)} \]
+    où $\bar{H}(t)$ est un observable appelé \textbf{Hamiltonien} et représentant l’énergie du système.
+\end{omed}
+
+Dans le cas d’un système isolé,
+\[ \ket{\psi(t)} = \exp\left(-i\frac{\hat{H}}{\hbar}(t - t_0)\right) \ket{\psi(t_0)} \]

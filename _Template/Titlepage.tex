@@ -1,0 +1,16 @@
+\begin{titlepage}
+    \titlepagehookfalse
+    \begin{tikzpicture}[overlay, remember picture]
+        \fill[couleurmatiere] (current page.north west) rectangle ($(current page.south west) + (3in,0)$);
+        \node[anchor=north, couleurmatiere!50!white] at ($(current page.north west) + (1in, -.5in)$) {\includegraphics[width=1in]{_Images/poly-vert-colorless.pdf}};
+        \node[anchor=center, couleurmatiere!50!white, rotate=90] at ($(current page.west) + (1in,-1in)$) {\resizebox{!}{1in}{\bfseries \code}};
+        \node[anchor=center, couleurmatiere!15!white] at ($(current page.center) + (1.5in,-3in)$) {\includegraphics[width=8in]{_Images/poly-armes-colorless.pdf}};
+
+
+        \node[anchor=center, black] at ($(current page.north) + (1.5in,-1in)$) {\resizebox{!}{.5in}{\itshape\bfseries \cours}};
+        \node[anchor=center, black] at ($(current page.north) + (1.5in,-1.6in)$) {\resizebox{!}{.2in}{Cours de \matiere}};
+        \node[anchor=center, couleurmatiere] at ($(current page.north) + (1.5in, -2in)$) {\includegraphics[width=4in]{_Images/poly-filet-colorless.pdf}};
+        \node[anchor=center, black] at ($(current page.north) + (1.5in,-2.4in)$) {\resizebox{!}{.25in}{\bfseries\fontfamily{lmr}\version}};
+        \node[anchor=center, black] at ($(current page.north) + (1.5in,-2.9in)$) {\resizebox{!}{.2in}{\oldstylenums{\today}, \myauthor}};
+    \end{tikzpicture}
+\end{titlepage}

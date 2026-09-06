@@ -1,0 +1,156 @@
+\section{Méthodes d’approximation}
+
+    Seuls certains problèmes de mécanique quantique (oscillateur harmonique, mouvement d’une particule chargée dans un potentiel coulombien) peuvent être résolus de façon exacte. Pour d’autres problèmes, on se ramène à des méthodes d’appoximation.
+
+    \subsection{Méthode des perturbations}
+
+        \subsubsection{Principe}
+
+    Cette méthode repose sur la recherche des valeurs et vecteurs propres d’un hamiltonien indépendant du temps, sachant que celui-ci peut s’écrire sous la forme $\hat{H} = \hat{H}_0 + \hat{W}$, où $\hat{H}_0$ représente l’hamiltonien principal tandis que $\hat{W}$ est une perturbation supposée petite devant $\hat{H}_0$. 
+
+    On suppose que les vecteurs et valeurs propres de $\hat{H}_0$ sont connues, et on notera 
+    \[ \hat{H}_0 \ket{n,r} = E_n \ket{n,r} \]   
+    où $r \in \intEN{1}{g_n}$ représente le niveau de dégénérescence du niveau d’énergie $E_n$. On posera $\hat{W} = \lambda \hat{H}_1$ où $\hat{H}_1$ est du même ordre de grandeur que $\hat{H}_0$ tandis que $\lambda \ll 1$. 
+
+    L’idée de base de la méthode constiste à considérer les vecteurs propres $\ket{\psi(\lambda)}$ et ses valeurs propres $E(\lambda)$ de l’hamiltonien $\hat{H}(\lambda) = \hat{H}_0 + \lambda \hat{H}_1$ et à effectuer un développement limité en fonction de $\lambda$ lorsque $\lambda \to 0$. On a ainsi 
+    \[ \ket{\psi(\lambda)} = \ket{\psi^{(0)}} + \lambda \ket{\psi^{(1)}} + \cdots \] 
+    et 
+    \[ E(\lambda) = E^{(0)} + \lambda E^{(1)} + \cdots \]   
+    L’équation aux valeurs propres s’écrit alors 
+    \begin{align*}
+        \left(\hat{H}_0 + \lambda \hat{H}_1\right) \ket{\psi(\lambda)} &= E(\lambda) \ket{\psi(\lambda)} 
+        \left(\hat{H}_0 + \lambda \hat{H}_1 \right)\left(\ket{\psi^{(0)}} + \lambda \ket{\psi^{(1)}} + \cdots\right) = \left(E^{(0)} + \lambda E^{(1)} + \cdots\right)\left(\right)\left(\ket{\psi^{(0)}} + \lambda \ket{\psi^{(1)}} + \cdots\right)
+    \end{align*}
+    En identifiant les coefficients d’ordre successifs dans les polynômes en $\lambda$ figurant dans les deux membres de l’égalité ci-dessus, on obtient donc que 
+    \begin{align*}
+        \hat{H}_0 \ket{\psi^{(0)}} &= E^{(0)} \ket{\psi^{(0)}} \\
+        \hat{H}_0 \ket{\psi^{(1)}} + \hat{H}_1 \ket{\psi^{(0)}} &= E^{(0)} \ket{\psi^{(1)}} + E^{(1)} \ket{\psi^{(0)}} \\  
+        &\vdots
+    \end{align*}
+    
+    La méthode consiste à résoudre successivement cette hiérarchie d’équations, en allant jusqu’à l’ordre d’approximation souhaité. On va ici se restreindre au second ordre, souvent largement suffisant.
+
+        \subsubsection{Cas d’un niveau non dégénéré}
+
+    On considère le cas où $E^{(0)}$ est non dégénéré. On pose $E^{(0)} = E_n$ et $\ket{\psi^{(0)}} = \ket{n}$ où $E_n$ est l’une des valeurs propres de $\hat{H}_0$. On a alors le système d’équations (en se limitant au premier ordre) 
+    \begin{align*}
+        \hat{H}_0 \ket{n} &= E_n \ket{n} \\
+        \hat{H}_0 \ket{\psi^{(1)}} + \hat{H}_1 \ket{n} &= E_n \ket{\psi^{(1)}} + E^{(1)} \ket{n}
+    \end{align*}
+    En multipliant à gauche la deuxième équation par le bra $\bra{m}$, vecteur propre de $\hat{H}_0$ pour la valeur propre $E_m$, on obtient 
+    \begin{align*}
+        \bra{m} \hat{H}_0 \ket{\psi^{(1)}} + \bra{m} \hat{H}_1 \ket{n} &= E_n \spr{m}{\psi^{(1)}} + E^{(1)} \spr{m}{n} \\
+        \bra{m} \hat{H}_1 \ket{n} &= (E_n - E_m) \spr{m}{\psi^{(1)}} + E^{(1)} \spr{m}{n}
+    \end{align*}
+    En appliquant ce résultat au cas $m = n$, on obtient que 
+    \[ E^{(1)} = \bra{n} \hat{H}_1 \ket{n} \]   
+    Puis avec $m \neq n$, on obtient que 
+    \[ \spr{m}{\psi^{(1)}} = \frac{\bra{m} \hat{H}_1 \ket{n}}{E_n - E_m} \] 
+    Cette équation nous informe sur la valeur de $\spr{m}{\psi^{(1)}}$ pour tout $m \neq n$ mais ne nous donne pas d’information sur $\spr{n}{\psi^{(1)}}$. On peut déterminer sa valeur par un développement de $\ket{\psi(\lambda)}$ au premier ordre en $\lambda$ :
+    \begin{align*}
+        \spr{\psi(\lambda)}{\psi(\lambda)}
+        &= \left(\bra{n} + \lambda \bra{\psi^{(1)}}\right) \left(\ket{n} + \lambda \ket{\psi^{(1)}}\right) + O_{\lambda \to 0} \left(\lambda^2\right) \\
+        &= 1 + \lambda \left(\spr{n}{\psi^{(1)}} + \spr{\psi^{(1)}}{n}\right) + O_{\lambda \to 0} \left(\lambda^2\right)
+    \end{align*}
+    La condition de normalisation du ket $\ket{\psi(\lambda)}$ implique que la partie réelle de $\spr{n}{\psi^{(1)}}$ soit nulle et donc $\spr{n}{\psi^{(1)}} = i \beta$. Ainsi, 
+    \begin{align*}
+        \ket{\psi^{(1)}}
+        &= \sum_{m} \ket{m} \spr{m}{\psi^{(1)}} \\
+        &= \ket{n}\spr{n}{\psi^{(1)}} + \sum_{m \neq n} \ket{m} \spr{m}{\psi^{(1)}} \\
+        &= i \beta \ket{n} + \sum_{m \neq n} \frac{\bra{m} \hat{H}_1 \ket{n}}{E_n - E_m} \ket{m}
+    \end{align*} 
+    Le paramètre $\beta$ est libre, et peut prendre n’importe quelle valeur. Il est lié à la phase globale du vecteur d’état :
+    \begin{align*}
+        \ket{\psi(\lambda)} 
+        &= \ket{\psi^{(0)}} + \ket{\psi^{(1)}} + O_{\lambda \to 0} \left(\lambda^2\right) \\
+        &= \left(1 + i \lambda \beta\right) \ket{n} + \lambda \sum_{m \neq n} \frac{\bra{m} \hat{H}_1 \ket{n}}{E_n - E_m} \ket{m} + O_{\lambda \to 0} \left(\lambda^2\right) \\
+        &= e^{i \lambda \beta} \left(\ket{n} + \lambda \sum_{m \neq n} \frac{\bra{m} \hat{H}_1 \ket{n}}{E_n - E_m} \ket{m} \right) + O_{\lambda \to 0} \left(\lambda^2\right)
+    \end{align*}
+    La phase n’ayant pas d’impact sur l’état, on peut choisir $\beta = 0$, ce qui donne finalement 
+    \[ \ket{\psi^{(1)}} = \sum_{m \neq n} \frac{\bra{m} \hat{H}_1 \ket{n}}{E_n - E_m} \ket{m} \]   
+    Pour l’ordre 2, considérons la troisième équation provenant de l’égalité initiale $\hat{H}_{\lambda} \ket{\psi(\lambda)} = E(\lambda) \ket{\psi(\lambda)}$, 
+    \[ \hat{H}_0 \ket{\psi^{(2)}} + \hat{H}_1 \ket{\psi^{(1)}} =  E^{(0)} \ket{\psi^{(2)}} + E^{(1)} \ket{\psi^{(1)}} + E^{(2)} \ket{\psi^{(0)}} \]    
+    et projetons-la sur le bra $\bra{n}$. Comme $\bra{n}\hat{H}_0 = E_n \bra{n}$ et $\spr{n}{\psi^{(1)}} = 0$, on obtient que 
+    \[ E^{(2)} = \bra{n} \hat{H}_1 \ket{\psi^{(1)}} = \sum_{m \neq n} \frac{\abs{\bra{m} \hat{H}_1 \ket{n}}^2}{E_n - E_m} \]   
+
+    \begin{omed}{Méthode des perturbations (cas non dégénéré)}
+        On considère un hamiltonien $\hat{H}_0$ (d’états propres $\left\{\ket{n}\right\}$ connus et non dégénérés tels que $\hat{H}_0 \ket{n} = E_n \ket{n}$) auquel on ajoute une perturbation $\hat{W}$ petite devant $\hat{H}_0$. On peut écrire l’énergie sous la forme du développement 
+        \[ E = E_n + \delta E_n^{(1)} + \delta E_n^{(2)} + \cdots \]   
+        où $\delta E_n^{(k)}$ correspond au terme d’ordre $k$ en $\hat{W}$. On obtient alors les expressions suivantes du déplacement de l’énergie au premier et second ordre :
+        \begin{align*}
+            \delta E_n^{(1)} &= \bra{n} \hat{W} \ket{n} \\
+            \delta E_n^{(2)} &= \sum_{m \neq n} \frac{\abs{\bra{m} \hat{W} \ket{n}}^2}{E_n - E_m}
+        \end{align*}
+        On peut aussi développer l’état propre perturbé de $\hat{H}$ sous la forme 
+        \[ \ket{\psi} = \ket{n} + \ket{\delta \psi_n^{(1)}} + \ket{\delta \psi_n^{(2)}} + \cdots \]   
+        avec, au premier ordre, 
+        \[ \ket{\delta \psi_n^{(1)}} = \sum_{m \neq n} \frac{\bra{m} \hat{W} \ket{n}}{E_n - E_m} \ket{m} \]
+    \end{omed}
+
+    Remarquons qu’avec le résultat de cette méthode, on peut interpréter l’énergie au premier ordre par la formule 
+    \[ E \equiv E_n + \delta E_n^{(1)} = \bra{n} \hat{H}_0 \ket{n} + \bra{n} \hat{W} \ket{n} = \bra{n} \hat{H} \ket{n} \]   
+    L’énergie perturbée d’un niveau donné est donc à peu près égale à la valeur moyenne de l’hamiltonien total dans l’état non perturbé, ce qui constitue un résultat relativement intuitif.
+
+        \subsubsection{Cas d’un niveau dégénéré}
+
+    On considère le cas où $E^{(0)} = E_n$ est dégénéré. On posera ainsi $\hat{H}_0 \ket{n,r} = E_n \ket{n,r}$ où $r \in \intEN{1}{g_n}$ où $g_n$ est la dimension du sous-espace propre associé. Reprenons alors l’étude du système d’équations 
+    \begin{align*}
+        \hat{H}_0 \ket{\psi^{(0)}} &= E^{(0)} \ket{\psi^{(0)}} \\
+        \hat{H}_0 \ket{\psi^{(1)}} + \hat{H}_1 \ket{\psi^{(0)}} &= E^{(0)} \ket{\psi^{(1)}} + E^{(1)} \ket{\psi^{(0)}} \\  
+        \hat{H}_0 \ket{\psi^{(2)}} + \hat{H}_1 \ket{\psi^{(1)}} &=  E^{(0)} \ket{\psi^{(2)}} + E^{(1)} \ket{\psi^{(1)}} + E^{(2)} \ket{\psi^{(0)}}  
+    \end{align*}
+    On peut écrire le vecteur $\ket{\psi^{(0)}}$ comme un élément du sous-espace propre soit 
+    \[ \ket{\psi^{(0)}} = \sum_{r=1}^{g_n} c_r \ket{n,r} \]   
+    En projetant la seconde équation sur le bra $\bra{n,r}$, sachant que $\bra{n,r} \hat{H}_0 = E_n \bra{n,r}$, on obtient 
+    \[ \bra{n,r} \hat{H}_1 \sum_{r' = 1}^{g_n} c_{r'} \ket{n, r'} = E^{(1)} c_r \]   
+    qui, après multiplication par $\lambda$ se réécrit 
+    \[ \sum_{r'=1}^{g_n} \bra{n,r} \hat{W} \ket{n,r'}c_{r'} = \delta E^{(1)} c_r \]   
+    On a alors un système de $g_n$ équations linéaires pouvant s’écrire sous forme matricielle
+    \[ \begin{bmatrix}
+        \bra{n,1} \hat{W} \ket{n,1} & \cdots & \bra{n,1} \hat{W} \ket{n,g_n} \\
+        \vdots & \ddots & \vdots \\
+        \bra{n,g_n} \hat{W} \ket{n,1} & \cdots & \bra{n,g_n} \hat{W} \ket{n,g_n} \\
+    \end{bmatrix} 
+    \begin{bmatrix}
+        c_1 \\
+        \vdots \\
+        c_n
+    \end{bmatrix} = \delta E^{(1)} \begin{bmatrix}
+        c_1 \\
+        \vdots \\
+        c_n
+    \end{bmatrix} \]    
+
+
+
+
+    \subsection{Méthode variationnelle}
+
+        \subsubsection{Majoration de l’énergie du niveau fondamental}
+
+    Pour tout état $\ket{\psi}$ de l’espace de Hilbert considéré, 
+    \[ \bra{\psi} \hat{H} \ket{\psi} \geq E_0 \]   
+    où $E_0$ est l’énergie du niveau fondamental. Il y a égalité uniquement lorsque l’état $\ket{\psi}$ appartient au sous-espace propre du niveau fondamental. 
+
+        \subsubsection{La méthode variationnelle}
+
+    Le problème d’optimisation consistant à minimiser la grandeur $\bra{\psi} \hat{H} \ket{\psi}$ est équivalent à la recherche de l’énergie $E_0$ du niveau fondamental et de l’état propre associé. 
+
+    \begin{omed}{Méthode variationnelle}
+        La méthode variationnelle consiste à se donner un ensemble $\left\{\ket{\phi_{\alpha}}\right\}$ de vecteurs d’essai appartenant à un sous-ensemble de l’espace de Hilbert et chercher le minimum de la grandeur 
+        \[ E(\alpha) = \frac{\bra{\varphi_{\alpha}} \hat{H} \ket{\varphi_{\alpha}} }{\spr{\varphi_{\alpha}}{\varphi_{\alpha}}} \]   
+        On approximera ainsi $E_0$ par $E(\alpha_{\text{min}})$ et l’état propre fondamental par $\frac{\ket{\varphi_{\text{min}}}}{\nor{\varphi_{\text{min}}}}$. 
+    \end{omed}
+
+    La précision de la méthode dépend de la pertinence de l’espace des fonctions d’essais, souvent choisi par considérations physiques.
+
+        \subsubsection{La méthode variationnelle linéaire}
+
+    Le problème variationnel linéaire correspond au cas particulier où $\mathcal{E}_{\text{essai}}$ est un sous-espace vectoriel de l’espace de Hilbert. 
+
+    \begin{omed}{Méthode variationnelle linéaire}
+        La méthode variationnelle linéaire consiste à rechercher les extremums de la fonctionnelle 
+        \[ E(\ket{\psi}) = \frac{\bra{\psi} \hat{H} \ket{\psi} }{\spr{\psi}{\psi}} \]   
+        où $\ket{\psi} \in \mathcal{E}_{\text{essai}}$ qui est un sous-espace vectoriel de l’espace de Hilbert. Cette recherche s’effectue en diagonalisant la restriction de l’hamiltonien dans l’espace $\mathcal{E}_{\text{essai}}$. Les vecteurs propres et valeurs propres ainsi obtenus constituent des approximations des premiers vecteurs propres et valeurs propres de l’hamiltonien $\hat{H}$. De plus, les valeurs propres obtenues constituent des bornes supérieures des valeurs exactes.
+    \end{omed}
+ 

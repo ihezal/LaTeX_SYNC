@@ -1,0 +1,143 @@
+{
+  "omed": {
+    "scope": "latex",
+    "prefix": "@omed",
+    "body": [
+      "\\begin{omed}{${1:}}",
+      "\t${0}",
+	  "\\end{omed}"
+    ],
+  },
+  "demo": {
+    "prefix": "@demo",
+    "body": [
+      "\\begin{demo}{${1:}}",
+      "\t${0}",
+      "\\end{demo}"
+    ],
+  },
+  "array" : {
+    "prefix": "@arr",
+    "body": [
+      "\\left${1:} \\begin{array}{${2:}}",
+      "    ${4:} \\\\\\",
+      "    $0",
+      "\\end{array} \\right${3:} \\kern-\\nulldelimiterspace"
+    ]
+  },
+
+  "esp": {
+    "prefix": "@esp",
+    "body": [
+      "\\quad \\text{${1:}} \\quad $0"
+    ],
+  },
+  
+  "suppose": {
+    "prefix": "@sup",
+    "body": [
+    "",
+    "\\begin{enumerate}[label=(\\$h_{\\arabic*}\\$)]",
+    "    \\item $0",
+    "\\end{enumerate}"
+    ],
+  },
+  "alors": {
+    "prefix": "@alo",
+    "body": [
+    "",
+    "\\begin{enumerate}[label=(\\$r_{\\arabic*}\\$)]",
+    "    \\item $0",
+    "\\end{enumerate}"
+    ],
+  },
+  "propriété": {
+    "prefix": "@prop",
+    "body": [
+    "",
+    "\\begin{enumerate}[label=(\\$p_{\\arabic*}\\$)]",
+    "    \\item $0",
+    "\\end{enumerate}"
+  ],
+  },
+
+  "restriction":{
+    "prefix": "@res",
+    "body": "${1:} \\big|\\vphantom{|}_{${2:}}^{${3:}} $0"
+  },
+  "comparaison":{
+    "prefix": "@comp",
+    "body": "${1:}_{${2:} \\to ${3:}} \\left(${4:}\\right) $0"
+  },
+  "limite":{
+    "prefix": "@lim",
+    "body": "\\underset{${1:} \\to ${2:}}{\\longrightarrow} $0"
+  }, 
+  "limitehaute":{
+    "prefix": "@lih",
+    "body": "\\overset{${1:}}{\\longrightarrow} $0"
+  }, 
+  "derivation droite":{
+    "prefix": "@ded",
+    "body": "\\frac{\\text{d}${1:}}{\\text{d}${2:}} $0"
+  }, 
+  "derivation ronde":{
+    "prefix": "@der",
+    "body": "\\frac{\\partial ${1:}}{\\partial ${2:}} $0"
+  }, 
+
+  "mathbb": {
+    "prefix": "@mbb",
+    "body": "\\mathbb{${1:}}$0"
+  },
+  "mathbold": {
+    "prefix": "@mb",
+    "body": "\\mathbf{${1:}}$0"
+  },
+  "mathcal": {
+    "prefix": "@mc",
+    "body": "\\mathcal{${1:}}$0"
+  },
+   "mathcallocal": {
+    "prefix": "@mcl",
+    "body": "\\mathcal{${1:}}(\\mathbf{R}^N)$0"
+  },
+  "mathplain": {
+    "prefix": "@mp",
+    "body": "\\mathrm{${1:}}$0"
+  },
+  "mathfrak": {
+    "prefix": "@mf",
+    "body": "\\mathfrak{${1:}}$0"
+  },
+  "rot": {
+    "prefix": "@rot",
+    "body": "\\nabla \times \\mathbf{${1:}} $0"
+  },
+  "div": {
+    "prefix": "@div",
+    "body": "\\nabla \\cdot \\mathbf{${1:}} $0"
+  }, 
+  "grad": {
+    "prefix": "@grd",
+    "body": "\\nabla \\mathbf{${1:}} $0"
+  },
+
+
+
+
+
+  "brapsi": {
+    "prefix": "@bra",
+    "body": "\\bra{\\psi${1:}} $0"
+  },
+  "ketpsi": {
+    "prefix": "@ket",
+    "body": "\\ket{\\psi${1:}} $0"
+  },
+  "braket": {
+    "prefix": "@brkt",
+    "body": "\\bra{${1:}} ${2:} \\ket{${3:}} $0"
+  },
+
+}

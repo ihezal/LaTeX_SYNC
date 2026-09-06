@@ -1,0 +1,179 @@
+\section{Symétries en physique quantique}
+
+    \subsection{Invariance et commutation}
+
+        \subsubsection{Le groupe de symétrie}
+
+    On considère le groupe des isométries de l’espace euclidien à trois dimensions (\textit{i.e.} des transformations conservant le produit scalaire donc les distances et les angles) duquel on ne conserve seulement celles \textit{laissant le système physique invariant}. On a ainsi un groupe dit \textbf{groupe de symétrie}, qui peut être discret (rotations $n \times \frac{2\pi}{6}$ du benzène, translations d’un cristal) ou infini (translations d’un système homogène, rotations pour un système invariant par rotation).
+
+    \begin{omed}{Théorème (de Noether)}
+        À toute invariance du système on peut associer une quantité physique conservée.
+    \end{omed}
+
+    Étudier les symétries d’un système physique est donc judicieux pour trouver des grandeurs conservées.
+
+    Il est intéressant de remarquer que pour toute isométrie d’un espace de Hilbert $\mathcal{E}_H$, la contrainte $\spr{\psi_1}{\psi_2} = \bra{\psi_1} \hat{R}^{\dagger} \hat{R} \ket{\psi_2}$ pour toutes fonctions d’ondes $\ket{\psi_1}, \ket{\psi_2} \in \mathcal{E}_H$ implique que 
+    \[  \hat{R}^{\dagger} \hat{R} = \hat{I} \]
+    Et étant donné qu’une isométrie est nécessairement inversible, on a directement 
+    \[  \hat{R} \hat{R}^{\dagger} = \hat{I} \]
+    donc $\hat{R}$ est un \textit{opérateur unitaire}.
+
+        \subsubsection{Commutation avec Ĥ}
+
+    De façon générale, pour tout système invariant par une isométrie $\mathcal{R}$, l’hamiltonien $\hat{H}$ commute avec l’opérateur $\hat{R}$ représentant cette isométrie dans l’espace de Hilbert.
+
+    En effet, considérons un système dans l’état $\ket{\psi(t_0)}$ à un instant initial $t_0$. À $t_1$, ce système aura pour état $\ket{\psi(t_1)} = \hat{U}(t_1, t_0)\ket{\psi(t_0)} $. Que l’on tranforme ce système avant ou après son évolution n’a pas d’impact par définition de l’invariance par l’isométrie. Ainsi, 
+    \[ \hat{R}\hat{U}(t_1,t_0)\ket{\psi(t_0)} = \hat{U}(t_1,t_0)\hat{R}\ket{\psi(t_0)} \]
+    Par validité pour tout état initial, on a donc 
+    \[ \hat{R}\hat{U}(t_1,t_0) = \hat{U}(t_1,t_0)\hat{R} \quad \text{i.e.} \quad \left[\hat{R},\hat{U}(t_1,t_0)\right] = 0 \]
+    puis en dérivant par rapport à $t_1$, et sachant que d’après l’équation de Schrödinger $i\hbar\frac{\partial \hat{U}(t,t_0)}{\partial t} = \hat{H}(t)\hat{U}(t,t_0)$, on obtient alors que 
+    \[ \left[\hat{R},\hat{H}(t)\right] = 0 \]
+    Ceci implique immédiatemment, d’après le théorème d’Erhenfest, que la grandeur $R$ se conserve au cours du temps. 
+
+    Lorsque l’hamiltonien est indépendant du temps, la recherche de ses états propres sera en outre simplifiée par le fait que les opérateurs $\hat{R}$ et $\hat{H}$ peuvent être diagonalisés dans une même base.
+
+        \subsubsection{Générateur infinitésimal}
+
+    On considère un groupe de symétrie continue, que l’on admettra qu’il peut être caractérisé par un paramètre $a$. On admet aussi que lorsque c’est un groupe de Lie, on peut différencier l’opérateur $\mathcal{R}_a$ par rapport à $a$. On appelle \textbf{générateur infinitésimal} l’opérateur $\hat{G}$ défini par 
+    \[ \hat{R}_{da} = \hat{I} - \frac{i}{\hbar} \hat{G}da \]   
+    Pour satisfaire l’unitarité de $\hat{R}_{da}$, il faut et il suffit que $\hat{G} = \hat{G}^{\dagger}$, \textit{i.e.} que $\hat{G}$ soit un opérateur \textit{auto-adjoint}. On peut donc lui associer une grandeur physique observable. Par définition de $\hat{G}$, on a 
+    \[ \hat{G} = i\hbar \frac{\partial \hat{R}_a}{\partial a} (a = 0) \]   
+    et sachant que $\left[\hat{R}_{da},\hat{H}(t)\right] = 0$, on trouve que 
+    \[ \left[\hat{G}, \hat{H}\right] = 0 \]
+    La grandeur physique $G$ associée à $\hat{G}$ est donc une constante du mouvement : il s’agit de la version quantique du théorème de Noether.
+
+    \section{Parité}
+
+    On note $\hat{\Pi}$ l’opérateur parité, dont l’action sur une fonction d’onde est, par exemple sur une fonction d’onde $\psi(x)$ de $\mathcal{L}^2(\mathbf{R})$,
+    \[ \left(\hat{\Pi_x}\psi\right)(x) = \psi(-x) \quad \text{i.e.} \quad \bra{x} \hat{\Pi_x} \ket{\psi} = \spr{-x}{\psi} \]
+    On a ainsi $\bra{x} \hat{\Pi_x} = \bra{-x}$ et donc, par unitarité $\hat{\Pi_x} \ket{x} = \ket{-x}$, ce que l’on aurait pu prendre comme point de départ.
+
+    On peut aussi considéré l’opérateur parité dans $\mathcal{L}^2(\mathbf{R}^3)$, soit par la symétrie miroir par rapport à $x = 0$ définie par 
+    \[ (\hat{\Pi_x}\psi)(x,y,z) = \psi(-x,y,z) \]    
+    ou l’inversion définie par 
+    \[ (\hat{\Pi}\psi)(\vec{r}) = \psi(-\vec{r}) \quad \text{i.e.} \quad \hat{\Pi}\ket{\vec{r}} = \ket{-\vec{r}} \] 
+
+    On remarque immédiatemment que $\hat{\Pi}^2 = \hat{I}$, donc les valeurs propres de l’opérateur parité sont $\pm 1$. Les états propres associés à la valeur propre $+1$ sont appelés états symétriques ou pairs, et obéissent à la relation $\psi_S(-x) = \psi_S(x)$, et les états associés à $-1$, appelés états antisymétriques ou impairs, obéissent à la relation $\psi_A(-x) = - \psi_A(x)$.
+
+    On peut donc chercher les états propres sous forme d’états pairs et impairs, puis diagonaliser l’hamiltonien dans cette base (étant donné que $\left[\hat{\Pi}_x, \hat{H}\right]$).
+
+    \subsection{Translations}
+
+    Considérons un système inviariant par \textit{toute transformation}, quelle que soit la direction où l’amplitude de la translation considérée. Un tel système est donc nécessairement homogène. 
+
+        \subsubsection{Translation dans L2R}
+
+    On considère les translations de la forme $x \mapsto x + a$, \textit{i.e.} les opérateurs de la forme 
+    \[ \hat{T}_a \ket{x} = \ket{x + a} \]    
+    Son opérateur adjoint $\hat{T}_a^{\dagger}$ est la translation inverse $\hat{T}_{-a}$. 
+
+    En passant à l’adjoint dans l’égalité, $\hat{T}^{\dagger}_{a}\ket{x} = \ket{x-a}$, on obtient que $\bra{x} \hat{T}_a = \bra{x-a}$ d’où 
+    \[ \bra{x} \hat{T}_a \ket{\psi} = \spr{x-a}{\psi} = \psi(x-a) \] 
+    
+    On peut considérer la translation infinitésimale $\hat{T}_{da}$. On a dans ce cas 
+    \begin{align*}
+        \bra{x} \hat{T}_{da} \ket{\psi} 
+        &= \psi(x - da) \\
+        &= \psi(x) - da \frac{\partial \psi}{\partial x} \\
+        &= \left(1 - \frac{i}{\hbar}da \frac{\hbar}{i}\frac{\partial }{\partial x} \right) \psi(x) \\
+        &= \bra{x} \left(\hat{I} - \frac{i}{\hbar} da \hat{p}_x \right) \ket{\psi}
+    \end{align*}
+
+    On en déduit que $\hat{T}_{da} = \hat{I} - \frac{i}{\hbar} da \hat{p}_x$, et que l’impulsion $\hat{p}_x$ est le générateur infinitésimal du groupe des translations. En utilisant l’additivité des opérateurs translations ($\hat{T_{a+b}} = \hat{T_a}\hat{T_b}$), on remarque que 
+    \begin{align*}
+        \hat{T}_{a + da} 
+        &= \hat{T_{da}}\hat{T_a} \\
+        &= \hat{T_a} - \frac{i}{\hbar}\hat{p}_x \hat{T_a}da
+    \end{align*}
+    c’est-à-dire que 
+    \[ \frac{\text{d}\hat{T}_a}{\text{d}a} = - \frac{i}{\hbar} \hat{p}_x \hat{T}_a  \]
+    On obtient une équation analogue à cette qui porte sur l’opérateur d’évolution, et la solution sera donc de la même forme :
+    \[ \hat{T}_a = \exp\left(-\frac{i \hat{p}_x a}{\hbar}\right) \]  
+    
+        \subsubsection{Translation dans L2R3}
+
+    On généralise la procédure précédente en prenant un vecteur $\vec{a}$, et la translation $T_{\vec{a}}$ s’écrit comme composition des translations selon les trois axes.
+    \[ \hat{T}_{\vec{a}} = \exp\left(-\frac{i \hat{p}_z a_z}{\hbar}\right)\exp\left(-\frac{i \hat{p}_y a_y}{\hbar}\right)\exp\left(-\frac{i \hat{p}_x a_x}{\hbar}\right) \]
+    par translations entre les opérateurs, on obtient 
+    \[ \hat{T}_{\vec{a}} = \exp\left(-\frac{i\hat{\vec{p}}\cdot \vec{a}}{\hbar}\right) \]   
+    Si on redéveloppe au plus bas ordre dans le cas d’une transformation infinitésimale, on obtient que 
+    \[ \hat{T}_{d\vec{a}} = \hat{I} - \frac{i}{\hbar} \hat{p}_x da_x - \frac{i}{\hbar} \hat{p}_y da_y - \frac{i}{\hbar} \hat{p}_z da_z \]   
+    Les observables $\hat{p}_{x,y,z}$ sont donc les générateurs infinitésimaux du groupe des translations.
+
+        \subsbsection{Nouvelle définition de l’observable impulsion}
+
+    Une nouvelle approche basée sur la définition de l’impulsion $\hat{\vec{p}}$ est plus générale puisqu’elle s’applique à tout système physique.
+
+    \begin{omed}{Définition (observable impulsion)}
+        On appelle observable impulsion $\hat{\vec{p}}$ l’ensemble des trois opérateurs $(\hat{p}_x, \hat{p}_y, \hat{p}_z)$ définis comme les générateurs infinitésimaux du groupe des translations, de sorte qu’une translation infinitésimale soit représentée dans l’espace de Hilbert par l’opérateur 
+        \[ \hat{T}_{d\vec{a}} = \hat{I} - \frac{i}{\hbar} \hat{p}_x da_x - \frac{i}{\hbar} \hat{p}_y da_y - \frac{i}{\hbar} \hat{p}_z da_z \]   
+    \end{omed}
+
+    Le groupe des translations étant commutatif, on en déduit que les observables $\hat{p}_x, \hat{p}_y, \hat{p}_z$ commutent entre elles. Dans le cas particulier où $\mathcal{E}_H = \mathcal{L}^2(\mathbf{R}^3)$, on peut chercher l’expression explicite de l’opérateur impulsion à partir de cette nouvelle définition sachant que 
+    \begin{align*}
+        \bra{\vec{r}} \hat{T}_{d\vec{a}} \ket{\psi} 
+        &= \psi(\vec{r} - d\vec{a}) \\
+        &= \psi(\vec{r}) - \vec{\nabla}\psi \cdot d\vec{a} \\
+        &= \psi(\vec{r}) - \frac{i}{\hbar} \frac{\hbar}{i} \vec{\nabla}\psi \cdot d\vec{a}
+    \end{align*}
+    ce qui nous donne bien la définition connue dans $\mathcal{L}^2(\mathbf{R}^3)$ 
+    \[ \hat{\vec{p}} = \frac{\hbar}{i} \vec{\nabla} \]   
+    Mais la nouvelle définition a l’avantage d’être plus générale que cette dernière équation. Dans un système constitué de $N$ particules, l’opérateur translation s’écrit dans l’espace produit tensoriel $\mathcal{E}_H = \mathcal{E}_1 \oplus \cdots \oplus \mathcal{E}_N$ sous la forme 
+    \begin{align*}
+        \hat{T}_{d\vec{a}} = \hat{T}_{d\vec{a}}^{(1)} \oplus \cdots \oplus \hat{T}_{d\vec{a}}^{(N)} 
+        &= \left(\hat{I} - \frac{i}{\hbar}\hat{\vec{p}}_1 \cdot d\vec{a}\right)\cdots\left(\hat{I} - \frac{i}{\hbar}\hat{\vec{p}}_N \cdot d\vec{a}\right) \\
+        &= \hat{I} - \frac{i}{\hbar} \sum_{j=1}^N \hat{\vec{p}}_j \cdot d\vec{a}
+    \end{align*}
+
+    L’opérateur impulsion global est donc, dans $\mathcal{E}_H$,
+    \[ \hat{\vec{P}} = \sum_{j=1}^N \hat{\vec{p}}_j \]   
+
+    \subsection{Théorème de Bloch}
+
+    On se place dans le cadre d’un groupe de symétrie qui n’est plus continu mais discret, en l’occurrence le groupe des translations de pas $m \vec{a} + n \vec{b} + p \vec{c}$ où $m,n,p \in \mathbf{Z}$ et où $\vec{a},\vec{b},\vec{c}$ sont linéairement indépendants. C’est le cas de cristaux réguliers en trois dimensions.
+        
+        \subsubsection{À une dimension}
+
+    On considère une maille d’atomes linéaire qui s’étend à l’infini, sur un axe $x$. Ce système est invariant par la translation $\hat{T}_{a}$ où $a$ est la période du système. Les opérateurs $\hat{H}$ et $\hat{T}_a$ commutant, on peut les diagonaliser dans une base commune. Cherchons donc les vecteurs propres de l’opérateur $\hat{T}_a$ pour ensuite diagonaliser $\hat{H}$. 
+
+    Comme $\hat{T}_a$ est un opérateur unitaire, ses valeurs propres sont des complexes de module égal à 1. On peut les chercher sous la forme $\lambda = \exp(-ik_xa)$ où $k_x$ est un nombre réel \textit{a priori} compris dans l’intervalle $\intFO{-\frac{\pi}{a}}{\frac{\pi}{a}}$, ce qui permet à $\lambda$ de décrire l’ensemble des nombres complexes de module 1.
+
+    \begin{omed}{Théorème de Bloch (version 1)}
+        Les états propres $\ket{\psi}$ d’un système associé à un potentiel périodique de période $a$ peuvent être cherchés sous la forme de fonctions propres de l’opérateur $\hat{T}_a$, soit 
+        \[ \hat{T}_a \ket{\psi} = \exp(-i k_x a) \ket{\psi} \] 
+        où $k_x$ est un paramètre assimilé au vecteur d’onde appartenant à l’intervalle $\intFO{-\frac{\pi}{a}}{\frac{\pi}{a}}$. Ainsi, 
+        \[ \psi(x - a) = \exp(-i k_x a) \psi(x) \]   
+    \end{omed}
+
+    Bien que $k_x$ ne soit pas exactement le vecteur d’onde et $\psi(x)$ pas une onde plane, on peut tout de même chercher cette fonction sous la forme du produit de l’onde plane $\exp(i k_x x)$ par une enveloppe \textit{a priori} arbitraire $u(x)$ soit $\psi(x) = \exp(i k_x x) u(x)$. La fonction translatée est 
+    \[ \psi(x-a) = \exp(i k_x (x-a)) u(x-a) = \exp(- i k_x a) \exp(i k_x x) u(x-a) \]   
+    Ainsi, $\hat{T}_a \ket{\psi} = e^{-ik_xa} \ket{\psi} $ si et seulement si $u(x-a) = u(x)$, ce qui revient à dire que $u$ est une fonction périodique de période $a$, ce qui nous permet d’obtenir une seconde formulation au théorème de Bloch.
+
+    \begin{omed}{Théorème de Bloch (version 2)}
+        Les états propres $\ket{\psi}$ d’un système associé à un potentiel périodique de période $a$ peuvent être cherchés sous la forme du produit d’une onde plane par une fonction $u$ périodique de période $a$, soit
+        \[ \psi(x) = e^{i k_x x} u(x) \]   
+        où $k_x$ est un paramètre assimilé au vecteur d’onde et appartenant à l’intervalle $\intFO{-\frac{\pi}{a}}{\frac{\pi}{a}}$. 
+    \end{omed}
+
+    Cherchons désormais les états propres de l’hamiltonien, sous la forme $\psi(x) = e^{i k_x x} u(x)$, qui obéissent donc à l’équation $\hat{H}\ket{\psi} = E\ket{\psi}$. Comme $\hat{H} = \frac{\hat{p}_x^2}{2m_0} + V(\hat{x})$, calculons dans un premier temps l’effet de l’impulsion carrée sur la fonction d’ondre $\psi(x)$ : 
+    \begin{align*}
+        \hat{p}_x\psi(x) 
+        &= \frac{\hbar}{i} \frac{\partial }{\partial x} e^{i k_x x} u(x) \\
+        &= \frac{\hbar}{i} \left(i k_x e^{i k_x x} u(x) + e^{i k_x x} \frac{\partial u}{\partial x} \right) \\
+        &= e^{i k_x x} (\hbar k_x + \hat{p}_x) u(x) \\
+        \hat{p}_x^2 \psi(x) 
+        &= \hat{p}_x e^{i k_x x} (\hbar k_x + \hat{p}_x) u(x) \\
+        &= e^{i k_x x} (\hbar k_x + \hat{p}_x)^2 u(x) 
+    \end{align*}
+    On veut donc que 
+    \[ e^{i k_x x} \frac{(\hbar k_x + \hat{p}_x)^2}{2 m_0} u(x) + V(x) e^{i k_x x} u(x) = E e^{i k_x x } u(x) \]   
+    ou encore, après simplification, 
+    \[ \left(\frac{(\hbar k_x + \hat{p}_x)^2}{2 m_0} + V(x)\right)u(x) = E u(x) \]   
+    On peut définir un hamiltonien spécifique $\hat{H}_{k_x} = \frac{(\hbar k_x + \hat{p}_x)^2}{2 m_0} + V(\hat{x})$ afin que l’on puisse réécrire cette équation sous la forme 
+    \[ \hat{H}_{k_x} \ket{u} = E \ket{u} \] 
+
+    Cet hamiltonien agit dans l’espace de Hilbert $\mathcal{E}_a$ des fonctions périodiques de période $a$ muni du produit scalaire hermitien 
+    \[ \spr{u}{v} = \int_{-a/2}^{a/2} u^{*}(x) v(x) dx \]   
+    On peut donc travailler dans $\mathcal{E}_a$, plus petit que l’espace $\mathcal{L}^2(\mathbf{R})$ initial, ce qui simplifie la résolution du problème.
+
+

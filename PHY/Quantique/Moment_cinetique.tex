@@ -1,0 +1,219 @@
+\section{Moment cinétique}
+
+    \subsection{Rotations et moment cinétique}
+
+        On introduit l’opérateur rotation $\hat{R}_{\vec{\alpha}}$ correspondant à l’effet dans l’espace de Hilbert à une rotation d’axe colinéaire au vecteur $\vec{\alpha}$ et d’angle égal à la norme $\nor{\vec{\alpha}}$.
+
+        \subsubsection{Définition du moment cinétique}
+
+        De même que l’impulsion peut être définie comme le générateur infinitésimal du groupe des translations, on peut définir en toute généralité le moment cinétique comme le générateur infinitésimal du groupe des rotations. 
+
+        \begin{omed}{Définition (moment cinétique)}
+            Pour tout système physique, on appelle observable moment cinétique et on note $\hat{\vec{J}}$ l’ensemble des trois opérateurs $(\hat{J_x}, \hat{J}_y, \hat{J}_z)$ définis comme les générateurs infinitésimaux du groupe des rotatinos, de sorte qu’une rotation infinitésimale du système associée au vecteur $d\vec{\alpha}$ soit représentée dans l’espace de Hilbert par l’opérateur 
+            \[ \hat{R}_{d\vec{\alpha}} = \hat{I} - \frac{i}{\hbar} J_x d\alpha_x - \frac{i}{\hbar} J_y d\alpha_y - \frac{i}{\hbar} J_z d\alpha_z = \hat{I} -  \frac{i}{\hbar} \hat{\vec{J}} \cdot d\vec{\alpha}  \]   
+        \end{omed}
+
+        On pourra, en procédant de la même façon que pour l’opérateur translation, écrire l’opérateur associé à une rotation sous forme exponentielle :
+
+        \[ \hat{R}_{\vec{\alpha}} = \exp\left(- \frac{i}{\hbar} \hat{\vec{J}} \cdot d\vec{\alpha} \right) \]
+
+        \subsubsection{Relations de commutation entre les observables selon x,y\&z}
+
+        Le groupe des rotations est non commutatif contrairement à celui des translations, ce qui nous permet d’établir des relations de commutation entre les opérateurs des composantes cartésiennes du moment cinétique.
+
+        \begin{omed}{Proposition (relations de commutation)}
+            \begin{align*}
+                \left[J_x, J_y\right] &= i \hbar J_z \\
+                \left[J_y, J_z\right] &= i \hbar J_x \\
+                \left[J_z, J_x\right] &= i \hbar J_y \\
+            \end{align*}
+            \textit{i.e.} 
+            \[ \hat{\vec{J}} \times \hat{\vec{J}} = i \hbar \hat{\vec{J}} \]   
+        \end{omed}
+
+        \subsubsection{L’observable J2}
+
+        On remarque que $\hat{J}^2 = J_x^2 + J_y^2 + J_z^2$ est un observable qui commute avec n’importe quelle composante du moment cinétique, puisque :
+        \begin{align*}
+            \left[J_x, \hat{J}^2\right] &= 0 \\
+            \left[J_y, \hat{J}^2\right] &= 0 \\
+            \left[J_z, \hat{J}^2\right] &= 0 \\
+        \end{align*}
+
+        \subsubsection{Système invariant par rotation}
+
+        Si un système est invariant par rotation, son hamiltonien commute avec les générateurs infinitésimaux du groupe des rotations, soit 
+        \[ \left[\hat{H}, \hat{\vec{J}}\right] = \vec{0} \]   
+        Ainsi, pour tout vecteur $\vec{\alpha}$, l’hamiltonien commutera avec $\hat{\vec{J}} \cdot \vec{\alpha}$. et donc avec $\hat{R}_{\alpha}$. L’hamiltonien commutera également avec $\hat{J}^2$. On dispose donc de façon générale un ensemble de trois observables commutant entre eux $(\hat{H}, \hat{J}_z, \hat{J}^2)$, qui pourront donc être diagonalisés dans une base propre commune. 
+
+    \subsection{Théorie générale du moment cinétique}
+
+        \subsubsection{Introduction des paramètres j \& m}
+
+        Commençons par la recherche des valeurs et états propres de $\hat{J}^2$. La valeur moyenne de $\hat{J}^2$ dans un état $\ket{\psi} $ quelconque s’écrit 
+        \[ \bra{\psi} \hat{J}^2 \ket{\psi} = \nor{J_x \ket{\psi}}^2 + \nor{J_y \ket{\psi} }^2 + \nor{J_z \ket{\psi} }^2 \geq 0 \]  
+        Ainsi $\text{Sp}(\hat{J}^2) \subset \mathbf{R}^+$. Comme la fonction $j \mapsto j(j+1)$ est une bijection de $\mathbf{R}_+$ dans $\mathbf{R}_+$, on peut chercher les valeurs propres sous la forme $\lambda = j(j+1)\hbar^2$, $j \in \mathbf{R}_+$. Les états propres $\ket{\psi} $ cherchés étant communs à $J_z$ et $\hat{J}^2$, on introduira le paramètre $m \in \mathbf{R}$ tel que les valeurs propres de $J_z$ s’écrivent $\lambda = m \hbar$. Les espaces propres communs pour les valeurs propres $j(j+1)\hbar^2$ et $m\hbar$ seront notés $\mathcal{E}_{j,m}$. 
+
+        \subsubsection{Les opérateurs + \& -}
+
+        On introduit les opérateurs $J_+ = J_x + i J_y$ et son adjoint $J_- = J_x - i J_y$, qui commutent avec $\hat{J}^2$ :
+        \[ \left[J^2, J_{\pm}\right]   = 0 \]   
+        Toutefois, ceux-ci ne commutent pas avec $J_z$, puisque 
+        \[ \left[J_z, J_{\pm}\right] = \left[J_z, J_x\right] \pm i \left[J_z, J_y\right] = \pm \hbar J_{\pm} \]   
+        Le produit $J_{\mp}J_{\pm}$ étant auto-adjoint, il est utile de le calculer explicitement :
+        \[ J_{\mp}J_{\pm} = \hat{J}^2 - J_z (J_z \pm \hbar \hat{I}) \]   
+        Cela nous conduit à exprimer l’observable $J^2$ en fonction des opérateurs $J_z$ et $J_{\pm}$ :
+        \[ \hat{J}^2 = \hat{J}_z^2 + \frac{1}{2} \left(J_- J_+ + J_+ J_-\right) \]   
+
+        Considérons désormais l’action de $J_{\pm}$ sur un ket $\ket{\psi} $ de l’espace $\mathcal{E}_{j,m}$. Étant donné que $J_{\pm}$ commute avec $J^2$, le vecteur $J_{\pm} \ket{\psi} $ reste un vecteur propre de l’opérateur $J^2$ pour la valeurs propre $j(j+1)\hbar^2$. Pour $J_z$, on remarque que 
+        \begin{align*}
+            J_z J_{\pm} \ket{\psi} 
+            &= \left(J_{\pm} J_z + \left[J_z, J_{\pm}\right]\right) \ket{\psi} \\
+            &= \left(J_{\pm} m \hbar + \hbar J_{\pm}\right) \ket{\psi} \\
+            &= (m \pm 1) \hbar \hat{J}_{\pm} \ket{\psi} 
+        \end{align*}
+        Ainsi, $J_{\pm} \ket{\psi}$ est soit un vecteur propre de l’espace commun $\mathcal{E}_{j, m \pm 1}$, soit le vecteur nul. Or sa norme vaut :
+        \begin{align*}
+            \nor{J_{\pm} \ket{\psi}}^2
+            &= \bra{\psi} J_{\mp} J_{\pm} \ket{\psi}  \\
+            &= \bra{\psi} J^2 - J_z (J_z \pm \hbar \hat{I}) \ket{\psi} \\
+            &= \left(j(j+1) - m(m\pm 1)\right)\hbar^2 
+            &\geq 0
+        \end{align*}
+        On déduit de la positivité de cette norme que, nécessairement, $m(m\pm1) \leq j(j+1)$, ce qui implique la relation 
+        \[ -j \leq m \leq j \]   
+        Les cas d’égalité $J_+ \ket{\psi} = \vec{0}$ et $J_- \ket{\psi}= \vec{0}$ seront respectivement atteints dans les cas où $m = j$ et $m = -j$.
+        
+        \subsubsection{Valeurs autorisées pour j \& m}
+
+        Les résultats précédemment établis contraignent en réalité grandement les valeurs de $j$, et $m$, par application répétées des opérateurs $J_{\pm}$. Considérons en effet $\ket{\psi} \in \mathcal{E}_{j,m}$, avec donc $m \in \intFF{-j}{j}$. Par application répétée de $J_+$, on obtiendrait à un moment $m' > j$, condition impossible. Il faut donc que l’un des vecteurs obtenus s’annule (et alors dans ce cas $m' = j$), \textit{i.e.} il existe un entier $N$ tel que $m + N = j$. En appliquant plutôt $J_-$, on trouve la condition symétrique, donc il existe un entier $N'$ tel que $m - N' = -j$. Ainsi, $2j = N + N'$, \textit{i.e.} 
+        \[ j \in \left\{0, \frac{1}{2}, 1, \frac{3}{2}, \ldots\right\} \]
+        Cela implique par ailleurs que $j - m = N$ soit un nombre entier, soit
+        \[ m \in \left\{-j, \ldots j-1 , j\right\} \]  
+        On approche avec ces restrictions des espaces $\mathcal{E}_{j,m}$, qui dépendront cependant largement des problèmes considérés. On peut toutefois encore remarquer que si l’espace $\mathcal{E}_{j, m_0}$ existe, tous les espaces $\mathcal{E}_{j,m}$ existent également (avec $m \in \left\{-j, \ldots j-1 , j\right\}$). 
+
+        \begin{omed}{Proposition (co-diagonalisation de $J^2$ et $J_z$)}
+            \begin{itemize}
+                \item Les valeurs propres de l’observable $J^2$ sont de la forme $j(j+1)\hbar^2$ où $j \in \left\{0, \frac{1}{2}, 1, \frac{3}{2}, \ldots\right\}$ ;
+                \item les valeurs propres de l’observable $J_z$ sont de la forme $m\hbar$, où $m \in \left\{-j, \ldots j-1 , j\right\}$ ;
+                \item la dimension de l’espace propre commun $\mathcal{E}_{j,m}$ est indépendante de $m$ ;
+                \item On peut construire une base propre commune aux observables $J^2$ et $J_z$, appelée base standard et notée $\left\{\ket{n,j,m}\right\}$, à l’aide des relations de récurrence 
+                \[ J_{\pm} \ket{n,j,m} = \sqrt{j(j+1) - m(m\pm1)}\hbar \ket{n,j, m\pm1} \]
+            \end{itemize}            
+        \end{omed}
+
+    \subsection{Cas d’une particule de spin 1/2}
+
+        Vérifions que la théorie précédemment évoquée s’applique bien au cas du moment cinétique intrinsèque d’une particule de spin 1/2. 
+
+        Rappelons que les composantes cartésiennes du moment cinétique intrinsèque s’écrivent dans la base $\left\{\ket{+}, \ket{-}\right\}$ par les matrices 
+        \begin{align*}
+            S_{x} &= \frac{\hbar}{2}\begin{bmatrix}
+                0 & 1 \\
+                1 & 0 \\
+            \end{bmatrix} \\
+            S_{y} &= \frac{\hbar}{2}\begin{bmatrix}
+                0 & -i \\
+                i & 0 \\
+            \end{bmatrix} \\
+            S_{z} &= \frac{\hbar}{2}\begin{bmatrix}
+                1 & 0 \\
+                0 & -1 \\
+            \end{bmatrix} \\
+        \end{align*}
+        L’opérateur $S^2$ a donc pour formule 
+        \begin{align*}
+            \hat{S}^2 
+            &= S_x^2 + S_y^2 + S_z^2 \\
+            &= 3 \times \frac{\hbar^2}{4} \hat{I} \\
+            &= \frac{1}{2} \frac{3}{2} \hbar^2 \hat{I} \\
+        \end{align*}
+        Ces résultats sont conformes à la théorie générale du moment cinétique, pour le paramètre demi-entier $j = \frac{1}{2}$. Les valeurs propres de $S_z$ sont aussi bien de la forme $m \hbar$ avec $m = \pm \frac{1}{2}$. Avec les notations du moment cinétique, on a donc 
+        \begin{align*}
+            \ket{+} &= \ket{\frac{1}{2}, \frac{1}{2}} \\
+            \ket{-} &= \ket{\frac{1}{2}, - \frac{1}{2}} \\
+        \end{align*}
+
+    \subsection{Moment cinétique orbital}
+
+        \subsubsection{Définition}
+
+        On considère une particule ponctuelle sans spin dans l’espace euclidien à trois dimensions. L’espace de Hilbert associé est constitué dans ce cas de l’ensemble des fonctions de carré sommable $\mathcal{L}^2(\mathbf{R}^3)$. Le moment cinétique orbital sera le moment cinétique de ce système. 
+
+        \begin{omed}{Définition (moment cinétique orbital)}
+            On appelle \textbf{moment cinétique orbital} et on note $\hat{\vec{L}}$ la quantité 
+            \[ \hat{\vec{L}} = \hat{\vec{r}} \times \hat{\vec{p}} \]
+        \end{omed}
+
+        Cette définition nous donne bien les relations de commutation attendues pour un moment cinétique, à savoir 
+        \[ \hat{\vec{L}} \times \hat{\vec{L}} = i \hbar \hat{\vec{L}} \]   
+
+        \subsubsection{Expression des opérateurs en coordonnées sphériques}
+
+        On déduit les expressions des opérateurs en coordonnées sphériques de celles en coordonnées cartésiennes :
+        \begin{align*}
+            L_x &= \hat{y} \hat{p}_z - \hat{z} \hat{p}_y = \frac{\hbar}{i} \left(y \frac{\partial }{\partial z} - z \frac{\partial }{\partial y} \right) \\
+            L_y &= \hat{z} \hat{p}_x - \hat{x} \hat{p}_z = \frac{\hbar}{i} \left(z \frac{\partial }{\partial x} - x \frac{\partial }{\partial z} \right) \\
+            L_z &= \hat{x} \hat{p}_y - \hat{y} \hat{p}_x = \frac{\hbar}{i} \left(x \frac{\partial }{\partial y} - y \frac{\partial }{\partial x} \right) \\
+        \end{align*}
+        La transformation sphérique $(x,y,z) \to (r,\theta,\varphi)$ passe par les relations 
+        \begin{align*}
+            x &= r \sin(\theta) \cos(\varphi) \\
+            y &= r \sin(\theta) \cos(\varphi) \\
+            z &= r \cos(\theta)
+        \end{align*}
+        On veut exprimer l’action de l’opérateur moment cinétique sur la fonction d’onde $\psi(r,\theta,\phi)$, en utilisant le fait que le moment cinétique est le générateur infinitésimal du groupe des rotations. Commençons par une rotation simple d’angle $d\alpha$ autour de l’axe $z$, qui voit $r$ et $\theta$ inchangés :
+        \begin{align*}
+            \hat{R}_{z,d\alpha} \psi(r,\theta,\varphi) 
+            &= \psi(r,\theta,\varphi-d\alpha) \\
+            &= \psi(r, \theta, \varphi) - \frac{\partial \psi}{\partial \phi} d\alpha \\ 
+        \end{align*}
+        Sachant que par définition, $\hat{R}_{z,d\alpha} = \hat{I} - \frac{i}{\hbar} \hat{L}_z d\alpha$, on en déduit que 
+        \[ \hat{L}_z = \frac{\hbar}{i} \frac{\partial }{\partial \varphi} \]   
+        On constate une parfaite analogie avec l’opérateur $\hat{p}_z$, associé à une translation le long de l’axe $z$, puisqu’une rotation le long de l’axe $z$ correspond à une translation dans l’espace des $\varphi$. Similairement, on obtient :
+        
+        \begin{omed}{Opérateurs différentiels associés à $\hat{\vec{L}}$ en coordonnées sphériques}
+            \begin{align*}
+                \hat{L}_x &= i \hbar \left(\sin(\varphi) \frac{\partial }{\partial \theta} + \frac{\cos(\varphi)}{\tan(\theta)} \frac{\partial }{\partial \varphi} \right) \\
+                \hat{L}_y &= i \hbar \left(-\cos(\varphi) \frac{\partial }{\partial \theta} + \frac{\sin(\varphi)}{\tan(\theta)} \frac{\partial }{\partial \varphi} \right) \\
+                \hat{L}_z &= \frac{\hbar}{i} \frac{\partial }{\partial \varphi} \\
+                \hat{L}_{\pm} &= \hbar e^{\pm i \varphi} \left(\pm \frac{\partial }{\partial \theta} + i \frac{\cos(\theta)}{\sin(\theta)} \frac{\partial }{\partial \varphi} \right) \\
+                \hat{L}^2 &= - \hbar^2 \left(\frac{1}{\sin(\theta)}\frac{\partial }{\partial \theta} \sin(\theta) \frac{\partial }{\partial \theta}  + \frac{1}{\sin^2(\theta)}\frac{\partial^2}{\partial \varphi^2} \right)
+            \end{align*}
+        \end{omed}
+
+        \subsubsection{Recherche des fonctions propres communes de L2 et Lz}
+
+        Dans le cadre du moment cinétique orbital, on notera respectivement les paramètres des valeurs propres par $\ell$ ($\ell(\ell + 1) \hbar^2$) et $m$ ($m\hbar$) qui sont des demi-entiers. En coordonnées sphériques, les fonctions propres recherchées $\psi(r,\theta,\varphi)$ obéissent donc aux deux équations aux valeurs propres :
+        \begin{align*}
+            - \left(\frac{1}{\sin(\theta)}\frac{\partial }{\partial \theta} \sin(\theta) \frac{\partial }{\partial \theta}  + \frac{1}{\sin^2(\theta)}\frac{\partial^2}{\partial \varphi^2} \right) \psi(r,\theta,\varphi) &= \ell(\ell + 1) \psi(r,\theta,\varphi) \\
+            -i\frac{\partial }{\partial \varphi} \psi(r,\theta,\varphi) &= m \psi(r, \theta, \varphi) \\
+        \end{align*}
+        La variable $r$ n’intervenant pas dans ces expressions, la résolution simultanée des deux équantions nous donnera une fonction ne dépendant que de $\theta$ et de $\varphi$, que l’on notera $Y(\theta, \varphi)$, appelée \textbf{partie angulaire} de la fonction d’onde. La \textbf{partie radiale} sera notée $R(r)$. Ces deux fonctions sont normalisées selon les relations
+        \begin{align*}
+            \int_{0}^{+\infty} \abs{R(r)}^2 r^2 dr &= 1 \\
+            \int_{0}^{\pi} \int_{0}^{2\pi} \abs{Y(\theta,\varphi)}^2 \sin(\theta) d\theta d\varphi &= 1
+        \end{align*}
+        ce qui assure que la fonction d’onde totale est bien normalisée. La seconde équation aux valeurs propres se réécrit alors 
+        \[ \frac{\partial Y}{\partial \varphi} = i m Y \]   
+        de solution normalisée 
+        \[ Y(\theta, \varphi) = F(\theta) e^{i m \varphi} \]   
+        La continuité de $Y$ en $\varphi = 0$ implique que $\exp(im2\pi) = 1$, \textit{i.e.} que $m$ soit un entier. Il en va ainsi de même pour $\ell$.
+        
+        \begin{omed}{Propriétés des harmoniques sphériques}
+            \begin{itemize}
+                \item $\hat{L}^2 Y_{\ell,m}(\theta, \varphi) = \ell(\ell + 1) \hbar^2 Y_{\ell, m} (\theta, \varphi)$ où $\ell \in \mathbf{N}$ ;
+                \item $\hat{L}_z Y_{\ell,m}(\theta, \varphi) = m \hbar Y_{\ell, m}(\theta, \varphi)$ où $m \in \intEN{-\ell}{\ell}$ peut prendre $2 \ell + 1$ valeurs différentes ;
+                \item $Y_{\ell,m}(\theta, \varphi) = F_{\ell, m}(\theta) e^{i m \varphi}$ où $F_{\ell,m}(\theta)$ est une fonction réelle qui s’annule $\ell - \abs{m}$ fois dans l’intervalle $\intOO{0}{\pi}$.
+                \item \textit{Conjugaison}
+                \[ Y_{\ell,m}^*(\theta, \varphi) = (-1)^m Y_{\ell,-m}(\theta, \varphi) \]  
+                \item \textit{Parité}
+                \[ Y_{\ell,m}(\pi - \theta, \varphi + \pi) = (-1)^{\ell} Y_{\ell,m}(\theta, \varphi) \]   
+                \item L’ensemble des harmoniques sphériques constitue une base orthonormée de l’espace des fonctions de carré sommable qui associent à un couple $(\theta, \varphi)$ la grandeur complexe $Y(\theta, \varphi)$. Pour toute fonction, on pourra écrire 
+                \[ Y(\theta, \varphi) = \sum_{\ell, m} c_{\ell, m} Y_{\ell,m}(\theta, \varphi) \]   
+                où les coefficients $c_{\ell, m}$ sont déterminés par les produits scalaires hermitiens 
+                \[ c_{\ell,m}= \int \int Y^*_{\ell,m}(\theta, \varphi) Y(\theta, \varphi) \sin(\theta) d\theta d\varphi \]
+            \end{itemize}
+        \end{omed}
+
+        

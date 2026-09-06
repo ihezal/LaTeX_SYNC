@@ -1,0 +1,103 @@
+\newcommand{\version}{Version SC}
+
+% Géométrie de la page
+\setlength{\oddsidemargin}{1in} 
+\setlength{\evensidemargin}{1in} 
+\setlength{\topmargin}{1in} 
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textwidth}{\dimexpr 210mm - 4in} 
+\setlength{\textheight}{\dimexpr 297mm - 4in}
+
+% Mise en page
+\pagestyle{empty}
+\makeatletter
+\let\ps@plain\ps@empty
+\makeatother
+\newif\iftitlepagehook
+\titlepagehooktrue
+\usepackage{ccicons}
+\AddToHook{shipout/background}{
+  \iftitlepagehook
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[gbox] ($(current page.north west) + (1in , -1in)$) rectangle ($(current page.south west) + (1.5in, 1in)$);
+        \node[couleurmatiere] at ($(current page.north west) + (1.25in, -1.2in)$) {\href{https://creativecommons.org/licenses/by-nc/4.0/}{\small \ccbync}};
+        \node[couleurmatiere] at ($(current page.south west) + (1.25in, +1.2in)$) {\thepage};
+        \node[anchor=east, couleurmatiere] at ($(current page.north east) + (-2in, -1.2in)$) {\itshape\rightmark};
+        \node[anchor=west, couleurmatiere] at ($(current page.north west) + (2in, -1.2in)$) {\itshape\cours};
+    \end{tikzpicture}
+  \fi
+}
+
+% Format des titres
+\newcommand{\marge}[2]{%
+  \tikz[baseline=(char.base), overlay, remember picture]{%
+    \node[#2, xshift=-.75in, font=\bfseries] (char) {#1}; 
+  }% 
+}
+
+\makeatletter
+\let\stdsection\section
+\renewcommand*\section{\@ifstar{\starsection}{\nostarsection}}
+\newcommand*\starsection[1]{\stdsection*{#1}}
+\newcommand*\nostarsection[1]{%
+  \refstepcounter{section}
+  \addcontentsline{toc}{section}{\thesection\hspace{1em}#1}
+  \markright{#1}
+  {\Large\bfseries\scshape
+  \par\vspace{1.5ex}
+  \marge{\thesection}{black}%
+  #1
+  \par\vspace{1ex}}
+}
+\renewcommand{\subsection}[1]{%
+  \refstepcounter{subsection}
+  \addcontentsline{toc}{subsection}{\thesubsection \hspace{1em}#1}
+  {\large\bfseries\scshape
+  \par\vspace{1.5ex}
+  \marge{\thesubsection}{black}%
+  #1
+  \par\vspace{1ex}
+  }
+}
+\renewcommand{\subsubsection}[1]{%
+  \refstepcounter{subsubsection}
+  {\normalsize\bfseries\scshape 
+  \par\vspace{1.5ex}
+  \marge{\thesubsubsection}{black}%
+  #1
+  \par\vspace{1ex}
+  }
+}
+\makeatother
+
+% Les environnements
+\newcounter{omedcounter}
+\renewcommand{\theomedcounter}{\thesection.\arabic{omedcounter}}
+\NewDocumentEnvironment{omed}{mo}
+{%
+  \refstepcounter{omedcounter}
+  \IfValueT{#2}{\label{#2}}
+  \begin{tcolorbox}[
+    general,
+    overlay unbroken and first={
+      \node[
+        black,
+        text width=.5in,
+        align=center,
+        anchor=north
+      ] at ($(frame.north west)+(-.75in,-.1cm)$)
+      {\color{couleurmatiere}\textbf{\thesection.\arabic{omedcounter}}};
+    } ]
+    \textbf{\textit{#1} ---}
+    
+}
+{%
+  \end{tcolorbox}
+}
+
+\NewDocumentEnvironment{demo}{m}{%
+  \textcolor{gris}{\bfseries #1 ---}
+}{%
+  \hfill\textcolor{gris}{\rule{1ex}{1ex}}
+}

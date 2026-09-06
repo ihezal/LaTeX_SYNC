@@ -1,0 +1,94 @@
+% Langue 
+\usepackage{polyglossia}
+\setmainlanguage{french}
+
+% Police de caractère
+\usepackage{fontspec}   
+\setmainfont[%
+  Ligatures={TeX, Common, Historic, Rare},
+  RawFeature = {+dlig,+hlig,+calt}
+  ]{Libertinus Serif}
+\usepackage{unicode-math}
+\setmathfont{Erewhon-Math}
+%\setmathfont{TeX Gyre Pagella Math}
+%\setmathfont{Libertinus Math}
+
+% Typographie
+\usepackage[final]{microtype}
+\allowdisplaybreaks
+\sloppy
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt plus 0.5pt minus 0.5pt}
+
+% Les couleurs
+\usepackage{xcolor}
+\definecolor{gris}{HTML}{808080}
+\definecolor{Pantone7694C}{HTML}{01426A}
+
+% Le package tikz
+\usepackage{tikz}
+\usetikzlibrary{%
+    patterns, 
+    decorations.fractals, 
+    decorations.text, 
+    angles, 
+    quotes, 
+    shapes.multipart, 
+    arrows.meta, 
+    calc, 
+    tikzmark, 
+    positioning, 
+    shapes.geometric
+}
+\tikzset{
+  gbox/.style={
+    draw=gris, fill=gris!2,           
+    line width=0.2mm, rounded corners=2mm, inner sep=2mm              
+  }
+}
+
+% Le package tcolorbox
+\usepackage[most]{tcolorbox}
+\tcbset{
+  general/.style={
+    enhanced, breakable, drop small lifted shadow=gris,
+    top=2mm, bottom=2mm, right=2mm, left=2mm, arc=2mm,
+    boxrule=.2mm,
+    colframe=gris, colback=gris!10, coltitle=gris, colbacktitle=gris!10
+  }
+}
+
+% Des packages utiles
+\usepackage{tabularray}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{xparse}
+\usepackage{comment}
+
+% Les symboles de délimitation
+\newcommand*\intOO[2]{\left] #1 \, , \, #2 \right[}
+\newcommand*\intFF[2]{\left[ #1 \, , \, #2 \right]}
+\newcommand*\intOF[2]{\left] #1 \, , \, #2 \right]}
+\newcommand*\intFO[2]{\left[ #1 \, , \, #2 \right[}
+\newcommand*\intEN[2]{\left[\!\left[ #1 \, , \, #2 \right]\!\right]}
+\newcommand*\spr[2]{\left< \, #1 \, \middle| \, #2 \, \right>}
+\newcommand*\abs[1]{\left\lvert \, #1 \, \right\rvert}
+\newcommand*\nor[1]{\left\lVert \, #1 \, \right\rVert}
+\newcommand*\nop[1]{\left|\kern-0.15ex\left|\kern-0.15ex\left| \, #1 \, \right|\kern-0.15ex\right|\kern-0.15ex\right|}
+\newcommand*\ket[1]{\left| \, #1 \, \right>}
+\newcommand*\bra[1]{\left< \, #1 \, \right|}
+
+% Le package enumitem
+\usepackage{enumitem}
+\setenumerate{topsep=1pt, itemsep=1pt, parsep=0pt, partopsep=0pt} 
+\setitemize{topsep=1pt, itemsep=1pt, parsep=0pt, partopsep=0pt} 
+
+% Le package hyperref
+\usepackage{hyperref} 
+\hypersetup{%
+    colorlinks=true,
+    linkcolor=couleurmatiere,
+    urlcolor=couleurmatiere,
+    filecolor=couleurmatiere,
+    pdfauthor=Olivier Allard
+    }

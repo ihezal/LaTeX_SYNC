@@ -1,0 +1,22 @@
+{
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  "editor.suggestOnTriggerCharacters": true,
+  "files.exclude": {
+  "**/*.aux": true,
+  "**/*.log": true,
+  "**/*.toc": true,
+  "**/*.out": true,
+  "**/*.synctex.gz": true
+  },
+  "latex-workshop.intellisense.disableSnippets": false,
+  "latex-workshop.latex.clean.enabled": true,
+  "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.formatOnSave": true
+    },
+  "latex-workshop.formatting.latex": "latexindent"
+}

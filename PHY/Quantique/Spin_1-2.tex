@@ -1,0 +1,71 @@
+\section{Le spin 1/2}
+
+    \subsection{Construction des observables cartésiens du spin}
+
+        On se place dans un espace des états de dimension $2$, et appelons $\ket{+}_z$ et $\ket{-}_z$ les vecteurs propres de l’observable $\hat{S}_z$ pour les valeurs propres $\pm \frac{\hbar}{2}$ (mises en évidence par l’expérience de Stern \& Gerlach). La matrice de l’observable s’écrit donc dans cette base selon l’expression 
+        \[ \hat{S}_z = \frac{\hbar}{2} \begin{bmatrix}
+            1 & 0 \\
+            0 & -1
+        \end{bmatrix} \]
+
+        Considérons l’observable $\hat{S}_x$, correspondant à la valeur du spin selon l’axe $x$. Ses valeurs sont aussi $\pm \frac{\hbar}{2}$ puisque le choix de l’axe est arbitraire. Ces axes étant orthogonaux, on sait qu’un système dans l’état $\ket{\pm}_z$ donnera aléatoirement une valeur $\pm \frac{\hbar}{2}$ du spin selon $x$. Ainsi, 
+        \begin{align*}
+            _z\bra{+} S_x \ket{+}_z &= 0 \\
+            _z\bra{-} S_x \ket{-}_z &= 0
+        \end{align*}
+        On en déduit que la matrice hermitienne représentant $\hat{S}_x$ dans la base $\left\{\ket{\pm}_z\right\}$ est de la forme
+        \[ \hat{S}_x = \frac{\hbar}{2} \begin{bmatrix}
+            0 & e^{-i\phi_x} \\
+            e^{i\phi_x} & 0
+        \end{bmatrix} \]
+        Pour que les coefficients de la matrice soient réels, il suffit de se placer dans la nouvelle base $\left\{\ket{+}_z, \ket{-}'_z\right\}$ où $\ket{-}'_z = e^{i \phi_x} \ket{-}_z$, que l’on notera $\left\{\ket{\pm}_z\right\}$. Ainsi, dans cette base, 
+        \[ \hat{S}_x = \frac{\hbar}{2} \begin{bmatrix}
+            0 & 1 \\
+            1 & 0
+        \end{bmatrix} \]
+        Les vecteurs propres de l’opérateur $\hat{S}_x$ se déduisent aisément de sa forme :
+        \begin{align*}
+            \ket{+}_x &= \frac{\ket{+}_z + \ket{-}_z}{\sqrt{2}} \\
+            \ket{-}_x &= \frac{\ket{+}_z - \ket{-}_z}{\sqrt{2}} \\
+        \end{align*}
+        Un raisonnement similaire appliqué à l’observable $\hat{S}_y$ nous permet de l’écrire sous la forme 
+        \[ \hat{S}_y = \frac{\hbar}{2} \begin{bmatrix}
+            0 & e^{-i\phi_y} \\
+            e^{i\phi_y} & 0
+        \end{bmatrix} \]
+        La base $\left\{\ket{\pm}_z\right\}$ étant déjà conventionnée pour que les coefficients de la matrice associés à $\hat{S}_x$ soient réels, on ne peut pas en faire de même pour $\hat{S}_y$. Toutefois, on peut déterminer la valeur de $\phi_y$ fixée par la convention. On sait que $_x\bra{+} \hat{S}_y \ket{+}_x = 0$, ce qui donne après calcul que $\frac{\hbar}{2} \cos(\phi_y) = 0$. On admettra alors que $\phi_y = \frac{\pi}{2}$ est la valeur confirmée expérimentalement. On a alors la matrice associée à l’opérateur $\hat{S}_y$
+         \[ \hat{S}_y = \frac{\hbar}{2} \begin{bmatrix}
+            0 & -i \\
+            i & 0
+        \end{bmatrix} \]
+        et les vecteurs propres de $\hat{S}_y$ 
+        \begin{align*}
+            \ket{+}_y &= \frac{\ket{+}_z + i \ket{-}_z}{\sqrt{2}} \\
+            \ket{-}_y &= \frac{\ket{+}_z - i \ket{-}_z}{\sqrt{2}} \\
+        \end{align*}
+
+        Avec les formules matricielles de ces opérateurs, on détermine facilement la valeur de leurs commutateurs :
+
+        \begin{omed}{Relations de commutation des observateurs du spin}
+            \begin{align*}
+                \left[S_x, S_y\right] &= i\hbar S_z \\
+                \left[S_y, S_z\right] &= i\hbar S_x \\
+                \left[S_z, S_x\right] &= i\hbar S_y \\
+            \end{align*}
+            soit 
+            \[ \hat{\vec{S}} \times \hat{\vec{S}} = i \hbar \hat{\vec{S}} \]
+        \end{omed}
+
+    \subsection{Mesure du spin selon un axe arbitraire}
+
+
+
+        \subsection{Sphère de Bloch}
+
+    \subsection{Particule dans un champ magnétique}
+
+        \subsection{Champ magnétique autonome}
+
+        \subsection{Champ magnétique dépendant du temps}
+
+        

@@ -1,0 +1,49 @@
+\newcommand{\version}{Version DC}
+
+% Géométrie de la page
+\usepackage[
+    top=3cm,
+    bottom=1cm,
+    left=1cm,
+    right=1cm
+]{geometry}
+\setlength{\columnsep}{1cm}
+
+% Mise en page
+\pagestyle{empty}
+\makeatletter
+\let\ps@plain\ps@empty
+\makeatother
+\newif\iftitlepagehook
+\titlepagehooktrue
+\usepackage{ccicons}
+\AddToHook{shipout/background}{
+  \iftitlepagehook
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[gbox] ($(current page.north west) + (1cm , -1cm)$) rectangle ($(current page.north east) + (-1cm, -2cm)$);
+        \node[anchor=west, couleurmatiere] at ($(current page.north west) + (1.25cm, -1.5cm)$) {\href{https://creativecommons.org/licenses/by-nc/4.0/}{\small \ccbync}};
+        \node[couleurmatiere] at ($(current page.north) + (0, -1.5cm)$) {\thepage};
+        \node[anchor=east, couleurmatiere] at ($(current page.north east) + (-1.25cm, -1.5cm)$) {\cours};
+    \end{tikzpicture}
+  \fi
+}
+
+% Les environnements
+\newcounter{omedcounter}
+
+\NewDocumentEnvironment{omed}{mo}
+{%
+  \refstepcounter{omedcounter}
+  \IfValueT{#2}{\label{#2}}
+  \begin{tcolorbox}[general]
+    \textbf{\textit{#1} \thesection.\arabic{omedcounter} ---}
+}
+{%
+  \end{tcolorbox}
+}
+
+\NewDocumentEnvironment{demo}{m + b}{%
+  \textcolor{gris}{\bfseries #1 ---} voir la version SC du poly. \hfill\textcolor{gris}{\rule{1ex}{1ex}}
+}{%
+
+}

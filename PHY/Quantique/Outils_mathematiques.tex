@@ -1,0 +1,172 @@
+\section{Outils mathématiques}
+
+    \subsection{Notation de Dirac}
+
+        On se place dans l’espace des états $\mathcal{E}_H$. 
+
+        On désigne par \textbf{ket} et on note $\ket{\psi}$ tout vecteur de $\mathcal{E}_H$. 
+
+        On désigne par \textbf{bra} et on note $\bra{\phi}$ tout vecteur de $\mathcal{E}_H^*$ qui est l’unique fonctionnelle linéaire (d’après le théorème de représentation de Riesz) associée $\ket{\phi}$. :
+        \[ \bra{\phi} : \ket{\psi} \in \mathcal{E}_H \mapsto \spr{\phi}{\psi} \]
+
+        \subsubsection{Opérateurs linéaires}
+
+        Un opérateur linéaire $\hat{A} : \mathcal{E}_H \to \mathcal{E}_H$ est une fonction linéaire de $\mathcal{E}_H$ dans lui-même. 
+
+        Si on considère une base $\left\{\ket{\psi_n}\right\}$ de $\mathcal{E}_H$, on peut définir la matrice de l’opérateur dans cette base, qui aura pour coefficients 
+        \[ A_{m,n} = \bra{\psi_m} \hat{A} \ket{\psi_n} \]
+        ce qui permet d’écrire directement l’opérateur sous la forme 
+        \[ \hat{A} = \sum_{m,n} A_{m,n} \ket{\psi_m} \bra{\psi_n} \]  
+
+        L’opérateur le plus commun est l’identité, qui peut s’écrire dans une base de $\mathcal{E}_H$ comme 
+        \[ \hat{I} = \sum_{n} \hat{P}_n := \sum_{n} \ket{\psi_n} \bra{\psi_n} \]   
+        où les $\hat{P}_n$ sont les projecteurs sur l’espace $\ket{\psi_n}$, grâce à l’orthonormalité de la base. On appelle cette écriture la \textbf{relation de fermeture}.
+
+        \begin{omed}{Définition}
+            Un opérateur $\hat{A}$ est dit \textbf{hermitien} ou \textbf{auto-adjoint} lorsque $\hat{A} = \hat{A}^{\dagger}$ où $\dagger$ est le symbole représentant l’opération de \textit{trans-conjugaison}.
+        \end{omed}
+
+        \begin{omed}{Théorème spectral}
+            Soit $\hat{A}$ un opérateur hermitien. On suppose que son spectre est \textit{discret}. 
+
+            Alors $\hat{A}$ est diagonalisable : il existe une base orthonormée $\left\{\ket{\psi_n}\right\}$ constituée de vecteurs propres de $\hat{A}$, et 
+            \[ \hat{A} = \sum_n a_n \ket{\psi_n} \bra{\psi_n} \]   
+        \end{omed}
+
+    \subsection{Transformation de Fourier}
+
+        On sait que l’espace des états $\mathcal{E}_H$ est homéomorphe à $\mathcal{L}^2(\mathbf{R})$ et on se place dans cette sous-section dans le formalisme de $\mathcal{L}^2(\mathbf{R})$. 
+        
+        On considère la fonction d’onde $\psi(x) = \spr{x}{\psi}$ qui décrit l’état physique du système dans l’\textbf{espace direct} (associé à la position). On cherche l’expression de $\tilde{\psi}(p) = \spr{p}{\psi}$. qui décrit l’état physique du système dans l’\textbf{espace de Fourier} (associé à l’impulsion). 
+
+        \begin{align*}
+            \tilde{\psi}(p) &= \spr{p}{\psi} = \bra{p} \hat{I} \ket{\psi} \\
+            &= \bra{p} \left(\int \ket{x} \bra{x} dx\right) \ket{\psi} \\
+            &= \int \psi(x) \spr{p}{x} dx \\
+        \end{align*}
+        
+        Pour trouver l’expression de $\spr{p}{x} = \overline{\spr{x}{p}}$, considérons l’action de $\hat{p}$ sur une fonction d’onde particulière : l’onde plane $e^{ikx}$, qui est une fonction propre de $\hat{p}$ pour la valeur propre $\hbar k$. Cela implique que 
+        \[ \bra{x} \hat{p} \ket{\psi} = \hat{p}\psi(x) = \frac{\hbar}{i} \frac{\text{d}\psi}{\text{d}x} \]
+        Ainsi, 
+        (trouver pk $\spr{p}{x} = \frac{e^{\frac{- i p x}{\hbar}}}{\sqrt{2\pi \hbar}}$)
+
+        Donc 
+        \[ \tilde{\psi}(p) = \frac{1}{\sqrt{2 \pi \hbar}} \int \psi(x) \exp\left(\frac{- i p x}{\hbar}\right) dx := \mathcal{F}[\psi](p) \]
+        où $\mathcal{F}$ est la \textbf{transformation de Fourier}, qui nous envoie dans l’espace de Fourier.
+
+        Des calculs similaires nous donnent directement 
+        \[ \psi(x) = \frac{1}{\sqrt{2 \pi \hbar}} \int \tilde{\psi}(p) \exp\left(\frac{i p x}{\hbar}\right) := \tilde{\mathcal{F}}[\tilde{\psi}](x) \]   
+        où $\tilde{\mathcal{F}}$ est la \textbf{tranformation de Fourier inverse}, qui nous permet de revenir dans l’espace direct.
+
+        \subsubsection{Propriétés}
+
+        \begin{omed}{Théorème}
+            Soient deux fonctions d’onde $\psi_1(x)$ et $\psi_2(x)$.
+            \[ \int \psi_1^*(x) \psi_2(x) dx = \int \tilde{\psi}_1^*(x) \tilde{\psi}_2(x) dx \]
+        \end{omed}
+
+        \begin{demo}{Démonstration}
+            Dans le cadre du formalisme de Dirac, on a directement, d’après les relations de fermeture,
+            \begin{align*}
+                \spr{\psi_1}{\psi_2} &= \int \spr{\psi_1}{x} \spr{x}{\psi_2} dx \\&= \int \spr{\psi_1}{p} \spr{p}{\psi_2} dp
+            \end{align*}
+        \end{demo}
+
+        \begin{omed}{Proposition}
+            Soit $\psi(x)$ une fonction d’onde. 
+            \begin{align*}
+                \mathcal{F}\left[\frac{\text{d}^n \psi}{\text{d}x^n}\right] &= \left(\frac{ip}{\hbar}\right)^n \mathcal{F}[\psi] \\
+                \tilde{\mathcal{F}}\left[\frac{\text{d}^n \tilde{\psi}}{\text{d}p^n}\right] &= \left(-\frac{ix}{\hbar}\right)^n \tilde{\mathcal{F}}[\tilde{\psi}] \\
+            \end{align*}
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            On dérive sous l’intégrale.
+        \end{demo}
+
+        \begin{omed}{Proposition}
+            Soit $\psi(x)$ une fonction d’onde. 
+            \begin{align*}
+                \mathcal{F}[\psi(x - x_0)](p) &= \tilde{\psi}(p)\exp\left(-\frac{i p x_0}{\hbar}\right) \\
+                \tilde{\mathcal{F}}[\tilde{\psi}(p - p_0)](x) &= \psi(x)\exp\left(\frac{i p_0 x}{\hbar}\right) 
+            \end{align*}
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Le facteur de phase apparaît dans la tranformation de Fourier de la fonction tranlatée.
+        \end{demo}
+
+        \begin{omed}{Proposition}
+            Soient deux fonctions d’onde $\psi_1(x)$ et $\psi_2(x)$.
+            \begin{align*}
+                \mathcal{F}[\psi_1 \psi_2](p) &= \frac{1}{\sqrt{2 \pi \hbar}} (\tilde{\psi_1} \star \tilde{\psi_2}) (p)  \\
+                \tilde{\mathcal{F}}[\tilde{\psi}_1 \tilde{\psi}_2](x) &= \frac{1}{\sqrt{2 \pi \hbar}} (\psi_1 \star \psi_2) (p)  \\
+            \end{align*}
+        \end{omed}
+
+
+    \subsection{Produit tensoriel}
+
+    Soient $\mathcal{E}_a$ et $\mathcal{E}_b$ deux espaces de Hilbert associés aux sous-systèmes $(a)$ et $(b)$, munis des bases hilbertiennes $\left\{\ket{\alpha_m}\right\}$ et $\left\{ \ket{\beta_n} \right\}$. 
+
+    \begin{omed}{Définition}
+        Le \textbf{produit tensoriel} est un opérateur bilinéaire 
+        \[ \otimes : \mathcal{E}_a \times \mathcal{E}_b \to \mathcal{E}_a \otimes \mathcal{E}_b \] 
+        où $\mathcal{E}_H := \mathcal{E}_a \otimes \mathcal{E}_b$ est un espace vectoriel de Hilbert permettant de décrire l’état du système $\left\{ (a),(b) \right\}$ de base hilbertienne dite \textbf{base tensorielle} $\left\{ \ket{\alpha_m} \otimes \ket{\beta_n} \right\}$.
+    \end{omed}
+
+    La base tensorielle nous indique que $\dim(\mathcal{E}_H) = \dim(\mathcal{E}_a) \times \dim(\mathcal{E}_b)$, et la forme générale d’un élément de $\mathcal{E}_H$ est donc 
+    \[ \ket{\psi} = \sum_{m,n} c_{m,n} \ket{\alpha_m} \otimes \ket(\beta_m) \] 
+
+    On appellera alors \textbf{états factorisés} les $\ket{\phi} \in \mathcal{E}_H$ qui s’écrivent sous la forme 
+    \[ \ket{\phi} = \left( \sum_{m} a_m \ket{\alpha_m} \right) \otimes \left( \sum_{n} b_n \ket{\beta_n} \right) \]
+    \textit{i.e.} les états tels que $c_{m,n} = a_m b_n$. On parle dans le cas contraire d’\textbf{état intriqué}. 
+
+
+    \subsection{Inégalité de Heisenberg}
+
+        Résultat fameux de la physique quantique, stipulant que l’on aura toujours $\Delta x \Delta p \geq \frac{\hbar}{2}$, l’inégalité de Heisenberg peut être démontrée dans un cadre plus général pour deux observables quelconques $\hat{A}$ et $\hat{B}$.
+
+        Commençons dans un premier temps par prouver l’\textbf{inégalité de Cauchy-Schwarz}.
+
+        \begin{omed}{Proposition}
+            Soit $\ket{\psi}, \ket{\psi}$ des éléments d’un espace de Hilbert $\mathcal{E}_H$. 
+            \[ \abs{\spr{\psi}{\psi'}} \leq \spr{\psi}{\psi} \spr{\psi'}{\psi'} \]
+            avec égalité dans le cas où il existe un scalaire $\lambda \in \mathbf{C}$ tel que $\ket{\psi} = \lambda \ket{\psi'}$.
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            
+        \end{demo}
+
+        On considère désormais un système placé dans l’état $\ket{\psi} $ ainsi que . 
+
+        \begin{omed}{Théorème}
+            Soient $\ket{\psi} \in \mathcal{E}_H$ et deux observables $\hat{A}$ et $\hat{B}$.
+            \[ \Delta A \Delta B \geq \frac{1}{2} \abs{\bra{\psi} \left[\hat{A}, \hat{B}\right] \ket{\psi}} \]
+            avec saturation (égalité) lorsque, pour un certain scalaire $\lambda \in \mathbf{R}$, 
+            \[ \left(\hat{B} - \left<B\right>\right) \ket{\psi} = i \lambda \left(\hat{A} - \left<A\right>\right) \ket{\psi} \]
+        \end{omed}
+
+        \begin{demo}{Démonstration}
+            
+        \end{demo}
+
+        Dans le cas particulier des observables position $\hat{x}$ et impulsion $\hat{p}$, sachant que leur commutateur est $\left[ \hat{x}, \hat{p} \right] = i \hbar \hat{I}$, on obtient 
+        \[ \Delta x \Delta p \geq \frac{\hbar}{2} \]
+        
+        Le cas de saturation s’obtient lorsque l’on a $\Delta x \Delta p = \frac{\hbar}{2}$. Considérons d’abord le cas particulier d’un paquet d’onde centré $\ket{\psi_0}$ (\textit{i.e.} tel que $\left<x\right> = \left<p\right> = 0$). La saturation impose qu’il existe un nombre réel tel que $\hat{p} \ket{\psi_0} = i \lambda \hat{x} \ket{\psi_0}$ soit, dans l’espace $\mathcal{L}^2(\mathbb{R})$, 
+        \[ \frac{\hbar}{i} \frac{\text{d} \psi_0}{\text{d}x}(x) = i \lambda x \psi_0(x) \] 
+        Il s’agit de l’équation différentielle génératrice d’une gaussienne, qui admet la solution normalisée 
+        \[ \psi_0(x) = \frac{1}{\left(2 \pi \Delta x^2\right)^{\frac{1}{4}}} \exp\left(-\frac{x^2}{4 \Delta x^2}\right) \]  
+        
+        Ramenons-nous désormais au cas général : on considère $\ket{\psi_1}$ résultant d’une translation dans l’espace de Fourier d’une quantité $p_0$ (\textit{i.e.} $\tilde{\psi}_1(p) = \tilde{\psi}_0(p - p_0)$). Cela revient à une multiplication de phase dans l’espace direct : 
+        \[ \psi_1(x) = \psi_0(x) \exp\left(\frac{i p_0 x}{\hbar}\right) \]   
+        On effectue ensuite une translation dans l’espace direct pour obtenir un état centré sur une posittion $x_0$ arbitraire. Finalement, 
+        \[ \psi(x) = \frac{e^{\frac{i p_0 (x - x_0)}{\hbar}}}{\left(2 \pi \Delta x^2\right)^{\frac{1}{4}}} \exp\left(-\frac{(x - x_0)^2}{4 \Delta x^2}\right) \]
+
+        Dans l’espace de Fourier, cette gaussienne prend la forme 
+        \begin{align*}
+            \tilde{\psi}(p) &= \frac{e^{-\frac{i p x_0}{\hbar}}}{\left(\frac{\pi \hbar^2}{2 \Delta x^2}\right)^{\frac{1}{4}}} \exp\left(-\frac{(p - p_0)^2}{\frac{\hbar^2}{\Delta x^2}}\right) \\
+            &= \frac{e^{-\frac{i p x_0}{\hbar}}}{\left(2 \pi \Delta p^2\right)^{\frac{1}{4}}} \exp\left(-\frac{(p - p_0)^2}{4 \Delta p^2}\right)
+        \end{align*}
