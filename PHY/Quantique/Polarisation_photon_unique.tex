@@ -1,0 +1,57 @@
+\section{Polarisation d’un photon unique}
+
+    \subsection{Polarisation de la lumière en optique classique}
+
+    \subsection{Polarisation de la lumière en optique quantique}
+
+        On suppose que l’on dispose d’une source de photons uniques, ce qui permet d’aborder le problème de l’optique quantique sous l’angle de la polarisation d’un photon unique, seul degré de liberté du problème. 
+
+        \subsubsection{Description de l’état de polarisation d’un photon unique}
+
+        L’espace des états $\mathcal{E}_H$ est un espace de Hilbert de dimension 2, de base orthonormée $\left\{\ket{\updownarrow}, \ket{\leftrightarrow}\right\}$ correspondant aux polarisations verticales et horizontales respectivement. On pourra écrire n’importe quel état de polarisation linéaire faisant un angle $\theta$ par rapport à la verticale par le ket 
+        \[ \ket{\theta} = \cos(\theta) \ket{\updownarrow} + \sin(\theta) \ket{\leftrightarrow} \]   
+        Pour ce qui est des états de polarisation circulaire droite ou gauche, on superpose les deux états de base avec un déphasage relatif de $\pm \frac{\pi}{2}$, soit 
+        \[ \ket{\pm} = \frac{\ket{\updownarrow} \pm \ket{\leftrightarrow}}{\sqrt{2}} \]
+
+        On pourra, au choix, sélectionner comme base orthonormée de l’espace des états les bases $\left\{\ket{\updownarrow}, \ket{\leftrightarrow}\right\}$, $\left\{\ket{\theta}, \ket{\theta + \frac{\pi}{2}}\right\}$ ou $\left\{\ket{+}, \ket{-}\right\}$.
+
+        \subsubsection{Mesure de l’état de polarisation d’un photon unique}
+
+        Considérons une mesure de polarisation par un \textbf{prisme de Rochon}, laissant les deux résultats possibles $\ket{\updownarrow}$ et $\ket{\leftrightarrow}$ dans le cas où celui-ci est orienté selon la verticale. Soit un état $\ket{\psi} = \alpha \ket{\updownarrow} + \beta \ket{\leftrightarrow}$ défini par les nombres complexes $\alpha$ et $\beta$. Les nombres $\abs{\alpha}^2$ et $\abs{\beta}^2$ correspondent alors aux probabilités associées aux deux états possible :
+        \begin{align*}
+            \mathcal{P}_{\updownarrow} &= \abs{\spr{\updownarrow}{\psi}}^2 = \abs{\alpha}^2 \\
+            \mathcal{P}_{\leftrightarrow} &= \abs{\spr{\leftrightarrow}{\psi}}^2 = \abs{\beta}^2 \\
+        \end{align*}
+        Si l’on tourne le prisme de Rochon d’un angle $\alpha$, la base de mesure à considérer est désormais $\left\{\ket{\alpha}, \ket{\alpha + \frac{\pi}{2}}\right\}$, et dans le cas d’un photon dans l’état $\ket{\theta}$, on obtient les probabilités de mesure 
+        \begin{align*}
+            \mathcal{P}_{\alpha} &= \abs{\spr{\alpha}{\theta}}^2  = \cos^2(\theta-\alpha) \\
+            \mathcal{P}_{\alpha + \frac{\pi}{2}} &= \abs{\spr{\alpha + \frac{\pi}{2}}{\theta}}^2  = \sin^2(\theta-\alpha) \\
+        \end{align*}
+        Ces résultats sont bien en accord avec la loi de Malus, qui stipule que la transmission est égale au carré du cosinus de la différence entre l’angle de la polarisation incidente et celle du polarisateur.
+
+        \subsubsection{Paramètres de description de l’état de polarisation d’un photon}
+
+        Cherchons le nombre minimal de paramètres nécessaires pour décrire entièrement l’état de polarisation d’un photon, par exemple dans la base $\left\{\ket{\updownarrow}, \ket{\leftrightarrow}\right\}$, $\ket{\psi} = \alpha \ket{\updownarrow} + \beta \ket{\leftrightarrow}$. \textit{A priori}, il faut les donnés des parties réelles et imaginaires de $\alpha$ et $\beta$. Toutefois, la normalisation du ket impose que $\abs{\alpha}^2 + \abs{\beta}^2 = 1$, et donc par exemple que $\alpha = e^{i\phi_{\updownarrow}} \cos(\theta)$ et $\beta = e^{i \phi_{\leftrightarrow}} \sin(\theta)$. De plus, la phase globale n’étant pas pertinente dans la description de l’état physique, on peut supposer que $\phi_{\updownarrow} = 0$, et donc écrire le ket sous la forme 
+        \[ \ket{\psi} = \cos(\theta)\ket{\updownarrow} + e^{i \phi} \sin(\theta)\ket{\leftrightarrow} \]   
+        où $\theta \in \intFF{0}{\frac{\pi}{2}}$ et $\phi \in \intOF{-\pi}{\pi}$.
+
+        \subsubsection{Évolution de l’état de polarisation d’un photon unique}
+
+        L’évolution temporelle de l’état de polarisation d’un photon unique fait intervenir un facteur de phase globale :
+        \[ \ket{\psi(t)} = e^{-\frac{iEt}{\hbar}} \ket{\psi(0)} \]   
+        Un tel préfacteur n’a aucune conséquence sur les mesures que l’on pourra réaliser, et l’on obtiendra toujours les mêmes résulats si l’on mesure selon un ket $\ket{\chi}$ :
+        \[ \mathcal{P}(t) = \abs{\spr{\chi}{\psi(t)}}^2 = \abs{\spr{\chi}{\psi(0)}}^2 \]   
+
+        On peut aussi considérer l’évolution spaciale de l’état de polarisation d’un photon traversant différents systèmes (lame à face parallèle, lame à retard, interféromètre, etc.). Dans le cas d’une lame à face parallèle, on a simplement 
+        \[ \ket{\psi_{\text{out}}} = e^{i k L} \ket{\psi_{\text{in}}} \]   
+        où $L$ est l’épaisseur de la lame et $k = \frac{n\omega}{c}$ est le vecteur d’onde dans le matériau. Le déphasage est global est donc le système physique n’est pas changé. Si on considère maintenant la traversée d’un matériau biréfringeant, comme une lame à retard, on sait qu’un état incident $\ket{\updownarrow}$ deviendra $e^{i k_0 L} \ket{\updownarrow}$ et qu’un état incident $\ket{\leftrightarrow}$ deviendra $e^{i k_e L} \ket{\leftrightarrow}$. En notant $\phi = (k_e - k_0) L$ le déphasage introduit par la lame à retard, on peut écrire (à une phase globale $e^{i k_0 L}$ près) que pour un état initial $\ket{\psi} = \alpha \ket{\updownarrow} + \beta \ket{\leftrightarrow}$, 
+        \[ \ket{\psi_{\text{out}}} = \alpha \ket{\updownarrow} + \beta e^{i \phi} \ket{\leftrightarrow} \]  
+        Ces transformations permettent de retrouver l’impact d’une lame demi-onde ($\phi = \pi$) ou demi-onde ($\phi = \frac{\pi}{2}$) sur un état de polarisation linéaire et sur un état de polarisation circulaire :
+        \begin{align*}
+            \ket{\theta} &\overset{\phi = \pi}{\longrightarrow} \ket{-\theta} \\
+            \ket{\pm} &\overset{\phi = \pi}{\longrightarrow} \ket{\mp} \\
+            \ket{\frac{\pi}{4}} &\overset{\phi = \frac{\pi}{2}}{\longrightarrow} \ket{+} \\
+            \ket{+} &\overset{\phi = \frac{\pi}{2}}{\longrightarrow} \ket{- \frac{\pi}{4}}
+        \end{align*}
+        
+
