@@ -1,3 +1,3 @@
-Le code LaTeX de ce projet est sous la licence LPPL (LaTeX Project Public License), version 1.3c.
+Le code LaTeX de ce projet est sous la licence MIT (Massachusetts Institute of Technology).
 
 Les documents compilés, au format .pdf, sont sous la licence CC BY-NC 4.0 de Creative Commons.
