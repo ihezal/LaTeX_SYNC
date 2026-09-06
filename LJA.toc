@@ -1,0 +1,91 @@
+\xpginauxfiletrue 
+\selectlanguage *{french}
+\contentsline {section}{\numberline {1}Vocabulaire}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Expressions}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Noms par par thématique}{2}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}La famille}{2}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Les lieux}{3}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Les professions et statuts}{3}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Les animaux}{4}{subsubsection.1.2.4}%
+\contentsline {subsubsection}{\numberline {1.2.5}Éléments naturels}{4}{subsubsection.1.2.5}%
+\contentsline {subsubsection}{\numberline {1.2.6}Moyens de transport}{5}{subsubsection.1.2.6}%
+\contentsline {subsubsection}{\numberline {1.2.7}Parties du corps}{5}{subsubsection.1.2.7}%
+\contentsline {subsubsection}{\numberline {1.2.8}Habits}{6}{subsubsection.1.2.8}%
+\contentsline {subsubsection}{\numberline {1.2.9}La maison}{6}{subsubsection.1.2.9}%
+\contentsline {subsubsection}{\numberline {1.2.10}Les objets du quotidien}{7}{subsubsection.1.2.10}%
+\contentsline {subsubsection}{\numberline {1.2.11}La nourriture}{7}{subsubsection.1.2.11}%
+\contentsline {subsubsection}{\numberline {1.2.12}Les arts}{8}{subsubsection.1.2.12}%
+\contentsline {subsubsection}{\numberline {1.2.13}Les sciences}{8}{subsubsection.1.2.13}%
+\contentsline {subsection}{\numberline {1.3}Adjectifs par thématiques}{8}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Caractéristiques physiques}{8}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Émotions}{9}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Temps et espace}{9}{subsubsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.4}}{9}{subsubsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.4}Les adverbes}{9}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Temps et espace}{9}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Quantité}{10}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}Autres}{10}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Mots interrogatifs}{10}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}Position dans l’espace}{10}{subsubsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.6}Les nombres}{10}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}Compter}{10}{subsubsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.7}La date}{11}{subsection.1.7}%
+\contentsline {subsubsection}{\numberline {1.7.1}L'heure}{11}{subsubsection.1.7.1}%
+\contentsline {subsubsection}{\numberline {1.7.2}Les jours}{11}{subsubsection.1.7.2}%
+\contentsline {subsubsection}{\numberline {1.7.3}Les mois}{12}{subsubsection.1.7.3}%
+\contentsline {section}{\numberline {2}Grammaire}{12}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Les particules}{12}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}La particule の}{12}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}La particule と}{12}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}La particule や}{13}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}La particule は}{13}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}La particule に}{13}{subsubsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.6}La particule で}{13}{subsubsection.2.1.6}%
+\contentsline {subsubsection}{\numberline {2.1.7}La particule へ}{13}{subsubsection.2.1.7}%
+\contentsline {subsubsection}{\numberline {2.1.8}La particule を}{14}{subsubsection.2.1.8}%
+\contentsline {subsubsection}{\numberline {2.1.9}か}{14}{subsubsection.2.1.9}%
+\contentsline {subsubsection}{\numberline {2.1.10}も}{14}{subsubsection.2.1.10}%
+\contentsline {subsubsection}{\numberline {2.1.11}ね}{14}{subsubsection.2.1.11}%
+\contentsline {subsubsection}{\numberline {2.1.12}よ}{14}{subsubsection.2.1.12}%
+\contentsline {subsubsection}{\numberline {2.1.13}て}{14}{subsubsection.2.1.13}%
+\contentsline {subsubsection}{\numberline {2.1.14}が}{14}{subsubsection.2.1.14}%
+\contentsline {subsubsection}{\numberline {2.1.15}から}{15}{subsubsection.2.1.15}%
+\contentsline {subsubsection}{\numberline {2.1.16}まで}{15}{subsubsection.2.1.16}%
+\contentsline {subsubsection}{\numberline {2.1.17}ので}{15}{subsubsection.2.1.17}%
+\contentsline {subsubsection}{\numberline {2.1.18}など}{15}{subsubsection.2.1.18}%
+\contentsline {subsubsection}{\numberline {2.1.19}くらい}{15}{subsubsection.2.1.19}%
+\contentsline {subsubsection}{\numberline {2.1.20}より}{15}{subsubsection.2.1.20}%
+\contentsline {subsubsection}{\numberline {2.1.21}のに}{16}{subsubsection.2.1.21}%
+\contentsline {subsection}{\numberline {2.2}Les adjectifs}{16}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Les な-adjectifs}{16}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Les い-adjectifs}{16}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}L'utilisation des adjectifs}{16}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Les pronoms}{17}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Les préfixes こ\~{} そ\~{} あ\~{} ど\~{}}{17}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Le suffixe\~{}んな}{17}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Mots interrogatifs}{18}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Les adverbes}{18}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Les compteurs}{18}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Les nombres ordinaux}{19}{subsubsection.2.5.1}%
+\contentsline {section}{\numberline {3}Conjugaison}{19}{section.3}%
+\contentsline {subsection}{\numberline {3.1}辞書形}{19}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}未然形}{19}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}La négation}{20}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}連用形}{20}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}La forme polie}{20}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Le désir 連用形\~{}いたい}{20}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Il semble 連用形\~{}いそう}{21}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Le gérondif 連用形\~{}いながら}{21}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Les tendances naturelles 連用形\~{}やすい}{21}{subsubsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.4}て形}{21}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Énumération de verbes}{21}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Le progressif\~{}ている}{22}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}La demande\~{}てください}{22}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}La permission\~{}てもいい}{22}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}L'interdiction\~{}てはいけません}{22}{subsubsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.5}仮定形}{22}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}La forme conditionnelle 仮定形\~{}ば}{22}{subsubsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.6}Formes mixtes}{22}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Le volitif,\~{}よう et\~{}ましょう}{22}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}た形}{23}{subsubsection.3.6.2}%
+\xpginauxfilefalse 

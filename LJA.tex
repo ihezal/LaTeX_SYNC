@@ -1,0 +1,41 @@
+\documentclass[10pt, twocolumn, a4paper]{article}
+
+\input{_Template/Preambule_zero.tex}
+\input{_Template/Preambule_DC.tex}
+
+\usepackage{luatexja}
+\usepackage{multirow}
+\usepackage{setspace}
+
+\tcbset{
+    general,
+    before upper={\setstretch{1.3}},
+    oversize
+}
+
+\NewTblrTheme{general}{
+    \SetTblrInner{
+        width = \linewidth,
+        hlines = {0.6pt, gray!50},
+        vlines = {0pt},
+        row{1} = {font=\bfseries, bg=couleurmatiere!20}
+    }
+}
+
+\newcommand{\myauthor}{Olivier Allard}
+\newcommand{\matiere}{langue}
+\newcommand{\cours}{Japonais}
+\newcommand{\code}{LJA-41600}
+\definecolor{couleurmatiere}{HTML}{0085CA}
+
+\begin{document}
+
+\input{_Template/Titlepage.tex}
+
+\tableofcontents
+
+\input{LJA/Vocabulaire.tex}
+\input{LJA/Grammaire.tex}
+\input{LJA/Conjugaison.tex}
+
+\end{document}
