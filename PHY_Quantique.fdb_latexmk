@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1788673150 "c:/Users/o-all/Desktop/LaTeX_SYNC/PHY_Quantique.tex" "PHY_Quantique.pdf" "PHY_Quantique" 1788673156 0
+["lualatex"] 1788788036 "c:/Users/o-all/Desktop/LaTeX_SYNC/PHY_Quantique.tex" "PHY_Quantique.pdf" "PHY_Quantique" 1788788049 0
   "C:/texlive/2023/texmf-var/luatex-cache/generic/fonts/hb/03d70e82cb92d442d16170d63ea5139916221518fc6845138621872a4e33efbb.luc" 1773652080 134936 74580cf71d42b54636629bfd1bb792a8 ""
   "C:/texlive/2023/texmf-var/luatex-cache/generic/fonts/hb/620cacdd525b4e1235d1d7fab1a2fa19b79f808a49c3fdabc606b9c1c5cc9910.luc" 1773652080 142643 c11ea9908ce5a3808bc4bb98d01afa45 ""
   "C:/texlive/2023/texmf-var/luatex-cache/generic/fonts/hb/8f67fa702e29fb568937ca4325eef6c3dfe8da7a65241648b55f55e873628c3f.luc" 1773652080 131983 d7adec826eb88640a3e34e97d6f2ac89 ""
@@ -10,14 +10,14 @@
   "C:/texlive/2023/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1787765023 55109 d50172cae402fb9d56925c45118d3d94 ""
   "C:/texlive/2023/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1754719723 287969 6119271027e35cc8fc4ef048a201ac13 ""
   "PHY/Quantique/Methodes_dapproximation.tex" 1788020991 12196 e79ebff7c96eb2acae3fce149a3389ae ""
-  "PHY/Quantique/Moment_cinetique.tex" 1788623719 17762 4657c203d846c5e45f85cc03c3873942 ""
+  "PHY/Quantique/Moment_cinetique.tex" 1788786904 21982 b7362407fcc5be6975ba9e03171c4d28 ""
   "PHY/Quantique/Outils_mathematiques.tex" 1782131049 11393 256d3aa78b61bdf73137dec26a83fe7e ""
   "PHY/Quantique/Principes_fondamentaux.tex" 1781688836 2734 371c050e6b3d5c35bdfe7589eb2e2e84 ""
   "PHY/Quantique/Spin_1-2.tex" 1788625253 4002 e68a94192274d5ecbe692a179a838646 ""
-  "PHY_Quantique.aux" 1788673156 6891 2fe6d6905077c409e4ffd68c4d49b019 "lualatex"
-  "PHY_Quantique.out" 1788673156 8553 c93e5cd28c8a57ede91a60dbfec5f976 "lualatex"
+  "PHY_Quantique.aux" 1788788048 7408 81d359ab8bad6ec3fd6c6d55ef9a37d0 "lualatex"
+  "PHY_Quantique.out" 1788788048 9299 2b88e73e817a0a9ab9f07a7ab671374e "lualatex"
   "PHY_Quantique.tex" 1788673134 631 12d14afba7a5dade9a483a01c3530d2b ""
-  "PHY_Quantique.toc" 1788673156 4130 c2d5738776af162aa07b83563e5dd613 "lualatex"
+  "PHY_Quantique.toc" 1788788048 4456 5d191d3d8bcf48e4b16a22390464f52b "lualatex"
   "_Images/poly-armes-colorless.pdf" 1781967715 49561 54355a67282e963c959d8ab06fde8068 ""
   "_Images/poly-filet-colorless.pdf" 1774552711 7218 a88e0b387e2f0e8b9cb79e3f3419147d ""
   "_Images/poly-vert-colorless.pdf" 1781969478 68454 b947a6a3164294deab5e92f6a9f03853 ""

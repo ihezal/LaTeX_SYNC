@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {1}Principes fondamentaux}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Espace des états}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Mesure}{1}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Évolution temporelle}{1}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.3}Évolution temporelle}{2}{subsection.1.3}%
 \contentsline {section}{\numberline {2}Outils mathématiques}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Notation de Dirac}{2}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Opérateurs linéaires}{2}{subsubsection.2.1.1}%
@@ -36,10 +36,13 @@
 \contentsline {subsection}{\numberline {5.2}Théorie générale du moment cinétique}{7}{subsection.5.2}%
 \contentsline {subsubsection}{\numberline {5.2.1}Introduction des paramètres j \& m}{7}{subsubsection.5.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.2}Les opérateurs + \& -}{7}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}Valeurs autorisées pour j \& m}{7}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.3}Valeurs autorisées pour j \& m}{8}{subsubsection.5.2.3}%
 \contentsline {subsection}{\numberline {5.3}Cas d’une particule de spin 1/2}{8}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Moment cinétique orbital}{8}{subsection.5.4}%
 \contentsline {subsubsection}{\numberline {5.4.1}Définition}{8}{subsubsection.5.4.1}%
 \contentsline {subsubsection}{\numberline {5.4.2}Expression des opérateurs en coordonnées sphériques}{8}{subsubsection.5.4.2}%
 \contentsline {subsubsection}{\numberline {5.4.3}Recherche des fonctions propres communes de L2 et Lz}{9}{subsubsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.5}Rotation d’une molécule diatomique}{9}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Modèle du rotateur rigide \& traitement classique}{9}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Traitement quantique}{10}{subsubsection.5.5.2}%
 \xpginauxfilefalse 

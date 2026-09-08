@@ -31,13 +31,36 @@
             \[ \hat{\vec{J}} \times \hat{\vec{J}} = i \hbar \hat{\vec{J}} \]   
         \end{omed}
 
+        \begin{demo}{Preuve}
+            Considérons une rotation d’angle $\alpha$ autour du vecteur unitaire $\vec{u} = (\cos(\phi), \sin(\phi), 0)$ placé dans le plan $xy$. Cette rotation peut s’exprimer comme la composition d’une rotation autour de l’axe $z$ d’angle $-\phi$ (ramenant le vecteur $\vec{u}$ selon l’axe $x$), suivie d’une rotation autour de $x$ d’angle $\alpha$, puis d’une rotation autour de l’axe $z$ d’angle $+\phi$. Ainsi, 
+            \begin{align*}
+                \hat{R}_{\vec{u}, \alpha} &= \hat{R}_{z, \phi} \hat{R}_{x,\alpha} \hat{R}_{z, -\phi} \\
+                \textit{i.e.} \quad e^{- i \frac{\alpha}{\hbar} \hat{\vec{J}} \cdot \vec{u}} &= e^{- i \frac{\phi}{\hbar} \hat{J}_z}e^{- i \frac{\alpha}{\hbar} \hat{J}_x}e^{i \frac{\phi}{\hbar} \hat{J}_z}
+            \end{align*}
+            En faisant tendra $\alpha$ vers $0$, et en développant au premier ordre, on obtient 
+            \begin{align*}
+                \hat{I} - i \frac{\alpha}{\hbar} \hat{\vec{J}} \cdot \vec{u} &= \hat{I} - i \frac{\alpha}{\hbar} e^{- i \frac{\phi}{\hbar} \hat{J}_z} \hat{J}_x e^{i \frac{\phi}{\hbar} \hat{J}_z} \\
+                \textit{i.e.} \quad \hat{\vec{J}} \cdot \vec{u} &=  e^{- i \frac{\phi}{\hbar} \hat{J}_z} \hat{J}_x e^{i \frac{\phi}{\hbar} \hat{J}_z} \\
+            \end{align*}
+            \[  \]   
+            En faisant ensuite tendre $\phi$ vers $0$, et en développant au premier ordre pareil, on a 
+            \begin{align*}
+                \hat{J}_x + \phi \hat{J}_y &= \hat{J}_x - i \frac{\phi}{\hbar} (\hat{J}_z \hat{J}_x - \hat{J}_x \hat{J}_z) \\
+                \textit{i.e.} \quad \left[J_z, J_x\right] &= i\hbar J_y 
+            \end{align*}
+        \end{demo}
+
         \subsubsection{L’observable J2}
 
         On remarque que $\hat{J}^2 = J_x^2 + J_y^2 + J_z^2$ est un observable qui commute avec n’importe quelle composante du moment cinétique, puisque :
+        \[ \left[J_{x,y,z}, \hat{J}^2\right] = 0 \]
+        En effet, pour le cas $J_z$ par exemple, on a 
         \begin{align*}
-            \left[J_x, \hat{J}^2\right] &= 0 \\
-            \left[J_y, \hat{J}^2\right] &= 0 \\
-            \left[J_z, \hat{J}^2\right] &= 0 \\
+            \left[J_{z}, J_x^2 + J_y^2 + J_z^2\right] 
+            &= \left[J_{z}, J_x^2\right] + \left[J_{z}, J_y^2\right] \\
+            &= \left[J_z, J_x\right] J_x + J_x \left[J_z, J_x\right] + \left[J_z, J_y\right] J_y + J_y \left[J_z, J_x\right] \\
+            &= i \hbar J_y J_x + i \hbar J_x J_y - i \hbar J_x J_y - i \hbar J_y J_x \\
+            &= 0
         \end{align*}
 
         \subsubsection{Système invariant par rotation}
@@ -216,4 +239,56 @@
             \end{itemize}
         \end{omed}
 
+    \subsection{Rotation d’une molécule diatomique}
+
+        Étudions le problème à deux corps invariant par rotation d’une molécule diatomique en rotation.
+
+        \subsubsection{Modèle du rotateur rigide \& traitement classique}
+
+        Ce modèle simplifie l’étude du problème, à partir de quelques postulats :
         
+        \begin{itemize}
+            \item Le mouvement du centre de masse n’est pas considéré ;
+            \item Le mouvement des électrons n’est pas pris en compte (on considère qu’il est déjà pris en compte dans la liaison chimique entre les deux atomes) ;
+            \item Le mouvement de vibration (variation de la longueur de la liaison entre les deux atomes), associé à des énergies bien supérieures.
+        \end{itemize}
+
+        On appelle $\vec{r_1}$ et $\vec{r_2}$ les positions des deux atomes de masses $m_1$ et $m_2$, et on pose $\vec{r} = \vec{r_2} - \vec{r_1}$ le vecteur séparant les deux atomes, de longueur $r$ constante dans le cadre du modèle du \textbf{rotateur rigide}. Le centre de masse étant placé à l’origine, on a que $m_1 \vec{r_1} + m_2 \vec{r_2} = \vec{0}$, \textit{i.e.}, avec la masse réduite $\mu$ du système,
+        \begin{align*}
+            \vec{r_1} &= - \frac{\mu}{m_1}\vec{r} \\
+            \vec{r_2} &= \frac{\mu}{m_2}\vec{r}
+        \end{align*}
+        En dérivant par rapport au temps, on a de même 
+        \begin{align*}
+            \vec{v_1} &= - \frac{\mu}{m_1}\vec{v} \\
+            \vec{v_2} &= \frac{\mu}{m_2}\vec{v}
+        \end{align*}
+
+        L’invariance par rotation nous dit que le moment cinétique est une constante du mouvement. Or son expression est
+        \begin{align*}
+            \vec{L} 
+            &= \vec{r_1} \times m_1 \vec{v_1} + \vec{r_2} \times m_2 \vec{v_2} \\
+            &= \frac{\mu^2}{m_1} \vec{r} \times \vec{v} + \frac{\mu^2}{m_2} \vec{r} \times \vec{v} \\
+            &= \vec{r} \times \mu \vec{v} \\
+            &\perp \vec{r}
+        \end{align*}
+        Ce moment cinétique est égal à celui d’une particule de masse $\mu$. La distance $r$ étant constante, $\vec{r} \perp \vec{v}$ et donc $L = \nor{\vec{L}} = \mu r v$. 
+
+        Évaluons désormais l’énergie $H$ du système. Il n’y a pas de potentiel ici associé à la molécule, donc 
+        \begin{align*}
+            H 
+            &= \frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 \\
+            &= \frac{1}{2} \mu v^2 \\
+            &= \frac{L^2}{2I} \quad \text{avec} \quad I = \mu r^2
+        \end{align*}
+        Cette énergie correspond à nouveau à celle d’une particule de masse $\mu$, avec un moment d’inertie par rapport à l’axe de la liaison passant par le centre de masse  $I = \mu r^2$.
+
+        \subsubsection{Traitement quantique}
+
+        On définit désormais l’état de notre rotateur rigide par une fonction d’onde $Y(\theta, \varphi)$ normaliée, afin que $\abs{Y(\theta, \varphi)}\sin(\theta)d\theta d\varphi$ représente la probabilité que la molécule soit orientée selon les angles sphériques $\theta$ et $\varphi$, à l’intérieur d’un angle solide infinitésimal $\sin(\theta)d\theta d\varphi$. L’espace de Hilbert $\mathcal{E}_H$ associé au problème est engendré par les harmoniques sphériques comme discuté précédemment, donc le système peut être défini par les coefficients $c_{\ell,m}$. 
+
+        On sait par invariance par rotation que $\hat{H}$, $\hat{L}^2$ et $\hat{L}_z$ commutent deux à deux, et donc sont diagonalisables dans une base commune. Or nous avons montré que la base propre commune à $\hat{L}^2$ et $\hat{L}_z$ est unique dans $\mathcal{E}_H$. Ainsi, on pourra nécessairement diagonaliser $\hat{H}$ dans cette base, \textit{i.e.} $Y_{\ell, m}(\theta, \varphi)$ sont des fonctions propres de $\hat{H}$. Ce résultat est en fait clair dans le cadre de la molécule diatomique car 
+        \[ \hat{H} = \frac{\hat{L}^2}{2I} \]   
+        On a de plus les valeurs propres qui sont de la forme 
+        \[ E_{\ell} = \ell (\ell + 1) \frac{\hbar^2}{2I} \]  
+        et qui sont dégénérées $2 \ell + 1$ fois car l’énergie est indépendante de la valeur de $m$. 

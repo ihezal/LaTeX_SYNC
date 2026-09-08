@@ -347,7 +347,10 @@ INPUT c:/texlive/2023/texmf-dist/tex/luatex/luatexja/patches/lltjp-geometry.sty
 INPUT c:/texlive/2023/texmf-dist/tex/luatex/luatexja/luatexja-compat.sty
 INPUT c:/texlive/2023/texmf-dist/tex/luatex/luatexja/ltj-compat.lua
 INPUT C:/Users/o-all/.texlive2023/texmf-var/luatexja/ltj-jisx0208.luc
-INPUT c:/texlive/2023/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT c:/texlive/2023/texmf-dist/tex/luatex/luatexja/addons/luatexja-fontspec.sty
+INPUT c:/texlive/2023/texmf-dist/tex/luatex/luatexja/addons/luatexja-fontspec-27c.sty
+INPUT c:/texlive/2023/texmf-dist/tex/luatex/luatexja/addons/luatexja-ruby.sty
+INPUT c:/texlive/2023/texmf-dist/tex/luatex/luatexja/ltj-ruby.lua
 INPUT c:/texlive/2023/texmf-dist/tex/latex/setspace/setspace.sty
 INPUT c:/texlive/2023/texmf-dist/tex/luatex/luatexja/patches/lltjp-array.sty
 INPUT ./LJA.aux
@@ -360,6 +363,8 @@ INPUT ./LJA.out
 INPUT ./LJA.out
 INPUT ./LJA.out
 OUTPUT LJA.out
+INPUT ./LJA.ltjruby
+OUTPUT LJA.ltjruby
 INPUT ./_Template/Titlepage.tex
 INPUT ./_Images/poly-vert-colorless.pdf
 INPUT ./_Images/poly-vert-colorless.pdf
@@ -371,9 +376,9 @@ INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./LJA.toc
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 OUTPUT LJA.toc
 INPUT ./LJA/Vocabulaire.tex
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 INPUT ./LJA/Grammaire.tex
 INPUT ./LJA/Conjugaison.tex
 INPUT ./LJA.aux

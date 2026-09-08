@@ -1,0 +1,3 @@
+local lrob=luatexja.ruby.old_break_info
+lrob[1]=78825
+lrob[-1]=0
