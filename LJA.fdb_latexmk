@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1788878807 "c:/Users/o-all/Desktop/LaTeX_SYNC/LJA.tex" "LJA.pdf" "LJA" 1788878868 0
+["lualatex"] 1789034507 "c:/Users/o-all/Desktop/LaTeX_SYNC/LJA.tex" "LJA.pdf" "LJA" 1789034577 0
   "C:/Users/o-all/.texlive2023/texmf-var/luatexja/extra_erewhon-math.luc" 1786128903 61210 fd35ed6a25856bff48a03a0ffbf8e7a6 ""
   "C:/Users/o-all/.texlive2023/texmf-var/luatexja/extra_haranoajigothic-medium.luc" 1786128929 321567 6827a8072762ff2dcd81360f1d86ac20 ""
   "C:/Users/o-all/.texlive2023/texmf-var/luatexja/extra_haranoajimincho-regular.luc" 1786128919 322628 2003028219727dbd2b50410eca50bc7d ""
@@ -25,14 +25,14 @@
   "C:/texlive/2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-regular.luc" 1702808771 127319 a1ac4f3e186aa4da80f2dc15b3f32e9a ""
   "C:/texlive/2023/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1788874658 55237 8522b3523dc3b76734ef832d7d578afa ""
   "C:/texlive/2023/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1754719723 287969 6119271027e35cc8fc4ef048a201ac13 ""
-  "LJA.aux" 1788878867 17006 d176af5719ca4e2bb23e468422cce7c7 "lualatex"
-  "LJA.ltjruby" 1788878867 68 1a9a81f786f8e10b7e3aa3c96a4f13ac "lualatex"
-  "LJA.out" 1788878867 12736 33f2856744241d1941839addb10b103d "lualatex"
+  "LJA.aux" 1789034575 19099 d35ec5e2b3136c4d352ea7fa418654fc "lualatex"
+  "LJA.ltjruby" 1789034576 5808 48808a4107f6d3794c5f211143d6c552 "lualatex"
+  "LJA.out" 1789034575 14187 44c2e4801465f05b7bc8fb3ceb7627be "lualatex"
   "LJA.tex" 1788878723 878 99befa8932302f822318dbb432c100b5 ""
-  "LJA.toc" 1788878867 8848 0765e9514e4171f2636cc7e4b86d083e "lualatex"
-  "LJA/Conjugaison.tex" 1788877751 22238 e41cc9c3158cb2a5f3b93bfe29352361 ""
+  "LJA.toc" 1789034576 9651 6bb0e03fbd9aff4f9c5557d8f8a72757 "lualatex"
+  "LJA/Conjugaison.tex" 1789029962 22660 4619beb5b601b555305e47c873cdb385 ""
   "LJA/Grammaire.tex" 1788799358 38766 387966e2b39d61aa67e327a341555160 ""
-  "LJA/Vocabulaire.tex" 1788874243 44186 924523e7c17fb821e63c5cec1e845830 ""
+  "LJA/Vocabulaire.tex" 1789034427 53998 9a1a7cad59db4395358bd02d2e0016b2 ""
   "_Images/poly-armes-colorless.pdf" 1781967715 49561 54355a67282e963c959d8ab06fde8068 ""
   "_Images/poly-filet-colorless.pdf" 1774552711 7218 a88e0b387e2f0e8b9cb79e3f3419147d ""
   "_Images/poly-vert-colorless.pdf" 1781969478 68454 b947a6a3164294deab5e92f6a9f03853 ""

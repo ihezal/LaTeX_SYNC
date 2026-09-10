@@ -1,0 +1,48 @@
+\section{Particules indiscernables}
+
+    En physique classique, si deux objets sont rigoureusement identiques, on pourra toujours marquer l’un d’entre eux sans modifier ses propriétés physiques ou même suivre son évolution sans perturbation. En physique quantique, il n’est ni possible de marquer une particule, ni possible de faire une mesure permettant d’avoir une information (par exemple sur la position) au long de son évolution, sans modifier son comportement. On dira donc que deux particules identiques sont \textbf{indiscernables}.
+
+    Prenons pour exemple le système physique constitué de deux particules indiscernables de spin 1/2 (où le spin est le seul degré de liberté considéré) dans les états de spin $\ket{+}_z$ et $\ket{-}_z$. Pour décrire l’état $\ket{\Psi}$ du système physique, on pourrait écrire $\ket{\Psi} = \ket{+}_z \otimes \ket{-}_z := \ket{+-}$. Mais l’état $\ket{-+}$ est tout aussi légitime, ainsi que toute combinaison linéaire de ces deux derniers états comme $\ket{0,0} = \frac{\ket{+-} - \ket{-+}}{\sqrt{2}}$ et $\ket{1,0} = \frac{\ket{+-} + \ket{-+}}{\sqrt{2}}$. L’ensemble des vecteurs \textit{a priori} acceptables est alors un espace vectoriel de dimension 2 ; on parle de \textbf{dégénérescence d’échange}.
+
+    Le problème de cette dégénérescence est qu’elle ne donne pas lieu aux mêmes prédictions physiques : considérons l’observable $\hat{S}_x$ correspondant au moment cinétique total selon l’axe $x$, et mesurons la probabilité de trouver la valeur propre $\hbar$ associée au vecteur propre
+    \begin{align*}
+        \ket{+}_x \otimes \ket{+}_x
+        &= \frac{\ket{+} + \ket{-}}{\sqrt{2}} \oplus \frac{\ket{+} + \ket{-}}{\sqrt{2}} \\
+        &= \frac{\ket{++} + \ket{+-} + \ket{-+} + \ket{--}}{2}
+    \end{align*}
+    On trouve ainsi 
+    \begin{align*}
+        \abs{(_x\bra{+}_x\bra{+}) \ket{+-}} =  \abs{(_x\bra{+}_x\bra{+}) \ket{-+}} &= \frac{1}{4} \\
+        \abs{(_x\bra{+}_x\bra{+}) \ket{1,0}} &= \frac{1}{2} \\
+        \abs{(_x\bra{+}_x\bra{+}) \ket{0,0}} &= 0
+    \end{align*}
+    Il faut donc introduire un nouveau postulat de physique quantique permettant de différencier ces systèmes.
+
+    \subsection{Échange de deux particules}
+
+        \subsubsection{Opérateur d’échange}
+
+        Considérons deux particules indiscernables appelées 1 et 2 et plaçons-nous dans l’espace produit $\mathcal{E}_H = \mathcal{E}_1 \oplus \mathcal{E}_2$. On introduit l’\textbf{opérateur d’échange} $\hat{P}_{12}$ qui échange l’état des deux particules. 
+
+        On a évidemment que cet opérateur est involutif : $\hat{P}_{12} = \hat{I}$, et qu’il est auto-adjoint. Il est par conséquent unitaire, de valeurs propres $\pm 1$, respectivement associées aux \textbf{états symétriques} et aux \textbf{états antisymétriques}.
+
+        \subsubsection{Opérateurs de symétrisation}
+
+        On considère les projecteurs sur les deux sous-espaces propres de l’opérateur d’échange, respectivement les opérateurs \textbf{symétrisation} $\hat{\mathcal{S}}$ et \textbf{antisymétrisation} $\hat{\mathcal{A}}$, définis par les relations
+        \begin{align*}
+            \hat{\mathcal{S}} &= \frac{\hat{I} + \hat{P}_{12}}{2} \\
+            \hat{\mathcal{S}} &= \frac{\hat{I} - \hat{P}_{12}}{2} \\
+        \end{align*}
+
+        \subsubsection{Invariance de l’hamiltonien}
+
+        Pour deux particules indiscernables, l’énergie du système doit rester inchangée leur de leur échange par $\hat{P}_{12}$. On peut voir l’action d’échange comme un invariant du système, ce qui nous donne la commutation entre l’opérateur d’échange et l’hamiltonien :
+        \[ \left[\hat{H}, \hat{P}_{12}\right] = 0 \]   
+
+    \subsection{Postulat de symétrisation}
+
+        Pour qu’un vecteur d’état $\ket{\Psi}$ soit physiquement acceptable, il faut que $\ket{\Psi}$ et $\hat{P}_{12}\ket{\Psi}$ correspondent à un même état physique, \textit{i.e.} soient égaux à une phase près :
+        \[ \hat{P}_{12} \ket{\Psi} = e^{i\theta} \ket{\Psi} \]  
+        Cela signifie aussi que $\ket{\Psi}$ est un vecteur propre pour l’opérateur d’échange $\hat{P}_{12}$, et donc que $\theta = 0$ ou $\theta = \pi$. La condition est donc en réalité 
+        \[ \hat{P}_{12} \ket{\Psi} = \pm \ket{\Psi} \]  
+        Dans l’exemple donné en introduction, les deux seuls états convenables sont donc $\ket{0,0}$ (antisymétrique) et $\ket{1,0}$ (symétrique).

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.16)  8 SEP 2026 16:46
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.16)  10 SEP 2026 12:01
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/o-all/Desktop/LaTeX_SYNC/LJA.tex
@@ -112,12 +112,12 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 ) (c:/texlive/2023/texmf-dist/tex/latex/polyglossia/gloss-french.ldf
 File: gloss-french.ldf polyglossia: module for French
 Module polyglossia Info: Language data for french
-(polyglossia)            hyphenation	
-(polyglossia)            patterns	hyph-fr.pat.txt
 (polyglossia)            synonyms	patois,francais
 (polyglossia)            righthyphenmin	2
+(polyglossia)            loader	loadhyph-fr.tex
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            loader	loadhyph-fr.tex on input line 17
+(polyglossia)            hyphenation	
+(polyglossia)            patterns	hyph-fr.pat.txt on input line 17
 Module polyglossia Info: Language french was not yet loaded; created with id 2 on input line 17
 Lua-only attribute polyglossia_punct = 4
 Package polyglossia Info: Option: French, variant=french.
@@ -1429,7 +1429,7 @@ Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
 Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
 Inserting `ltj.ruby.pre' in `hpack_filter'.
 Inserting `ltj.ruby.post_hbox' in `hpack_filter'. (./_Template/Titlepage.tex
-<_Images/poly-vert-colorless.pdf, id=441, 345.29pt x 599.23875pt>
+<_Images/poly-vert-colorless.pdf, id=473, 345.29pt x 599.23875pt>
 File: _Images/poly-vert-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-vert-colorless.pdf>
 Package luatex.def Info: _Images/poly-vert-colorless.pdf  used on input line 5.
@@ -1443,14 +1443,14 @@ LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <10> not available
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 9.6222pt on input line 6.
 (load cache: extra_haranoajigothic-medium.luc)
-<_Images/poly-armes-colorless.pdf, id=442, 598.235pt x 788.9475pt>
+<_Images/poly-armes-colorless.pdf, id=474, 598.235pt x 788.9475pt>
 File: _Images/poly-armes-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-armes-colorless.pdf>
 Package luatex.def Info: _Images/poly-armes-colorless.pdf  used on input line 7.
 (luatex.def)             Requested size: 578.15999pt x 762.52136pt.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 10.
-<_Images/poly-filet-colorless.pdf, id=443, 124.21407pt x 2.1681pt>
+<_Images/poly-filet-colorless.pdf, id=475, 124.21407pt x 2.1681pt>
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 12.
@@ -1864,11 +1864,11 @@ LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 101.
+(Font)              scaled to size 8.65997pt on input line 103.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 101.
+(Font)              scaled to size 8.65997pt on input line 103.
 LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
-(Font)              scaled to size 9.0pt on input line 101.
+(Font)              scaled to size 9.0pt on input line 103.
 [1
 
 ])
@@ -1917,13 +1917,17 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: parse table inner spec.
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 4.8111pt on input line 95.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 4.8111pt on input line 95.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 92.
+(Font)              No change on input line 95.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 92.
+(Font)              No change on input line 95.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 92.
+(Font)              No change on input line 95.
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1933,11 +1937,11 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 143.
+(Font)              No change on input line 147.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 143.
+(Font)              No change on input line 147.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 143.
+(Font)              No change on input line 147.
  [2]
 > Step: init table outer spec.
 > Step: parse table options.
@@ -1948,11 +1952,11 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 184.
+(Font)              No change on input line 174.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 184.
+(Font)              No change on input line 174.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 184.
+(Font)              No change on input line 174.
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1962,11 +1966,11 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 215.
+(Font)              No change on input line 214.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 215.
+(Font)              No change on input line 214.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 215.
+(Font)              No change on input line 214.
  [3]
 > Step: init table outer spec.
 > Step: parse table options.
@@ -1977,11 +1981,11 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 260.
+(Font)              No change on input line 245.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 260.
+(Font)              No change on input line 245.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 260.
+(Font)              No change on input line 245.
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1991,25 +1995,11 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 292.
+(Font)              No change on input line 296.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 292.
+(Font)              No change on input line 296.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 292.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 331.
-LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 331.
-LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 331.
+(Font)              No change on input line 296.
  [4]
 > Step: init table outer spec.
 > Step: parse table options.
@@ -2020,11 +2010,11 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 371.
+(Font)              No change on input line 328.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 371.
+(Font)              No change on input line 328.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 371.
+(Font)              No change on input line 328.
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2034,11 +2024,11 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 411.
+(Font)              No change on input line 369.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 411.
+(Font)              No change on input line 369.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 411.
+(Font)              No change on input line 369.
  [5]
 > Step: init table outer spec.
 > Step: parse table options.
@@ -2049,11 +2039,11 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 439.
+(Font)              No change on input line 409.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 439.
+(Font)              No change on input line 409.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 439.
+(Font)              No change on input line 409.
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2063,11 +2053,11 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 485.
+(Font)              No change on input line 449.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 485.
+(Font)              No change on input line 449.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 485.
+(Font)              No change on input line 449.
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2077,11 +2067,11 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 529.
+(Font)              No change on input line 477.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 529.
+(Font)              No change on input line 477.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 529.
+(Font)              No change on input line 477.
  [6]
 > Step: init table outer spec.
 > Step: parse table options.
@@ -2092,27 +2082,11 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 561.
+(Font)              No change on input line 523.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 561.
+(Font)              No change on input line 523.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 561.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
+(Font)              No change on input line 523.
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2122,12 +2096,60 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 636.
+(Font)              No change on input line 567.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 636.
+(Font)              No change on input line 567.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 636.
+(Font)              No change on input line 567.
  [7]
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 599.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 599.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 599.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 678.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 678.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 678.
+ [8]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2172,64 +2194,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 723.
+(Font)              No change on input line 765.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 723.
+(Font)              No change on input line 765.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 723.
- [8]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 804.
-LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 804.
-LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 804.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 829.
-LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 829.
-LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 829.
+(Font)              No change on input line 765.
  [9]
 > Step: init table outer spec.
 > Step: parse table options.
@@ -2239,12 +2208,28 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 870.
+(Font)              No change on input line 839.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 870.
+(Font)              No change on input line 839.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 870.
+(Font)              No change on input line 839.
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2253,33 +2238,12 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-
-Underfull \vbox (badness 1107) has occurred while \output is active []
-
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 867.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 867.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 867.
  [10]
 > Step: init table outer spec.
 > Step: parse table options.
@@ -2290,11 +2254,11 @@ Underfull \vbox (badness 1107) has occurred while \output is active []
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 981.
+(Font)              No change on input line 906.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 981.
+(Font)              No change on input line 906.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 981.
+(Font)              No change on input line 906.
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2303,6 +2267,12 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 937.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 937.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 937.
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2311,21 +2281,133 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 963.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 963.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 963.
  [11]
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 1064.
+(Font)              No change on input line 1016.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 1064.
+(Font)              No change on input line 1016.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 1064.
+(Font)              No change on input line 1016.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1057.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1057.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1057.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1082.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1082.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1082.
+ [12]
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1123.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1123.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1123.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+ [13]
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1234.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1234.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1234.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2337,25 +2419,47 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [14]
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 1090.
+(Font)              No change on input line 1317.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 1090.
+(Font)              No change on input line 1317.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
-(Font)              No change on input line 1090.
-) (./LJA/Grammaire.tex
+(Font)              No change on input line 1317.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1343.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1343.
+LaTeX Font Info:    Kanji font shape `JY3/mc/m/sc' undefined
+(Font)              No change on input line 1343.
+) (./LJA/Grammaire.tex [15]
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 24.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 28.
- [12]
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 32.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 55.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 69.
- [13] [14]
+ [16] [17]
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 309.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
@@ -2374,7 +2478,7 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 325.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 325.
- [15]
+ [18]
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 460.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
@@ -2389,7 +2493,7 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 503.
- [16]
+ [19]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2419,7 +2523,7 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 615.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 623.
-[17]
+[20]
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 631.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
@@ -2428,7 +2532,7 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 664.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 664.
- [18]
+ [21]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2452,11 +2556,10 @@ Underfull \hbox (badness 1043) in paragraph at lines 758--759
 []\TU/LibertinusSerif(0)/m/n/10 Cer-taines pro-non-cia-tions va-rient avec la com-bi-nai-son des
  []
 
-) (./LJA/Conjugaison.tex [19]
-LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 23.
-LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 23.
+) (./LJA/Conjugaison.tex
+Underfull \vbox (badness 5741) has occurred while \output is active []
+
+ [22]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2485,6 +2588,7 @@ Underfull \hbox (badness 5403) in paragraph at lines 74--79
 > Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 120.
+[23]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2511,7 +2615,6 @@ Underfull \hbox (badness 5985) in paragraph at lines 132--138
 \TU/LibertinusSerif(0)/m/n/10 a un com-por-te-ment par-ti-cu-lier qu[]  il faut connaître |:
  []
 
-[20]
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 151.
 > Step: init table outer spec.
@@ -2522,7 +2625,6 @@ LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 
-
 Package tabularray Warning: Table width is too small, need 49.67125pt more!
 
 > Step: build the whole table.
@@ -2532,34 +2634,36 @@ Overfull \hbox (49.67125pt too wide) in paragraph at lines 161--162
  []
 
 
-Underfull \vbox (badness 1221) has occurred while \output is active []
+Underfull \vbox (badness 1173) has occurred while \output is active []
 
- [21]
+ [24]
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
-(Font)              No change on input line 293.
- [22]) [23] (./LJA.aux)
+(Font)              No change on input line 310.
+ [25] [26]) [27
+
+] (./LJA.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-11>
  ***********
 Package rerunfilecheck Info: File `LJA.out' has not changed.
-(rerunfilecheck)             Checksum: 33F2856744241D1941839ADDB10B103D;12736.
+(rerunfilecheck)             Checksum: 44C2E4801465F05B7BC8FB3CEB7627BE;14187.
 )
 
 Here is how much of LuaTeX's memory you used:
- 45942 strings out of 476506
- 745367,10205817 words of node,token memory allocated
- 7403 words of node memory still in use:
-   35 hlist, 2 vlist, 19 rule, 1 local_par, 108 glue, 6 kern, 3 penalty, 89 glyph, 2196 attribute, 57 glue_spec, 253 attribute_list, 2 write, 13 user_defined, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 1:53,2:184818,3:4751,4:9266,5:976,6:516,7:15426,8:4,9:12126,10:16,11:535,12:1
- 66717 multiletter control sequences out of 65536+600000
- 69 fonts using 67412103 bytes
+ 45991 strings out of 476506
+ 745329,10205817 words of node,token memory allocated
+ 7391 words of node memory still in use:
+   35 hlist, 2 vlist, 19 rule, 1 local_par, 111 glue, 6 kern, 3 penalty, 90 glyph, 2170 attribute, 57 glue_spec, 259 attribute_list, 2 write, 13 user_defined, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 1:36,2:168979,3:5078,4:9616,5:997,6:537,7:16648,8:4,9:12792,10:16,11:552,12:1
+ 66747 multiletter control sequences out of 65536+600000
+ 69 fonts using 67412015 bytes
  107i,12n,113p,1784b,1428s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-BoldItalic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf><c:/texlive/2023/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb>
-Output written on LJA.pdf (24 pages, 526381 bytes).
+Output written on LJA.pdf (28 pages, 551925 bytes).
 
-PDF statistics: 904 PDF objects out of 1000 (max. 8388607)
- 771 compressed objects within 8 object streams
- 167 named destinations out of 1000 (max. 131072)
- 1048 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 976 PDF objects out of 1000 (max. 8388607)
+ 838 compressed objects within 9 object streams
+ 186 named destinations out of 1000 (max. 131072)
+ 1112 words of extra memory for PDF output out of 10000 (max. 100000000)
 
