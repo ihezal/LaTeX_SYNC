@@ -4,14 +4,14 @@
 
         Ce modèle, bien que faux, utilise la théorie classique pour donner les valeurs exactes des niveaux d’énergie de l’atome d’hydrogène, et possède une importance historique notable. 
 
-        \textbf{Modèle :} L’électron a une trajectoire circulaire autour d’un proton fixe qui sert d’origine, interactions coulombiennes.
+        \textbf{Modèle :} L’électron a une trajectoire circulaire autour d’un proton fixe qui sert d’origine, on considère des interactions coulombiennes.
 
         Dans ce cadre, d’après le PFD, 
         \[ m_e \frac{v^2}{r} = \frac{e^2}{r^2} \quad \text{avec} \quad e^2 = \frac{q^2}{4 \pi \varepsilon_0} \]   
         En postulant que la quantification du moment cinétique $L_z = n \hbar$, on doit avoir 
         \begin{align*}
             &L_z = r m_e v = n \hbar  \\
-            \implies &v_n = \frac{1}{n} \frac{e^2}{n} = \alpha \frac{c}{n} \\
+            \implies &v_n = \frac{e^2}{n\hbar} = \alpha \frac{c}{n} \\
             \implies &r_n = \frac{n^2}{a_1} \\
             \implies &E_n = \frac{1}{2} m_e v_n^2 - \frac{e^2}{r_n} = - \frac{E_I}{n^2} \\
         \end{align*}
@@ -19,8 +19,179 @@
         \begin{itemize}
             \item $\alpha= \frac{e^2}{\hbar c } \approx \frac{1}{137}$, la \textbf{constante de structure fine}.
             \item $a_1 = \frac{\hbar^2}{m_e e^2} \approx 53\text{pm}$, le \textbf{rayon de Bohr}.
-            \item $E_I = \frac{m_e e^4}{2 \hbar^2} \approx 13.6\text{ev}$, l’énergie d’ionisation de l’atome d’hydrogène.
+            \item $E_I = \frac{m_e e^4}{2 \hbar^2} \approx 13.6\text{ev}$, l’\textbf{énergie d’ionisation} de l’atome d’hydrogène.
         \end{itemize}
         Ce résultat établit par Bohr explicite bien la quantification des niveaux d’énergie, dont les fréquences de transition sont 
         \[ h \nu = E_{n_2} - E_{n_1} = E_I \left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right) \]   
         Ces résultats conformes aux attentes expérimentales sont toutefois loin d’être convenables, étant donné qu’un problème à une échelle si petite doit absolument être traité de façon quantique.
+
+    \subsection{Mouvement dans un potentiel central}
+
+        \subsubsection{Cas général}
+
+    Considèrons désormais le problème dans le cadre de la mécanique quantique : deux particules de masses $m_1$ et $m_2$ interagissent entre elles selon un potentiel dépendant uniquement de la distance $r = \nor{\vec{r_2} - \vec{r_1}}$ entre les deux particules. Le système est alors invariant par translation et par rotation. On choisira aussi l’origine des énergies afin que $V(r) \underset{r \to \infty}{\longrightarrow} 0$. L’hamiltonien du système est alors 
+    \[ \hat{H}_{\text{tot}} = \frac{\hat{p}_1^2}{2m_1} + \frac{\hat{p}_2^2}{2 m_2} + V(r) \]   
+
+    \begin{omed}{Simplification}
+        On peut se ramener à l’étude de deux systèmes indépendants, correspondant d’une part au mouvement libre du centre de masse, de masse $M = m_1 + m_2$, et d’autre part au mouvement d’une particule fictive plongée dans le potentiel $V(r)$ de masse réduite $\mu$.
+    \end{omed}
+
+    \begin{omed}{Démonstration}
+        On effectue un changement de variable en posant 
+        \[ \vec{R} = \frac{m_1 \vec{r_1} + m_2 \vec{r_2}}{M} \]   
+        qui correspond à la position du centre de masse. Ce changement de variable nous permet de réinterpréter $\vec{r_1}$ et $\vec{r_2}$ comme
+        \begin{align*}
+            \vec{r_1} &= \vec{R} - \frac{\mu}{M} \vec{r} \\
+            \vec{r_2} &= \vec{R} + \frac{\mu}{M} \vec{r} \\
+        \end{align*}
+        où $\mu$ est la masse réduite définie par 
+        \[ \frac{1}{\mu} = \frac{1}{m_1} + \frac{1}{m_2} \]   
+        On peut alors introduire une nouvelle fonction d’onde de la forme 
+        \[ \Phi(\vec{R}, \vec{r})= \eta \Psi \left(\vec{R} - \frac{\mu}{M} \vec{r}, \vec{R} + \frac{\mu}{M} \vec{r}\right) \]
+        où $\eta$ est une constante de normalisation de la nouvelle fonction d’onde. On se place ainsi dans un nouvel espace de Hilbert $\mathcal{E}_H = \mathcal{L}^2(\mathbf{R}^3) \otimes \mathcal{L}^2(\mathbf{R}^3)$ où le premier espace correspond à la position $\vec{R}$ du centre de masse et le second à la position $\vec{r}$ de la particule fictive de masse $\mu$. Identifions désormais les observables impulsion $\hat{\vec{P}}$ et $\hat{\vec{p}}$ associées à ces deux nouvelles variables, en utilisans la définition de l’impulsion comme générateur infinitésimal du groupe des translations :
+        \begin{align*}
+            \Phi(\vec{R} - d\vec{a}, \vec{r}) 
+            &= \Phi(\vec{R}, \vec{r}) - \eta \frac{\partial \Phi}{\partial \vec{r}_1} \cdot d\vec{a} - \eta \frac{\partial \Phi}{\partial \vec{r}_2} \cdot d\vec{a} \\
+            &= \left(1 - \frac{i}{\hbar}(\hat{\vec{p}}_1 + \hat{\vec{p}}_2) \cdot d\vec{a}\right) \Phi(\vec{R}, \vec{r}) \\
+        \end{align*}
+        On en déduit que 
+        \[ \hat{\vec{P}} = \hat{\vec{p}}_1 + \hat{\vec{p}}_2 \] 
+        De la même façon, 
+        \begin{align*}
+            \Phi(\vec{R}, \vec{r} - d\vec{a})
+            &= \Phi(\vec{R}, \vec{r}) + \eta \frac{\mu}{m_1} \frac{\partial \Phi}{\partial \vec{r}_1} \cdot d\vec{a} - \eta \frac{\mu}{m_2}\frac{\partial \Phi}{\partial \vec{r}_2} \cdot d\vec{a} \\
+            &= \left(1 - \frac{i}{\hbar} \mu \left[\frac{\hat{\vec{p}}_2}{m_2} - \frac{\hat{\vec{p}}_1}{m_1}\right] \cdot d\vec{a}\right) \Phi(\vec{R}, \vec{r}) \\
+        \end{align*}
+        L’impulsion associée à la variable spaciale $\vec{r}$ est donc
+        \begin{align*}
+            \hat{\vec{p}} 
+            &= \mu \left[\frac{\hat{\vec{p}}_2}{m_2} - \frac{\hat{\vec{p}}_1}{m_1}\right] \\
+            &= \frac{m_1 \hat{\vec{p}}_2 - m_2 \hat{\vec{p_1}}}{M} \\
+        \end{align*}
+        On peut ainsi réexprimer les impulsions des deux particules en fonction des nouvelles observables :
+        \begin{align*}
+            \hat{\vec{p}}_1 &= \frac{m_1}{M} \hat{\vec{P}} - \hat{\vec{p}} \\
+            \hat{\vec{p}}_2 &= \frac{m_2}{M} \hat{\vec{P}} + \hat{\vec{p}} \\
+        \end{align*}
+        En particulier, cela permet de réexprimer l’énergie cinétique totale du système puisque 
+        \[ \frac{\hat{p}_1^2}{2m_1} + \frac{\hat{p}_2^2}{2 m_2} = \frac{\hat{P}^2}{2M} + \frac{\hat{p}}{2 \mu} \]
+        L’hamiltonien du système devient alors 
+        \[ \hat{H}_{\text{tot}} = \hat{H}_{\text{cm}} + \hat{H} \]   
+        où $\hat{H}_{\text{cm}} = \frac{\hat{P}^2}{2M}$ est l’hamiltonien correspondant au centre de masse et $\hat{H} = \frac{\hat{p}^2}{2\mu} + V(\hat{r})$ est l’hamiltonien correspondant à la particule fictive placée dans le potentiel central $V(r)$. Ces hamiltoniens commutent car ils agissent dans deux espaces différents, donc la diagonalisation de $\hat{H}_{\text{tot}}$ peut se faire dans une base propre commune des opérateurs $\hat{H}_{\text{cm}}$ et $\hat{H}$. 
+
+        En utilisant les états propres $\ket{\vec{P}}$ de l’opérateur impulsion totale, on peut écrire les fonctions propres de l’hamiltonienn total sous la forme 
+        \[ \Phi(\vec{R}, \vec{r}) = \frac{e^{i \frac{\vec{P} \cdot \vec{R}}{\hbar}}}{(2\pi \hbar)^{\frac{3}{2}}} \psi(\vec{r}) \]   
+        où $\psi(\vec{r})$ est une fonction propre de $\hat{H}$ associée à la valeur propre $E$. L’énergie totale sera alors égale à $\frac{P^2}{2M} + E$. 
+    \end{omed}
+
+    On peut donc, pour l’étude du système, écrire l’hamiltonien du système sous la forme
+    \[ \hat{H}_{\text{tot}} = \frac{\hat{P}^2}{2M} + \frac{\hat{p}^2}{2 \mu} + V(\hat{r}) \]   
+    où $\hat{\vec{P}} = \hat{\vec{p}}_1 + \hat{\vec{p}}_2$ est l’impulsion totale du système et  $\hat{\vec{p}} = \frac{m_1 \hat{\vec{p}}_2 - m_2 \hat{\vec{p_1}}}{M}$ est l’impulsion de la particule fictive. Le mouvement du centre de masse étant plus aisé à étudier, on s’intéresse surtout au mouvement de la particule fictive dans $\mathcal{L}^2(\mathbf{R}^3)$ associé à l’hamiltonien 
+    \[ \hat{H} = \frac{\hat{p}^2}{2\mu} + V(\hat{r}) \] 
+    Le problème à deux corps se ramène donc de façon général à celui d’un seul corps dans un potentiel central. Dans le cas de l’atome d’hydrogène, il suffit donc de remplacer la masse de l’électron $m_e$ par la masse réduite $\mu$. Compte tenu des ordres de grandeurs ($\frac{m_p}{m_e} \approx 2000$), on peut considérer en première approximation directement la masse de l’électron, et supposer que le proton est fixe à l’origine.
+
+    Cherchons donc les fonctions propres $\psi(r, \theta, \varphi)$ de l’hamiltonien $\hat{H}$ de la particule fictive. D’après l’équation de Schödinger indépendante du temps $\hat{H} \ket{\psi} = E \ket{\psi}$, 
+    \[ \left(-\frac{\hbar^2}{2 \mu} \Delta + V(r)\right) \psi(r, \theta, \varphi) = E \psi(r, \theta, \varphi) \]   
+    où le laplacien s’écrit en coordonnées sphériques selon la relation 
+    \begin{align*}
+        \Delta 
+        &= \frac{1}{r} \frac{\partial^2}{\partial r^2} r + \frac{1}{r^2} \left(\frac{1}{\sin(\theta)} \frac{\partial }{\partial \theta} \left(\sin(\theta) \frac{\partial }{\partial \theta} \right) + \frac{1}{\sin^2(\theta)} \frac{\partial^2 }{\partial \varphi^2} \right) \\
+        &= \frac{1}{r} \frac{\partial^2}{\partial r^2} r - \frac{\hat{L}^2}{\hbar^2 r^2} \\
+    \end{align*} 
+    où $\hat{L}^2$ est l’opérateur carré associé au moment cinétique orbital de la particule. On peut finalement réécrire l’équation de Schödinger comme 
+    \[ \left(\underset{\textcolor{couleurmatiere}{E_{c, \text{trans}}}}{\frac{-\hbar^2}{2\mu r} \frac{\partial^2}{\partial r^2} r + V(r)} - \underset{\textcolor{couleurmatiere}{E_{c, \text{rot}}}}{\frac{\hat{L}^2}{2 \mu r^2}}\right) \psi(r, \theta, \varphi) = E \psi(r, \theta, \varphi) \]   
+    On peut vérifier explicitement que l’hamiltonien commute avec le moment cinétique, comme prévu par l’invariance par rotation. 
+
+    Cherchons maintenant une base propre commune aux trois observables $\hat{H}$, $\hat{L}^2$ et $\hat{L}_z$. Nous avons déjà vu que cette base propre correspond à une partie radiale et une harmoniques sphérique, de la forme
+    \[ \psi(r, \theta, \varphi) = R(r) Y_{\ell,m}(\theta, \varphi) \]   
+    où la partie radiale reste à déterminer. On sait déjà que 
+    \[ \hat{L}^2 \psi(r, \theta, \varphi) = \ell(\ell + 1) \hbar^2 \psi(r, \theta, \varphi) \]   
+    Sachant qu’il n’y a plus d’opérateur portant sur la partie angulaire dans l’équation de Schrödinger, on peut simplifier l’équation par $Y_{\ell,m}(\theta, \varphi)$, et en multipliant par $r$, on obtient
+    \[ \left(-\frac{\hbar^2}{2\mu}\frac{\text{d}^2}{\text{d}r^2} + \frac{\ell(\ell+1)\hbar^2}{2\mu r^2} + V(r)\right) u(r) = E u(r) \]  
+    où $u(r) = r R(r)$. Finalement, on a réussi à se ramener à une équation de Schrödinger indépendante du temps à une dimension 
+    \[ \left(-\frac{\hbar^2}{2\mu} \frac{\text{d}^2}{\text{d}r^2} + V_{\text{eff}, \ell}(r)\right)u(r) = Eu(r) \]   
+    correspondant au mouvement d’une particule de masse $\mu$ dans le potentiel 
+    \[ V_{\text{eff}, \ell}(r) = \underset{\textcolor{couleurmatiere}{\text{potentiel central}}}{V(r)} + \underset{\textcolor{couleurmatiere}{E_{c,\text{rot}}}}{\frac{\ell(\ell + 1) \hbar^2}{2 \mu r^2}} \]  
+    La fonction $u(r)$ sur laquelle porte l’équation est telle que $\abs{u(r)}^2 dr$ est la probabilité que la particule se trouve entre deux sphères concentriques de rayons $r$ et $r+ dr$.
+
+        \subsubsection{Cas du potentiel coulombien}
+
+        Appliquons la démarche exposée dans un cadre général à l’atome d’hydrogène, cas correspondant au potentiel coulombien $V(r) = \frac{-e^2}{r}$. On doit donc résoudre l’équation aux valeurs propres $\hat{H}_{\ell} \ket{u} = E \ket{u}$, où 
+        \[ \hat{H}_{\ell} = - \frac{\hbar^2}{2\mu} \frac{\text{d}^2}{\text{d}r^2} - \frac{e^2}{r} + \frac{\ell(\ell + 1)\hbar^2}{2 \mu r^2} \]   
+        où $\mu \approx m_e$. 
+
+        \begin{omed}{États liés de l’atome d’hydrogène}
+            \begin{itemize}
+                \item Les niveaux d’énergie sont repérés par un entier positif $n$ et ont pour valeur
+                \[ E_n = - \frac{E_I}{n^2} \]   
+                où $E_I = \frac{e^2}{2 a_1} = \frac{\mu e^4}{2 \hbar^2} \approx 13,6\text{ev}$ est l’énergie d’ionisation de l’hydrogène et où $a_1 = \frac{\hbar^2}{\mu e^2} \approx 0,053\text{nm}$ est le rayon de Bohr.
+                \item Le niveau $E_n$ est dégénéré $n^2$ fois.
+                \item Les états propres $\ket{n,\ell,m}$ sont associés aux fonctions d’onde
+                \[ \psi_{n,\ell,m}(r, \theta, \varphi) = R_{n, \ell}(r)Y_{\ell, m}(\theta, \varphi) \]   
+                où $Y_{\ell, m}(\theta, \varphi)$ est une harmonique sphérique et où $R_{n, \ell}(r) = \frac{u_{n, \ell}(r)}{r}$ correspond au produit d’un polynôme de degré $n'$ par $r^{\ell} \exp\left(-\frac{r}{n a_1}\right)$ l’entier $n' = n - \ell - 1$ est appelé le nombre quantique radial.
+                \item Les zéros du polynôme de degré $n'$ étant tous strictement positifs, la fonction $R_{n, \ell}(r)$ s’annule exactement $n'$ fois dans l’intervalle $\intOO{0}{\infty}$, conformément au théorème de Sturm-Liouville.
+                \item La fonction d’onde de l’état fondamental s’écrit 
+                \[ \psi_{1,0,0}(\vec{r}) = \frac{e^{-\frac{r}{a_1}}}{\sqrt{\pi a_1^3}} \]
+            \end{itemize}
+        \end{omed}
+
+        \begin{demo}{Résolution}
+            On utilisera comme unité de longueur le rayon de Bohr $a_1$ et comme unité d’énergie $E_I$. On introduit donc les variables sans dimension $\rho = \frac{r}{a_1}$ et $\varepsilon = \frac{E}{E_I}$, ce qui nous donne l’équation de Schrödinger 
+            \[ \hat{h}_{\ell} u(\rho) = \left(-\frac{\text{d}^2}{\text{d}\rho^2}  + \frac{\ell(\ell + 1)}{\rho^2} - \frac{2}{\rho}\right)u(\rho) = \varepsilon u(\rho) \]
+
+            On introduit l’opérateur différentiel $\hat{a}_{\ell}$ et son adjoint $\hat{a}_{\ell}^{\dagger}$ 
+            \begin{align*}
+                \hat{a}_{\ell} &= \frac{1}{\ell + 1} - \frac{\ell + 1}{\rho} - \frac{\text{d}}{\text{d}\rho} \\
+                \hat{a}_{\ell}^{\dagger} &= \frac{1}{\ell + 1} - \frac{\ell + 1}{\rho} + \frac{\text{d}}{\text{d}\rho} \\
+            \end{align*}
+            L’effet de l’opération $\dagger$ sur $\hat{a}_{\ell}$ peut se comprendre par le fait que $\hat{p}$ est une observable donc auto-adjoint, ce qui nous donne que $- i \frac{\text{d}}{\text{d}\rho}$ est auto-adjoint, d’où $\frac{\text{d}}{\text{d}\rho}^{\dagger} = - \frac{\text{d}}{\text{d}\rho}$. Après calculs, on remarque que 
+            \begin{align*}
+                \hat{a}_{\ell} \hat{a}_{\ell}^{\dagger} &= \hat{h}_{\ell} + \frac{1}{(\ell + 1)^2} \\
+                \hat{a}_{\ell}^{\dagger} \hat{a}_{\ell} &= \hat{h}_{\ell + 1} + \frac{1}{(\ell + 1)^2} \\  
+            \end{align*}
+            On peut ainsi réécrire l’équation aux états propres par 
+            \[ \left(\hat{a}_{\ell} \hat{a}_{\ell}^{\dagger} - \frac{1}{(\ell + 1)^2}\right) \ket{u} = \varepsilon \ket{u} \]   
+            On peut faire agir l’opérateur $\hat{a}_{\ell}^{\dagger}$ sur cette équation, ce qui donne 
+            \begin{align*}
+                \left( \hat{a}_{\ell}^{\dagger} \hat{a}_{\ell} - \frac{1}{(\ell + 1)^2}\right)\hat{a}_{\ell}^{\dagger} \ket{u} = \varepsilon \hat{a}_{\ell}^{\dagger} \ket{u}
+            \end{align*}
+            soit $\hat{h}_{\ell + 1} \hat{a}_{\ell}^{\dagger} \ket{u} = \varepsilon \hat{a}_{\ell}^{\dagger} \ket{u}$. Le vecteur $\hat{a}_{\ell}^{\dagger} \ket{u}$ est donc soit nul soit vecteur propre de $\hat{h}_{\ell + 1}$ pour la même valeur propre $\varepsilon$. De même, en faisant agir l’opérateur $\hat{a}_{\ell - 1}$ sur cette équation, on obtient 
+            \[ \left(\hat{a}_{\ell - 1} \hat{a}_{\ell - 1}^{\dagger} - \frac{1}{\ell^2} \right) \hat{a}_{\ell - 1} \ket{u} = \varepsilon \hat{a}_{\ell - 1} \ket{u} \]
+            soit $\hat{h}_{\ell - 1} \hat{a}_{\ell - 1} \ket{u} \varepsilon \hat{a}_{\ell - 1} \ket{u}$. Le vecteur $\hat{a}_{\ell - 1} \ket{u}$ est donc soit nul soit vecteur propre de $\hat{h}_{\ell - 1}$ pour la même valeur propre $\varepsilon$. Par ailleurs, le carré de la norme de $\hat{a}_{\ell}^{\dagger} \ket{u}$ s’écrit 
+            \begin{align*}
+                \nor{\hat{a}_{\ell}^{\dagger} \ket{u}}^2
+                &= \bra{u} \hat{a}_{\ell} \hat{a}_{\ell}^{\dagger} \ket{u} \\
+                &= \bra{u} \left(\hat{h}_{\ell} + \frac{1}{(\ell + 1)^2}\right) \ket{u} \\
+                &= \varepsilon + \frac{1}{(\ell + 1)^2}
+                &\geq 0
+            \end{align*}
+            On a donc la condition 
+            \[ \varepsilon \geq - \frac{1}{(\ell + 1)^2} \]
+
+            Employons désormais un raisonnement similaire à celui utilisé par Dirac pour l’oscillateur harmonique ou par Cartan pour le moment cinétique : pour une valeur donnée de $\varepsilon < 0$, on peut appliquer successivement $\hat{a}_{\ell}^{\dagger}$, $\hat{a}_{\ell + 1}^{\dagger}$, etc. jusqu’à ce que l’inégalité du dessus ne soit plus vérifiée. Ceci étant physiquement impossible, il existe $\ell_{\text{max}}$ tel que $\ket{u}$ soit vecteur propre de $\hat{h}_{\ell_{\text{max}}}$ pour la valeur propre $\varepsilon$ mais que $\hat{a}_{\ell_{\text{max}}}^{\dagger} \ket{u}$ soit le vecteur nul. En considérant la norme de ce vecteur et en posant $n = \ell_{\text{max}} + 1$, on obtient donc que 
+            \[ \varepsilon = \varepsilon_n = -\frac{1}{n^2} \]   
+            Dans le cas où $\ell = \ell_{\text{max}} = n-1$, on peut écrire $\hat{a}_{n-1}^{\dagger}\ket{u} = 0$ d’où 
+            \begin{align*}
+                \left(\frac{1}{n} - \frac{n}{\rho} + \frac{\text{d}}{\text{d}\rho} \right) u(\rho) &= 0 \\
+                \textit{i.e.} \quad \frac{\text{d}u}{u} = - \left(\frac{1}{n} + \frac{n}{\rho}\right) \text{d}\rho
+            \end{align*}
+            Cette équation différentielle, une fois intégrée, donne que 
+            \[ u_{n, n-1}(\rho) \propto \rho^n \exp\left(-\frac{\rho}{n}\right) \]
+            Pour trouver les autres fonctions radiales, on utilise la relation 
+            \[ \ket{u_{n,\ell - 1}} = \frac{\hat{a}_{\ell - 1} \ket{u_{n, \ell}}}{\nor{{\hat{a}_{\ell - 1} \ket{u_{n, \ell}}}}} \]
+            le dénominateur étant non nul car $\ell < n$ et $\nor{{\hat{a}_{\ell - 1} \ket{u_{n, \ell}}}}^2 = \frac{1}{\ell^2} - \frac{1}{n^2}$.
+
+            Le résultat montré sur le degré du polynôme se montre par récurrence, sachant que $u_{n, n-1}(\rho)$ est constitué d’un polynôme de degré $n' = n - \ell - 1 = 0$ et que l’action de $\hat{a}_{\ell - 1} = \left(\frac{1}{\ell} - \frac{\ell}{\rho} - \frac{\text{d}}{\text{d}\rho} \right)$ sur $u_{n,\ell}(\rho) = P(\rho) \rho^{\ell + 1} \exp\left(-\frac{\rho}{n}\right)$ donne un polynôme de degré supérieur $n' + 1 = n - (\ell - 1) - 1$.
+        \end{demo}
+
+        Un des résultats remarquables est l’apparition de l’entier $n$ strictement positif, appelé \textbf{nombre quantique principal}, qui détermine entièrement la valeur de l’énergie $E_n$. À énergie constante, on peut trouver différentes valeurs diverses du moment cinétique puisque $\ell \in \intEN{0}{n-1}$. La dégénérescence du niveau $E_n$ est donc égale à 
+        \[ g_n = \sum_{\ell = 0}^{n-1} \left(2\ell + 1\right) = n^2 \]   
+        La projection du moment cinétique sur l’axe $z$ prendre enfin la valeur $m \hbar$ où $m \in \intEN{-\ell}{\ell}$, ce qui montre que le moment cinétique ne pourra jamais atteindre la valeur $n\hbar$ utilisée pour établir le résultat du modèle de Bohr.
+
+
+
+    
+
+    
+
+    

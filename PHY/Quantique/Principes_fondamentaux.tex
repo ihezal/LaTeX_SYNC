@@ -6,6 +6,8 @@
     À chaque système physique est associé un espace de Hilbert complexe $\mathcal{E}_H$, l’état physique du système étant entièrement défini par un ket normé $\ket{\psi} \in \mathcal{E}_H$.
 \end{omed}
 
+    On s’intéresse dans ce cours uniquement à des espaces de Hilbert dits \textit{séparables}, ce qui signifie qu’il admet au moins un ensemble dénombrable de kets $\ket{\psi_n}$ constituant une base orthonormée de l’espace.  
+
 \subsection{Mesure}
 
 On se place premièrement dans le cas \textbf{non-dégénéré}.
@@ -43,5 +45,11 @@ Dans le cas général,
     où $\bar{H}(t)$ est un observable appelé \textbf{Hamiltonien} et représentant l’énergie du système.
 \end{omed}
 
-Dans le cas d’un système isolé,
+On peut écrire l’état du système $\ket{\psi(t)}$ à l’instant $t$ à partir de l’état $\ket{\psi(t_0)}$ à l’instant $t_0$ à l’aide d’un opérateur unitaire $\hat{U}(t,t_0)$ appelé opérateur d’évolution selon l’expression 
+\[ \ket{\psi(t)} = \hat{U}(t,t_0) \ket{\psi(t_0)} \]   
+L’opérateur d’évolution obéit alors à l’équation différentielle 
+\[ i\hbar \frac{\partial U(t,t_0)}{\partial t} = \hat{H}(t) \hat{U}(t,t_0) \]   
+Dans le cas d’un hamiltonien indépendant du temps, la solution de cette équation s’écrit simplement 
+\[ \hat{U}(t,t_0) = \hat{U}(t-t_0) = \exp\left(-i\frac{\hat{H}(t-t_0)}{\hbar}\right) \]  
+ce qui donne la solution
 \[ \ket{\psi(t)} = \exp\left(-i\frac{\hat{H}}{\hbar}(t - t_0)\right) \ket{\psi(t_0)} \]

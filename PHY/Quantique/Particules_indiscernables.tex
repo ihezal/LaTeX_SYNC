@@ -7,7 +7,7 @@
     Le problème de cette dégénérescence est qu’elle ne donne pas lieu aux mêmes prédictions physiques : considérons l’observable $\hat{S}_x$ correspondant au moment cinétique total selon l’axe $x$, et mesurons la probabilité de trouver la valeur propre $\hbar$ associée au vecteur propre
     \begin{align*}
         \ket{+}_x \otimes \ket{+}_x
-        &= \frac{\ket{+} + \ket{-}}{\sqrt{2}} \oplus \frac{\ket{+} + \ket{-}}{\sqrt{2}} \\
+        &= \frac{\ket{+} + \ket{-}}{\sqrt{2}} \otimes \frac{\ket{+} + \ket{-}}{\sqrt{2}} \\
         &= \frac{\ket{++} + \ket{+-} + \ket{-+} + \ket{--}}{2}
     \end{align*}
     On trouve ainsi 
@@ -18,11 +18,11 @@
     \end{align*}
     Il faut donc introduire un nouveau postulat de physique quantique permettant de différencier ces systèmes.
 
-    \subsection{Échange de deux particules}
+    \subsection{Postulat de symétrisation}
 
         \subsubsection{Opérateur d’échange}
 
-        Considérons deux particules indiscernables appelées 1 et 2 et plaçons-nous dans l’espace produit $\mathcal{E}_H = \mathcal{E}_1 \oplus \mathcal{E}_2$. On introduit l’\textbf{opérateur d’échange} $\hat{P}_{12}$ qui échange l’état des deux particules. 
+        Considérons deux particules indiscernables appelées 1 et 2 et plaçons-nous dans l’espace produit $\mathcal{E}_H = \mathcal{E}_1 \otimes \mathcal{E}_2$. On introduit l’\textbf{opérateur d’échange} $\hat{P}_{12}$ qui échange l’état des deux particules. 
 
         On a évidemment que cet opérateur est involutif : $\hat{P}_{12} = \hat{I}$, et qu’il est auto-adjoint. Il est par conséquent unitaire, de valeurs propres $\pm 1$, respectivement associées aux \textbf{états symétriques} et aux \textbf{états antisymétriques}.
 
@@ -39,10 +39,100 @@
         Pour deux particules indiscernables, l’énergie du système doit rester inchangée leur de leur échange par $\hat{P}_{12}$. On peut voir l’action d’échange comme un invariant du système, ce qui nous donne la commutation entre l’opérateur d’échange et l’hamiltonien :
         \[ \left[\hat{H}, \hat{P}_{12}\right] = 0 \]   
 
-    \subsection{Postulat de symétrisation}
+        \subsubsection{Énoncé}
 
-        Pour qu’un vecteur d’état $\ket{\Psi}$ soit physiquement acceptable, il faut que $\ket{\Psi}$ et $\hat{P}_{12}\ket{\Psi}$ correspondent à un même état physique, \textit{i.e.} soient égaux à une phase près :
-        \[ \hat{P}_{12} \ket{\Psi} = e^{i\theta} \ket{\Psi} \]  
-        Cela signifie aussi que $\ket{\Psi}$ est un vecteur propre pour l’opérateur d’échange $\hat{P}_{12}$, et donc que $\theta = 0$ ou $\theta = \pi$. La condition est donc en réalité 
-        \[ \hat{P}_{12} \ket{\Psi} = \pm \ket{\Psi} \]  
-        Dans l’exemple donné en introduction, les deux seuls états convenables sont donc $\ket{0,0}$ (antisymétrique) et $\ket{1,0}$ (symétrique).
+        \begin{omed}{Postulat de symétrisation}
+            Les particules appartiennent toutes à l’une ou l’autre des deux catérgories suivantes :
+            \begin{itemize}
+                \item Les \textbf{bosons} (particules de \textit{spin entier} comme les photons), pour lesquels le vecteur d’état est symétrique par échante de deux particules identiques :
+                \[ \hat{P}_{12} \ket{\Psi} = \ket{\Psi} \]   
+                \item Les \textbf{fermions} (particules de \textit{spin demi-entier} comme les électrons, protons, quarks), pour lesquels le vecteur d’état est antisymétrique par échante de deux particules identiques :
+                \[ \hat{P}_{12} \ket{\Psi} = - \ket{\Psi} \]   
+            \end{itemize}
+        \end{omed}
+
+        \begin{demo}{Idée}
+            Pour qu’un vecteur d’état $\ket{\Psi}$ soit physiquement acceptable, il faut que $\ket{\Psi}$ et $\hat{P}_{12}\ket{\Psi}$ correspondent à un même état physique, \textit{i.e.} soient égaux à une phase près :
+            \[ \hat{P}_{12} \ket{\Psi} = e^{i\theta} \ket{\Psi} \]  
+            Cela signifie aussi que $\ket{\Psi}$ est un vecteur propre pour l’opérateur d’échange $\hat{P}_{12}$, et donc que $\theta = 0$ ou $\theta = \pi$. La condition est donc en réalité 
+            \[ \hat{P}_{12} \ket{\Psi} = \pm \ket{\Psi} \]  
+            Dans l’exemple donné en introduction, les deux seuls états convenables sont donc $\ket{0,0}$ (antisymétrique) et $\ket{1,0}$ (symétrique).
+
+            Mais cette condition seule est insuffisante, puisque le principe de superposition imposerait qu’on puisse mettre le système dans toute combinaison linéaire des états précédemment cités, ce qui nous redonnerait l’espace de dégénérescence de dimension 2 qui, on l’a vu, contient des états non acceptables. Nous admettrons donc que pour un type de particule donnée, un seul type d’état (symétrique ou antisymétrique) est acceptable.
+        \end{demo}
+
+        
+
+        \subsubsection{Cas des particules composites}
+
+        Le postulat s’applique aussi aux particules dites \textbf{composites} comme les nucléons ou les atomes. En effet, dans des situations physique où les énergies impliquées sont faibles devant les énergies d’excitation de la particule composite, on peut la considérer comme une particule élémentaire dans son état fondamental. Les données pertinentes pour la décrire sont alors les coordonnées de son centre de masse et son état de spin. On peut dans ces situations (comme les atomes d’une vapeur atomique à température ambiante) se demander si une particule composite peut être considérée comme un boson ou un fermion.
+
+        \begin{omed}{Symétrisation d’une particule composite}
+            Lorsqu’un ensemble de particules en interaction mutuelle reste dans son état interne fondamental, cet ensemble peut être considéré comme une particule composite. Cette particule composite peut être globalement considérée comme un fermion si elle comporte un nombre impair de fermions, tandis qu’elle peut être considérée comme un boson dans le cas contraire.
+        \end{omed}
+
+        \begin{demo}{Raisonnement}
+            Le spin total d’une particule composite est la somme des spins des particules la constituant, donc 
+        \begin{align*}
+            \hat{\vec{S}} &= \sum_{n=1}^N \hat{\vec{S}}_n \\
+            \hat{S}_z &= \sum_{n=1}^N \hat{S}_{nz} \\
+        \end{align*}
+        Si l’on mesure $S_z$, on obtiendra donc un résultat égal à la somme des $S_{nz}$, soit $m\hbar$ où $m$ est la somme des $N_f$ nombres demi-entiers des spins des fermions et $N_b$ nombre entiers des spins des bosons. Ainsi, $m$ est demi-entier si $N_f$ est impaire, entier sinon. 
+
+        On peut aussi voir le problème à partir de l’opérateur d’échange de deux particules composites indiscernable 
+        \[ \hat{P}_{ab} = \hat{P}_{a_1 b_1} \cdots \hat{P}_{a_N b_N} \]   
+        où $N = N_f + N_b$. Si $\ket{\Psi}$ est l’état du système constitué de ces deux particules composites, on a alors 
+        \[ \hat{P}_{ab}\ket{\Psi} = (-1)^{N_f} \ket{\Psi} \] 
+        \end{demo}
+
+    \subsection{Cas de deux particules indiscernables indépendantes}
+
+    On considère un système constitué de deux particules indiscernables indépendantes, ce qui signifie que son hamiltonien pourra s’écrire comme la somme de deux opérateurs agissant respectivement dans $\mathcal{E}^{(1)}$ et $\mathcal{E}^(2)$ :
+    \[ \hat{H} = \hat{h}^{(1)} \otimes \hat{I}^{(2)} +  \hat{I}^{(1)} \otimes \hat{h}^{(2)} \]   
+    Les particules étant indiscernables, $\hat{h}^{(1)} = \hat{h}^{(2)}$. Cet hamiltonien $\hat{h}$ admet des valeurs propres notées $\ket{\psi_n}$ associées aux valeurs propres $E_n$, donc la base tensorielle $\left\{\ket{\psi_n, \psi_m}\right\}$ est une base propre de $\hat{H}$ pour les valeurs propres $E_n + E_m$ .
+
+        \subsubsection{Système de deux bosons}
+
+        On considère un système constitué de deux bosons indentiques et de spin nul. On suppose que les valeurs propres de l’hamiltonien à une particule sont non dégénérées, l’état fondamental étant associé à l’énergie $E_1$. L’énergie du système dans l’état $\ket{\Psi} = \ket{\psi_1, \psi_1}$ est donc $2E_1$.
+
+        Cherchons maintenant le premier état excité du système. On serait tentés de proposer les états $\ket{\psi_1, \psi_2}$ ou $\ket{\psi_2, \psi_1}$, mais pour satisfaire au postulat de symétrisation dans le cas des bosons, il faut choisir l’état symétrique (à une phase près)
+        \[ \ket{\Psi} = \frac{\ket{\psi_1, \psi_2} + \ket{\psi_2, \psi_1}}{\sqrt{2}} \] 
+        La valeur propre $E_1 + E_2$ est donc en réalité non dégénérée et correspond à un seul état physique. Une méthode générale pour trouver l’état décrivant le système est d’appliquer l’opérateur de symétrisation (pour les bosons) à un des états du sous-espace propre mathématique associé à la valeur propre $E_1 + E_2$ \textit{a priori} :
+        \begin{align*}
+            \hat{\mathcal{S}} \ket{\psi_1, \psi_2} 
+            &= \frac{\hat{I} + \hat{P}_{12}}{2} \ket{\psi_1, \psi_2} \\
+            &= \frac{\ket{\psi_1, \psi_2} + \ket{\psi_2, \psi_1}}{2} 
+        \end{align*}
+        Il faut ensuite normaliser l’état obtenu.
+
+        \subsubsection{Système de deux fermions}
+
+        Considérons désormais un système de deux fermions, lesquels ne peuvent pas être dans le même état puisque l’état $\ket{\alpha, \alpha}$ est symétrique par échange des particules : c’est le \textbf{principe d’exclusion de Pauli}. En considérant deux états différents $\ket{\alpha}$ et $\ket{\beta}$, on peut cependant construire un état physiquement acceptable (après normalisation) par application de l’opérateur antisymétrisation :
+        \begin{align*}
+            \hat{\mathcal{A}} \ket{\alpha,\beta} 
+            &= \frac{\ket{\alpha,\beta} - \ket{\beta, \alpha}}{2} \\
+        \end{align*}
+        Si ces deux états sont orthogonaux, l’état correspondant est $\frac{\ket{\alpha,\beta} - \ket{\beta, \alpha}}{\sqrt{2}}$. Décrivons désormais explicitement le degré de liberté de spin de nos deux fermions (que nous supposerons à spin demi-entier). L’espace de Hilbert s’écrit 
+        \begin{align*}
+            \mathcal{E}_H 
+            &= \mathcal{E}_{\text{externe}}^{(1)} \otimes \mathcal{E}_{\text{spin}}^{(1)} \otimes \mathcal{E}_{\text{externe}}^{(2)} \otimes \mathcal{E}_{\text{spin}}^{(2)} \\
+            &= \left(\mathcal{E}_{\text{externe}}^{(1)} \otimes \mathcal{E}_{\text{externe}}^{(2)}\right) \otimes \left(\mathcal{E}_{\text{spin}}^{(1)} \otimes \mathcal{E}_{\text{spin}}^{(2)}\right) \\
+        \end{align*}
+
+        On suppose que que l’hamiltonien à une particule n’agisse que sur les degrés de libertés externes de la particule, ce qui implique que les valeurs propres $E_n$ de $\hat{h}$ sont deux fois dégénérées :
+        \[ \hat{h} \ket{\psi_n} \otimes  \ket{\pm} = E_n \ket{\psi_n} \otimes \ket{\pm} \] 
+        Cherchons l’état fondamental du système. La forme la plus générale d’écriture des deux particules dans l’état d’énergie $E_1$ est 
+        \[ \ket{\Psi} = \ket{\psi_1, \psi_1} \otimes \sum_{i,j = \pm} c_{i,j} \ket{ij} \]   
+        Le postulat de symétrisation impose que $\hat{P}_{12} \ket{\Psi} = - \ket{\Psi}$, soit $c_{++} = c_{--} = 0$ et $c_{+-} = - c_{-+}$, soit après normalisation
+        \[ \ket{\Psi} = \ket{\psi_1, \psi_1} \otimes \frac{\ket{+-} - \ket{-+}}{\sqrt{2}} \]   
+        La représentation de cet état fondamental se fait donc à l’aide de deux flèches en sens contraires, signifiant que le système est dans un état antisymétrique.
+
+
+
+    
+
+       
+
+       
+        
+        
