@@ -1,0 +1,166 @@
+\section{Moment cinétique orbital}
+
+    \subsection{Définition}
+
+        On considère une particule ponctuelle sans spin dans l’espace euclidien à trois dimensions. L’espace de Hilbert associé est constitué dans ce cas de l’ensemble des fonctions de carré sommable $\mathcal{L}^2(\mathbf{R}^3)$. Le moment cinétique orbital sera le moment cinétique de ce système. Cela signifie qu’une rotation infinitésimale $\hat{R}_{d\vec{\alpha}}$ dans $\mathcal{L}^2(\mathbf{R}^3)$ s’écrira 
+        \[ \hat{R}_{d\vec{\alpha}} = \hat{I} - \frac{i}{\hbar} \hat{\vec{L}} \cdot d\vec{\alpha} \] 
+        Cette définition comme générateur infinitésimal revient à poser :
+
+        \begin{omed}{Définition (moment cinétique orbital)}
+            On appelle \textbf{moment cinétique orbital} et on note $\hat{\vec{L}}$ la quantité 
+            \[ \hat{\vec{L}} = \hat{\vec{r}} \times \hat{\vec{p}} \]
+        \end{omed}
+
+        Cette définition nous donne bien les relations de commutation attendues pour un moment cinétique, à savoir 
+        \[ \hat{\vec{L}} \times \hat{\vec{L}} = i \hbar \hat{\vec{L}} \]   
+        On pourra donc appliquer au moment cinétique orbital les résultats établis plus haut en matière générale pour tout observable de type moment cinétique.
+
+    \subsection{Théorie générale du moment cinétique orbital}
+
+        \subsubsection{Expression des opérateurs en coordonnées sphériques}
+
+        \begin{omed}{Opérateurs différentiels associés à $\hat{\vec{L}}$ en coordonnées sphériques}
+            \begin{align*}
+                \hat{L}_x &= i \hbar \left(\sin(\varphi) \frac{\partial }{\partial \theta} + \frac{\cos(\varphi)}{\tan(\theta)} \frac{\partial }{\partial \varphi} \right) \\
+                \hat{L}_y &= i \hbar \left(-\cos(\varphi) \frac{\partial }{\partial \theta} + \frac{\sin(\varphi)}{\tan(\theta)} \frac{\partial }{\partial \varphi} \right) \\
+                \hat{L}_z &= \frac{\hbar}{i} \frac{\partial }{\partial \varphi} \\
+                \hat{L}_{\pm} &= \hbar e^{\pm i \varphi} \left(\pm \frac{\partial }{\partial \theta} + i \frac{\cos(\theta)}{\sin(\theta)} \frac{\partial }{\partial \varphi} \right) \\
+                \hat{L}^2 &= - \hbar^2 \left(\frac{1}{\sin(\theta)}\frac{\partial }{\partial \theta} \sin(\theta) \frac{\partial }{\partial \theta}  + \frac{1}{\sin^2(\theta)}\frac{\partial^2}{\partial \varphi^2} \right)
+            \end{align*}
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            On déduit les expressions des opérateurs en coordonnées sphériques de celles en coordonnées cartésiennes :
+        \begin{align*}
+            L_x &= \hat{y} \hat{p}_z - \hat{z} \hat{p}_y = \frac{\hbar}{i} \left(y \frac{\partial }{\partial z} - z \frac{\partial }{\partial y} \right) \\
+            L_y &= \hat{z} \hat{p}_x - \hat{x} \hat{p}_z = \frac{\hbar}{i} \left(z \frac{\partial }{\partial x} - x \frac{\partial }{\partial z} \right) \\
+            L_z &= \hat{x} \hat{p}_y - \hat{y} \hat{p}_x = \frac{\hbar}{i} \left(x \frac{\partial }{\partial y} - y \frac{\partial }{\partial x} \right) \\
+        \end{align*}
+        La transformation sphérique $(x,y,z) \to (r,\theta,\varphi)$ passe par les relations 
+        \begin{align*}
+            x &= r \sin(\theta) \cos(\varphi) \\
+            y &= r \sin(\theta) \cos(\varphi) \\
+            z &= r \cos(\theta)
+        \end{align*}
+        On veut exprimer l’action de l’opérateur moment cinétique sur la fonction d’onde $\psi(r,\theta,\phi)$, en utilisant le fait que le moment cinétique est le générateur infinitésimal du groupe des rotations. Commençons par une rotation simple d’angle $d\alpha$ autour de l’axe $z$, qui voit $r$ et $\theta$ inchangés :
+        \begin{align*}
+            \hat{R}_{z,d\alpha} \psi(r,\theta,\varphi) 
+            &= \psi(r,\theta,\varphi-d\alpha) \\
+            &= \psi(r, \theta, \varphi) - \frac{\partial \psi}{\partial \phi} d\alpha \\ 
+        \end{align*}
+        Sachant que par définition, $\hat{R}_{z,d\alpha} = \hat{I} - \frac{i}{\hbar} \hat{L}_z d\alpha$, on en déduit que 
+        \[ \hat{L}_z = \frac{\hbar}{i} \frac{\partial }{\partial \varphi} \]   
+        On constate une parfaite analogie avec l’opérateur $\hat{p}_z$, associé à une translation le long de l’axe $z$, puisqu’une rotation le long de l’axe $z$ correspond à une translation dans l’espace des $\varphi$. On obtient de façon similaire les autres résultats.
+        \end{demo}
+
+        \subsubsection{Recherche des fonctions propres communes de $\hat{L}^2$ et $\hat{L}_z$ -- Les harmoniques sphériques}
+
+        Dans le cadre du moment cinétique orbital, on notera respectivement les paramètres des valeurs propres par $\ell$ (pour les valeurs propres $\ell(\ell + 1) \hbar^2$ de $\hat{L}^2$) et $m$ (pour les valeurs propres $m\hbar$ de $\hat{L}_z$) qui sont des entiers ou demi-entiers. 
+        
+        \begin{omed}{Propriétés des harmoniques sphériques}
+            \begin{itemize}
+                \item $\hat{L}^2 Y_{\ell,m}(\theta, \varphi) = \ell(\ell + 1) \hbar^2 Y_{\ell, m} (\theta, \varphi)$ où $\ell \in \mathbf{N}$ ;
+                \item $\hat{L}_z Y_{\ell,m}(\theta, \varphi) = m \hbar Y_{\ell, m}(\theta, \varphi)$ où $m \in \intEN{-\ell}{\ell}$ peut prendre $2 \ell + 1$ valeurs différentes ;
+                \item $Y_{\ell,m}(\theta, \varphi) = F_{\ell, m}(\theta) e^{i m \varphi}$ où $F_{\ell,m}(\theta)$ est une fonction réelle qui s’annule $\ell - \abs{m}$ fois dans l’intervalle $\intOO{0}{\pi}$.
+                \item \textit{Conjugaison}
+                \[ Y_{\ell,m}^*(\theta, \varphi) = (-1)^m Y_{\ell,-m}(\theta, \varphi) \]  
+                \item \textit{Parité}
+                \[ Y_{\ell,m}(\pi - \theta, \varphi + \pi) = (-1)^{\ell} Y_{\ell,m}(\theta, \varphi) \]   
+                \item L’ensemble des harmoniques sphériques constitue une base orthonormée de l’espace des fonctions de carré sommable qui associent à un couple $(\theta, \varphi)$ la grandeur complexe $Y(\theta, \varphi)$. Pour toute fonction, on pourra écrire 
+                \[ Y(\theta, \varphi) = \sum_{\ell, m} c_{\ell, m} Y_{\ell,m}(\theta, \varphi) \]   
+                où les coefficients $c_{\ell, m}$ sont déterminés par les produits scalaires hermitiens 
+                \[ c_{\ell,m}= \int \int Y^*_{\ell,m}(\theta, \varphi) Y(\theta, \varphi) \sin(\theta) d\theta d\varphi \]
+            \end{itemize}
+        \end{omed}
+
+        \begin{demo}
+            En coordonnées sphériques, les fonctions propres recherchées $\psi(r,\theta,\varphi)$ obéissent donc aux deux équations aux valeurs propres :
+        \begin{align*}
+            - \left(\frac{1}{\sin(\theta)}\frac{\partial }{\partial \theta} \sin(\theta) \frac{\partial }{\partial \theta}  + \frac{1}{\sin^2(\theta)}\frac{\partial^2}{\partial \varphi^2} \right) \psi(r,\theta,\varphi) &= \ell(\ell + 1) \psi(r,\theta,\varphi) \\
+            -i\frac{\partial }{\partial \varphi} \psi(r,\theta,\varphi) &= m \psi(r, \theta, \varphi) \\
+        \end{align*}
+        La variable $r$ n’intervenant pas dans ces expressions, la résolution simultanée des deux équantions nous donnera une fonction ne dépendant que de $\theta$ et de $\varphi$, que l’on notera $Y(\theta, \varphi)$, appelée \textbf{partie angulaire} de la fonction d’onde. La \textbf{partie radiale} sera notée $R(r)$. Ces deux fonctions sont normalisées selon les relations
+        \begin{align*}
+            \int_{0}^{+\infty} \abs{R(r)}^2 r^2 dr &= 1 \\
+            \int_{0}^{\pi} \int_{0}^{2\pi} \abs{Y(\theta,\varphi)}^2 \sin(\theta) d\theta d\varphi &= 1
+        \end{align*}
+        ce qui assure que la fonction d’onde totale est bien normalisée. La seconde équation aux valeurs propres se réécrit alors 
+        \[ \frac{\partial Y}{\partial \varphi} = i m Y \]   
+        de solution normalisée 
+        \[ Y(\theta, \varphi) = F(\theta) e^{i m \varphi} \]   
+        La continuité de $Y$ en $\varphi = 0$ implique que $\exp(im2\pi) = 1$, \textit{i.e.} que $m$ soit un entier. Il en va ainsi de même pour $\ell$.
+
+        Pour déterminer la forme de la fonction $F(\theta)$, il faudrait résoudre la première équation du système considéré, avec $\ell \in \mathbf{N}$, mais celle-ci est du second ordre. On préfèrera donc utiliser la méthode de construction de la base standard à l’aide de l’opérateur différentiel du premier ordre $\hat{L}_+ = \hat{L}_x + i \hat{L}_y$, en commençant par le cas $m = -\ell$. Étant donné qu’il s’agit de la plus petite valeur de $m$ acceptable, on sait que $\hat{L}_- Y(\theta, \varphi) = 0$. En utilisant la forme de $L_-$, on obtient donc 
+        \begin{align*}
+            \left(-\frac{\partial }{\partial \theta} + i \cotan(\theta) \frac{\partial }{\partial \varphi} \right) F(\theta) e^{- i \ell \varphi} &= 0 \\
+            \frac{\text{d}F}{\text{d}\theta} &\overset{\Updownarrow}{=} \ell \cot(\theta) F(\theta) \\
+            \frac{\text{d}F}{F} &\overset{\Updownarrow}{=} \ell \cotan(\theta) \text{d}\theta \\
+        \end{align*}
+        En intégrant, on obtient $F_{\ell, -\ell}(\theta) = c_{\ell} \sin^{\ell}(\theta)$. La condition de normalisation de $Y_{\ell, -\ell}$ implique que 
+        \[ F_{\ell, -\ell}(\theta) = \frac{1}{2^{\ell} \ell!} \sqrt{\frac{(2\ell + 1)!}{4\pi}} \sin^{\ell}(\theta) \]  
+        On pourra ensuite former les autres fonctions propres uniques appelées \textbf{harmoniques sphériques} $Y_{\ell, m}$ pour $m \in \intEN{-\ell - 1}{\ell}$, en appliquant l’opérateur $\hat{L}_+$ selon la formule 
+        \[ \hat{L}_+ Y_{\ell, m}(\theta, \varphi) = \sqrt{\ell(\ell + 1) - m(m+1)}\hbar Y_{\ell, m+1}(\theta, \varphi) \] 
+        On obtient avec la formule de $\hat{L}_+$ que 
+        \[ F_{\ell, m+1}(\theta) = \frac{1}{\sqrt{\ell(\ell + 1) - m(m+1)}}\left(\frac{\text{d}}{\text{d}\theta} - \frac{m}{\tan(\theta)}\right) F_{\ell, m}(\theta) \]   
+        On déduit de ces formules que les $F_{\ell,m}(\theta)$ sont des fonctions réelles, et leur proximité avec les polynômes de Legendre permet d’établir des propriétés très utiles de celles-ci, comme le fait que $F_{\ell,m}(\theta)$ s’annule exactement $\ell - \abs{m}$ fois dans l’intervalle ouvert $\intOO{0}{\pi}$. On a aussi $F_{\ell, -m} = (-1)^m F_{\ell,m}(\theta)$, ce qui n’est pas étonnant étant donné que la transformation $m \mapsto -m$ revient à changer le sens de l’axe $z$. On retiendra aussi que $\abs{F_{\ell,m}(\pi - \theta)} = \abs{F_{\ell, m}(\theta)}$.
+        \end{demo}
+
+        À l’instar des fonctions de Hermite dans $\mathcal{L}^2(\mathbf{R})$ ou des séries de Fourier dans un espace de fonctions périodiques, les harmoniques sphériques permettront ainsi de décomposer toute fonction $Y(\theta, \varphi)$ de deux variables angulaires à l’aide de la somme discrète des états $Y_{\ell, m}$.
+
+        \subsubsection{Premières harmoniques sphériques}
+
+
+
+    \subsection{Rotation d’une molécule diatomique}
+
+        Étudions le problème à deux corps invariant par rotation d’une molécule diatomique en rotation.
+
+        \subsubsection{Modèle du rotateur rigide \& traitement classique}
+
+        Ce modèle simplifie l’étude du problème, à partir de quelques postulats :
+        
+        \begin{itemize}
+            \item Le mouvement du centre de masse n’est pas considéré ;
+            \item Le mouvement des électrons n’est pas pris en compte (on considère qu’il est déjà pris en compte dans la liaison chimique entre les deux atomes) ;
+            \item Le mouvement de vibration (variation de la longueur de la liaison entre les deux atomes), associé à des énergies bien supérieures.
+        \end{itemize}
+
+        On appelle $\vec{r_1}$ et $\vec{r_2}$ les positions des deux atomes de masses $m_1$ et $m_2$, et on pose $\vec{r} = \vec{r_2} - \vec{r_1}$ le vecteur séparant les deux atomes, de longueur $r$ constante dans le cadre du modèle du \textbf{rotateur rigide}. Le centre de masse étant placé à l’origine, on a que $m_1 \vec{r_1} + m_2 \vec{r_2} = \vec{0}$, \textit{i.e.}, avec la masse réduite $\mu$ du système,
+        \begin{align*}
+            \vec{r_1} &= - \frac{\mu}{m_1}\vec{r} \\
+            \vec{r_2} &= \frac{\mu}{m_2}\vec{r}
+        \end{align*}
+        En dérivant par rapport au temps, on a de même 
+        \begin{align*}
+            \vec{v_1} &= - \frac{\mu}{m_1}\vec{v} \\
+            \vec{v_2} &= \frac{\mu}{m_2}\vec{v}
+        \end{align*}
+
+        L’invariance par rotation nous dit que le moment cinétique est une constante du mouvement. Or son expression est
+        \begin{align*}
+            \vec{L} 
+            &= \vec{r_1} \times m_1 \vec{v_1} + \vec{r_2} \times m_2 \vec{v_2} \\
+            &= \frac{\mu^2}{m_1} \vec{r} \times \vec{v} + \frac{\mu^2}{m_2} \vec{r} \times \vec{v} \\
+            &= \vec{r} \times \mu \vec{v} \\
+            &\perp \vec{r}
+        \end{align*}
+        Ce moment cinétique est égal à celui d’une particule de masse $\mu$. La distance $r$ étant constante, $\vec{r} \perp \vec{v}$ et donc $L = \nor{\vec{L}} = \mu r v$. 
+
+        Évaluons désormais l’énergie $H$ du système. Il n’y a pas de potentiel ici associé à la molécule, donc 
+        \begin{align*}
+            H 
+            &= \frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 \\
+            &= \frac{1}{2} \mu v^2 \\
+            &= \frac{L^2}{2I} \quad \text{avec} \quad I = \mu r^2
+        \end{align*}
+        Cette énergie correspond à nouveau à celle d’une particule de masse $\mu$, avec un moment d’inertie par rapport à l’axe de la liaison passant par le centre de masse  $I = \mu r^2$.
+
+        \subsubsection{Traitement quantique}
+
+        On définit désormais l’état de notre rotateur rigide par une fonction d’onde $Y(\theta, \varphi)$ normaliée, afin que $\abs{Y(\theta, \varphi)}\sin(\theta)d\theta d\varphi$ représente la probabilité que la molécule soit orientée selon les angles sphériques $\theta$ et $\varphi$, à l’intérieur d’un angle solide infinitésimal $\sin(\theta)d\theta d\varphi$. L’espace de Hilbert $\mathcal{E}_H$ associé au problème est engendré par les harmoniques sphériques comme discuté précédemment, donc le système peut être défini par les coefficients $c_{\ell,m}$. 
+
+        On sait par invariance par rotation que $\hat{H}$, $\hat{L}^2$ et $\hat{L}_z$ commutent deux à deux, et donc sont diagonalisables dans une base commune. Or nous avons montré que la base propre commune à $\hat{L}^2$ et $\hat{L}_z$ est unique dans $\mathcal{E}_H$. Ainsi, on pourra nécessairement diagonaliser $\hat{H}$ dans cette base, \textit{i.e.} $Y_{\ell, m}(\theta, \varphi)$ sont des fonctions propres de $\hat{H}$. Ce résultat est en fait clair dans le cadre de la molécule diatomique car 
+        \[ \hat{H} = \frac{\hat{L}^2}{2I} \]   
+        On a de plus les valeurs propres qui sont de la forme 
+        \[ E_{\ell} = \ell (\ell + 1) \frac{\hbar^2}{2I} \]  
+        et qui sont dégénérées $2 \ell + 1$ fois car l’énergie est indépendante de la valeur de $m$. 

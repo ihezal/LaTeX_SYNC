@@ -1,36 +1,38 @@
 \xpginauxfiletrue 
 \selectlanguage *{french}
-\contentsline {section}{1\hspace {1em}Principes fondamentaux}{2}{section.1}%
-\contentsline {subsection}{1.1\hspace {1em}Espace des états}{2}{subsection.1.1}%
-\contentsline {subsection}{1.2\hspace {1em}Mesure}{2}{subsection.1.2}%
-\contentsline {subsection}{1.3\hspace {1em}Évolution temporelle}{3}{subsection.1.3}%
-\contentsline {section}{2\hspace {1em}Outils mathématiques}{4}{section.2}%
-\contentsline {subsection}{2.1\hspace {1em}Notation de Dirac}{4}{subsection.2.1}%
-\contentsline {subsection}{2.2\hspace {1em}Transformation de Fourier}{5}{subsection.2.2}%
-\contentsline {subsection}{2.3\hspace {1em}Produit tensoriel}{8}{subsection.2.3}%
-\contentsline {subsection}{2.4\hspace {1em}Inégalité de Heisenberg}{8}{subsection.2.4}%
-\contentsline {section}{3\hspace {1em}Méthodes d’approximation}{10}{section.3}%
-\contentsline {subsection}{3.1\hspace {1em}Méthode des perturbations}{11}{subsection.3.1}%
-\contentsline {subsection}{3.2\hspace {1em}Méthode variationnelle}{15}{subsection.3.2}%
-\contentsline {section}{4\hspace {1em}Symétries en physique quantique}{17}{section.4}%
-\contentsline {subsection}{4.1\hspace {1em}Invariance et commutation}{17}{subsection.4.1}%
-\contentsline {subsection}{4.2\hspace {1em}Parité}{19}{subsection.4.2}%
-\contentsline {subsection}{4.3\hspace {1em}Translations}{19}{subsection.4.3}%
-\contentsline {subsection}{4.4\hspace {1em}Théorème de Bloch}{22}{subsection.4.4}%
-\contentsline {section}{5\hspace {1em}Le spin 1/2}{25}{section.5}%
-\contentsline {subsection}{5.1\hspace {1em}Construction des observables cartésiens du spin}{25}{subsection.5.1}%
-\contentsline {subsection}{5.2\hspace {1em}Mesure du spin selon un axe arbitraire}{27}{subsection.5.2}%
-\contentsline {subsection}{5.3\hspace {1em}Sphère de Bloch}{27}{subsection.5.3}%
-\contentsline {subsection}{5.4\hspace {1em}Particule dans un champ magnétique}{27}{subsection.5.4}%
-\contentsline {subsection}{5.5\hspace {1em}Champ magnétique autonome}{27}{subsection.5.5}%
-\contentsline {subsection}{5.6\hspace {1em}Champ magnétique dépendant du temps}{27}{subsection.5.6}%
-\contentsline {section}{6\hspace {1em}Moment cinétique}{27}{section.6}%
-\contentsline {subsection}{6.1\hspace {1em}Rotations et moment cinétique}{27}{subsection.6.1}%
-\contentsline {subsection}{6.2\hspace {1em}Théorie générale du moment cinétique}{30}{subsection.6.2}%
-\contentsline {subsection}{6.3\hspace {1em}Cas d’une particule de spin 1/2}{33}{subsection.6.3}%
-\contentsline {subsection}{6.4\hspace {1em}Moment cinétique orbital}{33}{subsection.6.4}%
-\contentsline {subsection}{6.5\hspace {1em}Rotation d’une molécule diatomique}{37}{subsection.6.5}%
-\contentsline {section}{7\hspace {1em}L’atome d’hydrogène}{39}{section.7}%
-\contentsline {subsection}{7.1\hspace {1em}Modèle de Bohr}{39}{subsection.7.1}%
-\contentsline {subsection}{7.2\hspace {1em}Mouvement dans un potentiel central}{40}{subsection.7.2}%
+\contentsline {section}{1\hspace {1em}Polarisation d’un photon unique}{2}{section.1}%
+\contentsline {subsection}{1.1\hspace {1em}Polarisation de la lumière en optique quantique}{2}{subsection.1.1}%
+\contentsline {section}{2\hspace {1em}Principes fondamentaux}{5}{section.2}%
+\contentsline {subsection}{2.1\hspace {1em}Espace des états}{5}{subsection.2.1}%
+\contentsline {subsection}{2.2\hspace {1em}Mesure}{5}{subsection.2.2}%
+\contentsline {subsection}{2.3\hspace {1em}Évolution temporelle}{6}{subsection.2.3}%
+\contentsline {section}{3\hspace {1em}Outils mathématiques}{7}{section.3}%
+\contentsline {subsection}{3.1\hspace {1em}Notation de Dirac}{7}{subsection.3.1}%
+\contentsline {subsection}{3.2\hspace {1em}Transformation de Fourier}{9}{subsection.3.2}%
+\contentsline {subsection}{3.3\hspace {1em}Produit tensoriel}{11}{subsection.3.3}%
+\contentsline {subsection}{3.4\hspace {1em}Inégalité de Heisenberg}{12}{subsection.3.4}%
+\contentsline {section}{4\hspace {1em}Méthodes d’approximation}{14}{section.4}%
+\contentsline {subsection}{4.1\hspace {1em}Méthode des perturbations}{14}{subsection.4.1}%
+\contentsline {subsection}{4.2\hspace {1em}Méthode variationnelle}{19}{subsection.4.2}%
+\contentsline {section}{5\hspace {1em}Symétries en physique quantique}{20}{section.5}%
+\contentsline {subsection}{5.1\hspace {1em}Invariance et commutation}{20}{subsection.5.1}%
+\contentsline {subsection}{5.2\hspace {1em}Parité}{23}{subsection.5.2}%
+\contentsline {subsection}{5.3\hspace {1em}Translations}{24}{subsection.5.3}%
+\contentsline {subsection}{5.4\hspace {1em}Théorème de Bloch}{27}{subsection.5.4}%
+\contentsline {section}{6\hspace {1em}Le spin 1/2}{29}{section.6}%
+\contentsline {subsection}{6.1\hspace {1em}Construction des observables cartésiens du spin}{29}{subsection.6.1}%
+\contentsline {subsection}{6.2\hspace {1em}Mesure du spin selon un axe arbitraire}{31}{subsection.6.2}%
+\contentsline {subsection}{6.3\hspace {1em}Sphère de Bloch}{31}{subsection.6.3}%
+\contentsline {subsection}{6.4\hspace {1em}Particule dans un champ magnétique}{31}{subsection.6.4}%
+\contentsline {subsection}{6.5\hspace {1em}Champ magnétique autonome}{31}{subsection.6.5}%
+\contentsline {subsection}{6.6\hspace {1em}Champ magnétique dépendant du temps}{31}{subsection.6.6}%
+\contentsline {section}{7\hspace {1em}Moment cinétique}{31}{section.7}%
+\contentsline {subsection}{7.1\hspace {1em}Rotations et moment cinétique}{32}{subsection.7.1}%
+\contentsline {subsection}{7.2\hspace {1em}Théorie générale du moment cinétique}{34}{subsection.7.2}%
+\contentsline {subsection}{7.3\hspace {1em}Cas d’une particule de spin 1/2}{37}{subsection.7.3}%
+\contentsline {subsection}{7.4\hspace {1em}Moment cinétique orbital}{38}{subsection.7.4}%
+\contentsline {subsection}{7.5\hspace {1em}Rotation d’une molécule diatomique}{41}{subsection.7.5}%
+\contentsline {section}{8\hspace {1em}L’atome d’hydrogène}{44}{section.8}%
+\contentsline {subsection}{8.1\hspace {1em}Modèle de Bohr}{44}{subsection.8.1}%
+\contentsline {subsection}{8.2\hspace {1em}Mouvement dans un potentiel central}{45}{subsection.8.2}%
 \xpginauxfilefalse 

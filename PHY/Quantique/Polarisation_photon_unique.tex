@@ -1,12 +1,10 @@
 \section{Polarisation d’un photon unique}
 
-    \subsection{Polarisation de la lumière en optique classique}
+    Ce premier petit chapitre a pour objectif de nous familiariser avec les postulats de la physique quantique, sous la forme d’un problème déjà abordé dans le cas classique.
 
-    \subsection{Polarisation de la lumière en optique quantique}
+    On suppose que l’on dispose d’une source de photons uniques, ce qui permet d’aborder le problème de l’optique quantique sous l’angle de la polarisation d’un photon unique, seul degré de liberté du problème. 
 
-        On suppose que l’on dispose d’une source de photons uniques, ce qui permet d’aborder le problème de l’optique quantique sous l’angle de la polarisation d’un photon unique, seul degré de liberté du problème. 
-
-        \subsubsection{Description de l’état de polarisation d’un photon unique}
+        \subsection{Description de l’état de polarisation d’un photon unique}
 
         L’espace des états $\mathcal{E}_H$ est un espace de Hilbert de dimension 2, de base orthonormée $\left\{\ket{\updownarrow}, \ket{\leftrightarrow}\right\}$ correspondant aux polarisations verticales et horizontales respectivement. On pourra écrire n’importe quel état de polarisation linéaire faisant un angle $\theta$ par rapport à la verticale par le ket 
         \[ \ket{\theta} = \cos(\theta) \ket{\updownarrow} + \sin(\theta) \ket{\leftrightarrow} \]   
@@ -15,7 +13,7 @@
 
         On pourra, au choix, sélectionner comme base orthonormée de l’espace des états les bases $\left\{\ket{\updownarrow}, \ket{\leftrightarrow}\right\}$, $\left\{\ket{\theta}, \ket{\theta + \frac{\pi}{2}}\right\}$ ou $\left\{\ket{+}, \ket{-}\right\}$.
 
-        \subsubsection{Mesure de l’état de polarisation d’un photon unique}
+        \subsection{Mesure de l’état de polarisation d’un photon unique}
 
         Considérons une mesure de polarisation par un \textbf{prisme de Rochon}, laissant les deux résultats possibles $\ket{\updownarrow}$ et $\ket{\leftrightarrow}$ dans le cas où celui-ci est orienté selon la verticale. Soit un état $\ket{\psi} = \alpha \ket{\updownarrow} + \beta \ket{\leftrightarrow}$ défini par les nombres complexes $\alpha$ et $\beta$. Les nombres $\abs{\alpha}^2$ et $\abs{\beta}^2$ correspondent alors aux probabilités associées aux deux états possible :
         \begin{align*}
@@ -29,13 +27,13 @@
         \end{align*}
         Ces résultats sont bien en accord avec la loi de Malus, qui stipule que la transmission est égale au carré du cosinus de la différence entre l’angle de la polarisation incidente et celle du polarisateur.
 
-        \subsubsection{Paramètres de description de l’état de polarisation d’un photon}
+        \subsection{Paramètres de description de l’état de polarisation d’un photon}
 
         Cherchons le nombre minimal de paramètres nécessaires pour décrire entièrement l’état de polarisation d’un photon, par exemple dans la base $\left\{\ket{\updownarrow}, \ket{\leftrightarrow}\right\}$, $\ket{\psi} = \alpha \ket{\updownarrow} + \beta \ket{\leftrightarrow}$. \textit{A priori}, il faut les donnés des parties réelles et imaginaires de $\alpha$ et $\beta$. Toutefois, la normalisation du ket impose que $\abs{\alpha}^2 + \abs{\beta}^2 = 1$, et donc par exemple que $\alpha = e^{i\phi_{\updownarrow}} \cos(\theta)$ et $\beta = e^{i \phi_{\leftrightarrow}} \sin(\theta)$. De plus, la phase globale n’étant pas pertinente dans la description de l’état physique, on peut supposer que $\phi_{\updownarrow} = 0$, et donc écrire le ket sous la forme 
         \[ \ket{\psi} = \cos(\theta)\ket{\updownarrow} + e^{i \phi} \sin(\theta)\ket{\leftrightarrow} \]   
-        où $\theta \in \intFF{0}{\frac{\pi}{2}}$ et $\phi \in \intOF{-\pi}{\pi}$.
+        où $\theta \in \intFF{0}{\frac{\pi}{2}}$ et $\phi \in \intFO{0}{2\pi}$.
 
-        \subsubsection{Évolution de l’état de polarisation d’un photon unique}
+        \subsection{Évolution de l’état de polarisation d’un photon unique}
 
         L’évolution temporelle de l’état de polarisation d’un photon unique fait intervenir un facteur de phase globale :
         \[ \ket{\psi(t)} = e^{-\frac{iEt}{\hbar}} \ket{\psi(0)} \]   

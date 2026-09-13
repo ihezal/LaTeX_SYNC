@@ -315,6 +315,7 @@ INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./PHY_Quantique.toc
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 OUTPUT PHY_Quantique.toc
+INPUT ./PHY/Quantique/Polarisation_photon_unique.tex
 INPUT ./PHY/Quantique/Principes_fondamentaux.tex
 INPUT ./PHY/Quantique/Outils_mathematiques.tex
 INPUT ./PHY/Quantique/Methodes_dapproximation.tex

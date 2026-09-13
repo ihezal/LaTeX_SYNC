@@ -12,14 +12,13 @@
     \[ \hat{H}_0 \ket{n,r} = E_n \ket{n,r} \]   
     où $r \in \intEN{1}{g_n}$ représente le niveau de dégénérescence du niveau d’énergie $E_n$. On posera $\hat{W} = \lambda \hat{H}_1$ où $\hat{H}_1$ est du même ordre de grandeur que $\hat{H}_0$ tandis que $\lambda \ll 1$. 
 
-    L’idée de base de la méthode constiste à considérer les vecteurs propres $\ket{\psi(\lambda)}$ et ses valeurs propres $E(\lambda)$ de l’hamiltonien $\hat{H}(\lambda) = \hat{H}_0 + \lambda \hat{H}_1$ et à effectuer un développement limité en fonction de $\lambda$ lorsque $\lambda \to 0$. On a ainsi 
+    L’idée de base de la méthode constiste à considérer les vecteurs propres $\ket{\psi(\lambda)}$ et les valeurs propres $E(\lambda)$ de l’hamiltonien $\hat{H}(\lambda) = \hat{H}_0 + \lambda \hat{H}_1$ et à effectuer un développement limité en fonction de $\lambda$ lorsque $\lambda \to 0$. On a ainsi 
     \[ \ket{\psi(\lambda)} = \ket{\psi^{(0)}} + \lambda \ket{\psi^{(1)}} + \cdots \] 
     et 
     \[ E(\lambda) = E^{(0)} + \lambda E^{(1)} + \cdots \]   
     L’équation aux valeurs propres s’écrit alors 
     \begin{align*}
-        \left(\hat{H}_0 + \lambda \hat{H}_1\right) \ket{\psi(\lambda)} &= E(\lambda) \ket{\psi(\lambda)} 
-        \left(\hat{H}_0 + \lambda \hat{H}_1 \right)\left(\ket{\psi^{(0)}} + \lambda \ket{\psi^{(1)}} + \cdots\right) = \left(E^{(0)} + \lambda E^{(1)} + \cdots\right)\left(\right)\left(\ket{\psi^{(0)}} + \lambda \ket{\psi^{(1)}} + \cdots\right)
+        \left(\hat{H}_0 + \lambda \hat{H}_1\right) \underset{\left(\ket{\psi^{(0)}} + \lambda \ket{\psi^{(1)}} + \cdots\right)}{\ket{\psi(\lambda)}} &= \underset{\left(E^{(0)} + \lambda E^{(1)} + \cdots\right)}{E(\lambda)} \underset{\left(\ket{\psi^{(0)}} + \lambda \ket{\psi^{(1)}} + \cdots\right)}{\ket{\psi(\lambda)}} \\
     \end{align*}
     En identifiant les coefficients d’ordre successifs dans les polynômes en $\lambda$ figurant dans les deux membres de l’égalité ci-dessus, on obtient donc que 
     \begin{align*}
@@ -32,7 +31,22 @@
 
         \subsubsection{Cas d’un niveau non dégénéré}
 
-    On considère le cas où $E^{(0)}$ est non dégénéré. On pose $E^{(0)} = E_n$ et $\ket{\psi^{(0)}} = \ket{n}$ où $E_n$ est l’une des valeurs propres de $\hat{H}_0$. On a alors le système d’équations (en se limitant au premier ordre) 
+    \begin{omed}{Méthode des perturbations (cas non dégénéré)}
+        On considère un hamiltonien $\hat{H}_0$ (d’états propres $\left\{\ket{n}\right\}$ connus et non dégénérés tels que $\hat{H}_0 \ket{n} = E_n \ket{n}$) auquel on ajoute une perturbation $\hat{W}$ petite devant $\hat{H}_0$. On peut écrire l’énergie sous la forme du développement 
+        \[ E = E_n + \delta E_n^{(1)} + \delta E_n^{(2)} + \cdots \]   
+        où $\delta E_n^{(k)}$ correspond au terme d’ordre $k$ en $\hat{W}$. On obtient alors les expressions suivantes du déplacement de l’énergie au premier et second ordre :
+        \begin{align*}
+            \delta E_n^{(1)} &= \bra{n} \hat{W} \ket{n} \\
+            \delta E_n^{(2)} &= \sum_{m \neq n} \frac{\abs{\bra{m} \hat{W} \ket{n}}^2}{E_n - E_m}
+        \end{align*}
+        On peut aussi développer l’état propre perturbé de $\hat{H}$ sous la forme 
+        \[ \ket{\psi} = \ket{n} + \ket{\delta \psi_n^{(1)}} + \ket{\delta \psi_n^{(2)}} + \cdots \]   
+        avec, au premier ordre, 
+        \[ \ket{\delta \psi_n^{(1)}} = \sum_{m \neq n} \frac{\bra{m} \hat{W} \ket{n}}{E_n - E_m} \ket{m} \]
+    \end{omed}
+
+    \begin{demo}{Preuve}
+    On considère le cas où $E^{(0)}$ est non dégénéré. On pose $E^{(0)} = E_n$ et $\ket{\psi^{(0)}} = \ket{n}$ où $E_n$ est l’une des valeurs propres de $\hat{H}_0$. On a alors le système d’équations (en se limitant au premier ordre)
     \begin{align*}
         \hat{H}_0 \ket{n} &= E_n \ket{n} \\
         \hat{H}_0 \ket{\psi^{(1)}} + \hat{H}_1 \ket{n} &= E_n \ket{\psi^{(1)}} + E^{(1)} \ket{n}
@@ -40,7 +54,7 @@
     En multipliant à gauche la deuxième équation par le bra $\bra{m}$, vecteur propre de $\hat{H}_0$ pour la valeur propre $E_m$, on obtient 
     \begin{align*}
         \bra{m} \hat{H}_0 \ket{\psi^{(1)}} + \bra{m} \hat{H}_1 \ket{n} &= E_n \spr{m}{\psi^{(1)}} + E^{(1)} \spr{m}{n} \\
-        \bra{m} \hat{H}_1 \ket{n} &= (E_n - E_m) \spr{m}{\psi^{(1)}} + E^{(1)} \spr{m}{n}
+        \bra{m} \hat{H}_1 \ket{n} &\overset{\Updownarrow}{=} (E_n - E_m) \spr{m}{\psi^{(1)}} + E^{(1)} \spr{m}{n}
     \end{align*}
     En appliquant ce résultat au cas $m = n$, on obtient que 
     \[ E^{(1)} = \bra{n} \hat{H}_1 \ket{n} \]   
@@ -71,25 +85,13 @@
     Pour l’ordre 2, considérons la troisième équation provenant de l’égalité initiale $\hat{H}_{\lambda} \ket{\psi(\lambda)} = E(\lambda) \ket{\psi(\lambda)}$, 
     \[ \hat{H}_0 \ket{\psi^{(2)}} + \hat{H}_1 \ket{\psi^{(1)}} =  E^{(0)} \ket{\psi^{(2)}} + E^{(1)} \ket{\psi^{(1)}} + E^{(2)} \ket{\psi^{(0)}} \]    
     et projetons-la sur le bra $\bra{n}$. Comme $\bra{n}\hat{H}_0 = E_n \bra{n}$ et $\spr{n}{\psi^{(1)}} = 0$, on obtient que 
-    \[ E^{(2)} = \bra{n} \hat{H}_1 \ket{\psi^{(1)}} = \sum_{m \neq n} \frac{\abs{\bra{m} \hat{H}_1 \ket{n}}^2}{E_n - E_m} \]   
-
-    \begin{omed}{Méthode des perturbations (cas non dégénéré)}
-        On considère un hamiltonien $\hat{H}_0$ (d’états propres $\left\{\ket{n}\right\}$ connus et non dégénérés tels que $\hat{H}_0 \ket{n} = E_n \ket{n}$) auquel on ajoute une perturbation $\hat{W}$ petite devant $\hat{H}_0$. On peut écrire l’énergie sous la forme du développement 
-        \[ E = E_n + \delta E_n^{(1)} + \delta E_n^{(2)} + \cdots \]   
-        où $\delta E_n^{(k)}$ correspond au terme d’ordre $k$ en $\hat{W}$. On obtient alors les expressions suivantes du déplacement de l’énergie au premier et second ordre :
-        \begin{align*}
-            \delta E_n^{(1)} &= \bra{n} \hat{W} \ket{n} \\
-            \delta E_n^{(2)} &= \sum_{m \neq n} \frac{\abs{\bra{m} \hat{W} \ket{n}}^2}{E_n - E_m}
-        \end{align*}
-        On peut aussi développer l’état propre perturbé de $\hat{H}$ sous la forme 
-        \[ \ket{\psi} = \ket{n} + \ket{\delta \psi_n^{(1)}} + \ket{\delta \psi_n^{(2)}} + \cdots \]   
-        avec, au premier ordre, 
-        \[ \ket{\delta \psi_n^{(1)}} = \sum_{m \neq n} \frac{\bra{m} \hat{W} \ket{n}}{E_n - E_m} \ket{m} \]
-    \end{omed}
+    \[ E^{(2)} = \bra{n} \hat{H}_1 \ket{\psi^{(1)}} = \sum_{m \neq n} \frac{\abs{\bra{m} \hat{H}_1 \ket{n}}^2}{E_n - E_m} \]  
+    \end{demo}
 
     Remarquons qu’avec le résultat de cette méthode, on peut interpréter l’énergie au premier ordre par la formule 
-    \[ E \equiv E_n + \delta E_n^{(1)} = \bra{n} \hat{H}_0 \ket{n} + \bra{n} \hat{W} \ket{n} = \bra{n} \hat{H} \ket{n} \]   
+    \[ E \approx E_n + \delta E_n^{(1)} = \bra{n} \hat{H}_0 \ket{n} + \bra{n} \hat{W} \ket{n} = \bra{n} \hat{H} \ket{n} \]   
     L’énergie perturbée d’un niveau donné est donc à peu près égale à la valeur moyenne de l’hamiltonien total dans l’état non perturbé, ce qui constitue un résultat relativement intuitif.
+
 
         \subsubsection{Cas d’un niveau dégénéré}
 
@@ -121,14 +123,11 @@
         c_n
     \end{bmatrix} \]    
 
-
-
-
     \subsection{Méthode variationnelle}
 
         \subsubsection{Majoration de l’énergie du niveau fondamental}
 
-    Pour tout état $\ket{\psi}$ de l’espace de Hilbert considéré, 
+    Remarquons que pour tout état $\ket{\psi}$ de l’espace de Hilbert considéré, 
     \[ \bra{\psi} \hat{H} \ket{\psi} \geq E_0 \]   
     où $E_0$ est l’énergie du niveau fondamental. Il y a égalité uniquement lorsque l’état $\ket{\psi}$ appartient au sous-espace propre du niveau fondamental. 
 

@@ -1,0 +1,167 @@
+\section{Le spin 1/2}
+
+    On a jusqu’ici pensé que l’état d’une particule ponctuelle comme l’électron peut être entièrement décrit à l’aide de l’espace de Hilbert $\mathcal{L}^2(\mathbf{R}^3)$, ce qui revient à supposer que les degrés de liberté de la particule sont entièrement décrits par sa position dans l’espace. Or l’expérience de Stern et Gerlach a montré que cela n’était pas suffisant, et qu’il fallait introduire un nouveau degré de liberté, appelé \textbf{spin} ou \textbf{moment cinétique intrinsèque}.
+
+    Les résultats de l’expérience sur l’atome d’hydrogène amènent à postuler que la composante du spin selon l’axe $z$, notée $\hat{S}_z$, peut prendre les valeurs $\pm \frac{\hbar}{2}$. On peut donc se placer dans un espace des états de dimension 2.
+
+    \subsection{Construction des observables cartésiens du spin}
+
+        \begin{omed}{Observables cartésiens du spin}
+            La forme matricielle des observables cartésiens du spin est 
+            \[ \hat{S}_{\alpha} = \frac{\hbar}{2} \sigma_{\alpha} \]   
+            où $\sigma_{\alpha}$ sont les \textbf{matrices de Pauli} définies par 
+            \begin{align*}
+                \sigma_x &= \begin{bmatrix}
+                    0 & 1 \\
+                    1 & 0
+                \end{bmatrix} \\
+                \sigma_y &= \begin{bmatrix}
+                    0 & -i \\
+                    i & 0
+                \end{bmatrix} \\
+                \sigma_z &= \begin{bmatrix}
+                    1 & 0 \\
+                    0 & -1
+                \end{bmatrix} \\
+            \end{align*}
+        \end{omed}
+
+        \begin{demo}
+            On se place dans un espace des états de dimension $2$, et appelons $\ket{+}_z$ et $\ket{-}_z$ les vecteurs propres de l’observable $\hat{S}_z$ pour les valeurs propres $\pm \frac{\hbar}{2}$ (mises en évidence par l’expérience de Stern \& Gerlach). La matrice de l’observable s’écrit donc dans cette base selon l’expression 
+        \[ \hat{S}_z = \frac{\hbar}{2} \begin{bmatrix}
+            1 & 0 \\
+            0 & -1
+        \end{bmatrix} \]
+
+        Considérons l’observable $\hat{S}_x$, correspondant à la valeur du spin selon l’axe $x$. Ses valeurs sont aussi $\pm \frac{\hbar}{2}$ puisque le choix de l’axe est arbitraire. Ces axes étant orthogonaux, on sait qu’un système dans l’état $\ket{\pm}_z$ donnera aléatoirement une valeur $\pm \frac{\hbar}{2}$ du spin selon $x$. Ainsi, 
+        \begin{align*}
+            _z\bra{+} \hat{S}_x \ket{+}_z &= 0 \\
+            _z\bra{-} \hat{S}_x \ket{-}_z &= 0
+        \end{align*}
+        On en déduit que la matrice hermitienne représentant $\hat{S}_x$ dans la base $\left\{\ket{\pm}_z\right\}$ est de la forme
+        \[ \hat{S}_x = \frac{\hbar}{2} \begin{bmatrix}
+            0 & e^{-i\phi_x} \\
+            e^{i\phi_x} & 0
+        \end{bmatrix} \]
+        Pour que les coefficients de la matrice soient réels, il suffit de se placer dans la nouvelle base $\left\{\ket{+}_z, \ket{-}'_z\right\}$ où $\ket{-}'_z = e^{i \phi_x} \ket{-}_z$, que l’on notera $\left\{\ket{\pm}_z\right\}$ (écrasant donc les premières valeurs arbitraires choisies pour cette base). Ainsi, dans cette base, 
+        \[ \hat{S}_x = \frac{\hbar}{2} \begin{bmatrix}
+            0 & 1 \\
+            1 & 0
+        \end{bmatrix} \]
+        Les vecteurs propres de l’opérateur $\hat{S}_x$ se déduisent aisément de sa forme :
+        \begin{align*}
+            \ket{+}_x &= \frac{\ket{+}_z + \ket{-}_z}{\sqrt{2}} \\
+            \ket{-}_x &= \frac{\ket{+}_z - \ket{-}_z}{\sqrt{2}} \\
+        \end{align*}
+        Un raisonnement similaire appliqué à l’observable $\hat{S}_y$ nous permet de l’écrire sous la forme 
+        \[ \hat{S}_y = \frac{\hbar}{2} \begin{bmatrix}
+            0 & e^{-i\phi_y} \\
+            e^{i\phi_y} & 0
+        \end{bmatrix} \]
+        La base $\left\{\ket{\pm}_z\right\}$ étant déjà conventionnée pour que les coefficients de la matrice associés à $\hat{S}_x$ soient réels, on ne peut pas en faire de même pour $\hat{S}_y$. Toutefois, on peut déterminer la valeur de $\phi_y$ fixée par la convention. On sait que $_x\bra{+} \hat{S}_y \ket{+}_x = 0$, ce qui donne après calcul que $\frac{\hbar}{2} \cos(\phi_y) = 0$. On admettra alors que $\phi_y = \frac{\pi}{2}$ est la valeur confirmée expérimentalement. On a alors la matrice associée à l’opérateur $\hat{S}_y$
+         \[ \hat{S}_y = \frac{\hbar}{2} \begin{bmatrix}
+            0 & -i \\
+            i & 0
+        \end{bmatrix} \]
+        et les vecteurs propres de $\hat{S}_y$ 
+        \begin{align*}
+            \ket{+}_y &= \frac{\ket{+}_z + i \ket{-}_z}{\sqrt{2}} \\
+            \ket{-}_y &= \frac{\ket{+}_z - i \ket{-}_z}{\sqrt{2}} \\
+        \end{align*}
+
+        \end{demo}
+
+        
+        Avec les formules matricielles de ces opérateurs, on détermine facilement la valeur de leurs commutateurs :
+
+        \begin{omed}{Relations de commutation des observateurs du spin}
+            \begin{align*}
+                \left[\hat{S}_x, \hat{S}_y\right] &= i\hbar \hat{S}_z \\
+                \left[\hat{S}_y, \hat{S}_z\right] &= i\hbar \hat{S}_x \\
+                \left[\hat{S}_z, \hat{S}_x\right] &= i\hbar \hat{S}_y \\
+            \end{align*}
+            soit 
+            \[ \hat{\vec{S}} \times \hat{\vec{S}} = i \hbar \hat{\vec{S}} \]
+        \end{omed}
+
+        Ces observables ne commutant pas entre elles, il est impossible de construire une base propre commune à celles-ci, \textit{i.e.} les grandeurs physiques correspondantes ne peuvent être mesurées simultanément.
+
+    \subsection{Mesure du spin selon un axe arbitraire}
+
+        Après avoir établi la forme cartésienne des observables de spin, intéressons-nous à la projection de spin selon un vecteur unitaire $\vec{u}$ arbitraire 
+        \[ \vec{u} = \begin{bmatrix}
+            \sin(\theta) \cos(\varphi) \\
+            \sin(\theta) \sin(\varphi) \\
+            \cos(\theta)
+        \end{bmatrix} \quad \text{avec} \quad \nor{\vec{u}} = 1 \]
+        avec $\theta \in \intFO{0}{\pi}$ et $\varphi \in \intFO{0}{2\pi}$. La projection du spin $\hat{\vec{S}} = \hat{S}_x \vec{u}_x + S_y \vec{u}_y + S_z \vec{u}_z$ selon le vecteur $\vec{u}$ est donc, dans la base $\left\{\ket{\pm}_z\right\}$,
+        \[ \hat{\vec{S}} \cdot \vec{u} = \frac{\hbar}{2}\begin{bmatrix}
+            \cos(\theta) & e^{-i\varphi} \sin(\theta) \\
+            e^{i\varphi} \sin(\theta) & - \cos(\theta)
+        \end{bmatrix} \]
+        Cherchons les vecteurs propres $\ket{\pm}_{\vec{u}}$ associés aux valeurs propres $\pm \frac{\hbar}{2}$ pour cette matrice. Pour simplifier l’expression de cette matrice, de la même façon que lorsque l’on a cherché la forme de $\hat{S}_x$, on peut procéder à un changement de variable. En considérant la nouvelle base formée des vecteurs $\ket{\pm}_z^' = \exp(\mp i \frac{\varphi}{2}) \ket{\pm}_z$, on arrive à la formule
+        \[ \hat{\vec{S}} \cdot \vec{u} = \frac{\hbar}{2} \hat{M} \quad \text{avec} \quad \hat{M} = \begin{bmatrix}
+            \cos(\theta) & \sin(\theta) \\
+            \sin(\theta) & -\cos(\theta)
+        \end{bmatrix} \]
+        On se ramène ainsi à l’étude d’une matrice orthogonale associée à une symétrie par rapport à une droite dans le plan euclidien (d’axe $\frac{\theta}{2}$). Le vecteur propre associé à la valeur propre $+\frac{\hbar}{2}$ est donc celui aligné avec l’axe, soit
+        \[ \ket{+}_{\vec{u}} = \cos\left(\frac{\theta}{2}\right)\ket{+}'_z + \sin\left(\frac{\theta}{2}\right) \ket{-}'_z \]
+        De même, le vecteur propre associé à la valeur propre $-\frac{\hbar}{2}$ est le vecteur orthogonal à l’axe
+        \[ \ket{+}_{\vec{u}} = -\sin\left(\frac{\theta}{2}\right)\ket{+}'_z + \cos\left(\frac{\theta}{2}\right) \ket{-}'_z \]
+        En se ramenant dans la base initiale, on obtient
+        \begin{align*}
+            \ket{+}_{\vec{u}} &= e^{-i \frac{\varphi}{2}}\cos\left(\frac{\theta}{2}\right)\ket{+}_z + e^{i \frac{\varphi}{2}}\sin\left(\frac{\theta}{2}\right) \ket{-}_z \\
+            \ket{-}_{\vec{u}} &= - e^{-i \frac{\varphi}{2}}\sin\left(\frac{\theta}{2}\right)\ket{+}_z + e^{i \frac{\varphi}{2}}\cos\left(\frac{\theta}{2}\right) \ket{-}_z \\
+        \end{align*}
+
+    \subsection{Sphère de Bloch}
+
+        Nous avons réussi, en partant des résultats expérimentaux de Stern et Gerlach, à établir des résultats sur les opérateurs de spin. Pour faciliter leur étude, on va introduire la notion de sphère de Bloch, qui permet de représenter l’état d’une particule de spin 1/2 de manière plus intuitive. Cette méthode pourrait d’ailleurs être employée pour représenter l’état de n’importe quel système à deux états (voir la sphère de Poincaré pour la représentation des polarisations linéaires).
+
+        Plaçons nous dans la base $\left\{\ket{\pm}_z\right\}$ notée $\left\{\ket{\pm}\right\}$ dans cette partie. La forme générale d’un état de l’espace de Hilbert du spin 1/2 est donc 
+        \[ \ket{\psi}  = a_+ \ket{+} + a_- \ket{-} \]   
+        où $a_{\pm} \in \mathbf{C}$. Comme discuté dans le chapitre introductif sur la polarisation d’un photon unique, on peut en réalité se ramener à la description de l’état par deux nombre réels, sous la forme 
+        \[ \ket{\psi} = e^{- i \frac{\varphi}{2}} \cos\left(\frac{\theta}{2}\right) \ket{+} + e^{i \frac{\varphi}{2}} \sin\left(\frac{\theta}{2}\right) \ket{-} \]
+        où $\theta \in \intFF{0}{\pi}$ et $\varphi \in \intFO{0}{2\pi}$. Cette expression est exactement celle obtenue pour $\ket{+}_{\vec{u}}$, et on peut donc à tout vecteur d’état $\ket{\psi} $ faire correspondre un unique vecteur unitaire $\vec{u}$ tel que $\ket{\psi} $ soit vecteur propre de l’observable $\hat{\vec{S}} \cdot \vec{u}$ pour la valeur propre $+\frac{\hbar}{2}$. On appelera ce vecteur $\vec{u}$ \textbf{vecteur de Bloch}, entièrement défini par les deux paramètres $\theta$ et $\varphi$, et l’on pourra le représenter dans la sphère unité, que l’on appelera alors \textbf{sphère de Bloch}. 
+
+        On pourrait aussi voir de façon alternative une sphère de rayon $\frac{\hbar}{2}$, où la direction du vecteur associé au vecteur d’état $\ket{\psi}$ est représenté par la valeur moyenne du spin dans l’état considéré $\left<\vec{S}\right>$.
+
+        Il faudra s’habituer à ce que, dans cette représentation, qui est différente de l’espace habituel $\mathbf{R}^3$, deux vecteurs orthogonaux (comme $\ket{\pm}$) sont opposés sur la sphère de Bloch.
+
+    \subsection{Particule dans un champ magnétique}
+
+        \subsection{Champ magnétique autonome}
+
+        \subsection{Champ magnétique dépendant du temps}
+
+    \subsection{Opérateur rotation du spin}
+
+        \subsubsection{Définition}
+
+        On peut définir un opérateur dans l’espace de Hilbert à deux dimensions $\mathcal{E}_{\text{spin}}$, qui correspond à une rotation d’angle $\alpha$ autour de l’axe $z$ dans la sphère de Bloch. Il faut faire attention à ne pas confondre cette rotation avec une rotation dans l’espace réel $\mathbf{R}^3$, même si certaines de ses propriétés y seront très analogues. Pour un état $\ket{\psi}$ défini par sa longitude $\varphi$ et sa colatitude $\theta$, on s’attend à ce que la transformation par $\hat{R}_{\alpha}$ corresponde à $\varphi \mapsto \varphi + \alpha$, soit 
+        \[ \hat{R}_{\alpha} \ket{\psi} = e^{- i \frac{\varphi}{2}} \cos\left(\frac{\theta}{2}\right) e^{-i \frac{\alpha}{2}} \ket{+} + e^{i \frac{\varphi}{2}} \sin\left(\frac{\theta}{2}\right) e^{i \frac{\alpha}{2}}\ket{-} \]
+        La forme matricielle de cette rotation est 
+        \[ \hat{R}_{\alpha} = \begin{bmatrix}
+            e^{-i \frac{\alpha}{2}} & 0 \\
+            0 & e^{i \frac{\alpha}{2}}
+        \end{bmatrix} = \exp\left(- \frac{i}{\hbar} \alpha \hat{S}_z\right) \]
+        On peut de façon plus générale définir la rotation d’un vecteur $\vec{\alpha}$, caractérisant son axe par sa direction et son angle par sa norme :
+        \[ \hat{R}_{\vec{\alpha}} = \exp\left(- \frac{i}{\hbar}\vec{\alpha} \cdot \hat{\vec{S}}\right) \]
+
+        \subsubsection{Lien avec le spin}
+
+        Si le spin porte le nom de moment cinétique intrinsèque, c’est qu’il peut \textit{a priori} être affilié à un moment cinétique. Nous avons vu dans le chapitre portant sur la théorie générale des moments cinétiques que ceux-ci étaient les générateurs infinitésimaux des groupes de rotation. La définition de l’opérateur rotation dans la sphère de Bloch nous permet ainsi d’écrire que 
+        \[ \hat{R}_{d\vec{\alpha}} = \hat{I} - \frac{i}{\hbar} \hat{\vec{S}} \cdot d\vec{\alpha} \]   
+        Cela nous confirme bien que le spin $\hat{\vec{S}}$ est un moment cinétique.
+
+        En reprenant la théorie générale du moment cinétique, on peut calculer $\hat{S}^2 = \hat{S}_x^2 + \hat{S}_{y}^2 + \hat{S}_z^2$, ce qui nous donne 
+        \[ \hat{S}^2 = \frac{1}{2} \frac{3}{2} \hbar^2 \hat{I} \]   
+        Ces résultats nous apprennent donc que la seule valeur valable pour $j$ est $\frac{1}{2}$, qui est bien un demi-entier. Les valeurs de $m$ possibles sont donc $\pm \frac{1}{2}$. Les écritures $\ket{\pm}$ cachent donc que 
+        \begin{align*}
+            \ket{+} &= \ket{j = \frac{1}{2}, m = \frac{1}{2}} \\
+            \ket{-} &= \ket{j = \frac{1}{2}, m = -\frac{1}{2}} \\
+        \end{align*}
+
+
+
+        

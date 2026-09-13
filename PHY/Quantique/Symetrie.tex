@@ -10,9 +10,7 @@
         À toute invariance du système on peut associer une quantité physique conservée.
     \end{omed}
 
-    Étudier les symétries d’un système physique est donc judicieux pour trouver des grandeurs conservées.
-
-    Il est intéressant de remarquer que pour toute isométrie d’un espace de Hilbert $\mathcal{E}_H$, la contrainte $\spr{\psi_1}{\psi_2} = \bra{\psi_1} \hat{R}^{\dagger} \hat{R} \ket{\psi_2}$ pour toutes fonctions d’ondes $\ket{\psi_1}, \ket{\psi_2} \in \mathcal{E}_H$ implique que 
+    Étudier les symétries d’un système physique est donc judicieux pour trouver des grandeurs conservées. Il est intéressant de remarquer que pour toute isométrie $\hat{R}$ d’un espace de Hilbert $\mathcal{E}_H$, la contrainte $\spr{\psi_1}{\psi_2} = \bra{\psi_1} \hat{R}^{\dagger} \hat{R} \ket{\psi_2}$ pour toutes fonctions d’ondes $\ket{\psi_1}, \ket{\psi_2} \in \mathcal{E}_H$ implique que 
     \[  \hat{R}^{\dagger} \hat{R} = \hat{I} \]
     Et étant donné qu’une isométrie est nécessairement inversible, on a directement 
     \[  \hat{R} \hat{R}^{\dagger} = \hat{I} \]
@@ -20,36 +18,57 @@
 
         \subsubsection{Commutation avec Ĥ}
 
-    De façon générale, pour tout système invariant par une isométrie $\mathcal{R}$, l’hamiltonien $\hat{H}$ commute avec l’opérateur $\hat{R}$ représentant cette isométrie dans l’espace de Hilbert.
+    \begin{omed}{Commutation de $\hat{R}$ et $\hat{H}$}
+        Pour tout système invariant par une isométrie $\mathcal{R}$, l’hamiltonien $\hat{H}$ commute avec l’opérateur $\hat{R}$ représentant cette isométrie dans l’espace de Hilbert, \textit{i.e.}
+        \[ \left[\hat{R}, \hat{H}(t)\right] = 0 \]
+    \end{omed}
 
-    En effet, considérons un système dans l’état $\ket{\psi(t_0)}$ à un instant initial $t_0$. À $t_1$, ce système aura pour état $\ket{\psi(t_1)} = \hat{U}(t_1, t_0)\ket{\psi(t_0)} $. Que l’on tranforme ce système avant ou après son évolution n’a pas d’impact par définition de l’invariance par l’isométrie. Ainsi, 
+    \begin{demo}{Preuve}
+        En effet, considérons un système dans l’état $\ket{\psi(t_0)}$ à un instant initial $t_0$. À $t_1$, ce système aura pour état $\ket{\psi(t_1)} = \hat{U}(t_1, t_0)\ket{\psi(t_0)} $. Que l’on tranforme ce système avant ou après son évolution n’a pas d’impact par définition de l’invariance par l’isométrie. Ainsi, 
     \[ \hat{R}\hat{U}(t_1,t_0)\ket{\psi(t_0)} = \hat{U}(t_1,t_0)\hat{R}\ket{\psi(t_0)} \]
     Par validité pour tout état initial, on a donc 
     \[ \hat{R}\hat{U}(t_1,t_0) = \hat{U}(t_1,t_0)\hat{R} \quad \text{i.e.} \quad \left[\hat{R},\hat{U}(t_1,t_0)\right] = 0 \]
     puis en dérivant par rapport à $t_1$, et sachant que d’après l’équation de Schrödinger $i\hbar\frac{\partial \hat{U}(t,t_0)}{\partial t} = \hat{H}(t)\hat{U}(t,t_0)$, on obtient alors que 
     \[ \left[\hat{R},\hat{H}(t)\right] = 0 \]
+    \end{demo}
+
     Ceci implique immédiatemment, d’après le théorème d’Erhenfest, que la grandeur $R$ se conserve au cours du temps. 
 
     Lorsque l’hamiltonien est indépendant du temps, la recherche de ses états propres sera en outre simplifiée par le fait que les opérateurs $\hat{R}$ et $\hat{H}$ peuvent être diagonalisés dans une même base.
 
         \subsubsection{Générateur infinitésimal}
 
-    On considère un groupe de symétrie continue, que l’on admettra qu’il peut être caractérisé par un paramètre $a$. On admet aussi que lorsque c’est un groupe de Lie, on peut différencier l’opérateur $\mathcal{R}_a$ par rapport à $a$. On appelle \textbf{générateur infinitésimal} l’opérateur $\hat{G}$ défini par 
-    \[ \hat{R}_{da} = \hat{I} - \frac{i}{\hbar} \hat{G}da \]   
-    Pour satisfaire l’unitarité de $\hat{R}_{da}$, il faut et il suffit que $\hat{G} = \hat{G}^{\dagger}$, \textit{i.e.} que $\hat{G}$ soit un opérateur \textit{auto-adjoint}. On peut donc lui associer une grandeur physique observable. Par définition de $\hat{G}$, on a 
+    On considère un groupe de symétrie continue, que l’on admettra qu’il peut être caractérisé par un paramètre $a$. On admet aussi que lorsque c’est un groupe de Lie, on peut différencier l’opérateur $\hat{R}_a$ par rapport à $a$. 
+    
+    \begin{omed}{Générateur infinitésimal}
+        Soit $\hat{R}_a$ une isométrie dépendant d’un paramètre $a$. On appelle \textbf{générateur infinitésimal} l’opérateur $\hat{G}$ défini par 
+        \[ \hat{R}_{da} = \hat{I} - \frac{i}{\hbar} \hat{G}da \]   
+    \end{omed}
+    
+    Pour satisfaire l’unitarité de $\hat{R}_{da}$, il faut et il suffit que $\hat{G} = \hat{G}^{\dagger}$, \textit{i.e.} que $\hat{G}$ soit un opérateur \textit{auto-adjoint} (\textit{hermitien}). On peut donc lui associer une grandeur physique observable. Par définition de $\hat{G}$, on a 
     \[ \hat{G} = i\hbar \frac{\partial \hat{R}_a}{\partial a} (a = 0) \]   
     et sachant que $\left[\hat{R}_{da},\hat{H}(t)\right] = 0$, on trouve que 
     \[ \left[\hat{G}, \hat{H}\right] = 0 \]
-    La grandeur physique $G$ associée à $\hat{G}$ est donc une constante du mouvement : il s’agit de la version quantique du théorème de Noether.
+    La grandeur physique $G$ associée à $\hat{G}$ est donc une constante du mouvement : il s’agit de la version quantique du théorème de Noether.
+
+    Avec cette nouvelle définition, on peut réinterpréter les rôles de $\hat{U}$ et $\hat{H}$. En effet, en étudiant l’évolution d’un ket entre $t$ et $t + dt$, on a que 
+    \[ \ket{\psi(t + dt)} = \hat{U}(t + dt, t) \ket{\psi(t)} \]   
+    Or on sait aussi, d’après l’équation de Schrödinger que 
+    \begin{align*}
+        \ket{\psi(t + dt)}
+        &= \ket{\psi(t)} + dt \frac{\text{d}\ket{\psi(t)} }{\text{d}t}  + O\left(dt^2\right) \\
+        &= \left[\hat{I} - \frac{i}{\hbar} \hat{H}(t) dt\right] \ket{\psi(t)} + O\left(dt^2\right)
+    \end{align*} 
+    $\hat{H}$ est donc le générateur infinitésimal de l’évolution temporelle, et on retrouve l’unitarité de $\hat{U}$.
 
     \subsection{Parité}
 
-    On note $\hat{\Pi}$ l’opérateur parité, dont l’action sur une fonction d’onde est, par exemple sur une fonction d’onde $\psi(x)$ de $\mathcal{L}^2(\mathbf{R})$,
-    \[ \left(\hat{\Pi_x}\psi\right)(x) = \psi(-x) \quad \text{i.e.} \quad \bra{x} \hat{\Pi_x} \ket{\psi} = \spr{-x}{\psi} \]
-    On a ainsi $\bra{x} \hat{\Pi_x} = \bra{-x}$ et donc, par unitarité $\hat{\Pi_x} \ket{x} = \ket{-x}$, ce que l’on aurait pu prendre comme point de départ.
+    On note $\hat{\Pi}$ l’opérateur parité, dont l’action sur une fonction d’onde $\psi(x)$ de $\mathcal{L}^2(\mathbf{R})$ est,
+    \[ \left(\hat{\Pi}_x\psi\right)(x) = \psi(-x) \quad \text{i.e.} \quad \bra{x} \hat{\Pi}_x \ket{\psi} = \spr{-x}{\psi} \]
+    On a ainsi $\bra{x} \hat{\Pi}_x = \bra{-x}$ et donc, par unitarité $\hat{\Pi}_x \ket{x} = \ket{-x}$, ce que l’on aurait pu prendre comme point de départ.
 
     On peut aussi considéré l’opérateur parité dans $\mathcal{L}^2(\mathbf{R}^3)$, soit par la symétrie miroir par rapport à $x = 0$ définie par 
-    \[ (\hat{\Pi_x}\psi)(x,y,z) = \psi(-x,y,z) \]    
+    \[ (\hat{\Pi}_x\psi)(x,y,z) = \psi(-x,y,z) \]    
     ou l’inversion définie par 
     \[ (\hat{\Pi}\psi)(\vec{r}) = \psi(-\vec{r}) \quad \text{i.e.} \quad \hat{\Pi}\ket{\vec{r}} = \ket{-\vec{r}} \] 
 
@@ -59,7 +78,7 @@
 
     \subsection{Translations}
 
-    Considérons un système inviariant par \textit{toute transformation}, quelle que soit la direction où l’amplitude de la translation considérée. Un tel système est donc nécessairement homogène. 
+    Considérons un système inviariant par \textit{toute translation}, quelle que soit sa direction où son amplitude. Un tel système est nécessairement homogène. 
 
         \subsubsection{Translation dans L2R}
 
@@ -118,9 +137,9 @@
     \end{align*}
     ce qui nous donne bien la définition connue dans $\mathcal{L}^2(\mathbf{R}^3)$ 
     \[ \hat{\vec{p}} = \frac{\hbar}{i} \vec{\nabla} \]   
-    Mais la nouvelle définition a l’avantage d’être plus générale que cette dernière équation. Dans un système constitué de $N$ particules, l’opérateur translation s’écrit dans l’espace produit tensoriel $\mathcal{E}_H = \mathcal{E}_1 \oplus \cdots \oplus \mathcal{E}_N$ sous la forme 
+    Mais la nouvelle définition a l’avantage d’être plus générale que cette dernière équation. Dans un système constitué de $N$ particules, l’opérateur translation s’écrit dans l’espace produit tensoriel $\mathcal{E}_H = \mathcal{E}_1 \otimes \cdots \otimes \mathcal{E}_N$ sous la forme 
     \begin{align*}
-        \hat{T}_{d\vec{a}} = \hat{T}_{d\vec{a}}^{(1)} \oplus \cdots \oplus \hat{T}_{d\vec{a}}^{(N)} 
+        \hat{T}_{d\vec{a}} = \hat{T}_{d\vec{a}}^{(1)} \otimes \cdots \otimes \hat{T}_{d\vec{a}}^{(N)} 
         &= \left(\hat{I} - \frac{i}{\hbar}\hat{\vec{p}}_1 \cdot d\vec{a}\right)\cdots\left(\hat{I} - \frac{i}{\hbar}\hat{\vec{p}}_N \cdot d\vec{a}\right) \\
         &= \hat{I} - \frac{i}{\hbar} \sum_{j=1}^N \hat{\vec{p}}_j \cdot d\vec{a}
     \end{align*}
@@ -146,7 +165,11 @@
     \end{omed}
 
     Bien que $k_x$ ne soit pas exactement le vecteur d’onde et $\psi(x)$ pas une onde plane, on peut tout de même chercher cette fonction sous la forme du produit de l’onde plane $\exp(i k_x x)$ par une enveloppe \textit{a priori} arbitraire $u(x)$ soit $\psi(x) = \exp(i k_x x) u(x)$. La fonction translatée est 
-    \[ \psi(x-a) = \exp(i k_x (x-a)) u(x-a) = \exp(- i k_x a) \exp(i k_x x) u(x-a) \]   
+    \begin{align*}
+        \psi(x-a)
+        &= \exp(i k_x (x-a)) u(x-a) \\
+        &= \exp(- i k_x a) \exp(i k_x x) u(x-a)
+    \end{align*}
     Ainsi, $\hat{T}_a \ket{\psi} = e^{-ik_xa} \ket{\psi} $ si et seulement si $u(x-a) = u(x)$, ce qui revient à dire que $u$ est une fonction périodique de période $a$, ce qui nous permet d’obtenir une seconde formulation au théorème de Bloch.
 
     \begin{omed}{Théorème de Bloch (version 2)}

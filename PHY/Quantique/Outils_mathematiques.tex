@@ -2,23 +2,17 @@
 
     \subsection{Notation de Dirac}
 
-        On se place dans l’espace des états $\mathcal{E}_H$. 
-
-        On désigne par \textbf{ket} et on note $\ket{\psi}$ tout vecteur de $\mathcal{E}_H$. 
-
-        On désigne par \textbf{bra} et on note $\bra{\phi}$ tout vecteur de $\mathcal{E}_H^*$ qui est l’unique fonctionnelle linéaire (d’après le théorème de représentation de Riesz) associée $\ket{\phi}$. :
+        On se place dans l’espace de Hilbert des états $\mathcal{E}_H$. On désigne par \textbf{ket} et on note $\ket{\psi}$ tout vecteur de $\mathcal{E}_H$. On désigne par \textbf{bra} et on note $\bra{\phi}$ tout vecteur de $\mathcal{E}_H^*$ qui est l’unique fonctionnelle linéaire (d’après le théorème de représentation de Riesz) associée $\ket{\phi}$. :
         \[ \bra{\phi} : \ket{\psi} \in \mathcal{E}_H \mapsto \spr{\phi}{\psi} \]
 
         \subsubsection{Opérateurs linéaires}
 
-        Un opérateur linéaire $\hat{A} : \mathcal{E}_H \to \mathcal{E}_H$ est une fonction linéaire de $\mathcal{E}_H$ dans lui-même. 
-
-        Si on considère une base $\left\{\ket{\psi_n}\right\}$ de $\mathcal{E}_H$, on peut définir la matrice de l’opérateur dans cette base, qui aura pour coefficients 
+        Un opérateur linéaire $\hat{A} : \mathcal{E}_H \to \mathcal{E}_H$ est une fonction linéaire de $\mathcal{E}_H$ dans lui-même. Si on considère une base $\left\{\ket{\psi_n}\right\}$ de $\mathcal{E}_H$, on peut définir la matrice de l’opérateur dans cette base, qui aura pour coefficients 
         \[ A_{m,n} = \bra{\psi_m} \hat{A} \ket{\psi_n} \]
         ce qui permet d’écrire directement l’opérateur sous la forme 
         \[ \hat{A} = \sum_{m,n} A_{m,n} \ket{\psi_m} \bra{\psi_n} \]  
 
-        L’opérateur le plus commun est l’identité, qui peut s’écrire dans une base de $\mathcal{E}_H$ comme 
+        L’opérateur le plus commun est l’identité, qui peut s’écrire dans une base orthonormale de $\mathcal{E}_H$ comme 
         \[ \hat{I} = \sum_{n} \hat{P}_n := \sum_{n} \ket{\psi_n} \bra{\psi_n} \]   
         où les $\hat{P}_n$ sont les projecteurs sur l’espace $\ket{\psi_n}$, grâce à l’orthonormalité de la base. On appelle cette écriture la \textbf{relation de fermeture}.
 
@@ -31,11 +25,12 @@
 
             Alors $\hat{A}$ est diagonalisable : il existe une base orthonormée $\left\{\ket{\psi_n}\right\}$ constituée de vecteurs propres de $\hat{A}$, et 
             \[ \hat{A} = \sum_n a_n \ket{\psi_n} \bra{\psi_n} \]   
+            où les $a_n \in \text{sp}(\hat{A})$ sont des réels.
         \end{omed}
 
     \subsection{Transformation de Fourier}
 
-        On sait que l’espace des états $\mathcal{E}_H$ est homéomorphe à $\mathcal{L}^2(\mathbf{R})$ et on se place dans cette sous-section dans le formalisme de $\mathcal{L}^2(\mathbf{R})$. 
+        Considérons le cas d’une particule se déplaçant sur un axe qui décrit sa position. On sait que l’espace des états $\mathcal{E}_H$ est homéomorphe à $\mathcal{L}^2(\mathbf{R})$ et on se place dans cette sous-section dans le formalisme de $\mathcal{L}^2(\mathbf{R})$. 
         
         On considère la fonction d’onde $\psi(x) = \spr{x}{\psi}$ qui décrit l’état physique du système dans l’\textbf{espace direct} (associé à la position). On cherche l’expression de $\tilde{\psi}(p) = \spr{p}{\psi}$. qui décrit l’état physique du système dans l’\textbf{espace de Fourier} (associé à l’impulsion). 
 
@@ -45,11 +40,14 @@
             &= \int \psi(x) \spr{p}{x} dx \\
         \end{align*}
         
-        Pour trouver l’expression de $\spr{p}{x} = \overline{\spr{x}{p}}$, considérons l’action de $\hat{p}$ sur une fonction d’onde particulière : l’onde plane $e^{ikx}$, qui est une fonction propre de $\hat{p}$ pour la valeur propre $\hbar k$. Cela implique que 
-        \[ \bra{x} \hat{p} \ket{\psi} = \hat{p}\psi(x) = \frac{\hbar}{i} \frac{\text{d}\psi}{\text{d}x} \]
-        Ainsi, 
-        \[ \spr{x}{p_x} = \frac{e^{\frac{i p_x x}{\hbar}}}{\sqrt{2\pi \hbar}} \]
-
+        Pour exprimer le contenu de cette intégrale, il nous faut la valeur de $\spr{p}{x}$. On sait que $\hat{p} = \frac{\hbar}{i} \frac{\text{d}}{\text{d}x}$, donc 
+        \begin{align*}
+            p\spr{x}{p} 
+            &= \bra{x} \hat{p} \ket{p} \\
+            &= \frac{\hbar}{i} \frac{\text{d}}{\text{d}x} \spr{x}{p} \\ 
+        \end{align*}
+        Par résolution de l’équation différentielle, on obtient $\spr{x}{p} = C(p) \exp\left(\frac{ipx}{\hbar}\right)$, puis la normalisation implique que 
+        \[ \spr{x}{p} = \frac{e^{\frac{i p_x x}{\hbar}}}{\sqrt{2\pi \hbar}} \]
         Donc 
         \[ \tilde{\psi}(p) = \frac{1}{\sqrt{2 \pi \hbar}} \int \psi(x) \exp\left(\frac{- i p x}{\hbar}\right) dx := \mathcal{F}[\psi](p) \]
         où $\mathcal{F}$ est la \textbf{transformation de Fourier}, qui nous envoie dans l’espace de Fourier.
