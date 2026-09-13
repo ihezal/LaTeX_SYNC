@@ -19,7 +19,11 @@
         width = \linewidth,
         hlines = {0.6pt, gray!50},
         vlines = {0pt},
-        row{1} = {font=\bfseries, bg=couleurmatiere!20}
+        row{1} = {font=\bfseries, bg=couleurmatiere!20},
+    }
+    \SetTblrOuter{
+        presep = 20pt,
+        postsep = 20pt,
     }
 }
 
@@ -35,8 +39,8 @@
 
 \tableofcontents
 
-\input{LJA/Vocabulaire.tex}
-\input{LJA/Grammaire.tex}
+%\input{LJA/Vocabulaire.tex}
+%\input{LJA/Grammaire.tex}
 \input{LJA/Conjugaison.tex}
 
 \end{document}

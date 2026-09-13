@@ -376,11 +376,9 @@ INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./LJA.toc
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 OUTPUT LJA.toc
-INPUT ./LJA/Vocabulaire.tex
-INPUT ./LJA/Grammaire.tex
 INPUT ./LJA/Conjugaison.tex
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 INPUT ./LJA.aux
 INPUT ./LJA.out
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb
