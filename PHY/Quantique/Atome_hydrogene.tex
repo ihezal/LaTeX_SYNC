@@ -36,7 +36,7 @@
         On peut se ramener à l’étude de deux systèmes indépendants, correspondant d’une part au mouvement libre du centre de masse, de masse $M = m_1 + m_2$, et d’autre part au mouvement d’une particule fictive plongée dans le potentiel $V(r)$ de masse réduite $\mu$.
     \end{omed}
 
-    \begin{omed}{Démonstration}
+    \begin{demo}{Démonstration}
         On effectue un changement de variable en posant 
         \[ \vec{R} = \frac{m_1 \vec{r_1} + m_2 \vec{r_2}}{M} \]   
         qui correspond à la position du centre de masse. Ce changement de variable nous permet de réinterpréter $\vec{r_1}$ et $\vec{r_2}$ comme
@@ -82,7 +82,7 @@
         En utilisant les états propres $\ket{\vec{P}}$ de l’opérateur impulsion totale, on peut écrire les fonctions propres de l’hamiltonienn total sous la forme 
         \[ \Phi(\vec{R}, \vec{r}) = \frac{e^{i \frac{\vec{P} \cdot \vec{R}}{\hbar}}}{(2\pi \hbar)^{\frac{3}{2}}} \psi(\vec{r}) \]   
         où $\psi(\vec{r})$ est une fonction propre de $\hat{H}$ associée à la valeur propre $E$. L’énergie totale sera alors égale à $\frac{P^2}{2M} + E$. 
-    \end{omed}
+    \end{demo}
 
     On peut donc, pour l’étude du système, écrire l’hamiltonien du système sous la forme
     \[ \hat{H}_{\text{tot}} = \frac{\hat{P}^2}{2M} + \frac{\hat{p}^2}{2 \mu} + V(\hat{r}) \]   
@@ -186,7 +186,67 @@
 
         Un des résultats remarquables est l’apparition de l’entier $n$ strictement positif, appelé \textbf{nombre quantique principal}, qui détermine entièrement la valeur de l’énergie $E_n$. À énergie constante, on peut trouver différentes valeurs diverses du moment cinétique puisque $\ell \in \intEN{0}{n-1}$. La dégénérescence du niveau $E_n$ est donc égale à 
         \[ g_n = \sum_{\ell = 0}^{n-1} \left(2\ell + 1\right) = n^2 \]   
-        La projection du moment cinétique sur l’axe $z$ prendre enfin la valeur $m \hbar$ où $m \in \intEN{-\ell}{\ell}$, ce qui montre que le moment cinétique ne pourra jamais atteindre la valeur $n\hbar$ utilisée pour établir le résultat du modèle de Bohr.
+        La projection du moment cinétique sur l’axe $z$ prendre enfin la valeur $m \hbar$ où $m \in \intEN{-\ell}{\ell}$, ce qui montre que le moment cinétique ne pourra jamais atteindre la valeur $n\hbar$ utilisée pour établir le résultat du modèle de Bohr. 
+
+    \subsection{Interaction spin-orbite}
+
+        Lors de l’étude précédente des états liés de l’atome d’hydrogène, nous n’avons pas tenu compte du degré de liberté de spin de l’électron. La conséquence de son introduction est \textit{a priori} de multiplier par deux la dégénérescence de tous les niveaux d’énergie identifiés, les portant à $2 n^2$ pour le niveau d’énergie $E_n$. On aurait ainsi 
+        \[ \hat{H}_0 \ket{n,\ell,m} \otimes \ket{\pm} = E_n \ket{n, \ell, m} \otimes \ket{\pm} \] 
+
+        Toutefois, l’hamiltonien $\hat{H}_0$ ne décrit pas parfaitement l’état du système complet et il faut y ajouter un terme supplémentaire faisant intervenir explicitement le spin de l’électron en raison d’effets relativistes. On admet que le terme correctif, dit d’\textbf{interaction spin-orbite}, à apporter est :
+        \[ \hat{W}_{\text{SO}} = \frac{1}{2 m_e^2 c^2} \frac{1}{\hat{r}} \frac{\text{d}V}{\text{d}r}(\hat{r}) \hat{\vec{L}} \cdot \hat{\vec{S}}_e \]
+
+        En ordre de grandeurs, on remarque que 
+        \[ \frac{W_{\text{SO}}}{E_I} \approx \frac{e^4}{\hbar^2 c^2} = \alpha^2 \approx 10^{-4} \]
+        où $\alpha$ est la constante de structure fine, ce qui signifie que l’on peut traiter cette variation par la méthode des perturbations. Il est notable que la présence de ce terme $\hat{W}_{\text{SO}}$ implique que le moment cinétique orbital $\hat{\vec{L}}$ ne commute plus avec $\hat{H}$. Il faut maintenant considérer le moment cinétique total $\hat{\vec{J}} = \hat{\vec{L}} + \hat{\vec{S}}_e$ qui correspond au véritable générateur infinitésimal des rotations du système complet. On peut vérifier que 
+        \[ \hat{\vec{L}} \cdot \hat{\vec{S}}_e = \frac{1}{2} \left(\hat{J}^2 - \hat{L}^2 - \hat{S}^2_e\right) \]   
+        Cette expression montre explicitement que $\hat{W}_{\text{SO}}$ commute avec $\hat{\vec{J}}$, è. Compte tenu des résultats sur l’addition des moments cinétiques, on sait que les valeurs propres de $\hat{J}^2$ seront de la forme $j(j+1)\hbar^2$ avec $j = \ell \pm \frac{1}{2}$.
+
+        Dans le cas de l’atome d’hydrogène, le niveau fondamental $1s$ de l’hamiltonien $\hat{H}_0$ est doublement dégénéré, et une base de celui c-ci peut s’écrire $\left\{\ket{1,0,0} \otimes \ket{\pm}\right\}$. Ces deux états correspondant à $\ell = 0$ sont vecteurs propres de $\hat{L}_x$, $\hat{L}_y$ et $\hat{L}_z$ pour la valeur propre $0$, donc $\hat{W}_0 \ket{1,0,0} \otimes \ket{\pm} = 0$. L’interaction spin-orbite est sans effet sur ces états. Il faudrait de plus considérer le couplage avec le spin du noyau pour observer une levée de dégénérescence, phénomène que l’on appelle \textbf{structure hyperfine}.
+
+    \subsection{Structure fine de l’atome d’hydrogène}
+
+        Dans le cas de l’atome d’hydrogène, le noyau est un proton, de spin 1/2. Ce degré de liberté supplémentaire, une fois considéré, fait apparaître une interaction entre les dipôles magnétiques du proton et de l’électron :
+        \[ W_{HF} = \frac{\mu_0}{3\pi r^3} \left(\vec{\mu}_e \cdot \vec{\mu}_p - 3 (\vec{\mu}_e \cdot \vec{u})(\vec{\mu}_p \cdot \vec{u})\right) - \frac{2\mu_0}{3} \vec{\mu}_e \cdot \vec{\mu}_p \delta(\vec{r}) \]
+        où $\mu_0$ est la perméabilité magnétique du vide, tandis que $\vec{\mu}_e$ et $\vec{\mu}_p$ sont le moments magnétiques de l’électron et du proton. $\vec{u}$ est un vecteur unitaire porté par le vecteur $\vec{r}$ séparant les deux dipôles. Le \textbf{terme de contact} proportionnelle à la fonction de Dirac $\delta(\vec{r})$ est essentiel car la probabilité que l’électron et le proton soient au même point est non nulle. En ordres de grandeur, $\frac{W_{HF}}{E_I} \approx 10^{-6}$ donc on peut tout à fait traiter ce problème par méthode des perturbations.
+
+        Considérons le cas du niveau fondamental de l’atome d’hydrogène, d’énergie $E_1 = - E_I$, et correspondant aux états de la forme $\ket{1,0,0} \otimes \ket{e : \pm} \otimes \ket{p : \pm}$. 
+        
+        \begin{omed}{Opérateur $\hat{H}_1$ dans l’état fondamental}
+            La restriction de l’opérateur $\hat{W}_{\text{HF}}$ sur l’espace des spins $\left\{\ket{e : \pm, p : \pm}\right\}$ est 
+            \[ \hat{H}_1 = A \left(\frac{1}{2} \frac{\hat{S}^2}{\hbar^2} - \frac{3}{4}\hat{I}\right) \] 
+            où $A \approx 5.87 \, \mu\text{eV}$. 
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Rappelons l’expression de $\hat{W}_{\text{HF}}$, que l’on notera ici 
+            \[ \hat{W} := \frac{\mu_0}{4\pi} \left(\frac{\hat{\vec{\mu}}_e \cdot \hat{\vec{\mu}}_p}{\hat{r}^3} - 3 \frac{(\hat{\vec{\mu}}_e \cdot \hat{\vec{r}}) (\hat{\vec{\mu}}_p \cdot \hat{\vec{r}})}{\hat{r}^5}\right) - \frac{2\mu_0}{3} \hat{\vec{\mu}}_e \cdot \hat{\vec{\mu}}_p \delta(\vec{r}) \]
+            Les opérateurs $\hat{\vec{\mu}}_{e,p}$ agissent sur les spins, alors que l’opérateur $\hat{\vec{r}}$ agit sur la partie spaciale. On définit l’opérateur $\hat{H_1}$, qui agit sur l’espace des spins, par ses éléments matriciels : 
+            \[ \bra{1,0,0,\sigma_e, \sigma_p} \hat{W} \ket{1,0,0, \sigma_e', \sigma_p'} = \bra{\sigma_e, \sigma_p} \hat{H}_1 \ket{\sigma_e', \sigma_p'} \]    
+            Autrement dit, pour définir $\hat{H}_1$, on prend $\hat{W}$, puis on « intègre » sur sa partie spaciale en moyennant sur les états orbitaux $\ket{1,0,0}$ :
+            \[ \hat{H}_1 = \frac{\mu_0}{4\pi} \left(\left<\frac{1}{r^3}\right>\hat{\vec{\mu}}_e \cdot \hat{\vec{\mu}}_p - 3\left<\frac{(\hat{\vec{\mu}}_e \cdot \vec{r}) (\hat{\vec{\mu}}_p \cdot {\vec{r}})}{r^5}\right> \right) - \frac{2\mu_0}{3} \hat{\vec{\mu}}_e \cdot \hat{\vec{\mu}}_p \left<\delta(\vec{r})\right> \]
+            Calculons les moyennes intervenant dans cette formule. Par symétrie, on sait que les produits associés à deux composantes cartésiennes différentes (comme $\left< xy \right>$) sont nuls. De même, par symétrie, $\left<x^2 \right> = \left<y^2 \right> = \left<z^2 \right> = \frac{1}{3} \left<r^2 \right>$. Ainsi,
+            \begin{align*}
+                \left<\frac{(\hat{\vec{\mu}}_e \cdot \vec{r}) (\hat{\vec{\mu}}_p \cdot {\vec{r}})}{r^5}\right> 
+                &= \hat{\mu}_{ex} \hat{\mu}_{px}\left<\frac{x^2}{r^5}\right> + \hat{\mu}_{ey} \hat{\mu}_{py} \left<\frac{y^2}{r^5}\right>+ \hat{\mu}_{ez} \hat{\mu}_{pz} \left<\frac{z^2}{r^5}\right> \\
+                &= \frac{1}{3} \left<\frac{1}{r^3}\right> \hat{\vec{\mu}}_e \cdot \hat{\vec{\mu}}_p \\
+            \end{align*}
+            Cette moyenne s’annule donc avec l’autre membre de la parenthèse, et il ne reste qu’à calculer 
+            \[ \left<\delta(\vec{r})\right> = \iiint \abs{\psi_{1s}(\vec{r})}^2\delta(\vec{r}) d^3r = \abs{\psi_{1s}(0)}^2 \]
+            Sachant que l’expression de la partie radiale de la fonction d’onde du niveau fondamental s’écrit $\psi_{1s}(\vec{r}) = \sqrt{\frac{1}{\pi a_1^3}} \exp\left(-\frac{r}{a_1}\right)$, on obtient finalement 
+            \[ \hat{H_1} = - \frac{2\mu_0}{3\pi a_1^3} \hat{\vec{\mu}}_e \cdot \hat{\vec{\mu}}_p \]
+            On conclut en utilisant que $\hat{\vec{\mu}}_{e,p} = \gamma_{e,p} \hat{\vec{S}}_{e,p}$.
+
+            Or on a que $\hat{S}^2 = \hat{S}^2_e + \hat{S}^2_p + 2 \hat{\vec{S}}_e \cdot \hat{\vec{S}}_p$, ce qui nous permet d’écrire que 
+            \[ \hat{\vec{S}}_e \cdot \hat{\vec{S}}_p = \frac{1}{2} \left(\hat{S}^2 - \hat{S}^2_e - \hat{S}^2_p\right) \]
+            Les particules $e$ et $p$ étant de spin 1/2, $\hat{S}_e^2 = \hat{S}_p^2 = \frac{3}{4} \hbar^2 \hat{I}$ et donc 
+            \[ \hat{H}_1 = A \left(\frac{1}{2} \frac{\hat{S}^2}{\hbar^2} - \frac{3}{4}\hat{I}\right) \]  
+        \end{demo}
+          
+        L’hamiltonien de structure hyperfine s’exprime donc directement en fonction de l’observable $\hat{S}^2$. Le cas de l’addition de deux spins 1/2 ayant déjà été traité dans ce poly, la base couplée constituant une base propre de l’hamiltonien, on peut écrire directement que 
+        \[ \hat{H}_1 \ket{s,m} = A \left(\frac{s(s+1)}{2} - \frac{3}{4}\right) \ket{s,m} \]   
+        On a donc $\hat{H}_1 \ket{1,m} = \frac{A}{4} \ket{1,m}$ et $\hat{H}_1 \ket{0,0} = - \frac{3A}{4} \ket{0,0}$. Le niveau fondamental de l’atome d’hydrogène est ainsi clivé en deux sous-niveaux. Un sous-niveau singulet, non dégénéré, qui devient le véritable état fondamental du système, ainsi qu’un sous-niveau triplet, dégénéré trois fois. L’amplitude du clivage est de l’ordre de $A \approx 5.87 \, \mu\text{eV}$, ce qui correspond à une fréquence de $\nu \approx 1.42 \, \text{GHz}$ et une longueur d’onde de $\lambda \approx 21 \, \text{cm}$
+
 
 
 

@@ -92,9 +92,9 @@
 
         Pour déterminer la forme de la fonction $F(\theta)$, il faudrait résoudre la première équation du système considéré, avec $\ell \in \mathbf{N}$, mais celle-ci est du second ordre. On préfèrera donc utiliser la méthode de construction de la base standard à l’aide de l’opérateur différentiel du premier ordre $\hat{L}_+ = \hat{L}_x + i \hat{L}_y$, en commençant par le cas $m = -\ell$. Étant donné qu’il s’agit de la plus petite valeur de $m$ acceptable, on sait que $\hat{L}_- Y(\theta, \varphi) = 0$. En utilisant la forme de $L_-$, on obtient donc 
         \begin{align*}
-            \left(-\frac{\partial }{\partial \theta} + i \cotan(\theta) \frac{\partial }{\partial \varphi} \right) F(\theta) e^{- i \ell \varphi} &= 0 \\
-            \frac{\text{d}F}{\text{d}\theta} &\overset{\Updownarrow}{=} \ell \cot(\theta) F(\theta) \\
-            \frac{\text{d}F}{F} &\overset{\Updownarrow}{=} \ell \cotan(\theta) \text{d}\theta \\
+            \left(-\frac{\partial }{\partial \theta} + i \text{cotan}(\theta) \frac{\partial }{\partial \varphi} \right) F(\theta) e^{- i \ell \varphi} &= 0 \\
+            \frac{\text{d}F}{\text{d}\theta} &\overset{\Updownarrow}{=} \ell \text{cotan}(\theta) F(\theta) \\
+            \frac{\text{d}F}{F} &\overset{\Updownarrow}{=} \ell \text{cotan}(\theta) \text{d}\theta \\
         \end{align*}
         En intégrant, on obtient $F_{\ell, -\ell}(\theta) = c_{\ell} \sin^{\ell}(\theta)$. La condition de normalisation de $Y_{\ell, -\ell}$ implique que 
         \[ F_{\ell, -\ell}(\theta) = \frac{1}{2^{\ell} \ell!} \sqrt{\frac{(2\ell + 1)!}{4\pi}} \sin^{\ell}(\theta) \]  
@@ -109,7 +109,15 @@
 
         \subsubsection{Premières harmoniques sphériques}
 
-
+        \begin{itemize}
+            \item \textbf{Cas $\ell = 0$ :} $Y_{0,0}(\theta, \varphi) = F_{0,0}(\theta) = c_0$. La normalisation implique que 
+            \[ Y_{0,0}(\theta, \varphi) = \frac{1}{\sqrt{4\pi}} \]   
+            \item \textbf{Cas $\ell = 1$ :} Avec la formule trouvée précédemment,
+            \[ Y_{1, -1}(\theta, \varphi) = \sqrt{\frac{3}{8\pi}} e^{-\varphi} \sin(\theta) \]   
+            En appliquant $\hat{L}_+$ à $Y_{1,-1}(\theta,\varphi)$, on trouve 
+            \[ Y_{1,0}(\theta, \varphi) = \sqrt{\frac{3}{4\pi}} \cos(\theta) \]   
+            La relation de conjugaison nous donne 
+        \end{itemize}
 
     \subsection{Rotation d’une molécule diatomique}
 

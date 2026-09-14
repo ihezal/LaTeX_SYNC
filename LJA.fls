@@ -359,9 +359,6 @@ INPUT c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT c:/texlive/2023/texmf-dist/tex/latex/ninecolors/ninecolors.sty
-INPUT ./LJA.out
-INPUT ./LJA.out
-INPUT ./LJA.out
 OUTPUT LJA.out
 INPUT ./LJA.ltjruby
 OUTPUT LJA.ltjruby
@@ -375,7 +372,6 @@ INPUT ./_Images/poly-armes-colorless.pdf
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT ./LJA.toc
 OUTPUT LJA.toc
 INPUT ./LJA/Conjugaison.tex
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm

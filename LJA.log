@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.16)  12 SEP 2026 15:22
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.16)  13 SEP 2026 20:02
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/o-all/Desktop/LaTeX_SYNC/LJA.tex
@@ -112,11 +112,11 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 ) (c:/texlive/2023/texmf-dist/tex/latex/polyglossia/gloss-french.ldf
 File: gloss-french.ldf polyglossia: module for French
 Module polyglossia Info: Language data for french
-(polyglossia)            lefthyphenmin	2
 (polyglossia)            patterns	hyph-fr.pat.txt
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            hyphenation	
 (polyglossia)            synonyms	patois,francais
 (polyglossia)            loader	loadhyph-fr.tex
-(polyglossia)            hyphenation	
 (polyglossia)            righthyphenmin	2 on input line 17
 Module polyglossia Info: Language french was not yet loaded; created with id 2 on input line 17
 Lua-only attribute polyglossia_punct = 4
@@ -1266,7 +1266,20 @@ Inserting `luatexja.ruby.np_info_after' in `luatexja.jfmglue.whatsit_after'.
 Inserting `luatexja.beginpar.np_info_after' in `luatexja.jfmglue.whatsit_after'.
 Inserting `luatexja.ruby.np_info_last_minute' in `luatexja.jfmglue.whatsit_last_minute'.) (c:/texlive/2023/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-) (c:/texlive/2023/texmf-dist/tex/luatex/luatexja/patches/lltjp-array.sty
+)
+
+c:/Users/o-all/Desktop/LaTeX_SYNC/LJA.tex:15: Package xcolor Error: Undefined color `couleurmatiere'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 }
+    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(c:/texlive/2023/texmf-dist/tex/luatex/luatexja/patches/lltjp-array.sty
 Package: lltjp-array 2019-07-18 Patch to array for LuaTeX-ja
 )
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
@@ -1359,7 +1372,6 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 )
 Package hyperref Info: Link coloring ON on input line 36.
- (./LJA.out) (./LJA.out)
 \@outlinefile=\write6
 
 \openout6 = LJA.out
@@ -1429,7 +1441,7 @@ Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
 Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
 Inserting `ltj.ruby.pre' in `hpack_filter'.
 Inserting `ltj.ruby.post_hbox' in `hpack_filter'. (./_Template/Titlepage.tex
-<_Images/poly-vert-colorless.pdf, id=127, 345.29pt x 599.23875pt>
+<_Images/poly-vert-colorless.pdf, id=43, 345.29pt x 599.23875pt>
 File: _Images/poly-vert-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-vert-colorless.pdf>
 Package luatex.def Info: _Images/poly-vert-colorless.pdf  used on input line 5.
@@ -1443,14 +1455,14 @@ LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <10> not available
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 9.6222pt on input line 6.
 (load cache: extra_haranoajigothic-medium.luc)
-<_Images/poly-armes-colorless.pdf, id=128, 598.235pt x 788.9475pt>
+<_Images/poly-armes-colorless.pdf, id=44, 598.235pt x 788.9475pt>
 File: _Images/poly-armes-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-armes-colorless.pdf>
 Package luatex.def Info: _Images/poly-armes-colorless.pdf  used on input line 7.
 (luatex.def)             Requested size: 578.15999pt x 762.52136pt.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 10.
-<_Images/poly-filet-colorless.pdf, id=129, 124.21407pt x 2.1681pt>
+<_Images/poly-filet-colorless.pdf, id=45, 124.21407pt x 2.1681pt>
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 12.
@@ -1498,10 +1510,36 @@ LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <14.4> not available
 (Font)              Font shape `JY3/gt/m/n' tried instead on input line 40.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 13.85594pt on input line 40.
- (./LJA.toc
-LaTeX Info: Redefining \rmfamily on input line 2.
-LaTeX Info: Redefining \sffamily on input line 2.
-LaTeX Info: Redefining \ttfamily on input line 2.
+
+No file LJA.toc.
+\tf@toc=\write7
+
+\openout7 = LJA.toc
+(./LJA/Conjugaison.tex
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 11.54663pt on input line 3.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 11.54663pt on input line 3.
+LaTeX Font Info:    Font shape `JT3/mc/b/n' in size <12> not available
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 11.54663pt on input line 3.
+LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <12> not available
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 11.54663pt on input line 3.
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 4.8111pt on input line 5.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 4.8111pt on input line 5.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Erewhon-Math' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -1858,57 +1896,28 @@ Package microtype Info: Character `textquestiondown ' is missing
 (microtype)             in font `TU/Erewhon-Math(3)/m/n/5.5'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 4.
+(Font)              scaled to size 6.73553pt on input line 93.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 5.2922pt on input line 4.
-)
-\tf@toc=\write7
-
-\openout7 = LJA.toc
- (./LJA/Conjugaison.tex
-LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 3.
-LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 3.
-LaTeX Font Info:    Font shape `JT3/mc/b/n' in size <12> not available
-(Font)              Font shape `JT3/gt/m/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 3.
-LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <12> not available
-(Font)              Font shape `JY3/gt/m/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 3.
-LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 5.
-LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 5.
+(Font)              scaled to size 5.2922pt on input line 93.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 82.
+(Font)              scaled to size 8.65997pt on input line 114.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 82.
+(Font)              scaled to size 8.65997pt on input line 114.
 LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
-(Font)              scaled to size 9.0pt on input line 82.
+(Font)              scaled to size 9.0pt on input line 114.
 [1
 
 ]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 138.
 > Step: init table outer spec.
@@ -1955,34 +1964,44 @@ Overfull \hbox (59.46562pt too wide) in paragraph at lines 177--178
 [][] 
  []
 
-[2] [3]
+[2]
 LaTeX Font Info:    Kanji font shape `JY3/mc/m/it' undefined
 (Font)              No change on input line 315.
- [4]) [5
+ [3] [4]) [5
 
 ] (./LJA.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-11>
  ***********
-Package rerunfilecheck Info: File `LJA.out' has not changed.
-(rerunfilecheck)             Checksum: C426C955728AA29169EAF18B01F48FB0;3285.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `LJA.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `LJA.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  C426C955728AA29169EAF18B01F48FB0;3285.
 )
 
 Here is how much of LuaTeX's memory you used:
- 44631 strings out of 476506
- 477004,2373549 words of node,token memory allocated
- 3800 words of node memory still in use:
-   35 hlist, 2 vlist, 19 rule, 1 local_par, 15 glue, 5 kern, 3 penalty, 50 glyph, 954 attribute, 57 glue_spec, 158 attribute_list, 2 write, 13 user_defined, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 1:47,2:126208,3:4765,4:3569,5:585,6:226,7:11908,8:2,9:5273,10:18,11:453,12:1
- 65536 multiletter control sequences out of 65536+600000
- 68 fonts using 66614335 bytes
- 107i,12n,105p,1784b,1162s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-BoldItalic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf><c:/texlive/2023/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb>
-Output written on LJA.pdf (6 pages, 259183 bytes).
+ 44593 strings out of 476506
+ 477029,2373549 words of node,token memory allocated
+ 3820 words of node memory still in use:
+   35 hlist, 2 vlist, 19 rule, 1 local_par, 15 glue, 5 kern, 3 penalty, 50 glyph, 963 attribute, 57 glue_spec, 159 attribute_list, 2 write, 13 user_defined, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 1:24,2:119343,3:4004,4:2941,5:514,6:189,7:11310,8:4,9:4526,10:18,11:425,12:1
+ 65513 multiletter control sequences out of 65536+600000
+ 68 fonts using 66614291 bytes
+ 107i,11n,105p,1784b,1160s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-BoldItalic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf><c:/texlive/2023/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb>
+Output written on LJA.pdf (6 pages, 256105 bytes).
 
-PDF statistics: 358 PDF objects out of 1000 (max. 8388607)
- 254 compressed objects within 3 object streams
+PDF statistics: 272 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
  49 named destinations out of 1000 (max. 131072)
- 424 words of extra memory for PDF output out of 10000 (max. 100000000)
+ 256 words of extra memory for PDF output out of 10000 (max. 100000000)
 

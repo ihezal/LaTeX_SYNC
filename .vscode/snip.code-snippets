@@ -139,5 +139,9 @@
     "prefix": "@brkt",
     "body": "\\bra{${1:}} ${2:} \\ket{${3:}} $0"
   },
+  "hatvec": {
+    "prefix": "@hv",
+    "body": "\\hat{\\vec{${1:}}}$0"
+  },
 
 }

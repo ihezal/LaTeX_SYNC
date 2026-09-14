@@ -315,13 +315,13 @@ INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./PHY_Quantique.toc
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 OUTPUT PHY_Quantique.toc
-INPUT ./PHY/Quantique/Polarisation_photon_unique.tex
 INPUT ./PHY/Quantique/Principes_fondamentaux.tex
 INPUT ./PHY/Quantique/Outils_mathematiques.tex
 INPUT ./PHY/Quantique/Methodes_dapproximation.tex
 INPUT ./PHY/Quantique/Symetrie.tex
-INPUT ./PHY/Quantique/Spin_1-2.tex
 INPUT ./PHY/Quantique/Moment_cinetique.tex
+INPUT ./PHY/Quantique/Moment_cinetique_orbital.tex
+INPUT ./PHY/Quantique/Moment_cinetique_intrinseque.tex
 INPUT ./PHY/Quantique/Atome_hydrogene.tex
 INPUT ./PHY_Quantique.aux
 INPUT ./PHY_Quantique.out

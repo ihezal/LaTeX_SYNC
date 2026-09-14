@@ -1,160 +1,162 @@
-\section{Moment cinétique}
+\section{Moment cinétique, théorie générale}
 
-    \subsection{Rotations et moment cinétique}
+\subsection{Rotations et moment cinétique}
 
-        On introduit l’opérateur rotation $\hat{R}_{\vec{\alpha}}$ correspondant à l’effet dans l’espace de Hilbert à une rotation d’axe colinéaire au vecteur $\vec{\alpha}$ et d’angle égal à la norme $\nor{\vec{\alpha}}$.
+On introduit l’opérateur rotation $\hat{R}_{\vec{\alpha}}$ correspondant à l’effet dans l’espace de Hilbert à une rotation d’axe colinéaire au vecteur $\vec{\alpha}$ et d’angle égal à la norme $\nor{\vec{\alpha}}$. L’espace de Hilbert n’étant pas nécessairement $\mathcal{L}^2(\mathbf{R}^3)$, la définition d’une rotation n’est pas ici réduite aux rotations de l’espace.
 
-        \subsubsection{Définition du moment cinétique}
+\subsubsection{Définition du moment cinétique}
 
-        De même que l’impulsion peut être définie comme le générateur infinitésimal du groupe des translations, on peut définir en toute généralité le moment cinétique comme le générateur infinitésimal du groupe des rotations. 
+De même que l’impulsion peut être définie comme le générateur infinitésimal du groupe des translations, on peut définir en toute généralité le moment cinétique comme le générateur infinitésimal du groupe des rotations.
 
-        \begin{omed}{Définition (moment cinétique)}
-            Pour tout système physique, on appelle observable moment cinétique et on note $\hat{\vec{J}}$ l’ensemble des trois opérateurs $(\hat{J_x}, \hat{J}_y, \hat{J}_z)$ définis comme les générateurs infinitésimaux du groupe des rotatinos, de sorte qu’une rotation infinitésimale du système associée au vecteur $d\vec{\alpha}$ soit représentée dans l’espace de Hilbert par l’opérateur 
-            \[ \hat{R}_{d\vec{\alpha}} = \hat{I} - \frac{i}{\hbar} J_x d\alpha_x - \frac{i}{\hbar} J_y d\alpha_y - \frac{i}{\hbar} J_z d\alpha_z = \hat{I} -  \frac{i}{\hbar} \hat{\vec{J}} \cdot d\vec{\alpha}  \]   
-        \end{omed}
+\begin{omed}{Définition (moment cinétique)}
+    Pour tout système physique, on appelle observable moment cinétique et on note $\hat{\vec{J}}$ l’ensemble des trois opérateurs $(\hat{\hat{J}_x}, \hat{J}_y, \hat{J}_z)$ définis comme les générateurs infinitésimaux du groupe des rotations, de sorte qu’une rotation infinitésimale du système associée au vecteur $d\vec{\alpha}$ soit représentée dans l’espace de Hilbert par l’opérateur
+    \begin{align*}
+        \hat{R}_{d\vec{\alpha}}
+         & = \hat{I} - \frac{i}{\hbar} \hat{J}_x d\alpha_x - \frac{i}{\hbar} \hat{J}_y d\alpha_y - \frac{i}{\hbar} \hat{J}_z d\alpha_z \\
+         & = \hat{I} -  \frac{i}{\hbar} \hat{\vec{J}} \cdot d\vec{\alpha}
+    \end{align*}
+\end{omed}
 
-        On pourra, en procédant de la même façon que pour l’opérateur translation, écrire l’opérateur associé à une rotation sous forme exponentielle :
+Cette écriture infinitésimale nous donne l’équation différentielle
+\begin{align*}
+    \frac{\text{d}\hat{R}_{\vec{\alpha}}}{\text{d}\vec{\alpha}}
+     & = \frac{\hat{R}_{\vec{\alpha} + d\vec{\alpha}} - \hat{R}_{\vec{\alpha}}}{d \vec{\alpha}}        \\
+     & = \frac{\hat{R}_{d\vec{\alpha}}\hat{R}_{\vec{\alpha}} - \hat{R}_{\vec{\alpha}}}{d \vec{\alpha}} \\
+     & = -\frac{i}{\hbar} \frac{\hat{\vec{J}} \cdot d\vec{\alpha}}{d\vec{\alpha}} \hat{R}_{\alpha}
+\end{align*}
+On peut donc exprimer l’opérateur rotation dans l’espace de Hilbert par l’expression générale
+\[ \hat{R}_{\vec{\alpha}} = \exp\left(- \frac{i}{\hbar} \hat{\vec{J}} \cdot d\vec{\alpha} \right) \]
 
-        \[ \hat{R}_{\vec{\alpha}} = \exp\left(- \frac{i}{\hbar} \hat{\vec{J}} \cdot d\vec{\alpha} \right) \]
+\subsubsection{Relations de commutation d’un moment cinétique}
 
-        \subsubsection{Relations de commutation entre les observables selon x,y\&z}
+Le groupe des rotations est non commutatif contrairement à celui des translations, ce qui nous permet d’établir des relations de commutation entre les opérateurs des composantes cartésiennes du moment cinétique.
 
-        Le groupe des rotations est non commutatif contrairement à celui des translations, ce qui nous permet d’établir des relations de commutation entre les opérateurs des composantes cartésiennes du moment cinétique.
+\begin{omed}{Proposition (relations de commutation)}
+    \begin{align*}
+        \left[\hat{J}_x, \hat{J}_y\right] & = i \hbar \hat{J}_z \\
+        \left[\hat{J}_y, \hat{J}_z\right] & = i \hbar \hat{J}_x \\
+        \left[\hat{J}_z, \hat{J}_x\right] & = i \hbar \hat{J}_y \\
+    \end{align*}
+    \textit{i.e.}
+    \[ \hat{\vec{J}} \times \hat{\vec{J}} = i \hbar \hat{\vec{J}} \]
+\end{omed}
 
-        \begin{omed}{Proposition (relations de commutation)}
-            \begin{align*}
-                \left[J_x, J_y\right] &= i \hbar J_z \\
-                \left[J_y, J_z\right] &= i \hbar J_x \\
-                \left[J_z, J_x\right] &= i \hbar J_y \\
-            \end{align*}
-            \textit{i.e.} 
-            \[ \hat{\vec{J}} \times \hat{\vec{J}} = i \hbar \hat{\vec{J}} \]   
-        \end{omed}
+\begin{demo}{Preuve}
+    Considérons une rotation d’angle $\alpha$ autour du vecteur unitaire $\vec{u} = (\cos(\phi), \sin(\phi), 0)$ placé dans le plan $xy$. Cette rotation peut s’exprimer comme la composition d’une rotation autour de l’axe $z$ d’angle $-\phi$ (ramenant le vecteur $\vec{u}$ selon l’axe $x$), suivie d’une rotation autour de $x$ d’angle $\alpha$, puis d’une rotation autour de l’axe $z$ d’angle $+\phi$. Ainsi,
+    \begin{align*}
+        \hat{R}_{\vec{u}, \alpha}                                                    & = \hat{R}_{z, \phi} \hat{R}_{x,\alpha} \hat{R}_{z, -\phi}                                                      \\
+        \textit{i.e.} \quad e^{- i \frac{\alpha}{\hbar} \hat{\vec{J}} \cdot \vec{u}} & = e^{- i \frac{\phi}{\hbar} \hat{J}_z}e^{- i \frac{\alpha}{\hbar} \hat{J}_x}e^{i \frac{\phi}{\hbar} \hat{J}_z}
+    \end{align*}
+    En faisant tendra $\alpha$ vers $0$, et en développant au premier ordre, on obtient
+    \begin{align*}
+        \hat{I} - i \frac{\alpha}{\hbar} \hat{\vec{J}} \cdot \vec{u} & = \hat{I} - i \frac{\alpha}{\hbar} e^{- i \frac{\phi}{\hbar} \hat{J}_z} \hat{J}_x e^{i \frac{\phi}{\hbar} \hat{J}_z} \\
+        \textit{i.e.} \quad \hat{\vec{J}} \cdot \vec{u}              & =  e^{- i \frac{\phi}{\hbar} \hat{J}_z} \hat{J}_x e^{i \frac{\phi}{\hbar} \hat{J}_z}                                 \\
+    \end{align*}
+    \[  \]
+    En faisant ensuite tendre $\phi$ vers $0$, et en développant au premier ordre pareil, on a
+    \begin{align*}
+        \hat{J}_x + \phi \hat{J}_y                            & = \hat{J}_x - i \frac{\phi}{\hbar} (\hat{J}_z \hat{J}_x - \hat{J}_x \hat{J}_z) \\
+        \textit{i.e.} \quad \left[\hat{J}_z, \hat{J}_x\right] & = i\hbar \hat{J}_y
+    \end{align*}
+\end{demo}
 
-        \begin{demo}{Preuve}
-            Considérons une rotation d’angle $\alpha$ autour du vecteur unitaire $\vec{u} = (\cos(\phi), \sin(\phi), 0)$ placé dans le plan $xy$. Cette rotation peut s’exprimer comme la composition d’une rotation autour de l’axe $z$ d’angle $-\phi$ (ramenant le vecteur $\vec{u}$ selon l’axe $x$), suivie d’une rotation autour de $x$ d’angle $\alpha$, puis d’une rotation autour de l’axe $z$ d’angle $+\phi$. Ainsi, 
-            \begin{align*}
-                \hat{R}_{\vec{u}, \alpha} &= \hat{R}_{z, \phi} \hat{R}_{x,\alpha} \hat{R}_{z, -\phi} \\
-                \textit{i.e.} \quad e^{- i \frac{\alpha}{\hbar} \hat{\vec{J}} \cdot \vec{u}} &= e^{- i \frac{\phi}{\hbar} \hat{J}_z}e^{- i \frac{\alpha}{\hbar} \hat{J}_x}e^{i \frac{\phi}{\hbar} \hat{J}_z}
-            \end{align*}
-            En faisant tendra $\alpha$ vers $0$, et en développant au premier ordre, on obtient 
-            \begin{align*}
-                \hat{I} - i \frac{\alpha}{\hbar} \hat{\vec{J}} \cdot \vec{u} &= \hat{I} - i \frac{\alpha}{\hbar} e^{- i \frac{\phi}{\hbar} \hat{J}_z} \hat{J}_x e^{i \frac{\phi}{\hbar} \hat{J}_z} \\
-                \textit{i.e.} \quad \hat{\vec{J}} \cdot \vec{u} &=  e^{- i \frac{\phi}{\hbar} \hat{J}_z} \hat{J}_x e^{i \frac{\phi}{\hbar} \hat{J}_z} \\
-            \end{align*}
-            \[  \]   
-            En faisant ensuite tendre $\phi$ vers $0$, et en développant au premier ordre pareil, on a 
-            \begin{align*}
-                \hat{J}_x + \phi \hat{J}_y &= \hat{J}_x - i \frac{\phi}{\hbar} (\hat{J}_z \hat{J}_x - \hat{J}_x \hat{J}_z) \\
-                \textit{i.e.} \quad \left[J_z, J_x\right] &= i\hbar J_y 
-            \end{align*}
-        \end{demo}
+On pourrait aussi partir de ces relations de commutation pour nous assurer qu’une observable est un moment cinétique. En effet, les relations cycliques de commutation permettent à elles seules de définir un moment cinétique.
 
-        \subsubsection{L’observable J2}
+\subsubsection{L’observable $\hat{J}^2$}
 
-        On remarque que $\hat{J}^2 = J_x^2 + J_y^2 + J_z^2$ est un observable qui commute avec n’importe quelle composante du moment cinétique, puisque :
-        \[ \left[J_{x,y,z}, \hat{J}^2\right] = 0 \]
-        En effet, pour le cas $J_z$ par exemple, on a 
-        \begin{align*}
-            \left[J_{z}, J_x^2 + J_y^2 + J_z^2\right] 
-            &= \left[J_{z}, J_x^2\right] + \left[J_{z}, J_y^2\right] \\
-            &= \left[J_z, J_x\right] J_x + J_x \left[J_z, J_x\right] + \left[J_z, J_y\right] J_y + J_y \left[J_z, J_x\right] \\
-            &= i \hbar J_y J_x + i \hbar J_x J_y - i \hbar J_x J_y - i \hbar J_y J_x \\
-            &= 0
-        \end{align*}
+On remarque que $\hat{J}^2 = \hat{J}_x^2 + \hat{J}_y^2 + \hat{J}_z^2$ est un observable qui commute avec n’importe quelle composante du moment cinétique, puisque :
+\[ \left[\hat{J}_{x,y,z}, \hat{J}^2\right] = 0 \]
+En effet, pour le cas $\hat{J}_z$ par exemple, on a
+\begin{align*}
+    \left[\hat{J}_{z}, \hat{J}_x^2 + \hat{J}_y^2 + \hat{J}_z^2\right]
+     & = \left[\hat{J}_{z}, \hat{J}_x^2\right] + \left[\hat{J}_{z}, \hat{J}_y^2\right]                                                                                                         \\
+     & = \left[\hat{J}_z, \hat{J}_x\right] \hat{J}_x + \hat{J}_x \left[\hat{J}_z, \hat{J}_x\right] + \left[\hat{J}_z, \hat{J}_y\right] \hat{J}_y + \hat{J}_y \left[\hat{J}_z, \hat{J}_x\right] \\
+     & = i \hbar \hat{J}_y \hat{J}_x + i \hbar \hat{J}_x \hat{J}_y - i \hbar \hat{J}_x \hat{J}_y - i \hbar \hat{J}_y \hat{J}_x                                                                 \\
+     & = 0
+\end{align*}
 
-        \subsubsection{Système invariant par rotation}
+On va donc pouvoir construire une base propre commune aux opérateurs $\hat{J}^2$ et $\hat{J}_z$.
 
-        Si un système est invariant par rotation, son hamiltonien commute avec les générateurs infinitésimaux du groupe des rotations, soit 
-        \[ \left[\hat{H}, \hat{\vec{J}}\right] = \vec{0} \]   
-        Ainsi, pour tout vecteur $\vec{\alpha}$, l’hamiltonien commutera avec $\hat{\vec{J}} \cdot \vec{\alpha}$. et donc avec $\hat{R}_{\alpha}$. L’hamiltonien commutera également avec $\hat{J}^2$. On dispose donc de façon générale un ensemble de trois observables commutant entre eux $(\hat{H}, \hat{J}_z, \hat{J}^2)$, qui pourront donc être diagonalisés dans une base propre commune. 
+\subsubsection{Système invariant par rotation}
 
-    \subsection{Théorie générale du moment cinétique}
+Si un système est invariant par rotation, son hamiltonien commute avec le générateur infinitésimal du groupe des rotations, donc
+\[ \left[\hat{H}, \hat{\vec{J}}\right] = \vec{0} \]
+Ainsi, pour tout vecteur $\vec{\alpha}$, l’hamiltonien commutera avec $\hat{\vec{J}} \cdot \vec{\alpha}$, et donc avec $\hat{R}_{\alpha}$. L’hamiltonien commutera également avec $\hat{J}^2$. On dispose donc de façon générale un ensemble de trois observables commutant entre eux $(\hat{H}, \hat{J}_z, \hat{J}^2)$, qui pourront donc être diagonalisés dans une base propre commune.
 
-        \subsubsection{Introduction des paramètres j \& m}
+\subsection{Théorie générale du moment cinétique}
 
-        Commençons par la recherche des valeurs et états propres de $\hat{J}^2$. La valeur moyenne de $\hat{J}^2$ dans un état $\ket{\psi} $ quelconque s’écrit 
-        \[ \bra{\psi} \hat{J}^2 \ket{\psi} = \nor{J_x \ket{\psi}}^2 + \nor{J_y \ket{\psi} }^2 + \nor{J_z \ket{\psi} }^2 \geq 0 \]  
-        Ainsi $\text{Sp}(\hat{J}^2) \subset \mathbf{R}^+$. Comme la fonction $j \mapsto j(j+1)$ est une bijection de $\mathbf{R}_+$ dans $\mathbf{R}_+$, on peut chercher les valeurs propres sous la forme $\lambda = j(j+1)\hbar^2$, $j \in \mathbf{R}_+$. Les états propres $\ket{\psi} $ cherchés étant communs à $J_z$ et $\hat{J}^2$, on introduira le paramètre $m \in \mathbf{R}$ tel que les valeurs propres de $J_z$ s’écrivent $\lambda = m \hbar$. Les espaces propres communs pour les valeurs propres $j(j+1)\hbar^2$ et $m\hbar$ seront notés $\mathcal{E}_{j,m}$. 
+\begin{omed}{Proposition (co-diagonalisation de $J^2$ et $\hat{J}_z$)}
+    \begin{itemize}
+        \item Les valeurs propres de l’observable $\hat{J}^2$ sont de la forme $j(j+1)\hbar^2$ où $j \in \left\{0, \frac{1}{2}, 1, \frac{3}{2}, \ldots\right\}$ ;
+        \item les valeurs propres de l’observable $\hat{J}_z$ sont de la forme $m\hbar$, où $m \in \left\{-j, \ldots j-1 , j\right\}$ ;
+        \item la dimension de l’espace propre commun $\mathcal{E}_{j,m}$ est indépendante de $m$ ;
+        \item On peut construire une base propre commune aux observables $J^2$ et $\hat{J}_z$, appelée base standard et notée $\left\{\ket{n,j,m}\right\}$, à l’aide des relations de récurrence
+              \[ \hat{J}_{\pm} \ket{n,j,m} = \sqrt{j(j+1) - m(m\pm1)}\hbar \ket{n,j, m\pm1} \]
+    \end{itemize}
+\end{omed}
 
-        \subsubsection{Les opérateurs + \& -}
+\subsubsection{Introduction des paramètres $j$ \& $m$}
 
-        On introduit les opérateurs $J_+ = J_x + i J_y$ et son adjoint $J_- = J_x - i J_y$, qui commutent avec $\hat{J}^2$ :
-        \[ \left[J^2, J_{\pm}\right]   = 0 \]   
-        Toutefois, ceux-ci ne commutent pas avec $J_z$, puisque 
-        \[ \left[J_z, J_{\pm}\right] = \left[J_z, J_x\right] \pm i \left[J_z, J_y\right] = \pm \hbar J_{\pm} \]   
-        Le produit $J_{\mp}J_{\pm}$ étant auto-adjoint, il est utile de le calculer explicitement :
-        \[ J_{\mp}J_{\pm} = \hat{J}^2 - J_z (J_z \pm \hbar \hat{I}) \]   
-        Cela nous conduit à exprimer l’observable $J^2$ en fonction des opérateurs $J_z$ et $J_{\pm}$ :
-        \[ \hat{J}^2 = \hat{J}_z^2 + \frac{1}{2} \left(J_- J_+ + J_+ J_-\right) \]   
+Commençons par la recherche des valeurs et états propres de $\hat{J}^2$. La valeur moyenne de $\hat{J}^2$ dans un état $\ket{\psi} $ quelconque s’écrit
+\[ \bra{\psi} \hat{J}^2 \ket{\psi} = \nor{\hat{J}_x \ket{\psi}}^2 + \nor{\hat{J}_y \ket{\psi} }^2 + \nor{\hat{J}_z \ket{\psi} }^2 \geq 0 \]
+Ainsi $\text{Sp}(\hat{J}^2) \subset \mathbf{R}^+$. Comme la fonction $j \mapsto j(j+1)$ est une bijection de $\mathbf{R}_+$ dans $\mathbf{R}_+$, on peut chercher les valeurs propres sous la forme $\lambda = j(j+1)\hbar^2$, $j \in \mathbf{R}_+$. Les états propres $\ket{\psi} $ cherchés étant communs à $\hat{J}_z$ et $\hat{J}^2$, on introduira aussi le paramètre $m \in \mathbf{R}$ tel que les valeurs propres de $\hat{J}_z$ s’écrivent $\lambda = m \hbar$. Les espaces propres communs pour les valeurs propres $j(j+1)\hbar^2$ et $m\hbar$ seront notés $\mathcal{E}_{j,m}$.
 
-        Considérons désormais l’action de $J_{\pm}$ sur un ket $\ket{\psi} $ de l’espace $\mathcal{E}_{j,m}$. Étant donné que $J_{\pm}$ commute avec $J^2$, le vecteur $J_{\pm} \ket{\psi} $ reste un vecteur propre de l’opérateur $J^2$ pour la valeurs propre $j(j+1)\hbar^2$. Pour $J_z$, on remarque que 
-        \begin{align*}
-            J_z J_{\pm} \ket{\psi} 
-            &= \left(J_{\pm} J_z + \left[J_z, J_{\pm}\right]\right) \ket{\psi} \\
-            &= \left(J_{\pm} m \hbar + \hbar J_{\pm}\right) \ket{\psi} \\
-            &= (m \pm 1) \hbar \hat{J}_{\pm} \ket{\psi} 
-        \end{align*}
-        Ainsi, $J_{\pm} \ket{\psi}$ est soit un vecteur propre de l’espace commun $\mathcal{E}_{j, m \pm 1}$, soit le vecteur nul. Or sa norme vaut :
-        \begin{align*}
-            \nor{J_{\pm} \ket{\psi}}^2
-            &= \bra{\psi} J_{\mp} J_{\pm} \ket{\psi}  \\
-            &= \bra{\psi} J^2 - J_z (J_z \pm \hbar \hat{I}) \ket{\psi} \\
-            &= \left(j(j+1) - m(m\pm 1)\right)\hbar^2 
-            &\geq 0
-        \end{align*}
-        On déduit de la positivité de cette norme que, nécessairement, $m(m\pm1) \leq j(j+1)$, ce qui implique la relation 
-        \[ -j \leq m \leq j \]   
-        Les cas d’égalité $J_+ \ket{\psi} = \vec{0}$ et $J_- \ket{\psi}= \vec{0}$ seront respectivement atteints dans les cas où $m = j$ et $m = -j$.
-        
-        \subsubsection{Valeurs autorisées pour j \& m}
+\subsubsection{Les opérateurs + \& -}
 
-        Les résultats précédemment établis contraignent en réalité grandement les valeurs de $j$, et $m$, par application répétées des opérateurs $J_{\pm}$. Considérons en effet $\ket{\psi} \in \mathcal{E}_{j,m}$, avec donc $m \in \intFF{-j}{j}$. Par application répétée de $J_+$, on obtiendrait à un moment $m' > j$, condition impossible. Il faut donc que l’un des vecteurs obtenus s’annule (et alors dans ce cas $m' = j$), \textit{i.e.} il existe un entier $N$ tel que $m + N = j$. En appliquant plutôt $J_-$, on trouve la condition symétrique, donc il existe un entier $N'$ tel que $m - N' = -j$. Ainsi, $2j = N + N'$, \textit{i.e.} 
-        \[ j \in \left\{0, \frac{1}{2}, 1, \frac{3}{2}, \ldots\right\} \]
-        Cela implique par ailleurs que $j - m = N$ soit un nombre entier, soit
-        \[ m \in \left\{-j, \ldots j-1 , j\right\} \]  
-        On approche avec ces restrictions des espaces $\mathcal{E}_{j,m}$, qui dépendront cependant largement des problèmes considérés. On peut toutefois encore remarquer que si l’espace $\mathcal{E}_{j, m_0}$ existe, tous les espaces $\mathcal{E}_{j,m}$ existent également (avec $m \in \left\{-j, \ldots j-1 , j\right\}$). 
+On introduit les opérateurs $\hat{J}_+ = \hat{J}_x + i \hat{J}_y$ et son adjoint $\hat{J}_- = \hat{J}_x - i \hat{J}_y$, qui commutent avec $\hat{J}^2$ :
+\[ \left[J^2, \hat{J}_{\pm}\right]   = 0 \]
+Toutefois, ceux-ci ne commutent pas avec $\hat{J}_z$, puisque
+\[ \left[\hat{J}_z, \hat{J}_{\pm}\right] = \left[\hat{J}_z, \hat{J}_x\right] \pm i \left[\hat{J}_z, \hat{J}_y\right] = \pm \hbar \hat{J}_{\pm} \]
+Le produit $\hat{J}_{\mp}\hat{J}_{\pm}$ étant auto-adjoint, il est utile de le calculer explicitement :
+\[ \hat{J}_{\mp}\hat{J}_{\pm} = \hat{J}^2 - \hat{J}_z (\hat{J}_z \pm \hbar \hat{I}) \]
+Cela nous conduit à exprimer l’observable $J^2$ en fonction des opérateurs $\hat{J}_z$ et $\hat{J}_{\pm}$ :
+\[ \hat{J}^2 = \hat{J}_z^2 + \frac{1}{2} \left(\hat{J}_- \hat{J}_+ + \hat{J}_+ \hat{J}_-\right) \]
 
-        \begin{omed}{Proposition (co-diagonalisation de $J^2$ et $J_z$)}
-            \begin{itemize}
-                \item Les valeurs propres de l’observable $J^2$ sont de la forme $j(j+1)\hbar^2$ où $j \in \left\{0, \frac{1}{2}, 1, \frac{3}{2}, \ldots\right\}$ ;
-                \item les valeurs propres de l’observable $J_z$ sont de la forme $m\hbar$, où $m \in \left\{-j, \ldots j-1 , j\right\}$ ;
-                \item la dimension de l’espace propre commun $\mathcal{E}_{j,m}$ est indépendante de $m$ ;
-                \item On peut construire une base propre commune aux observables $J^2$ et $J_z$, appelée base standard et notée $\left\{\ket{n,j,m}\right\}$, à l’aide des relations de récurrence 
-                \[ J_{\pm} \ket{n,j,m} = \sqrt{j(j+1) - m(m\pm1)}\hbar \ket{n,j, m\pm1} \]
-            \end{itemize}            
-        \end{omed}
+Considérons désormais l’action de $\hat{J}_{\pm}$ sur un ket $\ket{\psi} $ de l’espace $\mathcal{E}_{j,m}$. Étant donné que $\hat{J}_{\pm}$ commute avec $J^2$, le vecteur $\hat{J}_{\pm} \ket{\psi} $ reste un vecteur propre de l’opérateur $J^2$ pour la valeurs propre $j(j+1)\hbar^2$. Pour $\hat{J}_z$, on remarque que
+\begin{align*}
+    \hat{J}_z \hat{J}_{\pm} \ket{\psi}
+     & = \left(\hat{J}_{\pm} \hat{J}_z + \left[\hat{J}_z, \hat{J}_{\pm}\right]\right) \ket{\psi} \\
+     & = \left(\hat{J}_{\pm} m \hbar + \hbar \hat{J}_{\pm}\right) \ket{\psi}                     \\
+     & = (m \pm 1) \hbar \hat{J}_{\pm} \ket{\psi}
+\end{align*}
+Ainsi, $\hat{J}_{\pm} \ket{\psi}$ est soit un vecteur propre de l’espace commun $\mathcal{E}_{j, m \pm 1}$, soit le vecteur nul. Or sa norme vaut :
+\begin{align*}
+    \nor{\hat{J}_{\pm} \ket{\psi}}^2
+     & = \bra{\psi} \hat{J}_{\mp} \hat{J}_{\pm} \ket{\psi}                   \\
+     & = \bra{\psi} J^2 - \hat{J}_z (\hat{J}_z \pm \hbar \hat{I}) \ket{\psi} \\
+     & = \left(j(j+1) - m(m\pm 1)\right)\hbar^2                              \\
+     & \geq 0
+\end{align*}
+On déduit de la positivité de cette norme que, nécessairement, $m(m\pm1) \leq j(j+1)$, ce qui implique la relation
+\[ -j \leq m \leq j \]
+Les cas d’égalité $\hat{J}_+ \ket{\psi} = \vec{0}$ et $\hat{J}_- \ket{\psi}= \vec{0}$ seront respectivement atteints dans les cas où $m = j$ et $m = -j$.
 
-    \subsection{Cas d’une particule de spin 1/2}
+\subsubsection{Valeurs autorisées pour $j$ \& $m$}
 
-        Vérifions que la théorie précédemment évoquée s’applique bien au cas du moment cinétique intrinsèque d’une particule de spin 1/2. 
+Les résultats précédemment établis contraignent en réalité grandement les valeurs de $j$, et $m$, par application répétées des opérateurs $\hat{J}_{\pm}$. Considérons en effet $\ket{\psi} \in \mathcal{E}_{j,m}$, avec donc $m \in \intFF{-j}{j}$. Par application répétée de $\hat{J}_+$, on obtiendrait à un moment $m' > j$, condition impossible. Il faut donc que l’un des vecteurs obtenus s’annule (et alors dans ce cas $m' = j$), \textit{i.e.} il existe un entier $N$ tel que $m + N = j$. En appliquant plutôt $\hat{J}_-$, on trouve la condition symétrique, donc il existe un entier $N'$ tel que $m - N' = -j$. Ainsi, $2j = N + N'$, \textit{i.e.}
+\[ j \in \left\{0, \frac{1}{2}, 1, \frac{3}{2}, \ldots\right\} \]
+Cela implique par ailleurs que $j - m = N$ soit un nombre entier, soit
+\[ m \in \left\{-j, \ldots j-1 , j\right\} \]
+Les nombres $m$ et $j$ sont par définition soit des entiers, soit des demi-entiers. On approche avec ces restrictions des espaces $\mathcal{E}_{j,m}$, qui dépendront cependant largement des problèmes considérés.
 
-        Rappelons que les composantes cartésiennes du moment cinétique intrinsèque s’écrivent dans la base $\left\{\ket{+}, \ket{-}\right\}$ par les matrices 
-        \begin{align*}
-            S_{x} &= \frac{\hbar}{2}\begin{bmatrix}
-                0 & 1 \\
-                1 & 0 \\
-            \end{bmatrix} \\
-            S_{y} &= \frac{\hbar}{2}\begin{bmatrix}
-                0 & -i \\
-                i & 0 \\
-            \end{bmatrix} \\
-            S_{z} &= \frac{\hbar}{2}\begin{bmatrix}
-                1 & 0 \\
-                0 & -1 \\
-            \end{bmatrix} \\
-        \end{align*}
-        L’opérateur $S^2$ a donc pour formule 
-        \begin{align*}
-            \hat{S}^2 
-            &= S_x^2 + S_y^2 + S_z^2 \\
-            &= 3 \times \frac{\hbar^2}{4} \hat{I} \\
-            &= \frac{1}{2} \frac{3}{2} \hbar^2 \hat{I} \\
-        \end{align*}
-        Ces résultats sont conformes à la théorie générale du moment cinétique, pour le paramètre demi-entier $j = \frac{1}{2}$. Les valeurs propres de $S_z$ sont aussi bien de la forme $m \hbar$ avec $m = \pm \frac{1}{2}$. Avec les notations du moment cinétique, on a donc 
-        \begin{align*}
-            \ket{+} &= \ket{\frac{1}{2}, \frac{1}{2}} \\
-            \ket{-} &= \ket{\frac{1}{2}, - \frac{1}{2}} \\
-        \end{align*}
+\subsubsection{Dimension des espaces $\mathcal{E}_{j,m}$}
 
-    
+Sachant que notre espace de Hilbert est de dimension au moins 1, il existe au moins 1 vecteur propre commun à $\hat{J}^2$ et $J_z$. Appelons $j(j+1)\hbar^2$ et $m_0 \hbar$ ses valeurs propres (pour $\hat{J}^2$ et $J_z$ respectivement). En appliquant successivement $\hat{J}_-$, on peut construire des éléments des espaces $\mathcal{E}_{j,m}$ pour $m \in \left\{m_0 - 1, \ldots, -j\right\}$. Construisons alors une base dénombrable de l’espace $\mathcal{E}_{j, -j}$ et appelons-la $\left\{\ket{n, j, -j}\right\}$, où $n \in \intEN{1}{\dim(\mathcal{E}_{j,-j})}$. À partir de cette base, on peut construire les vecteurs $\ket{n,j,m}$ où $m \in \left\{-j, -j + 1 \ldots, j\right\}$ par la relation de récurrence
+\[ \ket{n, j, m+1} = \frac{\hat{J}_+ \ket{n,j,m}}{\sqrt{j(j+1) - m(m+1)} \hbar} \]
+
+Montrons par récurrence que, pour $j$ et $m$ fixés, $\left\{\ket{n,j,m}\right\}_n$ constitue une base dénombrable du sous-espace $\mathcal{E}_{j,m}$. Cela montrera alors que la dimension des espaces $\mathcal{E}_{j,m}$ est indépendante de la valeur de $m$, et vaut $\dim(\mathcal{E}_{j,-j})$. Le cas $m = -j$ est vrai. Supposons désormais que le cas $m$ est vrai, et montrons que le cas $m+1$ l’est aussi. Remarquons dans un premier temps quel les vecteurs formés par la relation de récurrence sont orthonormaux :
+\begin{align*}
+     & \spr{n,j,m+1}{n',j,m+1} = \frac{\bra{n,j,m} \hat{J}_- J_+ \ket{n',j,m}}{(j(j+1) - m(m+1))\hbar^2} \\
+     & = \frac{(j(j+1) - m(m+1))\hbar^2 \spr{n,j,m}{n',j,m}}{(j(j+1) - m(m+1))\hbar^2}                   \\
+     & = \delta_{n,n'}
+\end{align*}
+Montrons maintenant que ces vecteurs linéairement indépendants engendrent bien la totalité de $\mathcal{E}_{j, m+1}$. Soit $\ket{\psi} \in \mathcal{E}_{j, m+ 1}$. $\hat{J}_{-}\ket{\psi} \in \mathcal{E}_{j,m}$ donc peut s’écrire sous la forme $\hat{J}_- \ket{\psi} = \sum_n c_n \ket{n,j,m}$. Ainsi,
+\[
+    \hat{J}_+ \hat{J}_- \ket{\psi} = \sum_{n} \sqrt{j(j+1) - m(m+1)} \hbar c_n \ket{n,j, m+1}
+\]
+Or on sait que $\hat{J}_+ \hat{J}_- \ket{\psi} = (j(j+1) - m(m+1)) \hbar^2 \ket{\psi}$. On a donc finalement
+\[ \ket{\psi} = \sum_n \frac{c_n}{\sqrt{j(j+1) - m(m+1)}\hbar} \ket{n, j, m+1} \]
+Cela conclut la démonstration par récurrence.
+
+
+
