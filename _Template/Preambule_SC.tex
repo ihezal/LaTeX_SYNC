@@ -41,6 +41,7 @@
 \renewcommand*\section{\@ifstar{\starsection}{\nostarsection}}
 \newcommand*\starsection[1]{\stdsection*{#1}}
 \newcommand*\nostarsection[1]{%
+  \clearpage
   \refstepcounter{section}
   \addcontentsline{toc}{section}{\thesection\hspace{1em}#1}
   \markright{#1}
@@ -48,6 +49,11 @@
   \par\vspace{1.5ex}
   \marge{\thesection}{black}%
   #1
+  \begin{center}
+    \begin{tikzpicture}
+      \node[couleurmatiere] {\includegraphics[width=4cm]{_Images/poly-filet-colorless.pdf}};
+    \end{tikzpicture}
+  \end{center}
   \par\vspace{1ex}}
 }
 \renewcommand{\subsection}[1]{%
@@ -90,9 +96,7 @@
       {\color{couleurmatiere}\textbf{\thesection.\arabic{omedcounter}}};
     } ]
     \textbf{\textit{#1} ---}
-    
-}
-{%
+}{%
   \end{tcolorbox}
 }
 

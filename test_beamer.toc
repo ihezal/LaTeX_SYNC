@@ -1,0 +1,6 @@
+\xpginauxfiletrue 
+\selectlanguage *{french}
+\beamer@sectionintoc {1}{Formation \& Secourisme}{3}{0}{1}
+\beamer@sectionintoc {2}{Actions sociales}{7}{0}{2}
+\beamer@sectionintoc {3}{Formateur}{9}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{12}{0}{4}

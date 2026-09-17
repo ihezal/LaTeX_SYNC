@@ -1,0 +1,95 @@
+\section{Particule dans un champ magnétique}
+
+    En mécanique classique, on sait qu’une particule chargée de charge $q$ se déplaçant à une vitesse $\vec{v}$ dans un champ magnétique $\vec{B}$ est soumise à la force de Lorentz 
+    \[ \vec{F} = q \vec{v} \times \vec{B} \]   
+    Cette force, dépendant de la vitesse de la particule est non pas seulement de sa position, qui de plus ne produit aucun travail ($\vec{F} \cdot \vec{v} = 0$), ne peut donc s’écrire comme simple gradient d’une énergie potentielle. La forme de l’hamiltonien jusqu’ici employée ($\hat{H} = \frac{\hat{p}^2}{2m} + V(\hat{\vec{r}})$) n’est donc plus appopriée. Nous admettrons sa nouvelle forme, qui fait intervenir le concept de potentiel vecteur.
+
+    \subsection{Hamiltonien en présence d’un champ magnétique}
+
+        \subsubsection{Potentiel vecteur}
+
+    Rappelons les résultats établis dans le cadre du cours d’électromagnétisme :
+
+    \begin{omed}{Propriété}
+        Dans une région de l’espace ne comportant ni charges ni coursants électriques, les champs électrique et magnétique peuvent s’exprimer en fonction du \textbf{potentiel électrique} $U(\vec{r}, t)$ et du \textbf{potentiel vecteur} $\vec{A}(\vec{r},t)$ à l’aide des relations 
+        \begin{align*}
+            \vec{E}(\vec{r},t) &= - \vec{\nabla} U(\vec{r},t) - \frac{\partial \vec{A}}{\partial t} \\
+            \vec{B}(\vec{r},t) &= \vec{\nabla} \times \vec{A}(\vec{r},t) \\
+        \end{align*}
+        Ces potentiels définissent les champs électrique et magnétique à une \textbf{condition de jauge} près.
+    \end{omed}
+
+        \subsubsection{Jauge de Landau et jauge symétrique}
+
+        On considère le cas d’un champ magnétique $\vec{B}(\vec{r},t) = B \vec{u}_z$. Cherchons un potentiel vecteur simple donc ce champ magnétique pourrait dériver. La relation $\vec{\nabla} \times \vec{A}(\vec{r}) = \vec{B}(\vec{r})$ donne le système d’équations 
+        \begin{align*}
+            \frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z} &= 0 \\ 
+            \frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x} &= 0 \\  
+            \frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y} &= B \\ 
+        \end{align*}
+        L’ensemble des solutions étant infini, on prendra seulement celle qui nous arrange le plus. En particulier, on obtient les jauges de \textbf{Landau} et \textbf{symétrique}, respectivement définies par 
+        \[ \vec{A}(\vec{r}) = \begin{bmatrix}
+            0 \\
+            Bx \\
+            0
+        \end{bmatrix} \quad \text{et} \quad \vec{A}(\vec{r}) = \begin{bmatrix}
+            - \frac{By}{2} \\
+            \frac{Bx}{2} \\
+            0
+        \end{bmatrix}  \]
+        La jauge symétrique permet aussi d’exprimer le potentiel vecteur de façon plus générale par 
+        \[ \vec{A}(\vec{r}) = \frac{1}{2} \vec{B} \times \vec{r} \]   
+        valide pour tout champ magnétique uniforme.
+
+        \subsubsection{Hamiltonien en présence d’un champ magnétique}
+
+        On admet la forme de l’hamiltonien dans le cas de la présence d’un champ magnétique. 
+
+        \begin{omed}{Hamiltonien en présence de $\vec{B}$}
+            L’hamiltonien d’une particule chargée de charge $q$ et de masse $m$ placée dans un champ magnétique dérivant du potentiel vecteur $\vec{A}(\vec{r},t)$ s’écrit 
+            \[ \hat{H} = \frac{\left(\hat{\vec{p}} - q \vec{A}(\hat{\vec{r}},t)\right)^2}{2m} + V(\hat{\vec{r}}t) \]   
+            Dans le cas particulier où l’énergie potentielle résulte uniquement de l’application d’un potentiel électrique $U(\vec{r},t)$, on pourra écrire $V(\vec{r},t) = q U(\vec{r},t)$.
+        \end{omed}
+
+        \subsubsection{Différence entre impulsion et quantité de mouvement}
+
+        Une première conséquence de la forme prise par l’hamiltonien est que nous ne pourrons plus considérer impulsion et quantité de mouvement comme une seule et même grandeur physique (dans des espaces différents). Si on reprend la définition de l’impulsion comme générateur infinitésimal des translations pour une particule sans spin décrite par la fonction d’onde $\psi(\vec{r})$, 
+        \begin{align*}
+            \psi(\vec{r} - d\vec{a}) 
+            &= \psi(\vec{r}) - \vec{\nabla} \psi \cdot d \vec{a} \\
+            &:= \psi(\vec{r}) - \frac{i}{\hbar} \hat{\vec{p}} \psi(\vec{r}) \cdot d\vec{a}
+        \end{align*}
+        Ceci nous redonne bien l’expression connue de l’impulsion 
+        \[ \hat{\vec{p}} = \frac{\hbar}{i} \vec{\nabla} \]
+        qui donne les relations de commutation habituelles $[\hat{\alpha}, \hat{p}_{\alpha}] = i\hbar\hat{I}$ où $\alpha = x,y,z$. En définissant la vitesse $\hat{\vec{v}}$ de sorte que sa valeur moyenne soit égale à la dérivée de la position moyenne par rapport au temps, on a par le théorème d’Ehrenfest :
+        \begin{align*}
+            \bra{\psi(t)} \hat{\vec{v}} \ket{\psi(t)} 
+            &:= \frac{\text{d}\bra{\psi(t)} \hat{\vec{r}} \ket{\psi(t)}}{dt} \\
+            &= \frac{1}{i\hbar} \bra{\psi(t)} [\hat{\vec{r}}, \hat{H}] \ket{\psi(t)}
+        \end{align*}
+        En identifiant l’opérateur $\hat{\vec{v}}$ à $\frac{1}{i\hbar}[\hat{\vec{r}}, \hat{H}]$, on obtient donc sa forme en présence d’un champ magnétique :
+        \[ \hat{\vec{v}} = \frac{\hat{\vec{p}} - q \vec{A}(\hat{\vec{r}})}{m} \]
+        On peut donc reformuler l’hamiltonien comme 
+        \[ \hat{H} = \underset{E_c}{\frac{1}{2} m \hat{v}^2} + \underset{E_p}{V(\hat{\vec{r}})} \]   
+        Ce qui a changé avec ce nouvel hamiltonien n’est donc pas tant la forme de l’hamitonien (lorsqu’il est exprimé avec la vitesse) mais le fait qu’il faut distinguer désormais impulsion et quantité de mouvement, liée par la relation 
+        \[ \hat{\vec{p}} = m \hat{\vec{v}} + q \vec{A}(\hat{\vec{r}},t) \]  
+        Ces deux grandeurs ne différant que par une fonction de la position, on conserve la forme des commutateurs entre la position et la quantité de mouvement $[\hat{\alpha}, m\hat{v}_{\alpha}] = i\hbar\hat{I}$. 
+
+        \subsubsection{Autre forme de l’hamiltonien}
+
+        \begin{omed}{Hamiltonien en présence d’un champ magnétique uniforme}
+            \[ \hat{H} = \hat{H}_0 + \hat{H}_1 + \hat{H}_2 \]   
+            où \begin{itemize}
+                \item $\hat{H}_0$ correspond à l’hamiltonien en l’absence de champ magnétique ;
+                \item $\hat{H}_1 = - \hat{\vec{\mu}} \cdot \vec{B}$ est le terme \textbf{paramagnétique} qui correspond à l’énergie du moment magnétique orbital $\vec{\mu} = \frac{q}{2m} \vec{L}$ placé dans le champ $\vec{B}$ ;
+                \item $\hat{H}_2 = \frac{q^2}{2m}\vec{A}(\hat{\vec{r}})^2$ est le terme \textbf{diamagnétique} qui correspond à l’énergei dans le champ $\vec{B}$ d’un moment magnétique lui-même induit par le champ magnétique.
+            \end{itemize}
+        \end{omed}
+
+        \subsubsection{Invariance de jauge}
+
+        Il peut sembler étonnant que l’hamiltonien puisse dépendre du potentiel vecteur $\vec{A}$ défini à une condition de jauge près. Montrons que les hamiltoniens $\hat{H}$ et $\hat{H}'$ associés respectivement aux potentiels vecteurs $\vec{A}$ et $\vec{A}'$ reliés par le changement de jauge $\chi(\vec{r})$ décrivent la même situation physique.
+
+    \subsection{L’effet Aharonov-Bohm}
+
+        

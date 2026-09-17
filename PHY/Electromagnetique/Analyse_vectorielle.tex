@@ -1,0 +1,66 @@
+\section*{Analyse vectorielle}
+
+        \begin{omed}{Théorème (de Helmoltz-Hodge)}
+            Soit $\mathbf{V}$ un champ vectoriel de classe $\mathcal{C}^1(\Omega,\mathbf{R}^3)$. 
+            \begin{enumerate}[label=($p_{\arabic*}$)]
+                \item Si $\Omega$ est un domaine \textit{compact} et \textit{connexe} de frontière $\partial \Omega$ régulière (au moins par morceaux), alors il existe un champ vectoriel $\mathbf{A}$ et un champ scalaire $\psi$ définis sur $\Omega$ tels que 
+                \[ \mathbf{V} = \nabla \times \mathbf{A} - \nabla \psi \]    
+                qui sont caractérisés par les expressions suivantes : 
+                \begin{align*}
+                    \psi(\mathbf{r}) &= \frac{1}{4\pi} \int_{\Omega} \frac{\nabla \cdot \mathbf{V}(r')}{\abs{\mathbf{r} - \mathbf{r}'}} d\omega' - \frac{1}{4 \pi} \int_{\partial \Omega} \frac{\mathbf{V}(\mathbf{r}') \cdot d\mathbf{\sigma}'}{\abs{\mathbf{r} - \mathbf{r}'}} \\
+                    \mathbf{A}(\mathbf{r}) &= \frac{1}{4\pi} \int_{\Omega} \frac{\nabla \times \mathbf{V}(r')}{\abs{\mathbf{r} - \mathbf{r}'}} d\omega' + \frac{1}{4 \pi} \int_{\partial \Omega} \frac{\mathbf{V}(\mathbf{r}') \times d\mathbf{\sigma}'}{\abs{\mathbf{r} - \mathbf{r}'}} 
+                \end{align*}
+                \item Si $\Omega = \mathbf{R}^3$ et si $\mathbf{V}$ décroit à l’infini comme $o_{r \to \infty} \left(\frac{1}{r}\right)$, alors il existe une décomposition unique (pour $\psi$ à une constante près et $\mathbf{A}$ à un gradient près), $\nabla \times A$ et $\nabla \psi$ sont orthogonaux et 
+                \begin{align*}
+                    \psi(\mathbf{r}) &= \frac{1}{4\pi} \int_{\Omega} \frac{\nabla \cdot \mathbf{V}(r')}{\abs{\mathbf{r} - \mathbf{r}'}} d\omega' \\
+                    \mathbf{A}(\mathbf{r}) &= \frac{1}{4\pi} \int_{\Omega} \frac{\nabla \times \mathbf{V}(r')}{\abs{\mathbf{r} - \mathbf{r}'}} d\omega'
+                \end{align*}
+            \end{enumerate}
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            On commence par une identité classique : pour un vecteur $\mathbf{u}$, on veut définir les parties parallèle et perpendiculaire à un vecteur $\mathbf{v}$. Pour cela, on pose
+            \[ u(\mathbf{v}) = i \frac{\mathbf{v} \cdot \mathbf{u}}{\nor{v}^2} \quad \text{et} \quad \mathbf{u}(\mathbf{v}) = i \frac{\mathbf{v} \times \mathbf{u}}{\nor{v}^2} \]    
+            On a alors la partie parallèle 
+            \begin{align*}
+                \mathbf{u}_{//}(\mathbf{v}) 
+                &= - i \mathbf{v} u(\mathbf{v}) \\
+                &= \frac{(\mathbf{v} \cdot \mathbf{u}) \mathbf{v}}{\nor{v}^2}
+            \end{align*}
+            qui est bien la projection de $\mathbf{u}$ sur la direction $\mathbf{v}$, et la partie perpendiculaire 
+            \begin{align*}
+                \mathbf{u}_{\perp}(\mathbf{v})
+                &= i \mathbf{v} \times \mathbf{u}(\mathbf{v}) \\
+                &= - \frac{\mathbf{v} \times (\mathbf{v} \times \mathbf{u})}{\nor{v}^2} \\
+                &= - \frac{(\mathbf{v} \cdot \mathbf{u}) \mathbf{v}}{\nor{v}^2} +  \frac{(\mathbf{v} \cdot \mathbf{v})}{\nor{v}^2} \mathbf{u}
+            \end{align*}
+            en utilsant l’identité du double produit vectoriel $a \times b \times c = (a \cdot c) b - (a \cdot b) c$, qui est bien orthogonale à $\mathbf{v}$. On retrouve 
+            \[ \mathbf{u} = \mathbf{u}_{\\}(\mathbf{v}) + \mathbf{u}_{\perp}(\mathbf{v}) \]
+
+
+            On écrit $\mathbf{V}$ comme une transformée de Fourier
+            \[ \mathbf{V}(\mathbf{r}) = \iiint \mathbf{G}(\mathbf{w}) e^{i \mathbf{w} \cdot \mathbf{r}} d\mathbf{w} \]
+            et on considère les champs scalaires et vectoriels définis à partir des parties parallèle et vectorielle du vecteur $\mathbf{G}(\mathbf{w})$ :
+            \[ G_{\psi}(\mathbf{w}) = i \frac{\mathbf{w} \cdot \mathbf{G}(\mathbf{w})}{\nor{\mathbf{w}}^2} \quad \text{et} \quad \mathbf{G}_{\mathbf{A}}(\mathbf{w}) = i \frac{\mathbf{w} \times \mathbf{G}(\mathbf{w})}{\nor{\mathbf{w}}^2} \]
+            et 
+            \[ \psi(\mathbf{r}) = \iiint G_{\psi}(\mathbf{w}) e^{i \mathbf{w} \cdot \mathbf{r}} d \mathbf{w} \quad \text{et} \quad \mathbf{A}(\mathbf{r}) = \iiint \mathbf{G}_{\mathbf{A}}(\mathbf{w}) e^{i \mathbf{w} \cdot \mathbf{r}} d \mathbf{w} \]
+            Ainsi, d’après la décomposition de $\mathbf{G}(\mathbf{w})$ en ses parties parallèles et perpendiculaires à $\mathbf{w}$, on a 
+            \[ \mathbf{G}(\mathbf{w}) = - i \mathbf{w} G_{\psi}(\mathbf{w}) + i \mathbf{w} \times \mathbf{G}_{\mathbf{A}}(\mathbf{w}) \]   
+            et donc
+            \begin{align*}
+                \mathbf{V}(\mathbf{r})
+                &= \iiint (-i \mathbf{w} G_{\psi}(\mathbf{w})) + i \mathbf{w} \times \mathbf{G}_{\mathbf{A}}(\mathbf{w}) e^{i \mathbf{w} \cdot \mathbf{r}} d \mathbf{w}  \\
+                &= - \iiint \mathbf{w} G_{\psi}(\mathbf{w}) e^{i \mathbf{w} \cdot \mathbf{r}} d \mathbf{w} + \iiint i \mathbf{w} \times \mathbf{G}_{\mathbf{A}}(\mathbf{w}) e^{i \mathbf{w} \cdot \mathbf{r}} d \mathbf{w} \\
+                &= - \nabla \psi(\mathbf{r}) + \nabla \times \mathbf{A}(\mathbf{r})
+            \end{align*}
+        \end{demo}
+
+        \begin{omed}{Théorème (de Helmholtz)}
+            Soient $\rho$ un champ scalaire et $\mathbf{j}$ un champ vectoriel solénoïdal ($\nabla \cdot \mathbf{j} = 0$) définis dans $\mathbf{R}^3$ et supposés décroissants en $O_{r \to \infty} \left(\frac{1}{r^2}\right)$. Il existe un champ vectoriel $\mathbf{V}$ tel que 
+            \[ \nabla \cdot \mathbf{V} = \rho \quad \text{et} \quad \nabla \times \mathbf{V} = \mathbf{j} \]   
+            qui est unique si ce potentiel décroît $O_{r \to \infty} \left(\frac{1}{r^2}\right)$.
+        \end{omed}
+
+        \begin{demo}{Démonstration}
+            
+        \end{demo}

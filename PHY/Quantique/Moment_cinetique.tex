@@ -158,5 +158,74 @@ Or on sait que $\hat{J}_+ \hat{J}_- \ket{\psi} = (j(j+1) - m(m+1)) \hbar^2 \ket{
 \[ \ket{\psi} = \sum_n \frac{c_n}{\sqrt{j(j+1) - m(m+1)}\hbar} \ket{n, j, m+1} \]
 Cela conclut la démonstration par récurrence.
 
+\subsection{Addition de moments cinétiques}
+
+        \subsubsection{Principe à $N$ particules}
+
+        Considérons un système composite constitué de $N$ sous-systèmes, chacun décrits par l’espace de Hilbert $\mathcal{E}^{(n)}$. Dans l’espace tensoriel, l’opérateur associé à une rotation $\vec{\alpha}$ s’obtient en écrivant la composition des rotations sur chaque sous-système $n$, soit 
+        \[ \hat{R}_{\vec{\alpha}} = e^{- \frac{i}{\hbar} \hat{\vec{J}}_1 \cdot \vec{\alpha}} \cdots e^{- \frac{i}{\hbar} \hat{\vec{J}}_N \cdot \vec{\alpha}} = e^{- \frac{i}{\hbar} \hat{\vec{J}} \cdot \vec{\alpha}} \]
+        où l’on a utilisé le fait que $\hat{\vec{J}}_{n \neq m}$ commute avec $\hat{\vec{J}}_m$ car ils agissent dans des espaces différents et on a posé 
+        \[ \hat{\vec{J}} = \sum_{n = 1}^N \hat{\vec{J}}_n \]
+        Dans le cas où le système est invariant par rotation, on pourra diagonaliser dans une même base les observables $\hat{H}$, $\hat{J}^2$ et $\hat{J}_z$. Ce sont donc les états propres du moment cinétique total qui vont nous intéresser. L’\textbf{addition des moments cinétiques} est la méthode consistant à déterminer les valeurs propres admissibles du moment cinétique total à partir de celles de ses constituants individuels. 
+
+        \subsubsection{Addition de deux spins 1/2}
+
+        Considérons l’état de spin de deux particules $(a)$ et $(b)$ dans l’espace $\mathcal{E}_H = \mathcal{E}_{\text{spin}}^{(a)} \otimes \mathcal{E}_{\text{spin}}^{(b)}$ de dimension 4. On appelle $\hat{\vec{S}}_a$ et $\hat{\vec{S}}_b$ les observables associées au spin de chacune des deux particules et on décrit le système dans la base $\left\{\ket{\pm\pm}\right\}$ construite à partir des valeurs propres des observables $\hat{S}_{az}$ et $\hat{S}{bz}$. Le moment cinétique total est 
+        \[ \hat{\vec{S}} = \hat{\vec{S}}_a + \hat{\vec{S}}_b \]  
+        
+
+        \begin{omed}{Addition de deux spins 1/2}
+            Les valeurs propres de l’observable $\hat{S}^2$ sont de la forme $s(s+1)\hbar^2$ avec $s \in \intEN{0}{1}$. On appelle \textbf{base couplée} l’ensemble des vecteurs propres communs de $\hat{S}^2$ et $\hat{S}_z$, qui s’écrivent dans la base tensorielle selon les expressions :
+            \begin{align*}
+                \ket{0,0} &= \frac{\ket{+-} - \ket{-+}}{\sqrt{2}} \\
+                \ket{1,1} &= \ket{++} \\
+                \ket{1,0} &=  \frac{\ket{+-} + \ket{-+}}{\sqrt{2}} \\
+                \ket{1,-1} &= \ket{--} \\
+            \end{align*}
+        \end{omed}
+
+        L’état $\ket{0,0}$ est appelé \textbf{état singulet}, tandis que les états correspondant à $s = 1$ sont appelés \textbf{états triplets}.
+
+        \begin{demo}{Démonstration}
+            Les valeurs propres associées à cet observable de type moment cinétique ($\hat{\vec{S}} \times \hat{\vec{S}} = i \hbar \hat{\vec{S}}$) sont de la forme $s(s+1)\hbar^2$ pour $\hat{S}^2$ et de la forme $m \hbar$ pour $\hat{S}_z$, avec $s$ et $m$ entiers ou demi-entiers. La base tensorielle étant une base propre de $\hat{S}_z$, on peut directement trouver $m$ :
+        \begin{align*}
+            \hat{S}_z \ket{++} &= \frac{\hbar}{2} \ket{++} + \frac{\hbar}{2} \ket{++} = \hbar \ket{++} \\
+            \hat{S}_z \ket{+-} &= \frac{\hbar}{2} \ket{+-} - \frac{\hbar}{2} \ket{+-} = 0 \\
+            \hat{S}_z \ket{-+} &= 0 \\
+            \hat{S}_z \ket{--} &= - \frac{\hbar}{2} \ket{--} - \frac{\hbar}{2} \ket{--} = - \hbar \ket{--} \\
+        \end{align*}
+        Ainsi, $m \in \intEN{-1}{1}$ est un entier, ce qui sera par conséquent le cas de $s$, qui peut prendre les valeurs $0$ ou $1$. Étant donné que l’espace $\mathcal{E}_{1,1}$ est non dégénéré (engendré par $\ket{++}$), il est de dimension 1. Il en va donc de même pour $\mathcal{E}_{1,0}$ et $\mathcal{E}_{1,-1}$ puisque la dimension des espaces $\mathcal{E}_{s,m}$ ne dépend que de $s$. Comme notre espace est de dimension quatre, $\mathcal{E}_{0,0}$ est nécessairement de dimension 1 aussi.
+
+        Construisons explicitement les quatre vecteurs propres communs aux deux observables $\hat{S}^2$ et $\hat{S}_z$. On utilise pour cela la relation 
+        \[ \hat{S}^2 = \hat{S}_- \hat{S}_+ + \hat{S}_z^2 + \hbar \hat{S}_z \]   
+        Cela donne 
+        \[\hat{S}^2 \ket{++} = 2 \hbar^2 \ket{++}\]
+        $\ket{++}$ est donc bien vecteur propre commun aux deux observables, et on peut le noter $\ket{s=1,m=1}$. On trouve similairement que $\ket{--} = \ket{1,-1}$. Pour trouver $\ket{1,0}$, on peut appliquer $\hat{S}_-$ :
+        \begin{align*}
+            \hat{S}_- \ket{s,m} &= \sqrt{s(s+1) - m(m-1)} \hbar \ket{s,m-1} \\
+            \ket{1,0} &\overset{\Updownarrow}{=} \frac{1}{\sqrt{2}\hbar} \hat{S}- \ket{1,1} \\
+            &= \frac{\ket{+-} + \ket{-+}}{\sqrt{2}}
+        \end{align*}
+        Enfin, le vecteur $\ket{0,0}$ est orthogonal aux trois autres, et nous pouvons facilement intuiter sa forme 
+        \[ \ket{0,0} = \frac{\ket{+-} - \ket{-+}}{\sqrt{2}} \]   
+        \end{demo}
+
+        \subsubsection{Addition de deux moments cinétiques quelconques}
+
+        On peut répéter la démarche précédente dans le cas général : on se munit de deux moments cinétiques $\hat{\vec{J}}_1$ et $\hat{\vec{J}}_2$ agissant dans les espaces $\mathcal{E}^{(1)}$ et $\mathcal{E}^{(2)}$. Les opérateurs $\hat{J}_1^2$, $\hat{J}_{1z}$, $\hat{J}^2_2$ et $\hat{J}_{2z}$ commutant entre eux, on peut construire une base tensorielle $\left\{\ket{n_1, j_1, m_1} \otimes \ket{n_2, j_2, m_2}\right\}$ de l’espace $\mathcal{E}_H = \mathcal{E}^{(1)} \otimes \mathcal{E}^{(2)}$ associée  aux valeurs propres $j_{i}(j_i + 1)\hbar$ et $m_i \hbar$ pour les quatre opérateurs. Ces derniers ne constituant pas obligatoirement un ECOC, les nombres $n_1$ et $n_2$ sont a priori nécessaires.
+
+        \begin{omed}{Valeurs propres de $\hat{J}^2$ et $\hat{J}_z$}
+            Pour des valeurs données des nombres $j_1$ et $j_2$, 
+            \begin{align*}
+                j &\in \intEN{\abs{j_1 - j_2}}{j_1 + j_2} \\
+                m &\in \intEN{-j}{j} \\
+            \end{align*}
+        \end{omed}
+
+        \begin{demo}{Preuve à faire}
+            
+        \end{demo}
+
+
 
 

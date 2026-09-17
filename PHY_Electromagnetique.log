@@ -1,8 +1,8 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.16)  15 SEP 2026 15:26
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.16)  17 SEP 2026 10:59
  restricted system commands enabled.
  file:line:error style messages enabled.
-**c:/Users/o-all/Desktop/LaTeX_SYNC/PHY_Quantique.tex
-(c:/Users/o-all/Desktop/LaTeX_SYNC/PHY_Quantique.tex
+**c:/Users/o-all/Desktop/LaTeX_SYNC/PHY_Electromagnetique.tex
+(c:/Users/o-all/Desktop/LaTeX_SYNC/PHY_Electromagnetique.tex
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-11>
 Lua module: luaotfload 2023-08-31 3.26 Lua based OpenType font support
@@ -112,12 +112,12 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 ) (c:/texlive/2023/texmf-dist/tex/latex/polyglossia/gloss-french.ldf
 File: gloss-french.ldf polyglossia: module for French
 Module polyglossia Info: Language data for french
-(polyglossia)            lefthyphenmin	2
+(polyglossia)            patterns	hyph-fr.pat.txt
 (polyglossia)            hyphenation	
-(polyglossia)            synonyms	patois,francais
 (polyglossia)            loader	loadhyph-fr.tex
+(polyglossia)            synonyms	patois,francais
 (polyglossia)            righthyphenmin	2
-(polyglossia)            patterns	hyph-fr.pat.txt on input line 17
+(polyglossia)            lefthyphenmin	2 on input line 17
 Module polyglossia Info: Language french was not yet loaded; created with id 2 on input line 17
 Lua-only attribute polyglossia_punct = 4
 Package polyglossia Info: Option: French, variant=french.
@@ -843,15 +843,86 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \ar@cellbox=\box128
 ) (c:/texlive/2023/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write4
- Excluding comment 'comment') (c:/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
+ Excluding comment 'comment') (c:/texlive/2023/texmf-dist/tex/latex/ccicons/ccicons.sty
+Package: ccicons 2017/10/30 v1.6 LaTeX support for Creative Commons icons
+) (c:/texlive/2023/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
+\c@tracingmulticols=\count353
+\mult@box=\box129
+\multicol@leftmargin=\dimen327
+\c@unbalance=\count354
+\c@collectmore=\count355
+\doublecol@number=\count356
+\multicoltolerance=\count357
+\multicolpretolerance=\count358
+\full@width=\dimen328
+\page@free=\dimen329
+\premulticols=\dimen330
+\postmulticols=\dimen331
+\multicolsep=\skip56
+\multicolbaselineskip=\skip57
+\partial@page=\box130
+\last@line=\box131
+\mc@boxedresult=\box132
+\maxbalancingoverflow=\dimen332
+\mult@rightbox=\box133
+\mult@grightbox=\box134
+\mult@firstbox=\box135
+\mult@gfirstbox=\box136
+\@tempa=\box137
+\@tempa=\box138
+\@tempa=\box139
+\@tempa=\box140
+\@tempa=\box141
+\@tempa=\box142
+\@tempa=\box143
+\@tempa=\box144
+\@tempa=\box145
+\@tempa=\box146
+\@tempa=\box147
+\@tempa=\box148
+\@tempa=\box149
+\@tempa=\box150
+\@tempa=\box151
+\@tempa=\box152
+\@tempa=\box153
+\@tempa=\box154
+\@tempa=\box155
+\@tempa=\box156
+\@tempa=\box157
+\@tempa=\box158
+\@tempa=\box159
+\@tempa=\box160
+\@tempa=\box161
+\@tempa=\box162
+\@tempa=\box163
+\@tempa=\box164
+\@tempa=\box165
+\@tempa=\box166
+\@tempa=\box167
+\@tempa=\box168
+\@tempa=\box169
+\@tempa=\box170
+\@tempa=\box171
+\@tempa=\box172
+\c@minrows=\count359
+\c@columnbadness=\count360
+\c@finalcolumnbadness=\count361
+\last@try=\dimen333
+\multicolovershoot=\dimen334
+\multicolundershoot=\dimen335
+\mult@nat@firstbox=\box173
+\colbreak@box=\box174
+\mc@col@check@num=\count362
+) (c:/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \enitkv@toks@=\toks43
-\labelindent=\skip56
-\enit@outerparindent=\dimen327
+\labelindent=\skip58
+\enit@outerparindent=\dimen336
 \enit@toks=\toks44
-\enit@inbox=\box129
-\enit@count@id=\count353
-\enitdp@description=\count354
+\enit@inbox=\box175
+\enit@count@id=\count363
+\enitdp@description=\count364
 ) (c:/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
  (c:/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
@@ -875,17 +946,17 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
  (c:/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count355
+\c@section@level=\count365
 )
-\@linkdim=\dimen328
-\Hy@linkcounter=\count356
-\Hy@pagecounter=\count357
+\@linkdim=\dimen337
+\Hy@linkcounter=\count366
+\Hy@pagecounter=\count367
  (c:/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
 ) (c:/texlive/2023/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count358
+\Hy@SavedSpaceFactor=\count368
  (c:/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
 )
@@ -896,21 +967,21 @@ Package hyperref Info: Plain pages OFF on input line 4196.
 Package hyperref Info: Backreferencing OFF on input line 4201.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4448.
-\c@Hy@tempcnt=\count359
+\c@Hy@tempcnt=\count369
  (c:/texlive/2023/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4786.
-\XeTeXLinkMargin=\dimen329
+\XeTeXLinkMargin=\dimen338
  (c:/texlive/2023/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (c:/texlive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count360
-\Field@Width=\dimen330
-\Fld@charsize=\dimen331
+\Fld@menulength=\count370
+\Field@Width=\dimen339
+\Fld@charsize=\dimen340
 Package hyperref Info: Hyper figures OFF on input line 6065.
 Package hyperref Info: Link nesting OFF on input line 6070.
 Package hyperref Info: Hyper index ON on input line 6073.
@@ -922,9 +993,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6095.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count361
-\c@Item=\count362
-\c@Hfootnote=\count363
+\Hy@abspage=\count371
+\c@Item=\count372
+\c@Hfootnote=\count373
 )
 Package hyperref Info: Driver (autodetected): hluatex.
  (c:/texlive/2023/texmf-dist/tex/latex/hyperref/hluatex.def
@@ -935,8 +1006,8 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count364
-\c@bookmark@seq@number=\count365
+\Fld@listcount=\count374
+\c@bookmark@seq@number=\count375
  (c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -944,15 +1015,13 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip57
+\Hy@SectionHShift=\skip59
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 94.
-) (./_Template/Preambule_SC.tex (c:/texlive/2023/texmf-dist/tex/latex/ccicons/ccicons.sty
-Package: ccicons 2017/10/30 v1.6 LaTeX support for Creative Commons icons
-)
-\c@omedcounter=\count366
-) (./PHY_Quantique.aux)
-\openout1 = PHY_Quantique.aux
+Package hyperref Info: Option `colorlinks' set `true' on input line 105.
+) (./_Template/Preambule_SC.tex
+\c@omedcounter=\count376
+) (./PHY_Electromagnetique.aux)
+\openout1 = PHY_Electromagnetique.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -1010,16 +1079,16 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
  (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count367
-\scratchdimen=\dimen332
-\scratchbox=\box130
-\nofMPsegments=\count368
-\nofMParguments=\count369
+\scratchcounter=\count377
+\scratchdimen=\dimen341
+\scratchbox=\box176
+\nofMPsegments=\count378
+\nofMParguments=\count379
 \everyMPshowfont=\toks45
-\MPscratchCnt=\count370
-\MPscratchDim=\dimen333
-\MPnumerator=\count371
-\makeMPintoPDFobject=\count372
+\MPscratchCnt=\count380
+\MPscratchDim=\dimen342
+\MPnumerator=\count381
+\makeMPintoPDFobject=\count382
 \everyMPtoPDFconversion=\toks46
 ) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1027,15 +1096,15 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@lstlisting=\count373
+\c@lstlisting=\count383
  (c:/texlive/2023/texmf-dist/tex/latex/ninecolors/ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 )
 Package hyperref Info: Link coloring ON on input line 12.
- (./PHY_Quantique.out) (./PHY_Quantique.out)
+ (./PHY_Electromagnetique.out) (./PHY_Electromagnetique.out)
 \@outlinefile=\write5
 
-\openout5 = PHY_Quantique.out
+\openout5 = PHY_Electromagnetique.out
 LaTeX Info: Redefining \rmfamily on input line 12.
 LaTeX Info: Redefining \sffamily on input line 12.
 LaTeX Info: Redefining \ttfamily on input line 12.
@@ -1047,17 +1116,17 @@ Removing  `luaotfload.harf.finalize_hlist' from `hpack_filter'.
 Inserting `polyglossia-punct.process' in `hpack_filter'.
 Inserting `luaotfload.node_processor' in `hpack_filter'.
 Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'. (./_Template/Titlepage.tex
-<_Images/poly-vert-colorless.pdf, id=191, 345.29pt x 599.23875pt>
+<_Images/poly-vert-colorless.pdf, id=71, 345.29pt x 599.23875pt>
 File: _Images/poly-vert-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-vert-colorless.pdf>
 Package luatex.def Info: _Images/poly-vert-colorless.pdf  used on input line 5.
 (luatex.def)             Requested size: 72.26999pt x 125.4141pt.
-<_Images/poly-armes-colorless.pdf, id=192, 598.235pt x 788.9475pt>
+<_Images/poly-armes-colorless.pdf, id=72, 598.235pt x 788.9475pt>
 File: _Images/poly-armes-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-armes-colorless.pdf>
 Package luatex.def Info: _Images/poly-armes-colorless.pdf  used on input line 7.
 (luatex.def)             Requested size: 578.15999pt x 762.52136pt.
-<_Images/poly-filet-colorless.pdf, id=193, 124.21407pt x 2.1681pt>
+<_Images/poly-filet-colorless.pdf, id=73, 124.21407pt x 2.1681pt>
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 12.
@@ -1091,7 +1160,7 @@ Package fontspec Info: Font family 'LibertinusSerif(1)' created for font
 
  [1
 
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}<./_Images/poly-vert-colorless.pdf><./_Images/poly-armes-colorless.pdf><./_Images/poly-filet-colorless.pdf>]) (./PHY_Quantique.toc
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}<./_Images/poly-vert-colorless.pdf><./_Images/poly-armes-colorless.pdf><./_Images/poly-filet-colorless.pdf>]) (./PHY_Electromagnetique.toc
 LaTeX Info: Redefining \rmfamily on input line 2.
 LaTeX Info: Redefining \sffamily on input line 2.
 LaTeX Info: Redefining \ttfamily on input line 2.
@@ -1450,155 +1519,68 @@ Package microtype Info: Character `textexclamdown ' is missing
 Package microtype Info: Character `textquestiondown ' is missing
 (microtype)             in font `TU/Erewhon-Math(3)/m/n/6.6'.
 (microtype)             Ignoring protrusion settings for this character.
+)
+\tf@toc=\write6
+
+\openout6 = PHY_Electromagnetique.toc
+ (./PHY/Electromagnetique/Analyse_vectorielle.tex
+Missing character: There is no 𝜎 (U+1D70E) in font LibertinusSerif/B:mode=harf;script=latn;language=dflt;+tlig;+liga;+hlig;+dlig;+dlig,+hlig,+calt;!
+Missing character: There is no 𝜎 (U+1D70E) in font LibertinusSerif/B:mode=harf;script=latn;language=dflt;+tlig;+liga;+hlig;+dlig;+dlig,+hlig,+calt;!
+Missing character: There is no 𝜎 (U+1D70E) in font LibertinusSerif/B:mode=harf;script=latn;language=dflt;+tlig;+liga;+hlig;+dlig;+dlig,+hlig,+calt;!
+Missing character: There is no 𝜎 (U+1D70E) in font LibertinusSerif/B:mode=harf;script=latn;language=dflt;+tlig;+liga;+hlig;+dlig;+dlig,+hlig,+calt;!
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
-(Font)              scaled to size 10.95pt on input line 31.
-[1])
-\tf@toc=\write6
-
-\openout6 = PHY_Quantique.toc
- (./PHY/Quantique/Principes_fondamentaux.tex [2]
+(Font)              scaled to size 10.95pt on input line 19.
+[1] [2]) (./PHY/Electromagnetique/Equations_Maxwell.tex [3]
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
 (luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [3
+ [4
 
-] [4] [5] [6] [7]) (./PHY/Quantique/Outils_mathematiques.tex [8]
+] [5]
+Underfull \hbox (badness 1168) in paragraph at lines 63--64
+[]\TU/LibertinusSerif(0)/b/n/12 Élec-tro-sta-tique[] \TU/LibertinusSerif(0)/m/n/12 Dans une si-tua-tion d’élec-tro-sta-tisme, les
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 98--100
+\TU/LibertinusSerif(0)/m/n/12 Pour une onde plane mo-no-chro-ma-tique $\TU/Erewhon-Math(1)/m/n/12 𝑢(\TU/LibertinusSerif(0)/b/n/12 r\TU/Erewhon-Math(1)/m/n/12 , 𝑡) =
+ []
+
+[7] [8] [9]) (./PHY/Electromagnetique/Milieux_dielectriques.tex [10]
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
 (luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [9
+ [11
 
-] [10] [11] [12] [13] [14]) (./PHY/Quantique/Methodes_dapproximation.tex [15]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [16
-
-] [17]
-Overfull \hbox (40.5846pt too wide) detected at line 58
-[]
- []
-
-
-Overfull \hbox (17.2196pt too wide) detected at line 68
-[]
- []
-
-[18]
-Overfull \hbox (10.42471pt too wide) detected at line 82
-[]
- []
-
-
-Overfull \hbox (0.97183pt too wide) detected at line 86
-[] [] \TU/Erewhon-Math(1)/m/n/12 + [] [] = 𝐸[] [] + 𝐸[] [] + 𝐸[] []
- []
-
-[19]
-Overfull \hbox (16.97159pt too wide) detected at line 103
-[]
- []
-
-
-Overfull \hbox (13.33618pt too wide) detected at line 124
-[] [] \TU/Erewhon-Math(1)/m/n/12 = 𝛿𝐸[] []
- []
-
-[20] [21]) (./PHY/Quantique/Symetrie.tex [22]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [23
-
-] [24] [25] [26] [27] [28] [29] [30]) (./PHY/Quantique/Moment_cinetique.tex [31]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [32
-
-] [33]
-Overfull \hbox (2.45998pt too wide) detected at line 76
-[]
- []
-
-[34]
-Overfull \hbox (0.77148pt too wide) detected at line 94
-[] [] \TU/Erewhon-Math(1)/m/n/12 = []ℏ []
- []
-
-[35] [36] [37] [38] [39] [40]) (./PHY/Quantique/Moment_cinetique_orbital.tex [41] [42]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [43
-
-] [44] [45]
-Overfull \hbox (38.61055pt too wide) detected at line 81
-[]
- []
-
-[46] [47] [48] [49]) (./PHY/Quantique/Moment_cinetique_intrinseque.tex [50]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [51
-
-] [52] [53] [54] Excluding 'comment' comment. [55]) (./PHY/Quantique/Atome_hydrogene.tex [56]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [57
-
-] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68]
-Overfull \hbox (23.5947pt too wide) detected at line 227
-[] \TU/Erewhon-Math(1)/m/n/12 = [] [] − [][][] ⋅ [][] []
- []
-
-
-Overfull \hbox (32.51114pt too wide) detected at line 233
-[]
- []
-
-[69]) (./PHY/Quantique/Particules_indiscernables.tex [70]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [71
-
-] [72] [73] [74] [75] [76]) [77] (./PHY_Quantique.aux)
+]
+Missing character: There is no 𝛤 (U+1D6E4) in font LibertinusSerif/B:mode=harf;script=latn;language=dflt;+tlig;+liga;+hlig;+dlig;+dlig,+hlig,+calt;!
+) [12] (./PHY_Electromagnetique.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-11>
  ***********
-Package rerunfilecheck Info: File `PHY_Quantique.out' has not changed.
-(rerunfilecheck)             Checksum: 2A3C49880A9CDCAB68903EDF917263FA;8120.
+Package rerunfilecheck Info: File `PHY_Electromagnetique.out' has not changed.
+(rerunfilecheck)             Checksum: D4F60636E1B9B67A5A005F083084425D;1976.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42616 strings out of 476506
+ 41989 strings out of 476506
  125038,1977958 words of node,token memory allocated
- 3902 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 1 local_par, 13 glue, 5 kern, 2 penalty, 51 sub_mlist, 61 glyph, 720 attribute, 56 glue_spec, 398 attribute_list, 2 write, 24 pdf_literal, 1 pdf_action, 24 pdf_colorstack nodes
-   avail lists: 1:2,2:3252,3:1650,4:252,5:488,6:83,7:4629,8:69,9:1186,10:22,11:325
- 63416 multiletter control sequences out of 65536+600000
- 68 fonts using 33452387 bytes
- 107i,14n,105p,1043b,1198s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 1806 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 1 local_par, 18 glue, 5 kern, 2 penalty, 1 margin_kern, 3 glyph, 188 attribute, 60 glue_spec, 132 attribute_list, 2 write, 24 pdf_literal, 1 pdf_action, 24 pdf_colorstack nodes
+   avail lists: 1:3,2:2107,3:847,4:164,5:288,6:37,7:3955,8:50,9:706,10:19,11:252
+ 63013 multiletter control sequences out of 65536+600000
+ 62 fonts using 29259779 bytes
+ 107i,14n,105p,1051b,1235s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-BoldItalic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf><c:/texlive/2023/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb>
-Output written on PHY_Quantique.pdf (78 pages, 523088 bytes).
+Output written on PHY_Electromagnetique.pdf (13 pages, 221402 bytes).
 
-PDF statistics: 969 PDF objects out of 1000 (max. 8388607)
- 785 compressed objects within 8 object streams
- 210 named destinations out of 1000 (max. 131072)
- 552 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 336 PDF objects out of 1000 (max. 8388607)
+ 222 compressed objects within 3 object streams
+ 38 named destinations out of 1000 (max. 131072)
+ 312 words of extra memory for PDF output out of 10000 (max. 100000000)
 

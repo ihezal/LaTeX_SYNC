@@ -1,0 +1,178 @@
+% Mise en page beamer
+\setbeamersize{
+  text margin left=.25in,
+  text margin right=.25in
+}
+
+% Police pour beamer
+\usefonttheme{professionalfonts}
+\usefonttheme{serif}
+
+% Couleurs pour beamer
+\colorlet{couleurmatiere}{Pantone7694C}
+\colorlet{bleutertiaire}{couleurmatiere!4}
+\colorlet{bleusecond}{couleurmatiere!12}
+\colorlet{bleupremier}{couleurmatiere!20}
+\colorlet{gristertiaire}{gris!4}
+\colorlet{grissecond}{gris!12}
+\colorlet{grispremier}{gris!20}
+
+
+% Titlepage
+\setbeamertemplate{title page}{
+  \begin{tikzpicture}[overlay, remember picture]
+    \fill[couleurmatiere] (current page.north west) rectangle ($(current page.south west) + (1.5in,0)$);
+    \node[anchor=north, couleurmatiere!50!white] at ($(current page.north west) + (.5in, -.25in)$) {\includegraphics[width=.5in]{_Images/poly-vert-colorless.pdf}};
+    \node[anchor=center, couleurmatiere!10!white] at ($(current page.south west) + (2.25in,.75in)$) {\includegraphics[width=3in]{_Images/poly-armes-colorless.pdf}};
+
+
+    \node[anchor=center, black] at ($(current page.north) + (.75in,-.5in)$) {\resizebox{!}{.2in}{\itshape\bfseries \inserttitle}};
+    \node[anchor=center, black] at ($(current page.north) + (.75in,-1.6in)$) {\resizebox{!}{.1in}{\insertsubtitle}};
+    \node[anchor=center, couleurmatiere] at ($(current page.north) + (.75in, -2in)$) {\includegraphics[width=3in]{_Images/poly-filet-colorless.pdf}};
+    \node[anchor=center, black] at ($(current page.north) + (.75in,-2.4in)$) {\resizebox{!}{.1in}{\bfseries\fontfamily{lmr} \insertauthor}};
+    \node[anchor=center, black] at ($(current page.north) + (.75in,-2.6in)$) {\resizebox{!}{.1in}{\oldstylenums{\today}}};
+  \end{tikzpicture}
+}
+
+
+% Sectionpage
+\setbeamertemplate{section page}{
+  \begin{tikzpicture}[overlay, remember picture]
+    \fill[couleurmatiere] (current page.north west) rectangle ($(current page.south west) + (1.5in,0)$);
+    \node[anchor=south, couleurmatiere!50!white] at ($(current page.south west) + (.5in, .25in)$) {\includegraphics[width=.5in]{_Images/poly-vert-colorless.pdf}};
+    \node[anchor=west, couleurmatiere!50!white, font=\fontsize{50}{55}\selectfont\bfseries] at ($(current page.west) + (.25in, 1in)$) {\insertsectionnumber};
+
+    \node[anchor=north, couleurmatiere, font=\fontsize{28}{32}\selectfont\bfseries] at ($(current page.north) + (0in, -.5in)$) {\insertsection};
+    \node[anchor=center, couleurmatiere] at ($(current page.north) + (0in, -1in)$) {\includegraphics[width=1.5in]{_Images/poly-filet-colorless.pdf}};
+  \end{tikzpicture}
+  \hspace*{1in}
+  \begin{center}
+    \begin{minipage}{.5\paperwidth}
+      \tableofcontents[currentsection, sectionstyle=hide, subsectionstyle=show]
+    \end{minipage}
+  \end{center}
+}
+
+\AtBeginSection[]{
+  \begin{frame}[plain,noframenumbering]
+    \sectionpage
+  \end{frame}
+}
+
+
+%-----------------
+% Layout permanent
+%-----------------
+
+\setbeamertemplate{frametitle}{
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=west, couleurmatiere] at ($(current page.north west) + (.2in,-.2in)$) {\itshape\bfseries\insertframetitle};
+    \node[anchor=east, couleurmatiere] at ($(current page.north east) + (-.25in, -.2in)$) {\insertslidenavigationsymbol \insertsectionnavigationsymbol};
+  \end{tikzpicture}
+}
+
+\setbeamertemplate{footline}{
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw[gbox] ($(current page.south west) + (.1in , .1in)$) rectangle ($(current page.south east) + (-.1, .3in)$);
+    \node[anchor=west, couleurmatiere] at ($(current page.south west) + (.2in,.2in)$) {\href{https://creativecommons.org/licenses/by-nc/4.0/}{\tiny \ccbync}};
+    \node[anchor=center, couleurmatiere] at ($(current page.south) + (0, .2in)$) {\insertframenumber{} / \inserttotalframenumber};
+    \node[anchor=east, couleurmatiere] at ($(current page.south east) + (-.25in, .2in)$) {\insertsection \quad -- \quad \insertsubsection};
+  \end{tikzpicture}
+}
+\setbeamertemplate{navigation symbols}{}
+
+%----------------------------
+% Environnements omed et demo
+%----------------------------
+\newcounter{omedcounter}
+\renewcommand{\theomedcounter}{\thesection.\arabic{omedcounter}}
+\NewDocumentEnvironment{omed}{mo}
+{%
+  \refstepcounter{omedcounter}
+  \IfValueT{#2}{\label{#2}}
+  \begin{tcolorbox}[
+      general,
+      overlay unbroken and first={
+          \node[
+            black,
+            text width=.5in,
+            align=center,
+            anchor=north
+          ] at ($(frame.north west)+(-.75in,-.1cm)$)
+          {\color{couleurmatiere}\textbf{\thesection.\arabic{omedcounter}}};
+        } ]
+    \textbf{\textit{#1} ---}
+    }{%
+  \end{tcolorbox}
+}
+
+\NewDocumentEnvironment{demo}{m}{%
+  \textcolor{gris}{\bfseries #1 ---}
+}{%
+  \hfill\textcolor{gris}{\rule{1ex}{1ex}}
+}
+
+
+% ------------------------------------------------------------
+% Table des matières — style article
+% ------------------------------------------------------------
+\makeatletter
+
+% Récupère le numéro de page de chaque section dans la TOC
+\patchcmd{\beamer@sectionintoc}
+{\def\inserttocsection{\hyperlink{Navigation#3}{#2}}}
+{%
+  \def\inserttocsection{\hyperlink{Navigation#3}{#2}}%
+  \def\inserttocsectionpage{#3}%
+}
+{}{}
+
+% Récupère le numéro de page de chaque sous-section dans la TOC
+\patchcmd{\beamer@subsectionintoc}
+{\def\inserttocsubsection{\hyperlink{Navigation#4}{#3}}}
+{%
+  \def\inserttocsubsection{\hyperlink{Navigation#4}{#3}}%
+  \def\inserttocsubsectionpage{#4}%
+}
+{}{}
+
+\makeatother
+
+% Section
+\setbeamertemplate{section in toc}{%
+  \leavevmode
+  \leftskip=0em
+  \rightskip=0em
+  \parfillskip=0pt
+  \usebeamerfont{section in toc}%
+  \textcolor{couleurmatiere}{\inserttocsectionnumber.}\hspace{0.5em}%
+  \inserttocsection
+  \nobreak\leaders\hbox to 0.6em{\hss.\hss}\hfill
+  \inserttocsectionpage
+  \par
+}
+
+% Sous-section
+\setbeamertemplate{subsection in toc}{%
+  \leavevmode
+  \leftskip=2em
+  \rightskip=0em
+  \parfillskip=0pt
+  \usebeamerfont{subsection in toc}%
+  \textcolor{couleurmatiere}{\inserttocsectionnumber.\inserttocsubsectionnumber}%
+  \hspace{0.5em}%
+  \inserttocsubsection
+  \nobreak\leaders\hbox to 0.6em{\hss.\hss}\hfill
+  \inserttocsubsectionpage
+  \par
+}
+
+% On cache les sous-sous-sections
+\setbeamertemplate{subsubsection in toc}{}
+
+% Apparence générale
+\setbeamerfont{section in toc}{size=\large}
+\setbeamerfont{subsection in toc}{size=\normalsize}
+
+
+

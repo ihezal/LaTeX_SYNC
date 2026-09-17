@@ -1,0 +1,184 @@
+\section{Équations de Maxwell}
+
+    Ces équations déterminent les règles qui régissent le comportement des ondes électromagnétiques dans le cadre général. Elles généralisent des situations particulières telles que l’électrostatique, la magnétostatique, les régimes lentement variables\ldots. 
+    
+    \subsection{Équations de Maxwell dans le vide}
+
+
+        Pour définir un champ électromagnétique $(\mathbf{E}(\mathbf{r},t), \mathbf{B}(\mathbf{r},t))$, on peut donner son action mécanique sur une charge élémentaire $q$, qui subit ce qu’on appelle la \textbf{force de Lorentz} 
+        \[ \mathbf{F}(\mathbf{r},t) = q\left[\mathbf{E}(\mathbf{r},t) + \mathbf{v}(t) \times \mathbf{B}(\mathbf{r},t)\right] \]    
+        La dynamique des ces champs est gouverné par l’ensemble clos des quatre équations de Maxwell :
+        \begin{omed}{Proposition (équations de Maxwell)}
+            \begin{align*}
+                \textbf{Maxwell-Thompson} \quad &\nabla \cdot \mathbf{B} = 0 \\
+                \textbf{Maxwell-Faraday} \quad &\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t} \\
+                \textbf{Maxwell-Gauss} \quad  &\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_{0}} \\
+                \textbf{Maxwell-Ampère} \quad &\nabla \times \mathbf{B} = \mu_0 \mathbf{j} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} 
+            \end{align*}
+        \end{omed}
+        Ces équations ne se démontrent pas, mais elles (et l’ensemble de leurs conséquences) sont validées par l’expérience. 
+        
+        Ces quatre équations suffisent à définir entièrement $\mathbf{E}$ et $\mathbf{B}$, puisque Helmholtz a prouvé que tout champ de vecteur se décompose en un champ à divergence nulle et un champ à rotationnel nul. La donnée d’une divergence et d’un rotationnel permet donc de carctériser entièrement un champ (pour des conditions initiales données).
+
+        Les deux premières équations relient les champs entre eux, alors que les deux secondes les relient à leurs sources. Ces sources sont les charges, statiques ou en mouvement : en supposant les charges $q_i$ ponctuelles, on a la densité volumiques de charges $\rho$ en $\text{C} \cdot \text{m}^{-3}$ et le courant $\mathbf{j}$ en $\text{A} \cdot \text{m}^{-2}$ 
+        \begin{align*}
+            \rho(\mathbf{r},t) &= \sum_{i} q_i \delta(r - r_i(t)) \\
+            \mathbf{j}(\mathbf{r},t) &= \sum_{i} q_i \mathbf{v}_i(t) \delta(\mathbf{r} - \mathbf{r}_i(t))
+        \end{align*}
+        qui définissent la charge totale $Q$ contenu dans un volume $V$ en $\text{C}$ et le courant traversant une surface $S$, noté $I$ :
+        \begin{align*}
+            Q(t) &= \iiint_V \rho(\mathbf{r},t) d\mathbf{r} \\
+            I(t) &= \int_S \mathbf{j}(\mathbf{r},t) \cdot d \mathbf{S}
+        \end{align*}
+
+        Ces équations vérifient de plus le \textbf{principe de superposition} : Si des sources $(\rho_1, \mathbf{j}_1)$ génèrent $(\mathbf{E}_1, \mathbf{B}_1)$ et $(\rho_2, \mathbf{j}_2)$ génèrent $(\mathbf{E}_2, \mathbf{B}_2)$, alors la somme des sources génère la somme des champs.
+
+        \subsubsection{Conservation de la charge}
+
+        L’expérience indique que le quantité totale de charges se conserve. Comme pour les autres grandeurs extensives de densité volumique $\rho$ et de vecteur densité $\mathbf{j}$, on a l’équation locale de conservation 
+        \[ \frac{\partial \rho}{\partial t} + \nabla \cdot \mathbf{j} = 0 \]   
+        qui peut aussi s’écrire sous forme intégrale par 
+        \begin{align*}
+            \frac{\text{d}Q}{\text{d}t} 
+            &= - \iiint_V \nabla \cdot \mathbf{j} d\mathbf{r} \\
+            &= - \oint_{S} \mathbf{j}\cdot d\mathbf{S} 
+        \end{align*} 
+        d’après Green-Ostrogradsksy.
+
+
+        \subsubsection{Forme intégrale des équations de Maxwell}
+
+        Les équations précédemment énoncées ont une forme locale, qui insiste sur le fait que les dériviées partielles des champs en un point donné $\mathbf{r}$ et à un instant donné $t$ ne dépendent que des densités de charges et de courant au même point et à cet instant. En utilisant les formules de Stokes et de Green-Ostrogradsky, on en déduit :
+
+        \begin{omed}{Proposition (équations de Maxwell, forme intégrale)}
+            \begin{align*}
+                \textit{Conservation du flux} \quad & \oint_S \mathbf{B} \cdot d\mathbf{S} = 0 \\
+                \textit{Loi de Faraday} \quad & \oint_C \mathbf{E} \cdot d\ell = - \frac{\text{d}}{\text{d}t} \int_{S} \mathbf{B} \cdot d\mathbf{S} \\
+                \textit{Théorème de Gauss} \quad  & \oint_{S} \mathbf{E} \cdot d\mathbf{S} = \frac{Q_{\text{int}}}{\varepsilon_0} \\
+                \textit{Théorème d’Ampère} \quad & \oint_C \mathbf{B} \cdot d\ell = \mu_0 I + \mu_0 \varepsilon_0 \frac{\text{d}}{\text{d}t} \int_S \mathbf{E} \cdot d\mathbf{S}
+            \end{align*}
+        \end{omed}
+
+        \subsubsection{Électrostatique}
+
+        Dans une situation d’électrostatisme, les charges ne se déplacent pas, donc il n’y a pas de courant et par conséquent pas de champ magnétique. Pour le champ électrique, en a les équations de Maxwell 
+        \[ \nabla \times \mathbf{E} = 0 \quad \text{et} \quad  \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0} \]    
+        La solution générale de cette équation pour la distribution volumique de charge est 
+        \[ \mathbf{E}(\mathbf{r}) = \frac{1}{4 \pi \varepsilon_0} \iiint_V \frac{\mathbf{r} - \mathbf{r}'}{\abs{\mathbf{r} - \mathbf{r}'}^3} \rho(\mathbf{r}') d\mathbf{r}' \]
+        Dans le cas d’une unique charge située en $\mathbf{r} = 0$ $\rho = q \delta(\mathbf{r})$
+        \[ \mathbf{E} = \frac{q}{4 \pi \varepsilon_0} \frac{\mathbf{r}}{r^3} \]   
+
+        \subsubsection{Magnétostatique}
+
+        En magnétostatique, les charges en mouvemement produisent des courants stationnaires. Dans ce cas, $\mathbf{j}$ est indépendante du temps. Si de plus la matière reste neutre, alors le champ électrique est nul. Les équations de Maxwell deviennent alors 
+        \[ \nabla \times \mathbf{B} = \mu_0 \mathbf{j} \quad \text{et} \quad \nabla \cdot \mathbf{B} = 0 \]   
+        \begin{omed}{Théorème (loi de Biot et Savart)}
+            En magnétostatique, le champ magnétique s’écrit
+            \[ \mathbf{B}(\mathbf{r}) = \frac{\mu_0}{4 \pi} \iiint_V \frac{\mathbf{j}(\mathbf{r}') \times (\mathbf{r} - \mathbf{r}')}{\abs{\mathbf{r} - \mathbf{r}'}^3} d\mathbf{r}' \]
+        \end{omed}
+        Dans le cas d’un courant $I$ parcourant un contour $\Gamma$, on a 
+        \[ \mathbf{B}(\mathbf{r}) = \frac{\mu_0}{4 \pi} \int_{\Gamma} \frac{I d\mathbf{r}' \times (\mathbf{r} - \mathbf{r}')}{\abs{\mathbf{r} - \mathbf{r}'}^3} \]
+        et dans le cas d’une charge ponctuelle se déplaçant à la vitesse $\mathbf{v}$ ($\abs{\mathbf{v}} \ll c$), le champ magnétique produit au point $\mathbf{r}$ est 
+        \[ \mathbf{B}(\mathbf{r}) = \frac{\mu_0}{4 \pi} \frac{q \mathbf{v} \times \mathbf{r}}{r^3} \]  
+        
+        \subsubsection{Induction électromagnétique}
+
+        On pose la quantité $e := \oint_{\mathcal{C}} \mathbf{E} \cdot d\ell$ que l’on appelle \textbf{force électromotrice induite} et exprimée en V. D’après la loi de Faraday, on a alors $e = - \frac{\text{d}}{\text{d}t} \int_{S} \mathbf{B}(t) \cdot d\mathbf{S}$. En faisant tourner un circuit électrique dans un champ constant, on génère une tension induite qui assure la fonction d’\textit{alternateur}. Inversement, lorsque l’on induit un courant dans une boucle de courant, la forme de Laplace qui en résulte permet d’assurer la fonction de \textit{moteur}.
+
+        \subsubsection{Ondes électromagnétiques}
+
+        On considère une onde électromagnétique se propageant dans le vide ($\rho = 0$ et $\mathbf{j} = 0$). En utilisant le théorème de Schwartz, on a que 
+        \begin{align*}
+            \nabla \times (\nabla \times \mathbf{E}) 
+            &\overset{1}{=} \nabla (\nabla \cdot \mathbf{E}) - \Delta \mathbf{E} \\
+            &\overset{1}{=} - \Delta \mathbf{E} \\
+            &\overset{2}{=} \nabla \left(-\frac{\text{d}\mathbf{B}}{\text{d}t} \right) \\
+            &\overset{2}{=} + \mu_0 \varepsilon_0 \frac{\partial^2 \mathbf{E}}{\partial t^2} 
+        \end{align*}
+        ce qui donne l’équation de propagation 
+        \[ \frac{1}{c^2} \frac{\partial^2 \mathbf{E}}{\partial t^2} - \Delta \mathbf{E} = 0 \quad \text{et} \quad c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}} \]   
+        Pour une onde plane monochromatique $u(\mathbf{r},t) = u_0 \exp\left(\mathbf{k} \cdot \mathbf{r} - i \omega t\right)$, on a la relation de structure 
+        \[ \mathbf{B} = \frac{\mathbf{k} \times \mathbf{E}}{\omega} \]   
+
+    \subsection{Les potentiels scalaire et vecteur}
+
+        On considère un champ de vecteur $\mathbf{V}(\mathbf{r})$ défini sur un ouvert étoilé. 
+        \begin{align*}
+            \forall \mathbf{r}, \nabla \cdot \mathbf{V}(\mathbf{r}) = 0 &\implies \exists \mathbf{A}, \mathbf{V}(\mathbf{r}) = \nabla \times \mathbf{A}(\mathbf{r}) \\
+            \forall \mathbf{r}, \nabla \times \mathbf{V}(\mathbf{r}) = 0 &\implies \exists \mathbf{A}, \mathbf{V}(\mathbf{r}) = \nabla \times \mathbf{A}(\mathbf{r}) 
+        \end{align*}
+        En admettant ces résultats, on démontre le résultat suivant :
+
+        \begin{omed}{Théorème}
+            Il existe $V(\mathbf{r},t)$ un \textbf{potentiel scalaire} et $\mathbf{A}(\mathbf{r},t)$ un \textbf{potentiel vecteur} tels que 
+            \[ \mathbf{E} = - \nabla V - \frac{\partial \mathbf{A}}{\partial t} \]   
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Étant donné que $\nabla \cdot \mathbf{B} = 0$, il existe $\mathbf{A}(\mathbf{r},t)$ tel que $B = \nabla \times \mathbf{A}$. En introduisant cette nouvelle donnée dans l’équation de Faraday, on obtient 
+            \[ \nabla \times \left(E + \frac{\partial \mathbf{A}}{\partial t} \right) = 0 \]   
+            d’où il existe $V(\mathbf{r},t)$ tel que 
+            \[ \mathbf{E} = - \nabla V - \frac{\partial \mathbf{A}}{\partial t} \]  
+        \end{demo}
+
+        Ce résultat généralise le cas de l’électrostatique où $\mathbf{E} = - \nabla V$. 
+
+        L’intérêt de l’introduction de ces potentiels réside dans le fait qu’ils simplifient souvent les calculs des champs. On peut donc définir le champ électromagnétique par le couple $(\mathbf{E}, \mathbf{B})$ ou par le couple $(\mathbf{A}, V)$. Toutefois, ce couple n’est pas unique pour un champ électromagnétique. Si deux couples $(\mathbf{A}, V)$ et $(\mathbf{A}', V')$ sont solutions, ils sont liés par les \textbf{transformations de jauge} :  \[ \mathbf{B} = \nabla \times \mathbf{A} = \nabla \times \mathbf{A}' \] 
+        donc il existe $\chi(\mathbf{r},t)$ tel que $\mathbf{A}' = \mathbf{A} + \nabla \chi(\mathbf{r},t)$ et 
+        \[ E = - \nabla V - \frac{\partial \mathbf{A}}{\partial t} = - \nabla V' - \frac{\partial \mathbf{A}'}{\partial t}  \]   
+        donc $V' = V - \frac{\partial \chi(\mathbf{r},t)}{\partial t}$. Le couple est donc fixé si on choisit une \textbf{condition de jauge}.
+
+        \begin{demo}{Exemple 1 (magnétostatique)}
+            On a $\nabla \times \mathbf{B} = \mu_0 \mathbf{j}$ donc en posant $\mathbf{B} = \nabla \times \mathbf{A}$, on obtient 
+            \[ (\nabla \cdot \mathbf{A}) \nabla - \nabla^2 \mathbf{A} = \mu_0 \mathbf{j} \]   
+            En imposant la \textbf{jauge de Coulomb} $\nabla \cdot \mathbf{A} = 0$, on a donc 
+            \[ \nabla^2 \mathbf{A} = - \mu_0 \mathbf{j} \]   
+            qui admet pour solution (par analogie avec la loi de Poisson de l’électrostatique)
+            \[ \mathbf{A}(\mathbf{r}) = \frac{\mu_0}{4 \pi} \iiint_V \frac{\mathbf{j}(\mathbf{r}')}{\abs{\mathbf{r} - \mathbf{r}'}} d\mathbf{r}' \]    
+            De ce résultat on tire la loi de Biot et Savart 
+            \begin{align*}
+                \mathbf{B} 
+                &= \nabla \times \mathbf{A} \\
+                &= \frac{\mu_0}{4 \pi} \iiint_V \nabla_r \times \left(\frac{\mathbf{j}(\mathbf{r}')}{\abs{\mathbf{r} - \mathbf{r}'}}\right) d\mathbf{r}' \\
+                &= \frac{\mu_0}{4 \pi} \iiint_V  \frac{\mathbf{j}(\mathbf{r}') \times (\mathbf{r} - \mathbf{r}')}{\abs{\mathbf{r} - \mathbf{r}'}^3} d\mathbf{r}'
+            \end{align*}
+        \end{demo}
+
+        \begin{demo}{Exemple 2 (propagation du potentiel vecteur)}
+            Dans le cadre plus général de l’électromagnétisme, on impose la \textbf{condition de jauge de Lorenz} $\frac{1}{c^2} \frac{\partial V}{\partial t} + \nabla \cdot \mathbf{A} = 0$, pour obtenir l’équation de propagation pour $\mathbf{A}$
+            \[ \frac{1}{c^2} \frac{\partial^2 \mathbf{A}}{\partial t^2} - \Delta \mathbf{A} = \mu_0 \mathbf{j} \]   
+            qui a pour solution le potentiel retardé 
+            \[ \mathbf{A}(\mathbf{r},t) = \frac{\mu_0}{4 \pi} \iiint_V \frac{\mathbf{j}\left(\mathbf{r}', t - \frac{\abs{\mathbf{r} - \mathbf{r}'}}{c}\right)}{\abs{\mathbf{r} - \mathbf{r}'}} d\mathbf{r}' \] 
+        \end{demo}
+
+    \subsection{Équations de Maxwell dans la matière}
+
+        La matière est essentiellement composée de vide, où les équations de Maxwell définies précédemment sont justes. Toutefois, au voisinage des noyaux et électrons, le champ électromagnétique prend des valeurs très intenses avec des variations très rapides sur une échelle de distance de l’ordre de grandeur de la distance inter-atomique $a \approx 1\,\dot{\text{A}}$. Or l’échelle spatiale caractéristique pertinente pour l’étude des champs est $\lambda$ qui est de l’ordre de $1 \, \mu\text{m}$ pour des rayons optiques, ce qui permet de considérer uniquement les comportements moyens du champ sur des échelles de distance mésoscopiques telles que $a \ll d \ll \lambda$. On a alors les champs macroscopiques
+        \begin{align*}
+            \left<\mathbf{E}\right>(\mathbf{r},t) &= \frac{1}{V} \int_{V(\mathbf{r})} \mathbf{E}(\mathbf{r}',t) d^3 \mathbf{r}' \\
+            \left<\mathbf{B}\right>(\mathbf{r},t) &= \frac{1}{V} \int_{V(\mathbf{r})} \mathbf{B}(\mathbf{r}',t) d^3 \mathbf{r}' \\
+        \end{align*}
+        ainsi que les sources macroscopiques de charge et de courant 
+        \begin{align*}
+            \left<\rho\right>(\mathbf{r},t) &= \frac{1}{V} \int_{V(\mathbf{r})} \rho(\mathbf{r}',t) d^3 \mathbf{r}' \\
+            \left<\mathbf{j}\right>(\mathbf{r},t) &= \frac{1}{V} \int_{V(\mathbf{r})} \mathbf{j}(\mathbf{r}',t) d^3 \mathbf{r}' \\
+        \end{align*}
+
+        On peut alors écrire les équations de Maxwell vérifiées par les champs moyens macroscopiques, en tenant compte du fait que la moyenne spatiale $\left<.\right>$ que nous venons de définir ainsi que la dérivée spatiale commutent avec la dérivation temporelle. 
+
+        \begin{align*}
+            \nabla \cdot \left<\mathbf{B}\right> &= 0 \\
+            \nabla \cdot \left<\mathbf{E}\right> &= \frac{\left<\rho\right>}{\varepsilon_0} \\
+            \nabla \times \left<\mathbf{E}\right> &= - \frac{\partial \left<\mathbf{B}\right>}{\partial t} \\
+            \nabla \times \left<\mathbf{B}\right> &= \mu_0 \left<\mathbf{j}\right> + \frac{1}{c^2} \frac{\partial \left<\mathbf{E}\right>}{\partial t} \\
+        \end{align*}
+
+        
+
+
+
+        
+
+
+
+        

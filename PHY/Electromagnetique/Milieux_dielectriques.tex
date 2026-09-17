@@ -1,0 +1,29 @@
+\section{Milieux diélectriques}
+
+    Un \textbf{milieu diélectrique} est un milieu isolant, par opposition aux milieux dits conducteurs vus dans le cadre des équations de Maxwell. Il s’agit par exemple de papier, verre, céramique, bois sec, plastique ou encore de gaz ou liquide. La distinction entre conducteur et diélectrique n’est pas nette, puisque la conductivité électrique d’un milieu varie sur des dizaines d’ordres de grandeur, et on ne peut pas décider d’une limite artificielle. 
+
+    \subsection{Polarisation de la matière et dipôle électrique}
+
+    Lorsque l’on applique un champ électrique à la matière, les charges électriques $\pm q$ des atomes se déplacent. Dans le cas d’un matériau isolant, il n’y a pas de déplacement macroscopique des charges, et celles-ci reste au voisinage de leur position d’équilibre en l’absence de champ. Mais localement, les charges de signe opposé se séparent et des dipôles électriques se forment : il s’agit de la \textbf{polarisation de la matière}.
+
+    Il est donc important de s’attarder sur la notion de dipôle électrique, qui entre en jeu dans la description de la matière polarisée. Un dipôle électrique est constitué de deux charges $\pm q$ séparées du vecteur $\textbf{a}$ qui pointe de $-q$ vers $+q$. On définit le \textbf{moment dipolaire} par $\mathbf{p} = q \mathbf{a}$. Le potentiel créé par ces deux charges en un point $M(\mathbf{r})$ où $\mathbf{r}$ est le vecteur position par rapport à l’origine située entre les deux charges $\pm q$ est 
+    \[ V(\mathbf{r}) = \frac{q}{4\pi\varepsilon_0}\frac{1}{\abs{\mathbf{r} - \frac{\mathbf{a}}{2}}} - \frac{q}{4\pi\varepsilon_0}\frac{1}{\abs{\mathbf{r} + \frac{\mathbf{a}}{2}}} \]   
+    Si $\abs{\mathbf{r}} \geq \abs{\mathbf{a}}$ (\textbf{approximation dipolaire}), 
+    \[ V(r) \equiv \frac{1}{4\pi\varepsilon_0} q \mathbf{a} \cdot \nabla \frac{1}{r} = \frac{\mathbf{p} \cdot \mathbf{e}_r}{4\pi\varepsilon_0 r^2} \]
+    On en déduit le champ électrique créé par un dipôle électrique lorsque l’on se situe dans l’approximation dipolaire :
+    \[ \mathbf{E}(\mathbf{r}) = - \nabla V(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \frac{3 (\mathbf{e}_r \cdot \mathbf{p})\mathbf{e}_r - \mathbf{p}}{r^3} \]
+    L’énergie d’interaction de ce dipôle avec un champ $\mathbf{E}$ est 
+    \[ U = - \mathbf{p} \cdot \mathbf{E} \]   
+    et le couple exercé par le champ sur le dipôle vaut 
+    \[ \mathbf{\Gamma} = \mathbf{p} \times \mathbf{E} \]
+
+    \subsection{Description microscopique de la polarisation}
+
+    Pour étudier les propriétés des milieux diélectriques, on introduit le \textbf{vecteur polarisation} $\mathbf{P}$, défini comme la moyenne spatiale des dipôles microscopiques $\mathbf{p}_n$ sur un volume $V$, centré en $\mathbf{r}$, grand devant la distance caractéristique des fluctuations de charges (taille d’un atome) et petit devant celle du phénomène étudié, \textit{i.e.} d’échelle mésoscopique :
+    \begin{equation}
+        \mathbf{P}(\mathbf{r},t)=\frac{1}{V} \sum_{n \in V(\mathbf{r})} \mathbf{p}_n(t)
+    \end{equation}
+    Dans une description continue de la matière, ce vecteur correspond à un moment dipolaire par unité de volume, en $\left[\text{C} / \text{m}^2\right]$.
+
+
+
