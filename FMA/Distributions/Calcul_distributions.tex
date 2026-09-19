@@ -1,0 +1,657 @@
+\newpage
+
+\section{Calcul des distributions}
+
+    \subsection{Introduction}
+
+        Comme vu dans la section précédente, il est naturel d’avoir à considérer (et en accord avec la physique) des solutions d’équations aux dérivées partielles qui ne sont pas forcément différentiables. 
+
+        Nous allons en introduction présenter une façon naturelle d’écrire qu’une fonction non nécessairement différentiable est solution d’une équation aux dérivées partielles. Considérons le cas de l’équation de transport en dimension $N = 1$
+        \[ \left\{      \begin{array}{lc}
+            \partial_t u + c \partial_x u = 0 & x \in \mathbf{R}, t > 0 \\
+            u \big|\vphantom{|}_{t=0} = u^{\text{in}} 
+        \end{array} \right. \kern-\nulldelimiterspace \]   
+        où $c \in \mathbf{R}$. 
+
+        Supposons dans un premier temps que $u^{\text{in}} \in \mathcal{C}^2(\mathbf{R})$, de sorte qu’il existe une unique solution $u \in \mathcal{C}^1(\mathbf{R}_+ \times \mathbf{R})$ donnée par 
+        \[ u(t,x) = u^{\in}(x - ct) \]   
+        Considérons les propositions suivantes : 
+        \begin{enumerate}[label=($p_{\arabic*}$)]
+            \item Pour tout couple $(t,x) \in \mathbf{R}^*_+ \times \mathbf{R}$, 
+            \[ \partial_t u + c \partial_x u = 0 \]    
+            \item Pour toute fonction $\phi \in \mathcal{C}_c^{\infty}(\mathbf{R}_+^* \times \mathbf{R})$, 
+            \[ \iint_{\mathbf{R}_+^* \times \mathbf{R}} (\partial_t u(t,x) + c \partial_x u(t,x))\phi(t,x) dt dx = 0 \] 
+            \item Pour toute fonction $\phi \in \mathcal{C}_c^{\infty}(\mathbf{R}_+^* \times \mathbf{R})$, 
+            \[ \iint_{\mathbf{R}_+^* \times \mathbf{R}} u(t,x)(\partial_t \phi(t,x) + c \partial_x \phi(t,x)) dt dx = 0 \] 
+        \end{enumerate}
+
+        \begin{demo}{Équivalences}
+            Montrons d’abord que les conditions deuxième et troisième sont équivalences : pour tout entier $n \geq 1$ tel que $\text{supp}(\phi) \subset \intOO{\frac{1}{n}}{n} \times \intOO{-n}{n}$, 
+            \begin{align*}
+                \iint_{\mathbf{R}_+^* \times \mathbf{R}} & (\partial_t u(t,x) + c \partial_x u(t,x))\phi(t,x) dt dx  \\
+                =& \iint_{\intOO{\frac{1}{n}}{n} \times \intOO{-n}{n}}  (\partial_t u(t,x) + c \partial_x u(t,x))\phi(t,x) dt dx = 0 \\
+                =& \int^{n}_{-n} \left[u(t,x)\phi(t,x)\right]_{t = \frac{1}{n}}^{t = n} dx + c \int_{\frac{1}{n}}^{n} \left[u(t,x) \phi(t,x)\right]_{x=-n}^{x = n} dt \\
+                &- \iint_{\mathbf{R}_+^* \times \mathbf{R}} u(t,x)(\partial_t \phi(t,x) + c \partial_x \phi(t,x)) dt dx
+            \end{align*}
+            en utilisant le théorème de Fubini et en intégrant par parties par rapport à $t$ et par rapport à $x$. Comme $\phi$ est identiquement nulle sur le bord du pavé $\intOO{\frac{1}{n}}{n} \times \intOO{-n}{n}$, les deux premières intégrales sont nulles, d’où l’équivalence. 
+
+            Montrons désormais que la première condition et la seconde sont équivalentes. Le sens direct est immédiat. Réciproquement, comme $u$ est de  classe $\mathcal{C}^1$, la condition deuxième implique que, pour tout $n \geq 1$ entier, la restriction
+            \[ \left(\partial_t u + c \partial_x u\right) \Big|\vphantom{\big|}_{\intFF{\frac{1}{n}}{n} \times \intFF{-n}{n}} \in \mathcal{C}(\intFF{\frac{1}{n}}{n} \times \intFF{-n}{n}) \]
+            est un élément de $L^2(\intFF{\frac{1}{n}}{n} \times \intFF{-n}{n})$ qui est orthogonal au sous-espace dense $\mathcal{C}_c^{\infty}$. Il est donc nul :
+            \[ \left(\partial_t u + c \partial_x u\right) = 0 \text{ presque partout en } (t,x) \in \intFF{\frac{1}{n}}{n} \times \intFF{-n}{n} \]
+            Comme $\partial_t u + c \partial_x u$ est continue sur tout $\mathbf{R}_+ \times \mathbf{R}$, on en déduit que l’annulation a lieu partout sur cet ensemble, \textit{i.e.} la condition première est vérifiée.
+        \end{demo}
+
+        Si la démonstration des équivalences nécessite que $u$ soit de classe $\mathcal{C}^1$, ce n’est pas explicite dans l’assertion troisième. On dit ainsi qu’une fonction $u$ continue, ou même seulement localement intégrable, est une \textbf{solution généralisée} de l’équation de transport $\partial_t u + c \partial_x u = 0$ sur $\mathbf{R}_+^* \times \mathbf{R}$ si elle vérifie cette condition, \textit{i.e.} pour tout fonction $\phi \in \mathcal{C}_c^{\infty}(\Omega)$, 
+        \[ \iint_{\mathbf{R}_+^* \times \mathbf{R}} u(t,x)(\partial_t \phi(t,x) + c \partial_x \phi(t,x)) dt dx = 0 \] 
+
+        La théorie de la distribution consiste en l’étude généralisée des solutions d’une équation aux dérivées partielles, ou l’on fait porter ces dérivées sur une fonction test plutôt que sur la fonction solution. Ainsi, plutôt que d’étudier la fonction $\partial_t u + c \partial_x u$, on étudie la forme linéaire 
+        \[ \phi \longmapsto - \iint_{\mathbf{R}_+^* \times \mathbf{R}} u(t,x)(\partial_t \phi(t,x) + c \partial_x \phi(t,x)) dt dx \]
+        sur le $\mathbf{R}$-espace vectoriel $\mathcal{C}_c^{\infty}(\mathbf{R}_+^* \times \mathbf{R})$.
+
+    \subsection{Définition et exemples}
+
+        \subsubsection{Notion de distribution}
+
+        \begin{omed}{Définition (distribution)}
+            Soient $N \geq 1$ et $\Omega \subset \mathbf{R}^N$ un ouvert. Une \textbf{distribution} $T$ sur $\Omega$ est une forme $\mathbf{K}$-linéaire sur $\mathcal{C}_c^{\infty}(\Omega)$ à valeurs dans $\mathbf{K}$ vérifiant la \textbf{propriété de continuité} suivante : 
+            
+            \textbf{(p)} pour tout compact $K \subset \Omega$, il existe $C_K > 0$ et $p_{K} \in \mathbf{N}$ tels que, pour toute fonction test $\phi \in \mathcal{C}_c^{\infty}(\Omega)$ de support $\text{supp}(\phi) \subset K$, 
+            \[ \abs{\spr{T}{\phi}} \leq C_K \max_{\abs{\alpha} \leq p_K} \sup_{x \in K} \abs{\partial^{\alpha} \phi(x)} \]   
+
+            S’il existe $p$ tel que $p_K \leq p$ pour tout $K \subset \Omega$, alors on dit que $T$ est une distribution d’ordre $\leq p$ et on appelle \textbf{ordre de la distribution} le plus petit entier $p$ satisfaisant une telle propriété.
+        \end{omed}
+
+        On note $\mathcal{D}(\Omega) = \mathcal{C}^{\infty}_c(\Omega)$ l’espace vectoriel des fonctions tests sur $\Omega$ et $\mathcal{D}'(\Omega)$ l’espace vectoriel des distributions sur $\Omega$. Si ces notations correspondent à celle utilisées dans le cadre de la dualité, c’est parce que l’on peut munir $\mathcal{D}(\Omega)$ d’une topologie telle que $\mathcal{D}'(\Omega)$ soit exactement l’espace des formes linéaires continues (espace dual) sur $\mathcal{D}(\Omega)$ pour cette topologie. 
+
+        \begin{demo}{Exemple (fonctions localement intégrables)}
+            À toute fonction $f$ de $L^1_{\text{loc}}(\Omega)$, on associe la forme linéaire définie par 
+            \[ T_f : \phi \in \mathcal{C}_c^{\infty}(\Omega) \mapsto \int_{\Omega} f(x) \phi(x) dx \]
+            Soient $K \subset \Omega$ un compact et $\phi \in \mathcal{C}_c^{\infty}(\Omega)$ telle que $\text{supp}(\phi) \subset K$. En posant $C_K = \int_{K} \abs{f(x)}dx$, on obtient 
+            \[ \abs{\spr{T_f}{\phi}} \leq C_K \sup_{x \in K} \abs{\phi(x)} \]
+            donc $T_k$ est une distribution d’ordre $0$ sur $\Omega$.
+        \end{demo}
+
+        \begin{omed}{Proposition}
+            L’application 
+            \[ L^1_{\text{loc}}(\Omega) \ni f \longmapsto T_f \in \mathcal{D}'(\Omega) \]   
+            est linéaire est injective.
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            La linéarité est immédiate. Pour l’injectivité, supposons que $f \in L^1_{\text{loc}}(\Omega)$ est dans le noyau de cette application linéaire.
+
+            Soit $x_0 \in \Omega$ et $r > 0$ tel que $\overline{B(x_0), 2r} \subset \Omega$. On pose $F \in L^1(\mathbb{R}^N)$ définie par $F(x) = \mathbb{1}_{B(x_0,2r)}(x)f(x)$ presque partout si $x \in \Omega$ et $F(x) = 0$ si $x \notin \Omega$. 
+            
+            Soit $\zeta \in \mathcal{C}^{\infty}(\mathbf{R}^N)$ telle que $\zeta \geq 0$, $\text{supp}(\zeta) \subset B(0,1)$ et $\int_{\mathbf{R}^N} \zeta(x)dx = 0$. La famille de fonctions définie par 
+            \[ \zeta_{\varepsilon}(x) = \frac{1}{\varepsilon^N} \zeta\left(\frac{x}{\varepsilon}\right) \] 
+            pour $0 < \varepsilon < r$ et $x \in \mathbf{R}^N$ est une suite. Ainsi, 
+            \[ \zeta_{\varepsilon} \star F \underset{\varepsilon \to 0^+}{\longrightarrow} F \]   
+            dans $L^1(\mathbf{R}^N)$. Or, pour $x \in B(x_0,2r)$, 
+            \begin{align*}
+                \zeta_{\varepsilon} \star F(x) 
+                &= \int_{\mathbf{R}^N} F(y) \zeta_{\varepsilon}(x-y)dy \\
+                &= \int_{B(x_0, 2r)} f(y) \zeta_{\varepsilon}(x-y)dy \\
+                &= \int_{\Omega} f(y) \zeta_{\varepsilon}(x-y)dy = 0
+            \end{align*}
+            car $y \mapsto \zeta_{\varepsilon}(x - y)$ est de classe $\mathcal{C}^{\infty}$ à support dans $B(x_0, 2r)$ ($\zeta_{\varepsilon}(x - y) \neq 0$ si $\abs{x-y} < r$ et dans ce cas $\abs{y - x_0} < 2r$). Par conséquent, $F = 0$ preque partout sur $B(x_0, r)$. Or $f = F$ presque partout sur $B(x_0, 2r)$, donc $f = 0$ presque partout sur $B(x_0,r)$.
+
+            Soit, pour $n \geq 1$, l’ensemble compact (car fermé borné) dans $\Omega$ 
+            \[ K_n = \left\{x \in \Omega \middle| \abs{x} \leq n \land \text{d}(x, \partial \Omega) \geq \frac{1}{n} \right\} \]   
+            Comme $K_n \subset \bigcup_{x \in K_n} B\left(x,\frac{1}{2n}\right)$ est compact, il existe un nombre fini de $x_1, \ldots, x_k$ tels que 
+            \[ K_n \subset \bigcup_{i = 1}^k B(x_i, \frac{1}{2n}) \]   
+            Ainsi, $f = 0$ presque partout sur $K_n$. Comme $\Omega$ est la réunion dénombrable des $K_n$, alors 
+            \[ \left\{x \in \Omega \middle| f(x) \neq 0\right\} = \bigcup_{n \geq 1} \left\{x \in K_n \middle| f(x) \neq 0\right\} \]   
+            est de mesure nulle (réunion dénombrable d’ensembles de mesure nulle). Finalement, $f = 0$ presque partout sur $\Omega$.
+        \end{demo}
+
+        Dorénavent, nous identifierons toute fonction localement intégrable sur $\Omega$ et sa distribution $T_f$ sur $\Omega$ lorsqu’il n’y a pas d’ambiguïté. 
+
+        \begin{demo}{Exemple (masse de Dirac)}
+            À tout point $x_0 \in \Omega$ un ouvert de $\mathbf{R}^N$ on associe la forme linéaire définie par 
+            \[ \delta_{x_0} : \phi \in \mathcal{C}_c^{\infty}(\Omega) \mapsto \phi(x_0) \]    
+            Pour tout compact $K \subset \Omega$ et toute fonction test $\phi$ à support dans $K$, on a 
+            \[ \abs{\spr{\delta_{x_0}}{\phi}} = \abs{\phi(x_0)} \leq \sup_{x \in K} \abs{\phi(x)} \]   
+            donc $\delta_{x_0}$ est une distribution d’ordre $0$ sur $\Omega$.
+
+            On peut aussi associer la forme linéaire définie par 
+            \[ \delta_{x_0}^{(m)} \phi \mapsto (-1)^m \phi^{(m)}(x_0) \]   
+            Pour tout compact $K \subset \Omega$ et toute fonction test $\phi$ à support dans $K$, on a 
+            \[ \abs{\spr{\delta_{x_0}^{(m)}}{\phi}} = \abs{\phi^{(m)}(x_0)} \leq \sup_{x \in K} \abs{\phi{(m)}(x)} \]  
+            qui est cette fois-ci une distribution d’ordre $m$ sur $\mathbf{R}$. 
+        \end{demo}
+
+        \begin{demo}{Exemple (valeur principale de $\frac{1}{x}$)}
+            La fonction $x \mapsto \frac{1}{x}$ n’est pas localement intégrable sur $\mathbf{R}$, donc on ne peut pas jouir de l’écriture précédemment utilisée. On définit la distribution \textbf{valeur principale} de $\frac{1}{x}$ par la formule 
+            \[ \spr{\text{vp}\frac{1}{x}}{\phi} = \lim_{\varepsilon \to 0^+} \int_{\abs{x} > \varepsilon} \frac{\phi(x)}{x} dx = \int_{0}^{\infty} \frac{\phi(x) - \phi(-x)}{x}dx \]   
+            L’idée motivant cette définition (Cauchy) est que l’on retire de l’intégrale un terme du type 
+            \[ \int_{-\varepsilon}^{\varepsilon} \frac{\phi(x)}{x} dx = \phi(0) \int_{-\varepsilon}^{\varepsilon} \frac{dx}{x} + O(\varepsilon) \]  
+            et que le premier terme du membre de droite est nul parce que $x \mapsto \frac{1}{x}$ est impaire.
+
+            Pour tout $R > 1$ et toute fonction test $\phi \in \mathcal{D}(\mathbf{R})$ telle que $\text{supp}(\phi) \subset \intFF{-R}{R}$, 
+            \begin{align*}
+                \abs{\spr{\text{vp}\frac{1}{x}}{\phi} }
+                &= \abs{\int_{0}^{1} \frac{\phi(x) - \phi(-x)}{x} dx} + \abs{\int_{1}^{R} \frac{\phi(x)- \phi(-x)}{x}dx} \\
+                &\leq 2 \sup_{\abs{x} \leq 1} \abs{\phi'(x)} + 2 \ln(R) \sup_{\abs{x} \leq R}\abs{\phi(x)} \\
+                \leq 2(1 + \ln(R)) \sup_{\abs{x} \leq R} \max(\abs{\phi(x)}, \abs{\phi'(x)})
+            \end{align*}
+            ce qui montre que $\text{vp}\frac{1}{x}$ est une distribution d’ordre au plus 1. On peut montrer que c’est en fait une distribution d’ordre exactement 1 sur $\mathbf{R}$.
+        \end{demo}
+
+        \begin{omed}{Définition (convergence d’une suite de fonctions tests)}[def:convsuitefonctionstest]
+            Soient $\Omega$ un ouvert de $\mathbf{R}^N$, une suite $(\phi_n)$ de fonctions tests et $\phi$ une fonction test. On dit que 
+            \[ \phi_n \underset{n \to \infty}{\longrightarrow} \phi \quad \text{dans } \mathcal{C}_c^{\infty} \]   
+            si et seulement si 
+            \begin{enumerate}[label=($p_{\arabic*}$)]
+                \item il existe un compact $K \subset \Omega$ tel que
+                \[ \text{supp}(\phi_n) \subset K \quad \forall n \geq 1 \]   
+                \item pour tout multi-indice $\alpha \in \mathbf{N}^N$, 
+                \[ \partial^{\alpha} \phi_n \underset{n \to \infty}{\longrightarrow} \partial^{\alpha} \phi \quad \text{uniformément sur } \Omega \]
+            \end{enumerate}
+        \end{omed}
+
+        \begin{omed}{Proposition (continuité séquentielle des distributions)}[prop:continuitesequentielledistribution]
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert et $T \in \mathcal{D}'(\Omega)$. Alors pour toute suite $(\phi_n)$ de fonctions tests qui converge vers $\phi \in \mathcal{C}_c^{\infty}(\Omega)$, on a 
+            \[ \spr{T}{\phi_n} \underset{n \to \infty}{\longrightarrow} \spr{T}{\phi} \]   
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            La convergence des fonctions tests implique qu’il existe $K \subset \Omega$ un compact contenant $\text{supp}(\phi_n)$ pour tout $n \geq 1$ ainsi que $\text{supp}(\phi)$. Ce compact ainsi défini, la propriété de continuité des distributions assure qu’il existe $p_K \geq 0$ et $C_K > 0$ tels que 
+            \[ \abs{\spr{T}{\psi}} \leq C_K \max_{\abs{\alpha} \leq p_K} \sup_{x \in K} \abs{\partial^{\alpha} \psi(x)} \]   
+            pour toute fonction test $\psi \in \mathcal{C}^{\infty}(\Omega)$ à support dans $K$. 
+
+            On applique cette inégalité à la fonction $\psi = \phi_n - \phi$ :
+            \[ \abs{\spr{T}{\phi_n} - \spr{T}{\phi}} \leq C_K \max_{\abs{\alpha} \leq p_K} \sup_{x \in K} \abs{\partial^{\alpha} \phi_n(x) - \partial^{\alpha} \phi_(x)} \underset{n \to \infty}{\longrightarrow} 0 \] 
+            puisque, par hypothèse de la convergence de $\phi_n$ vers $\phi$, $\partial^{\alpha} \phi_n \to \partial^{\alpha} \phi$ uniformément sur $K$.
+        \end{demo}
+
+        \subsubsection{Distributions positives}
+
+        On ne peut évidemment pas parler de valeur d’une distribution en un point de l’ouvert ou elle est définie, mais il existe une définition naturelle de la positivité au vu de sa définition :
+
+        \begin{omed}{Définition (distribution positive)}
+            Soient $\Omega$ un ouvert de $\mathbf{R}^N$ et $T$ une distribution sur $\Omega$. On dit que $T$ est une \textbf{distribution positive} et on note $T \geq 0$ si 
+            \[ \spr{T}{\phi} \geq 0 \quad \forall \phi \geq 0 \in \mathcal{C}_c^{\infty}(\Omega) \]
+        \end{omed}
+
+        Ces distributions vérifient la propriété remarquable suivante :
+
+        \begin{omed}{Théorème (Ordre d’une distribution positive)}
+            Toute distribution positive sur un ouvert de $\mathbf{R}^N$ est d’ordre 0.
+        \end{omed}
+
+        \begin{demo}{Démonstration}
+            Soit $T \in \mathcal{D}'(\Omega)$ telle que $T \geq 0$ pour un ouvert $\Omega \subset \mathbf{R}^N$. Soit $K \subset \Omega$ compact. D’après le lemme d’existence de fonctions plateaux (\ref{lem:fonctionsplateaux}), il existe $\chi \in \mathcal{D}(\Omega)$ qui vaut $1$ sur le voisinage de $K$, à support compact dans $\Omega$ et vérifiant $0 \leq \chi \leq 1$.
+
+            Pour tout $\phi \in \mathcal{D}(\Omega)$ telle que $\text{supp}(\phi) \subset K$, on a $\phi = \chi \phi$ d’où 
+            \[ \spr{T}{\phi} = \spr{T}{\chi \phi} \]   
+            De plus, par positivité de $\chi$ sur $\Omega$, 
+            \[ -\chi(x) \sup_{y \in K}\abs{\phi(y)} \leq \chi(x) \phi(x) \leq \chi(x) \sup_{y \in K}\abs{\phi(y)} \quad \forall x \in \Omega \]   
+            Étant donné que $T \geq 0$, 
+            \begin{align*}
+                \spr{T}{\chi \left(\sup_{y \in K}\abs{\phi(y)} - \phi\right)} &\geq 0 \\
+                \spr{T}{\chi \left(\phi + \sup_{y \in K}\abs{\phi(y)}\right)} &\geq 0
+            \end{align*}
+            d’où 
+            \[ \abs{\spr{T}{\chi \phi }} \leq C_K \sup_{y \in K}\abs{\phi(y)} \quad \text{avec } C_K = \spr{T}{\chi} \]   
+        \end{demo}
+
+        \subsubsection{Commentaire en lien avec la physique}
+
+        Considérer la notion de fonction généralisée à travers une forme linéaire peut paraître a priori étrange, puisque l’on a plutôt tendance à vouloir définir une fonction par sa valeur en un point. Toutefois, rappelons qu’un appareil de mesure d’une grandeur physique ne fournit jamais qu’une valeur moyenne locale de la quantité mesurée. Par exemple, un baromètre, au lieu de fournir la quantité $p(\mathbf{x})$ en tout point $\mathbf{x} \in \mathbf{R}^3$, mesure une quantité du type 
+        \[ \frac{1}{\abs{A}} \int_A p(\mathbf{x}) d\mathbf{x} = \frac{1}{\abs{A}} \int_{\mathbf{R}^3} \mathbb{1}_{A}(\mathbf{x}) p(\mathbf{x}) d\mathbf{x} \]   
+        pour tout cube $A$ de l’espace $\mathbf{R}^3$, ce qui s’apparente à une quantité de la forme 
+        \[ \int_{\mathbf{R}^3} \phi(\mathbf{x}) p(\mathbf{x}) d\mathbf{x} \]    
+        pour $\phi$ décrivant une classe bien choisie de fonctions. La quantité physique apparaît donc sous la forme d’une forme linéaire $\phi \mapsto \int_{\mathbf{R}^3} \phi(\mathbf{x}) p(\mathbf{x}) d\mathbf{x}$ qui prend ses valeurs dans un espace de fonctions.
+
+        C’est d’ailleurs ce point de vue que l’on adopte en mécanique quantique, en choisissant de mesurer les quantités à travers des observables qui font apparaître le carré du module de la fonction d’onde dans l’espace des positions ou des impulsions.
+
+    \subsection{Convergence des suites de distributions}
+
+        Cette convergence est la convergence simple (\textit{i.e.} ponctuelle) des suites de formes linéaires.
+
+        \begin{omed}{Définition (suite convergente de distributions)}
+            Soient $N \geq 1$ un entier et $\Omega \subset \mathbf{R}^N$ un ouvert. On considère une suite $(T_n)_{n \geq 1}$ de distributions de $\mathcal{D}'(\Omega)$. On dit que 
+            \[ T_n \underset{n \to \infty}{\longrightarrow} T \quad \text{dans } D'(\Omega) \]   
+            si, pour toute fonction test $\phi \in \mathcal{C}_c^{\infty}(\Omega)$, 
+            \[ \spr{T_n}{\phi} \underset{n \to \infty}{\longrightarrow} \spr{T}{\phi} \]
+        \end{omed}
+
+        Avec cette définition, si on considère une suite $(f_n)$ de $L^1_{\text{loc}}(\Omega)$ qui converge vers $f \in L^{1}_{\text{loc}}(\Omega)$, \textit{i.e.} pour tout compact $K \subset \Omega$, 
+        \[ \int_K \abs{f_n - f} \underset{n \to \infty}{\longrightarrow} 0 \]   
+        converge vers $f$ dans $\mathcal{D}'(\Omega)$.
+
+        \begin{demo}{Exemple (dipôle de moment $\mu$)}
+            $N = 1$, $\Omega = \mathbf{R}$ et on pose pour $n \geq 1$
+            \[ T_n = \mu \frac{n}{2}\left(\delta_{\frac{1}{n}}\right) - \delta_{-\frac{1}{n}} \]   
+            Alors $T_n \underset{n \to \infty}{\longrightarrow} -\mu \delta_{0}^{(1)}$ dans $\mathcal{D}'(\Omega)$
+        \end{demo}
+
+        \begin{demo}{Exemple (Valeurs de $\frac{1}{z}$ aux bords de l’axe réel)}
+            Pour $\varepsilon > 0$, on considère les fonctions définies sur $\mathbf{R}$ par 
+            \[ f_{\varepsilon}^+(x) = \frac{1}{x + i\varepsilon} \quad \text{et} \quad f_{\varepsilon}^-(x) = \frac{1}{x - i\varepsilon} \]   
+            Ces deux fonctions sont continues et bornées sur $\mathbf{R}$ donc localement intégrables, de sorte qu’elles définissent des distributions sur $\mathbf{R}$. 
+
+            On considère une suite $(\varepsilon_n)$ de termes positifs et de limite nulle. Soit $\phi \in \mathcal{D}(\mathbf{R})$ une fonction test. Il existe $R > 0$ tel que $\text{supp}(\phi) \subset \intFF{-R}{R}$ donc 
+            \[ 
+                \spr{f_{\varepsilon}^+}{\phi} 
+                = \int_{-R}^{R} \frac{1}{x + i\varepsilon}(\phi(x) - \phi(0)) + \phi(0) \int_{-R}^{R} \frac{dx}{x + i \varepsilon} \]   
+            Pour le premier terme du membre de droite, en utilisant le théorème des accroissements finis, sur $\intFF{-R}{R}$,
+            \[ \abs{\frac{1}{x + i \varepsilon}(\phi(x) - \phi(0))} \leq C \quad \text{avec } C = \max_{\abs{x} \leq R} \abs{\phi'(x)} \]   
+            et donc par convergence dominée,
+            \begin{align*}
+                \int_{-R}^{R} \frac{1}{x + i \varepsilon}(\phi(x) - \phi(0)) 
+                &\underset{\varepsilon \to 0^+}{\longrightarrow} \int_{-R}^{R} \frac{\phi(x) - \phi(0)}{x}dx \\
+                &= \int_{0}^R \frac{\phi(x) - \phi(-x)}{x}dx \\
+                &= \int_{0}^{\infty} \frac{\phi(x) - \phi(-x)}{x}dx \\
+                &= \spr{\text{vp}\frac{1}{x}}{\phi}
+            \end{align*}
+            Pour le second terme, 
+            \begin{align*}
+                \int_{-R}^R \frac{dx}{x + i \varepsilon} 
+                &= -i \int_{-R}^{R} \frac{\varepsilon}{x^2 + \varepsilon^2} dx \\
+                &= -i \left[\arctan\left(\frac{x}{\varepsilon}\right)\right]^{R}_{-R} \\
+                &= - i \left(\arctan\left(\frac{R}{\varepsilon}\right) - \arctan\left(-\frac{R}{\varepsilon}\right)\right) \\
+                &\underset{\varepsilon \to 0^+}{\longrightarrow} -i \pi
+            \end{align*}
+            On en déduit que 
+            \[ f_{\varepsilon_n}^+ \underset{n \to \infty}{\longrightarrow} \text{vp}\frac{1}{x} - i\pi\delta_0 \]   
+            De la même façon, on trouve que 
+            \[ f_{\varepsilon_n}^- \underset{n \to \infty}{\longrightarrow} \text{vp}\frac{1}{x} + i\pi\delta_0 \] 
+        \end{demo}
+
+        \begin{omed}{Proposition (convergence vers une masse de Dirac)}
+            Soient $\Omega$ un ouvert de $\mathbf{R}^N$ et $x_0 \in \Omega$. Soit $(f_n)$ une suite de fonctions mesurables sur $\Omega$ vérifiant 
+            \begin{enumerate}[label=($h_{\arabic*}$)]
+                \item pour tout $n \geq 1$, $f_n \geq 0$ presque partout sur $\Omega$ ;
+                \item $\text{supp}(f_n) \subset B(x_0, r_n)$ où $r_n \to 0^+$ quand $n \to \infty$ ;
+                \item $\int_{\Omega} f_n(x)dx \to 1$ quand $n \to \infty$.
+            \end{enumerate}
+            Alors 
+            \[ f_n \underset{n \to \infty}{\longrightarrow} \delta_{x_0} \quad \text{dans } \mathcal{D}'(\Omega) \]   
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Pour toute fonction test $\phi \in \mathcal{D}(\Omega)$, 
+            \[ \int_{\Omega} f_n(x)\phi(x)dx = \int_{\Omega} f_n(x)(\phi(x) - \phi(x_0)) dx + \phi(x_0) \int_{\Omega} f_n(x)dx \]    
+            D’après le théorème des accroissements finis, comme $f_n$ est à support dans $B(x_0, r_n)$, on a dans l’intégrale
+            \[ \abs{\phi(x) - \phi(x_0)} \leq \abs{x - x_0} \sup_{\abs{x - x_0} \leq r_n} \abs{\nabla \phi(x)} \]   
+            Soient $r* > 0$ tel que $\overline{B(x_0, r^*)} \subset \Omega$ et $n^* > 1$ tel que $0 < r_n < r^{*}$ pour tout $n \geq n*$. Alors, pour tout $n \geq n^*$ et pour tout $x \in \overline{B(x_0, r_n)}$,
+            \[ \abs{\phi(x) - \phi(x_0)} \leq C^* r_n \quad \text{avec } C^* = \sup_{\abs{x - x_0} \leq r^*} \abs{\nabla \phi(x)} \]
+            Par positivité de $f_n$ presque partout, 
+            \begin{align*}
+                \abs{\int_{\Omega} f_n(x)(\phi(x) - \phi(x_0))dx} 
+                &\leq \int_{B(x_0,r_n)} f_n(x) \abs{\phi(x) - \phi(x_0)}dx \\
+                &\leq C^* r_n \int_{\Omega} f_n(x)dx \\
+                &\underset{n \to \infty}{\longrightarrow} C^* \times 0 \times 1 =  0
+            \end{align*}
+            On en déduit que 
+            \[ \int_{\Omega} f_n(x) \phi(x) dx \underset{n \to \infty}{\longrightarrow} \phi(x_0) \lim_{n \to \infty} \int_{\Omega} f_n(x)dx = \phi(x_0) = \spr{\delta_{x_0}}{\phi} \]   
+        \end{demo}
+
+        Nous allons désormais énoncer un résultat aux conséquences riches, mais dont nous omettrons la preuve, relatif à la convergence des distributions et des fonctions tests.
+
+        \begin{omed}{Théorème (principe de la borne uniforme)}[theo:ppeborneuniforme]
+            Soient $N \geq 1$, $\Omega \subset \mathbf{R}^N$ un ouvert et $K \subset \Omega$ un compact. Soit $(T_n)$ une suite de distributions de $\mathcal{D}'(\Omega)$ telle que $(\spr{T_n}{\phi})$ est une suite convergente pour toute fonction test $\phi \in \mathcal{D}(\Omega)$ à support dans $K$. 
+            
+            Alors il existe un entier $p \geq 0$ et $C> 0$ tels que, pour tout $n \geq 1$ et $\phi \in \mathcal{D}(\Omega)$ à support dans $K$, 
+            \[ \abs{\spr{T_n}{\phi}} \leq C \max_{\abs{\alpha} \leq p} \sup_{x \in \mathbf{K}} \abs{\partial^{\alpha} \phi(x)} \] 
+        \end{omed}
+
+        \begin{omed}{Corollaire}
+            Soient $N \geq 1$, $\Omega \subset \mathbf{R}^N$ un ouvert et $K \subset \Omega$ un compact. Soit $(T_n)$ une suite de distributions de $\mathcal{D}'(\Omega)$ telle que $(\spr{T_n}{\phi})$ est une suite convergente pour toute fonction test $\phi \in \mathcal{D}(\Omega)$. 
+
+            Alors il existe une distribution $T \in \mathcal{D}'(\Omega)$ telle que 
+            \[ \spr{T_n}{\phi} \underset{n \to \infty}{\longrightarrow} \spr{T}{\phi} \quad \forall \phi \in \mathcal{D}(\Omega) \]  
+            \textit{i.e.}
+            \[ T_n \underset{n \to \infty}{\longrightarrow} T \quad \text{dans } \mathcal{D}'(\mathbf{R}^N) \]      
+        \end{omed}
+
+        \begin{demo}{Raisonnement}
+            L’application $\phi \mapsto \lim_{n \to \infty} \spr{T_n}{\phi}$ est une application linéaire sur $\mathcal{D}(\Omega)$. Montrons qu’elle vérifie bien la propriété de continuité des distributions.
+
+            Pour tout $K \subset \Omega$ compact, il existe d’après le principe de la borne uniforme (\ref{theo:ppeborneuniforme}) un entier $p_K \geq 0$ et une constante $C_K > 0$ tels que, pour toute fonction test $\phi \in \mathcal{D}(\Omega)$ à support dans $K$,
+            \[ abs{\spr{T_n}{\phi}} \leq C_K \max_{\abs{\alpha} \leq p_K} \sup_{x \in \mathbf{K}} \abs{\partial^{\alpha} \phi(x)} \]
+            En passant à la limite (et en notant $T \in \mathcal{D}'(\Omega)$ la distribution limite), on obtient 
+            \[ abs{\spr{T_n}{\phi}} \leq C_K \max_{\abs{\alpha} \leq p_K} \sup_{x \in \mathbf{K}} \abs{\partial^{\alpha} \phi(x)} \]
+            qui est bien la propriété de continuité pour $T$.
+        \end{demo}
+
+        \begin{omed}{Proposition (continuité séquentielle de la dualité)}
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert, $(T_n)$ une suite de distributions de $\mathcal{D}'(\Omega)$, et $(\phi_n)$ une suite de fonctions tests de $\mathcal{D}(\Omega)$. On suppose que $T_n \to T$ dans $\mathcal{D}'(\Omega)$ et $\phi_n \to \phi$ dans $\mathcal{D}(\Omega)$ lorsque $n \to \infty$.
+
+            Alors 
+            \[ \spr{T_n}{\phi_n} \underset{n \to \infty}{\longrightarrow} \spr{T}{\phi} \]   
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Comme $\phi_n \to \phi$, il existe un compact $K \subset \Omega$ tel que $\text{supp}(\phi_n) \subset K$ pour tout $n \geq 1$. D’après le principe de la borne uniforme (\ref{theo:ppeborneuniforme}), il existe un entier $p \geq 0$ et $C > 0$ tels que, pour tout $n \geq 1$ et $\psi \in \mathcal{D}(\Omega)$.
+            \[ abs{\spr{T_n}{\psi}} \leq C \max_{\abs{\alpha} \leq p} \sup_{x \in \mathbf{K}} \abs{\partial^{\alpha} \psi(x)} \]
+            On applique ce résultat à $\phi = \phi_n - \phi$ :
+            \[ abs{\spr{T_n}{\phi_n - \phi}} \leq C \max_{\abs{\alpha} \leq p} \sup_{x \in \mathbf{K}} \abs{\partial^{\alpha}(\phi_n - \phi)(x)} \underset{n \to \infty}{\longrightarrow} 0 \]
+            puisque par hypothèse sur la suite $(\phi_n)$, $\partial^{\alpha} \phi_n \to \partial^{\alpha} \phi$ uniformément sur $K$ quand $n \to \infty$ (\ref{def:convsuitefonctionstest}). L’écriture 
+            \[ \spr{T_n}{\phi_n} - \spr{T}{\phi} = \spr{T_n}{\phi_n - \phi} + \spr{T_n - T}{\phi} \]   
+            donne le résultat, sachant que le premier terme du membre de droite converge vers $0$ d’après l’inégalité précédente et le second de même puisque $T_n \to T$ dans $\mathcal{D}'(\Omega)$.
+        \end{demo}
+
+    \subsection{Opérations sur les distributions}
+
+        Nous avons introduit les distributions comme les fonctions généralisées. Elles doivent donc jouir d’opérations similaires, que nous allons étudier dans cette sous-section.
+
+        \subsubsection{Dérivation des distributions}
+
+        Nous allons reprendre la méthode utilisée en introduction : reporter les opérateurs de dérivation sur la fonction test. 
+
+        \begin{omed}{Définition}
+            Soient $N \geq 1$ entier, $\Omega \subset \mathbf{R}^N$ un ouvert et $T \in \mathcal{D}'(\Omega)$ une distribution. Pour tout $j \in \intEN{1}{N}$, on définit la distribution $\partial_{x_j} T$ par la formule 
+            \[ \spr{\partial_{x_j} T}{\phi} = - \spr{T}{\partial_{x_j} \phi} \]   
+            pour toute fonction test $\phi \in \mathcal{D}(\Omega)$. 
+        \end{omed}
+
+        Cette notion de dérivation coïncide (heuresement) avec la notion habituelle pour les fonctions de classe $\mathcal{C}^1$.
+
+        \begin{omed}{Proposition}
+            Soit $\Omega \subset \mathbf{R}^N$ un ouvert. Pour toute fonction $f \in \mathcal{C}^1$, pour tout $j \in \intEN{1}{N}$.
+            \[ \partial_{x_j} T_f = T_{\partial_{x_j} f} \]   
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Montrons le cas $N = 1$ et $\Omega = \intOO{a}{b}$. Pour toute fonction test $\phi \in \mathcal{D}(\intOO{a}{b})$, 
+            \begin{align*}
+                \spr{T'_f}{\phi} 
+                &= -\spr{T_f}{\phi'} = - \int_{a}^b f(x) \phi'(x)dx \\
+                &= -\left[f(x) \phi(x)\right]_{a}^b + \int_{a}^{b}f'(x)\phi(x) dx \\
+                &= \int_{a}^{b} f'(x) \phi(x) dx \\
+                &= \spr{T_{f'}}{\phi}
+            \end{align*}
+            en utilisant que $\phi(a) = \phi(b) = 0$. Ainsi, $T_f' = T_{f'}$ dans $\mathcal{D}'(\intOO{a}{b})$. 
+
+            La généralisation est plus complexe, et nous n’en ferons pas ici la démonstration.
+        \end{demo}
+
+        Voici un exemple de fonction dont la dérivée au sens des distributions n’est pas représentée par une fonction localement intégrable :
+
+        \begin{demo}{Exemple (dérivée de la fonction de Heaviside)}
+            On note $H$ la fonction de Heaviside définie sur $\mathbf{R}$ par $H = \mathbb{1}_{\mathbf{R}^+}$. Alors $H' = \delta_0$ dans $\mathcal{D}'(\Omega)$.
+        \end{demo}
+
+        On sait, dans le cas des fonctions de classe $\mathcal{C}^1$ sur un intervalle ouvert de $\mathbf{R}$, que si la dérivée est identiquement nulle sur cet intervalle, la fonction est constante. Un énoncé similaire prend forme dans le cadre de la théorie des distributions.
+
+        \begin{omed}{Proposition}
+            Soit $I$ un intervalle ouvert de $\mathbf{R}$ et $T \in \mathcal{D}'(I)$. On suppose que $T' = 0$.
+
+            Alors $T$ est une fonction constante. 
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Notons $I = \intOO{a}{b}$. Dire qu’une fonction $\phi$ est la dérivée d’une fonction test $\Phi \in \mathcal{D}(I)$ équivaut à dire que 
+            \[ \phi \in \mathcal{D}(I) \quad \text{et} \quad \int_{I} \phi(x)dx = 0 \]   
+            car il existe $\intFF{c}{d} \subset \intOO{a}{b}$ tel que $\text{supp}(\phi) \subset \intFF{c}{d}$ et $\Phi : x \in I \mapsto \int_{a}^{x} \phi(y) dy$ est bien une fonction test, de dérivée $\phi$, tel que $\text{supp}(\Phi) \subset \intFF{c}{d}$.
+            
+            Soient donc $\psi, \chi \in \mathcal{D}(I)$ deux fonctions tests avec $\int_I \chi(y) dy=1$. On pose, pour $x \in I$,
+            \[ \phi(x) = \psi(x) - \chi(x) \int_I \psi(y)dy \]   
+            Alors 
+            \[ \int_I \phi(x)dx = 0 \]   
+            donc il existe $\Phi \in \mathcal{D}(I)$ telle que $\phi = \Phi'$. On a donc 
+            \[ \psi(x) = \Phi'(x) + \chi(x) \int_I \psi(y)dy \quad \forall x \in I \]   
+            et par conséquent
+            \begin{align*}
+                \spr{T}{\psi} 
+                &= \spr{T}{\Phi'} + \spr{T}{\chi} \int_I \psi(x)dx \\
+                &= - \spr{T'}{\Phi} + \spr{T}{\chi} \int_I \psi(x)dx \\
+                &=  \int_I \spr{T}{\chi} \times \psi(x)dx \\
+                &= \spr{C}{\phi} \quad \text{avec } C = \spr{T}{\chi} 
+            \end{align*}
+            Autrement dit, $T = C$ dans $\mathcal{D}'(I)$.
+        \end{demo}
+
+        Par dualité, la dérivation au sens des distributions hérite évidemment des propriétés linéaires de la dérivation agissant sur les fonctions tests. En voici un premier exemple :
+
+        \begin{omed}{Lemme (symétrie des dérivées multiples)}
+            Soit $\Omega \subset\mathbf{R}^N$ un ouvert, et soit $T \in \mathcal{D}'(\Omega)$ une distribution. Pour tout $j \neq k \in \intEN{1}{N}$, 
+            \[ \partial_{x_j} \left(\partial_{x_k} T\right) = \partial_{x_k} \left(\partial_{x_j} T\right) \]   
+        \end{omed}
+        
+        \begin{demo}{Preuve}
+            Le lemme de Schwarz assure que pour toute fonction test $\phi \in \mathcal{D}(\Omega)$, 
+            \[ \partial_{x_j} \left(\partial_{x_k} \phi\right) = \partial_{x_k} \left(\partial_{x_j}\phi\right) \quad \text{sur } \Omega \]
+            Par conséquent, en reportant les opérateurs de dérivation sur $\phi$, on obtient le résultat.
+        \end{demo}
+
+        De façon plus générale, définissons les dérivées d’ordre supérieur à $1$ dans $\mathcal{D}'(\Omega)$. 
+
+        \begin{omed}{Définition}
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert et $T \in \mathcal{D}'(\Omega)$ une distribution. Pour tout multi-indice $\alpha \in \mathbf{N}^N$, on pose pour toute fonction test $\phi \in \mathcal{D}(\Omega)$
+            \[ \spr{\partial^{\alpha} T}{\phi} = (-1)^{\abs{\alpha}} \spr{T}{\partial^{\alpha}\phi} \] 
+        \end{omed}
+
+        \begin{demo}{Exemple}
+            On constate que cette définition correspond bien à la notation utilisée dans le cadre des masses de Dirac, puisque dans $\mathcal{D}'(\mathbf{R})$, 
+            \[ \partial^m \delta_{x_0} = \delta^{(m)}_{x_0} \]   
+        \end{demo}
+
+        La distribution a pour avantage, contrairement aux fonctions, d’être infiniment dérivable. 
+
+        \begin{omed}{Propositon (contuinuité de la dérivation dans $\mathcal{D}'$)}
+            Soit $\Omega \subset \mathbf{R}^N$ un ouvert et soit $(T_n)$ une suite de distributions de $\mathcal{D}'(\Omega)$. On suppose que $T_n \to T$ pour $n \to \infty$.
+
+            Alors, pour tout multi-indice $\alpha \in \mathbf{N}^N$, on a que 
+            \[ \partial^{\alpha} T_n \underset{n \to \infty}{\longrightarrow} \partial^{\alpha} T \]
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Pour toute fonction test $\phi \in \mathcal{D}(\Omega)$, 
+            \begin{align*}
+                \spr{\partial^{\alpha} T_n}{\phi}
+                &= (-1)^{\abs{\alpha}} \spr{T_n}{\partial^{\alpha} \phi} \\
+                &\underset{n \to \infty}{\longrightarrow} (-1)^{\abs{\alpha}} \spr{T}{\partial^{\alpha} \phi} = \spr{\partial^{\alpha} T}{\phi}
+            \end{align*}
+        \end{demo}
+
+        Ce résultat montre en particulier que si $(f_n) \to f$ dans $L^1_{\text{loc}}(\Omega)$ alors $\partial^{\alpha} f_n \to \partial^{\alpha} f$ au sens des distributions sur $\Omega$. Cette énoncé de convergence de distributions dérivées est d’une simplicité étonnante par rapport au cas des fonctions, qui demande une convergence uniforme locale de la suite des dérivées. Cela tient au fait que la convergence des dérivées au sens des distributions est bien plus faible que dans le cas des fonctions.
+
+        \begin{demo}{Exemple}
+            La fonction $x \mapsto \ln(\abs{x})$ est localement intégrable sur $\mathbf{R}$ donc définit un élément de $\mathcal{D}'(\Omega)$, et pour toute fonction test $\phi \in \mathcal{D}(\Omega)$,
+            \begin{align*}
+                \spr{(\ln\abs{x})'}{\phi} 
+                &= - \int_{-\infty}^{\infty} \ln\abs{x} \phi'(x) dx \\
+                &= - \int_{0}^{\infty} \ln\abs{x}(\phi'(x) + \phi'(-x))dx \\
+                &= - \left[\ln\abs{x}(\phi(x) - \phi(-x))\right]_0^{\infty} + \int_{0}^{\infty} \frac{\phi(x) - \phi(-x)}{x} dx \\
+                &= \spr{\text{vp}\frac{1}{x}}{\phi}
+            \end{align*}
+            en utilisant une intégration par parties. On a donc que 
+            \[ (\ln\abs{x})' = \text{vp}\frac{1}{x} \]   
+        \end{demo}
+
+        \subsubsection{Multiplication par une fonction test}
+
+        \begin{omed}{Définition (produit $C^{\infty}_c$-$\mathcal{D}'$)}
+            Soient $N \geq 1$ un entier et $\Omega \subset \mathbf{R}^N$ un ouvert. Pour toute fonction test $a \in \mathcal{D}(\Omega)$ et distribution $T \in \mathcal{D}'(\Omega)$, on définit la \textbf{distribution produit} de $T$ par $a$, notée $aT$, par la formule
+            \[ \spr{aT}{\phi} = \spr{T}{a\phi} \quad \text{avec } \phi \in \mathcal{D}(\Omega) \]   
+        \end{omed}
+
+        Avant d’expliciter les propriétés du produit, vérifions que la distribution produit vérifie bien la propriété de continuité. Par la formule de Leibnitz, pour tout compact $K \subset \Omega$, on a que 
+        \begin{align*}
+            \max_{\abs{\alpha} \leq p} \sup_{x \in K} \abs{\partial^{\alpha}(a \phi)(x)} 
+            &= \max_{\abs{\alpha} \leq p} \sup_{x \in K} \abs{\sum_{\beta \leq \alpha} \binom{\alpha}{\beta} \partial^{\alpha - \beta} a(x) \partial^{\beta} \phi(x)} \\
+            &\leq M_{p,K}(a) \max_{\abs{b} \leq p} \sup_{x \in K} \abs{\partial^{\beta} \phi(x)} 
+        \end{align*}
+        avec 
+        \[ M_{p,K}(a) = 2^p \max_{\abs{\alpha} \leq p} \sup_{x \in K} \abs{\partial^{\alpha}a(x)} \]
+ 
+        \begin{omed}{Proposition (continuité de la distribution produit)}
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert, $a \in \mathcal{D}(\Omega)$ une fonction test et $(T_n)$ une suite de distributions de $\mathcal{D}'(\Omega)$ telle que $T_n \to T$. 
+
+            Alors 
+            \[ a T_n \underset{n \to \infty}{\longrightarrow} a T \]
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Comme pour la dérivation d’une distribution convergente, on reporte les opérations sur la fonction test :
+            \begin{align*}
+                \spr{aT_n}{\phi} 
+                &= \spr{T_n}{a \phi} \\
+                &\underset{n \to \infty}{\longrightarrow} \spr{T}{a \phi} = \spr{aT}{\phi}
+            \end{align*}
+        \end{demo}
+
+        La multiplication par une fonction $\mathcal{C}_c^{\infty}$ s’accompagne aussi d’une formule de Leibnitz analogue au cas des fonctions :
+
+        \begin{omed}{Proposition (formule de Leibnitz dans $\mathcal{D}'$)}
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert, $a \in \mathcal{D}(\Omega)$ une fonction test et $T \in \mathcal{D}'(\Omega)$ une distribution. Pour tout $j \in \intEN{1}{N}$, 
+            \[ \partial_{x_j}(aT)  = (\partial_{x_j} a) T + a \partial_{x_j} T \]   
+            Plus généralement, pour tout $\alpha \in \mathbf{N}^N$ un multi-indice, 
+            \[ \partial^{\alpha}(aT) = \sum_{\beta \leq \alpha} \binom{\alpha}{\beta} (\partial^{\alpha - \beta} a) \partial^{\beta} T \]   
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Pour toute fonction test $\phi \in \mathcal{C}^{\infty}_c(\Omega)$, on a 
+            \begin{align*}
+                \spr{\partial_{x_j} (aT)}{\phi} 
+                &= - \spr{aT}{\partial_{x_j} \phi} \\
+                &= - \spr{T}{a \partial_{x_j} \phi} \\
+                &= - \spr{T}{\partial_{x_j} a \phi} + \spr{T}{(\partial_{x_j}a) \phi} \\
+                &= \spr{a \partial_{x_j} T}{\phi} + \spr{(\partial_{x_j} a)T}{\phi}
+            \end{align*}
+            Le cas des multi-indices découle d’une récurrence comme dans le cas classique d’un produit de fonctions.
+        \end{demo}
+
+        \begin{demo}{Exemple (produit d’une masse de Dirac par une fonction test)}
+            Pour tout $x_0 \in \Omega$ et $a \in \mathcal{D}(\Omega)$, on a 
+            \[ a \delta_{x_0} = a(x_0) \delta_{x_0} \] 
+            En appliquant la formule de Leibnitz, on trouve que pour tout $j \in \intEN{1}{N}$, 
+            \[ a \partial_{x_j} \delta_{x_0} = a(x_0) \partial_{x_j \delta_{x_0}} - (\partial_{x_j} a)(x_0) \delta_{x_0} \]   
+        \end{demo}
+
+        \subsubsection{Localisation et recollement des distributions}
+
+        On ne peut pas utiliser la notion de valeur en un point comme dans le cas des fonctions, mais on peut restreindre une distribution à n’importe quel ouvert :
+
+        \begin{omed}{Définition (restriction des distributions)}
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert et $\omega \subset \Omega$ un ouvert. À toute distribution $T \in \mathcal{D}'(\Omega)$, on associe sa \textbf{restriction} à $\omega$, notée $T \big|\vphantom{|}_{\omega} \in \mathcal{D}'(\omega)$ et définie par 
+            \[ \spr{T \big|\vphantom{|}_{\omega}}{\phi} = \spr{T}{\Phi} \]   
+            où $\phi$ est une fonction test sur $\mathcal{D}(\Omega)$ et $\Phi$ est le prolongement de $\phi$ par $0$ sur $\Omega \backslash \omega$.
+        \end{omed}
+
+        Évidemment, cette notion coïncide avec la notion usuelle de restriction dans le cas de distributions associées à des fonctions localement intégrables.
+
+        On peut reconstruire une distribution sur un ouvert à partir de sa restriction à chaque ouvert d’un recouvrement (ouvert) de $\Omega$.
+
+        \begin{omed}{Proposition (principe de recollement)}[prop:principerecollement]
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert et $(\omega_i)_{i \in I}$ un recouvrement ouvert de $\Omega$. On considère une famille $(T_i)_{i \in I}$ de distributions telles que, pour tout $i \in I$, $T_i \in \mathcal{D}'(\omega_i)$, et si $j \neq i$, 
+            \[ T_i \big|\vphantom{|}_{\omega_i \cap \omega_j} = T_j \big|\vphantom{|}_{\omega_i \cap \omega_j} \] 
+            Alors il existe une unique distribution $T \in \mathcal{D}'(\Omega)$ telle que 
+            \[ T \big|\vphantom{|}_{\omega_i} = T_i \quad \forall i \in I \]
+        \end{omed}
+
+        \subsubsection{Changement de variable dans les distributions}
+
+        On aimerait définir le produit de composition $T \circ \chi$ d’une distribution $T$ par une application $\chi$ comme dans le cas des fonctions. Pour définir ce produit, il faut introduire des hypothèses sur $\chi$.
+
+        Commençons par le cas où $\Omega_1$ et $\Omega_2$ sont deux ouverts de $\mathbf{R}^N$, et où $\chi : \Omega_1 \to \Omega_2$ est un $\mathcal{C}^{\infty}$ difféomorphisme. On s’inspirera pour cela du changement de variable dans le cas de $f \in L^1_{\text{loc}}(\Omega_2)$, de façon à ce que $f \circ \chi \in L^2_{\text{loc}}(\Omega_1)$, et 
+        \[ \int_{\Omega_1} f \circ \chi(x) \phi(x) dx = \int_{\Omega_2} f(y) \phi(\chi^{-1}(y)) \abs{\det(J_{\chi}(\chi^{-1}(y)))}^{-1} dy \]   
+        où $J_\chi$ est la matrice jacobienne de $\chi$. 
+
+        \begin{omed}{Définition (changement de variable dans $\mathcal{D}'$)}[def:changementvariableRNRN]
+            Soient $\Omega_1$ et $\Omega_2$ deux ouverts de $\mathbf{R}^N$, $T \in \mathcal{D}'(\Omega_2)$ une distribution et $\chi : \Omega_1 \to \Omega_2$ un difféomorphisme de classe $\mathcal{C}^{\infty}$. 
+
+            L'\textbf{image inverse} de $T$ sur $\Omega_2$ par $\chi$ est la distribution $T \circ \chi$ sur $\Omega_1$ définie par la formule 
+            \[ \spr{T \circ \chi}{\phi} = \spr{T}{\chi_*(\phi)} \quad \text{avec } \phi \in \mathcal{D}(\Omega_1) \]   
+            où l’image direct de la fonction test par $\chi$ est donnée par 
+            \[ \chi_*(\phi)(y) = \phi(\chi^{-1}(y)) \abs{\det(J_{\chi}(\chi^{-1}(y)))}^{-1} quad \text{où } y \in \Omega_2 \]
+        \end{omed}
+
+        Pour voir que $T \circ \chi$ vérifie la propriété de continuité des distributions, on applique la formule de dérivation des applications composées et la formule de Leibnitz par récurrence sur l’ordre de la dérivation.
+
+        On peut aussi vérifier que l’on a bien, pour une suite de distributions $(T_n)$ sur $\Omega^2$ telle que $T_n \to T$ dans $\mathcal{D}'(\Omega_2)$, $T_n \circ \chi \to T \circ \chi$ dans $\mathcal{D}'(\Omega_1)$.
+
+        \subsubsection{Dérivation et intégration sous le crochet de dualité}
+
+        On généralise avec les deux théorèmes suivants au cas des distributions les théorème de dérivation sous l’intégrale d’une part et théorème de Fubini d’autre part.
+
+        \begin{omed}{Proposition (dérivation sous le crochet)}[prop:derivationsouscrochet]
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert, $T \in \mathcal{D}'(\Omega)$ une distribution et une fonction test $\phi \in \mathcal{D}(\Omega \times \mathbf{R}^n)$ à support dans $K \times \mathbf{R}^n$ où $K \subset \Omega$ est un compact. 
+
+            Alors la fonction 
+            \[ y \mapsto \spr{T}{\phi(\cdot , y)} \text{ est de classe } \mathcal{C}^{\infty} \text{ sur } \mathbf{R}^n \]
+            et l’on a, pour tout multi-indice $\alpha \in \mathbf{N}^n$, 
+            \[ \partial_y^{\alpha} \spr{T}{\phi(\cdot,y)} = \spr{T}{\partial_y^{\alpha} \phi(\cdot, y)} \]
+        \end{omed}
+
+        Dans le cas particulier où $T = T_f$ avec $f \in L^1_{\text{loc}}(\Omega)$, cet énoncé signifie que $y \mapsto \int_{\Omega} f(x) \phi(x,y) dx$ est de classe $\mathcal{C}^{\infty}$ sur $\mathbf{R}^n$ et que 
+        \[ \partial_y^{\alpha} \int_{\Omega} f(x) \phi(x,y)dx = \int_{\Omega} f(x)\partial_y^{\alpha} \phi(\cdot, y)dx \]
+
+        \begin{demo}{Preuve}
+            Soit $y_0 \in \mathbf{R}^n$. D’après la formule de Taylor à l’ordre 1 en $y_0$ pour la fonction $y \mapsto \phi(x,y)$, 
+            \[ \phi(x,y_0 + h) = \phi(x,y_0) + \sum_{i=1}^{n} \partial_{y_i} \phi(x,y_0) h_i + r(x,y_0,h) \]    
+            où 
+            \[ r(x,y_0,h)= 2 \sum_{\abs{\alpha} = 2} \frac{h^{\alpha}}{\alpha!} \int_{0}^{1} (1-t)\partial_y^{\alpha} \phi(x, y_0 + th) dt \]   
+            Comme $\text{supp}(\phi) \subset K \times \mathbf{R}^n$, pour tout $h \in \mathbf{R}^n$, la fonction $x \mapsto r(x,y_0,h)$ est à support dans $K$. De plus, pour tout $x \in K$ et tout $h \in \mathbf{R}^n$ tel que $\abs{h} \leq 1$, on a, par dérivation sous le signe somme dans l’intégrale qui définit $r(x,y_0,h)$, 
+            \begin{align*}
+                \abs{\partial_x^{\alpha} r(x,y_0,h)}  
+                &\leq \sum_{\abs{\beta} = 2} 2 \abs{\frac{h^\beta}{\beta!}} \int_{0}^1 (1 - t) \abs{\partial_x^{\alpha} \partial_y^{\beta} \phi(x,y_0 + th)} dt \\
+                &\leq \sum_{\abs{\beta} = 2} \abs{h}^2 \sup_{x \in K, \abs{y - y_0} \leq 1} \abs{\partial_x^{\alpha} \partial_y^{\beta} \phi(x,y)} \\
+                &\leq \frac{n(n+1)}{2}\abs{h}^2 \max_{\abs{\beta} \leq 2} \sup_{x \in K, \abs{y - y_0} \leq 1} \abs{\partial_x^{\alpha} \partial_y^{\beta} \phi(x,y)} \\
+            \end{align*}
+            Ainsi, 
+            \begin{align*}
+                \abs{\spr{T}{r(\cdot,y_0, h)}} 
+                &\leq C_K \abs{h}^2 \max_{\abs{\alpha} \leq p_K, \abs{\beta} = 2} \sup_{x \in K, \abs{y - y_0} \leq 1} \abs{\partial_x^{\alpha} \partial_y^{\beta} \phi(x,y)} \\
+                &= O_{\abs{h} \to 0} \left(\abs{h}^2\right) 
+            \end{align*}
+            où $C_K$ et $p_K$ sont les constantes qui apparaissent dans la condition de continuité de $T$. On en déduit que 
+            \begin{align*}
+                \spr{T}{\phi(\cdot, y_0 + h)} 
+                &= \spr{T}{\phi(\cdot, y_0)} + \sum_{i=1}^{n} \spr{T}{\partial_{y_i} \phi(\cdot, y_0)} h_i + \spr{T}{r(\cdot, y_0, h)} \\
+                &= \spr{T}{\phi(\cdot, y_0)} + \sum_{i=1}^{n} \spr{T}{\partial_{y_i} \phi(\cdot, y_0)} h_i + O_{\abs{h} \to 0} \left(\abs{h}^2\right)
+            \end{align*}
+            ce qui montre que la fonction $y \mapsto \spr{T}{\phi(\cdot, y)}$ est différentiable sur $\mathbf{R}^n$ et que des dérivées partielles sont 
+            \[ \partial_{y_i} \spr{T}{\phi(\cdot, y)} = \spr{T}{\partial_{y_i} \phi(\cdot, y)} \quad \text{pour tout } y \in \mathbf{R}^n \]   
+            Par récurrence sur l’ordre de la dérivation, on aboutit au résultat de l’énoncé.
+        \end{demo}
+
+        \begin{omed}{Proposition (intégration sous le crochet)}[prop:integrationsouscrochet]
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert, $T \in \mathcal{D}'(\Omega)$ une distribution et une fonction test $\phi \in \mathcal{D}(\Omega \times \mathbf{R}^n)$. Alors 
+            \[ \int_{\mathbf{R}^n} \spr{T}{\phi(\cdot, y)} dy = \spr{T}{\int_{\mathbf{R}^n} \phi(\cdot, y) dy} \]   
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            On traite en premier lieu le cas $n = 1$. Par hypothèse, il existe $K$ compact dans $\Omega$ et $R > 0$ tel que $\phi$ soit à support dans $K \times \intFF{-R}{R}$. On considère $\zeta \in \mathcal{D}(\mathbf{R})$ à support compact dans $\intFF{-R}{R}$ telle que $\int_{\mathbf{R}} \zeta(x)dx = 1$. On pose 
+            \[ \psi(x,y) := \phi(x,y) - \zeta(y) \int_{\mathbf{R}} \phi(x,z)dz \]   
+            D’après le théorème de dérivation sous le signe intégrale, il est clair que $\psi \in \mathcal{D}(\Omega \times \mathbf{R})$ et vérifie $\text{supp}(\psi) \subset K \times \intFF{-R}{R}$ et $\int_{\mathbf{R}} \psi(x,y) dy = 0$ pour tout $x \in \Omega$. 
+            
+            En particulier, la fonction définie sur $\Omega \times \mathbf{R}$ 
+            \[ \Psi(x,y) := \int_{-\infty}^{y} \psi(x,z)dz \]   
+            est de classe $\mathcal{C}^{\infty}(\Omega \times \mathbf{R})$ et à support $\text{supp}(\Psi) \subset K \times \intFF{-R}{R}$. Par dérivation sous le crochet (\ref{prop:derivationsouscrochet}), 
+            \[ \frac{\text{d}}{\text{d}y} \spr{T}{\Psi(\cdot, y)} = \spr{T}{\psi(\cdot, y)} \quad \text{pour } y \in \mathbf{R} \]
+            donc il existe une constante $C \in \mathbf{R}$ telle que 
+            \[ \spr{T}{\Psi(\cdot, y)} = C + \int_{-\infty}^{y } \spr{T}{\psi(\cdot, z)} dz \]   
+            et les fonction étant identiquement nulles pour $y < -R$, on en déduit que $C = 0$. En particulier, 
+            \begin{align*}
+                \int_{\mathbf{R}} \spr{T}{\psi(\cdot,y)} dy 
+                &\overset{1}{=} \int_{-\infty}^R \spr{T}{\psi(\cdot, y) dy} \\
+                &= \spr{T}{\Psi(x,R)} = 0 \\
+                &\overset{2}{=} \int_{\mathbf{R}} \spr{T}{\phi(\cdot, y)} dy - \spr{T}{\int_{\mathbf{R}} \phi(\cdot, z)dz} \int_{\mathbf{R}} \zeta(y)dy \\
+                &= \int_{\mathbf{R}} \spr{T}{\phi(\cdot,y)}dy - \spr{T}{\int_{\mathbf{R}} \phi(\cdot, z)dz}
+            \end{align*}
+            d’où le résulat. Pour les cas $n > 1$, on procède par récurrence, en intégrant successivement par rapport à toutes les composantes de $y$ et en appliquant le théorème de Fubini.
+        \end{demo}
+
+        \subsubsection{Produit de distributions}
+
+        Étant donné la définition d’une distribution comme forme linéaire, on a bien plus de facilité à étendre les opérations linéaire sur les fonctions aux distributions. Les opérations non-linéaires sont quant à elles pas toujours généralisables aux cas des distributions, notamment le produit. Il n’y a donc \textbf{pas de moyen de définir un produit}, sauf dans des cas particuliers
+
+        \begin{demo}{Exemples}
+            \begin{itemize}
+                \item Il est tout à fait naturel de considérer que, si $x_1 \neq x_2$,
+                \[ \delta_{x_1} \delta_{x_2} = 0 \quad \text{dans } \mathcal{D}'(\mathbf{R}^N) \]   
+                \item Toutefois, on ne peut pas donner de sens à l’expression $(\delta_{x_0})^2$ dans $\mathcal{D}'(\mathbf{R}^N)$. On pourrait être tentés de s’inpirer du cas ci-dessus et d’écrire, dans $\mathcal{D}'(\mathbf{R})$,
+                \[ (\delta_0)^2 = \lim_{n \to \infty} \delta_0 \delta_{\frac{1}{n}} = 0 \]   
+                Mais dans ce cas, en posant $\zeta \in \mathcal{D}(\mathbf{R})$ une fonction test à support dans $\intFF{-1}{1}$, positive, telle que $\int_{\mathbf{R}} \zeta(x)dx = 1$, et une suite régularisante $(\zeta_n)$ définie sur $\mathbf{R}$ par $\zeta_n(x) = n \zeta(nx)$. On aurait alors $\zeta_n$ (confondue avec sa distribution) qui tend vers $\delta_0$ dans $\mathcal{D}'(\mathbf{R})$, et donc par le même principe on aurait 
+                \[ (\delta_0)^2 = \lim_{n \to \infty} (\zeta_n \delta_0) \]   
+                Or $\zeta_n \delta_0 = n \zeta(0) \delta_0$ qui ne converge pas dans $\mathcal{D}'(\mathbf{R})$.
+            \end{itemize}  
+         \end{demo}
+
+
+        

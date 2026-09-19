@@ -1,0 +1,405 @@
+\newpage
+
+\section{Transformation de Fourier}
+
+    La transformation de Fourier est un outil fondamental en mathématiques, notamment en théorie du signal et autres phénomènes ondulatoires. Elle permet la résolution des équations aux dérivées partielles intrinsèquement liées avec la notion de distribution.
+
+    Il existe un langage dans lequel on peut considérer un cadre unique qui réunit les séries de Fourier et la transformation de fourier sur $\mathbf{R}^N$, nécessitant l’utilisation des distributions.
+
+    \subsection{La classe de Schartz}
+
+        \begin{omed}{Définition (espace de Schwartz $\mathcal{S}(\mathbf{R}^N)$)}
+            On note $\mathcal{S}(\mathbf{R}^N) \subset \mathcal{E}(\mathbf{R}^N)$ l’espace des fonctions (dit \textbf{espace de Schwartz}) $\phi$ de classe $\mathcal{C}^{\infty}$ telles que, pour tout multi-indice $\alpha, \beta \in \mathbf{N}^N$, 
+            \[ \sup_{x \in \mathbf{R}^N} \abs{x^{\alpha} \partial^{\beta} \phi(x)} < \infty \]   
+        \end{omed}
+
+        Il s’agit d’un $\mathbf{K}$-espace vectoriel sur l’espace des fonctions de classe $\mathcal{C}^{\infty}$, qui contient notamment toutes les fonctions de classe $\mathcal{C}^{\infty}$ à support compact : $\mathcal{D}(\mathbf{R}^N) \subset \mathcal{S}(\mathbf{R}^N)$.
+
+        La topologie de l’espace $\mathcal{S}(\mathbf{R}^N)$ n’est pas définie par une norme, mais par une famille dénombrable de semi-normes $(\mathcal{N}_p)_{p \in \mathbf{N}}$ définies par 
+        \[ \mathcal{N}_p(\phi) = \sum_{\abs{\alpha}, \abs{\beta} \leq p} \sup_{x \in \mathbf{R}^N} \abs{x^{\alpha} \partial^{\beta} \phi(x)} \quad \phi \in \mathcal{S}(\mathbf{R}^N) \]   
+        Cette topologie permet de définir une suite convergente dans cet espace. 
+
+        \begin{omed}{Définition (suites convergentes dans $\mathcal{S}(\mathbf{R}^N)$)}
+            Une suite de fonctions $(\phi_n)$ de $\mathcal{S}(\mathbf{R}^N)$ converge vers $\phi \in \mathcal{S}(\mathbf{R}^N)$ dans l’espace $\mathcal{S}(\mathbf{R}^N)$ si 
+            \[ \mathcal{N}_p(\phi_n - \phi) \underset{n \to \infty}{\longrightarrow} 0 \quad \forall p \in \mathbf{N} \]  
+        \end{omed}
+
+        \begin{omed}{Proposition (densité de $\mathcal{D}(\mathbf{R}^N)$ dans $\mathcal{S}(\mathbf{R}^N)$)}
+            Toute fonction de $\mathcal{S}(\mathbf{R}^N)$ s’écrit comme limite d’une suite de fonctions de $\mathcal{D}(\mathbf{R}^N)$.
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Soit $\chi \in \mathcal{C}_c^{\infty}(\mathbf{R}^N)$ une fonction telle que $\text{supp}(\chi) \subset B(0,2)$, $0 \leq \chi \leq 1$ et $\chi \big|\vphantom{|}_{\overline{B}(0,1)} = 1$. On pose, pour tout $n \geq 1$, 
+            \[ \chi_n(x) = \chi\left(\frac{x}{n}\right) \quad x \in \mathbf{R}^N \]   
+            Soient $\phi \in \mathcal{S}(\mathbf{R}^N)$ et les fonctions définies pour $n \geq 1$ sur $\mathbf{R}^N \ni x$ par 
+            \[ \phi_n(x) = \chi_n(x) \phi(x) \]
+            Les fonctions $\phi_n$ sont de classe $\mathcal{C}^{\infty}$ par produit, et 
+            \[ \text{supp}(\phi_n) \subset \text{supp}(\chi_n) = \overline{B(0,2n)} \]   
+            De plus, pour $x \in \mathbf{R}^N$,
+            \begin{align*}
+                \partial^{\beta}(\phi - \phi_n)(x) 
+                &= (1 - \chi_n(x)) \partial^{\beta} \phi(x) \\
+                &- \sum_{\gamma \leq \beta, \abs{\gamma} \geq 1} \binom{\beta}{\gamma} \frac{1}{n^{\abs{\gamma}}} \partial^{\gamma} \chi\left(\frac{x}{n}\right)\partial^{\beta - \gamma} \phi(x) \\
+                \abs{x^{\alpha} \partial^{\beta}(\phi - \phi_n)(x)} 
+                &\leq \abs{x^{\alpha}(1 - \chi_n(x)) \partial^{\beta} \phi(x)} \\
+                &+ \frac{1}{n} \sum_{\gamma \leq \beta, \abs{\gamma} \geq 1} \binom{\beta}{\gamma} \sup_{z \in \mathbf{R}^N} \abs{\partial^{\gamma} \chi(z)} \sup_{x \in \mathbf{R}^N} \abs{x^{\alpha} \partial^{\beta - \gamma} \phi(x)} \\
+                &\leq \abs{x^{\alpha}(1 - \chi_n(x)) \partial^{\beta} \phi(x)} + \frac{C}{n} \mathcal{N}_p(\phi) \\
+            \end{align*}
+            avec $C = 2^p \max_{0 \leq \abs{\gamma} \leq p} \sup_{z \in \mathbf{R}^N} \abs{\partial^{\gamma} \chi(z)}$. Or, pour tous $\alpha$ et $\beta$ des multi-indices de $\mathbf{N}^N$, avec $\abs{\alpha}, \abs{\beta} \leq p$, 
+            \[ \abs{x^{\alpha}(1 - \chi_n(x))\partial^{\beta}\phi(x)} \leq \frac{1}{n^2} \abs{x^{\alpha} x^2 \partial^{\beta}\phi(x)} \leq \frac{1}{n^2} \mathcal{N}^{p+2}(\phi) \]    
+            Ainsi, 
+            \[ \sup_{x \in \mathbf{R}^N} \abs{x^{\alpha} \partial^{\beta}(\phi - \phi_n)(x)} \leq \frac{1}{n^2} \mathcal{N}^{p+2}(\phi) + \frac{C}{n} \mathcal{N}_p(\phi) \underset{n \to \infty}{\longrightarrow} 0 \]
+            D’où $\phi_n \to \phi$ dans $\mathcal{S}(\mathbf{R}^N)$.
+        \end{demo}
+
+        Étant donné que l’ensemble $\mathcal{D}(\mathbf{R}^N)$ des fonctions de classe $\mathcal{C}^{\infty}$ à support continu est dense dans l’espace des fonctions $L^p$ pour $p \in \intFO{1}{\infty}$, on a par passage à l’adhérence dans les inclusions $\mathcal{D}(\mathbf{R}^N) \subset \mathcal{S}(\mathbf{R}^N) \subset L^p$, la densité dans la classe de Schwartz dans les espaces $L^p$.
+
+        \begin{omed}{Corollaire (densité de $\mathcal{S}(\mathbf{R}^N)$ dans $L^p(\mathbf{R}^N)$)}
+            Pour tout $p \in \intFO{1}{\infty}$, toute fonction de $L^p(\mathbf{R}^N)$ est limite au sens de la norme $L^p$ d’une suite de fonctions de $\mathcal{S}(\mathbf{R}^N)$.
+        \end{omed}
+
+        Nous allons désormais énoncer quelques propriétés de stabilité de la classe de Schwartz par certaines opérations, ce qui nécessite la notion de croissance polynomiale :
+
+        \begin{omed}{Définition (croissance polynomiale)}
+            On dit qu’une fonction continue $f$ sur $\mathbf{R}^N$ est à croissance polynomiale s’il existe un entier $n \geq 0$ tel que 
+            \[ f(x) = \mathcal{O}_{\abs{x} \to \infty} \left(\abs{x}^n\right) \]   
+        \end{omed}
+
+        \begin{omed}{Proposition (opérations dans $\mathcal{S}(\mathbf{R}^N)$)}[prop:operationsclasseSchwartz]
+            Soit $\phi \in \mathcal{S}(\mathbf{R}^R)$. 
+            \begin{enumerate}[label=($p_{\arabic*}$)]
+                \item pour tout multi-indice $\alpha \in \mathbf{N}^N$, $\partial^{\alpha}\phi \in \mathcal{S}(\mathbf{R}^N)$ ;
+                \item pour toute fonction $f \in \mathcal{E}(\mathbf{R}^N)$ dont les dérivées sont à croissance polynomiale, $f\phi \in \mathcal{S}(\mathbf{R}^N)$ ;
+                \item pour tout $q \in \intFF{1}{\infty}$, $\mathcal{S}(\mathbf{R}^N) \subset L^q(\mathbf{R}^N)$ et pour tout multi-indices $\alpha, \beta \in \mathbf{N}^N$ tels que $\abs{\alpha}, \abs{\beta} \leq p$, il existe $C_{\alpha,\beta} > 0$ telle que  
+                \[ \nor{x^{\alpha} \partial^{\beta} f}_{L^q(\mathbf{R}^N)} \leq C \mathcal{N}_p(f)^{1 - \frac{1}{q}} \mathcal{N}_{p + N + 1}(f)^{\frac{1}{q}} \]
+                \item pour toute distribution à support compact $S \in \mathcal{E}'(\mathbf{R}^N)$, $S \star \phi \in \mathcal{S}(\mathbf{R}^N)$.
+            \end{enumerate}
+        \end{omed}
+
+    \subsection{La transformation de Fourier sur l’espace de Schwartz}
+
+        La théorie de la transformée de Fourier sur les espaces $L^1(\mathbf{R}^N)$ et $L^2(\mathbf{R}^N)$ est supposée déjà connue. Nous allons désormais introduire la notion de transformation de Fourier sur la classe de Schwartz :
+
+        \begin{omed}{Définition (transformation de Fourier sur $\mathcal{S}(\mathbf{R}^N)$)}
+            À toute fonction $\phi \in \mathcal{S}(\mathbf{R}^N)$ on associe sa \textbf{transformation de Fourier}
+            \[ \mathcal{F}\phi(\xi) = \int_{\mathbf{R}^N} e^{- i \xi \cdot x} \phi(x) dx \quad \xi \in \mathbf{R}^N \]  
+        \end{omed}
+
+        Cette application linéaire est bien définie pour tout $\phi \in \mathcal{S}(\mathbf{R}^N)$, puisque $\phi\mathcal{S}(\mathbf{R}^N) \subset L^1(\mathbf{R}^N)$.
+
+        \begin{omed}{Proposition (dérivation et translation)}
+            Soit $\phi \in \mathcal{S}(\mathbf{R}^N)$. 
+            \begin{enumerate}[label=($p_{\arabic*}$)]
+                \item La fonction $\mathcal{F}\phi$ est de classe $\mathcal{C}^1(\mathbf{R}^N)$ et, pour tout $j \in \intEN{1}{N}$, 
+                \[ \partial_{\xi_{j}} \mathcal{F}\phi(\xi) = \mathcal{F}[-ix_j \phi](\xi) \quad \xi \in \mathbf{R}^N \]    
+                \item Pour tout $j \in \intEN{1}{N}$,
+                \[ \mathcal{F}[\partial_{x_j}\phi](\xi) = i \xi_j \mathcal{F}\phi(\xi) \quad \xi \in \mathbf{R}^N \]
+                \item Pour tout $a \in \mathbf{R}^N$, la fonction $(\tau_a)_* \phi = \phi \circ \tau_{-a}$ a pour tranformée de Fourier 
+                \[ \mathcal{F}[(\tau_a)_*\phi](\xi) = e^{-i \xi \cdot a} \mathcal{F}\phi(\xi) \]    
+                \item Pour tout $a \in \mathbf{R}^N$, 
+                \[ \mathcal{F}[e^{i a \cdot x} \phi](\xi) = (\tau_a)_*(\mathcal{F}\phi)(\xi) = \mathcal{F}\phi(\xi - a) \quad \xi \in \mathbf{R}^N \]   
+            \end{enumerate}
+        \end{omed}
+
+        On remarque avec cette proposition que la tranformation de Fourier échange dérivation et multiplication par la variable. Ainsi, il y a échange entre régularité et décroissance à l’infini : plus une fonction est dérivable, plus sa transformée de Fourier est décroissante à l’infini. Ceci permet de comprendre l’utilité de la classe de Schwartz, qui combine ces deux propriétés. Sa tranformation de Fourier combine donc aussi ses deux propriétés, et reste dans la classe de Schwartz.
+
+        \begin{omed}{Théorème (formule d’inversion dans $\mathcal{S}(\mathbf{R}^N)$)}
+            La transformation de Fourier est un automorphisme de $\mathcal{S}(\mathbf{R}^N)$, d’inverse noté $\mathcal{F}^{-1}$ et définit pour $\psi \in \mathcal{S}(\mathbf{R}^N)$ par 
+            \[ \mathcal{F}^{-1}\psi(x) = \frac{1}{(2\pi)^N} \int_{\mathbf{R}^N} e^{i x \cdot \xi} \psi(\xi) d\xi \quad x \in \mathbf{R}^N \]   
+            Les isomorphismes $\mathcal{F}$ et $\mathcal{F}^{-1}$ sont continus sur $\mathcal{S}(\mathbf{R}^N)$ au sens où, pour $p \in \mathbf{N}$, il existe $C_p > 0$ tel que pour tout $\phi \in \mathbf{R}^N$, 
+            \[ \mathcal{N} p(\mathcal{F}\phi), \mathcal{N}_p(\mathcal{F}^{-1}\phi) \leq C_p \mathcal{N}_{p + N + 1}(\phi) \]
+        \end{omed}
+
+        Pour démontrer ce théorème, nous aurons besion d’un résultat crucial sur les vecteurs gaussiens non dégénérés et leur tranformée de Fourier :
+
+        \begin{omed}{Lemme (tranformation de Fourier d’une gaussienne)}
+            Soit $A \in S^{++}(\mathbf{R})$ une matrice symétrique définie positive. On pose 
+            \[ G_A(x) = \frac{1}{\sqrt{(2\pi)^N \det(A)}}\exp\left(-\frac{1}{2} \spr{A^{-1}x}{x}\right) \quad x \in \mathbf{R}^N \]   
+            Alors $G_A \in \mathcal{S}(\mathbf{R}^N)$ la classe de Schwartz et 
+            \[ \mathcal{F}G_A(\xi) = \exp\left(-\frac{1}{2}\spr{A\xi}{\xi}\right) \quad \xi \in \mathbf{R}^N \]   
+        \end{omed}
+
+        \begin{demo}{Démonstration de la formule d’inversion}
+            Montrons dans un premier temps que $\mathcal{F}\mathcal{S}(\mathbf{R}^N) \subset \mathcal{S}(\mathbf{R}^N)$. D’après les formules de dérivation, pour des multi-indices $\alpha$ et $\beta$ de $\mathbf{R}^N$, 
+            \[ \xi^{\alpha} \partial^{\beta} \mathcal{F}\phi = (-i)^{\abs{\alpha} + \abs{\beta}} \mathcal{F}[\partial^{\alpha}(x^{\beta \phi})] \]   
+            Or, d’après la formule de Leibnitz, 
+            \[ \partial^{\alpha}(x^{\beta \phi}) = \sum_{\gamma \leq \alpha} \binom{\alpha}{\gamma} (\partial^{\gamma} x^{\beta})(\partial^{\alpha - \gamma}\phi) \quad \in \mathcal{S}(\mathbf{R}^N) \]   
+            Ainsi, $\xi^{\alpha} \partial^{\beta} \mathcal{F}\phi \in L^{\infty}(\mathbf{R}^N)$. Ceci est vrai pour tout couple de multi-indices, donc $\mathcal{F}\phi \in \mathcal{S}(\mathbf{R}^N)$.
+
+            Pour la formule d’inversion, nous aimerions procéder ainsi : 
+            \begin{align*}
+                \mathcal{F}^{-1} \mathcal{F}\phi(x) 
+                &= \frac{1}{(2\pi)^N} \int_{\mathbf{R}^N} e^{i \xi \cdot x} \left(\int_{\mathbf{R}^N} e^{- i \xi \cdot y} \phi(y)dy\right) d\xi \\
+                &= \int_{\mathbf{R}^N} \phi(y) \left(\frac{1}{(2\pi)^N} \int_{\mathbf{R}^N} e^{i \xi \cdot (x-y)} d\xi \right) dy \\
+            \end{align*}
+            puis écrire $\delta(x-y) = \frac{1}{(2\pi)^N} \int_{\mathbf{R}^N} e^{i \xi \cdot (x-y)} d\xi$. Malheureusement, la fonction $(x,y) \mapsto e^{i \xi \cdot(x-y)}\phi(y)$ n’est pas intégrale et nous ne pouvons pas appliquer l’égalité de Fubini, et l’intégrale censée représenter la masse de dirac n’a pas de sens comme intégrale de Lebesgue. Pour garder un sens à nos écritures, on utilise l’égalité
+            \[ \frac{1}{(2\pi)^N}\int_{\mathbf{R}^N} e^{i \xi \cdot (x-y) - \frac{1}{2}\varepsilon\abs{\xi}^2} = G_{\varepsilon}(x-y) \quad \varepsilon > 0\]   
+            qui est une fonction intégrable sur $\mathbf{R}^N \times \mathbf{R}^N$, d’où 
+            \begin{align*}
+                \int_{\mathbf{R}^N} G_{\varepsilon}(x-y)\phi(y)dy 
+                &= \int_{\mathbf{R}^N} \left(\frac{1}{(2\pi)^N} \int_{\mathbf{R}^N} e^{i \xi \cdot (x-y) - \frac{1}{2} \varepsilon \abs{\xi}^2} d\xi\right) \phi(y) dy \\
+                &= \frac{1}{(2\pi)^N} \int_{\mathbf{R}^N} e^{i \xi \cdot x} e^{-\frac{1}{2}\varepsilon\abs{\xi}^2} \mathcal{F}\phi(\xi) d\xi
+            \end{align*}
+            Pour le terme de gauche,
+            \begin{align*}
+                \int_{\mathbf{R}^N} G_{\varepsilon}(x-y)\phi(y)dy 
+                &=\int_{\mathbf{R}^N}\phi(x - z)G_{\varepsilon}(z)dz \\
+                &= \int_{\mathbf{R}^N} \phi(x - \sqrt{\varepsilon}w)G_1(w)dw \\
+                &\underset{\varepsilon \to 0^+}{\longrightarrow} \phi(x) 
+            \end{align*}
+            en utilisant le théorème de convergence dominée puisque $\phi \in \mathcal{S}(\mathbf{R}^N)$ est continue et bornée d’où
+            \[ \abs{\phi(x - \sqrt{\varepsilon}w) G_1(w)} \leq \sup_{y \in \mathbf{R}^N} \abs{\phi(y)}G_1(w) \in L^1(\mathbf{R}^N) \]   
+            De même, dans le membre de droite, on utilise la convergence dominée avec 
+            \[ \abs{e^{i \xi \cdot x} e^{-\frac{1}{2}\varepsilon\abs{\xi}^2} \mathcal{F}\phi(\xi)} \leq \abs{\mathcal{F}\phi(\xi)} \in \mathcal{S}(\mathbf{R}^N) \subset L^1(\mathbf{R}^N) \]
+            ce qui donne
+            \[ \frac{1}{(2\pi)^N} \int_{\mathbf{R}^N} e^{i \xi \cdot x} e^{-\frac{1}{2}\varepsilon\abs{\xi}^2} \mathcal{F}\phi(\xi) d\xi \underset{\varepsilon \to 0^+}{\longrightarrow} \frac{1}{(2\pi)^N} \int_{\mathbf{R}^N} e^{i \xi \cdot x} \mathcal{F}\phi d\xi \]
+        \end{demo}
+
+        \begin{omed}{Corollaire (formule de Plancherel)}
+            Pour toutes fonctions $\phi, \psi \in \mathcal{S}(\mathbf{R}^N)$, 
+            \[ \spr{\phi}{\psi}_{L^2(\mathbf{R}^N)} = \frac{1}{(2\pi)^N}\spr{\mathcal{F}\phi}{\mathcal{F}\psi}_{L^2(\mathbf{R}^N)} \]   
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            \begin{align*}
+                \spr{\phi}{\psi}_{L^2(\mathbf{R}^N)}
+                &= \int_{\mathbf{R}^N} \overline{\phi(x)}\psi(x)dx \\
+                &= \int_{\mathbf{R}^N} \overline{\frac{1}{(2\pi)^N} \int_{\mathbf{R}^N} \mathcal{F}\phi(\xi) e^{i x \cdot \xi} d\xi} \psi(x)dx \\
+                &= \frac{1}{(2\pi)^N} \int_{\mathbf{R}^N} \int_{\mathbf{R}^N} e^{-ix \cdot \xi} \overline{\mathcal{F}\phi(\xi)} \psi(x)dx d\xi \\
+                &= \frac{1}{(2\pi)^N} \int_{\mathbf{R}^N} \overline{\mathcal{F}\phi(\xi)} \left(\int_{\mathbf{R}^N} e^{-ix \cdot \xi} \psi(x)dx\right) d\xi \\
+                &= \frac{1}{(2\pi)^N} \spr{\mathcal{F}\phi}{\mathcal{F}\psi}_{L^2(\mathbf{R}^N)}
+            \end{align*}
+            en vertu du théorème de Fubini puisque la fonction $(x, \xi) \mapsto \overline{\mathcal{F}\phi(\xi)}\psi(x)$ est intégrable sur $\mathbf{R}^N_{\xi} \times \mathbf{R}^N_x$ puisque $\psi$ et $\mathcal{F}\phi$ sont des fonctions de $\mathcal{S}(\mathbf{R}^N)$. 
+        \end{demo}
+
+    \subsection{Les distributions tempérées}
+
+        Nous voulons étendre la notion de transformation de Fourier à des distributions. Pour pouvoir définir cette transformation sur une fonction continue $f$, il faut des contiditions limitant sa croissance à l’infini, par exemple avec $f \in L^1(\mathbf{R}^N)$. Il faut donc adapter cette notion pour une distribution, en introduisant la notion de distribution tempérée.
+
+        \begin{omed}{Définition (distributions tempérées)}
+            Une \textbf{distribution tempérée} est une forme linéaire continue sur $\mathcal{S}(\mathbf{R}^N)$, \textit{i.e.} une forme linéaire $T$ sur $\mathcal{S}(\mathbf{R}^N)$ telle qu’il existe un entier $p \geq 0$ et $C >0$ tels que 
+            \[ \abs{\spr{T}{\phi}} \leq C \mathcal{N}_p(\phi) \quad \forall \phi \in \mathcal{D}(\mathbf{R}^N) \]
+            On note $\mathcal{S}'(\mathbf{R}^N)$ le $\mathbf{C}$-espace vectoriel des distributions tempérées.
+        \end{omed}
+
+        Étant donné que $\mathcal{D}(\mathbf{R}^N) \subset \mathcal{S}(\mathbf{R}^N)$, toute distribution tempérée $T \in \mathcal{S}'(\mathbf{R}^N)$ définit par restriction une forme linéaire 
+        \[ \mathcal{D}(\mathbf{R}^N) \ni \phi \mapsto \spr{T}{\phi} \]   
+        qui est une distribution puisque pour toute fonction test $\phi \in \mathcal{D}(\mathbf{R}^N)$ à support dans un compact $K \subset \mathbf{R}^N$, 
+        \[ \mathcal{N}_p(\phi) \leq A_K^p(p + 1)^{2N} \max_{\abs{\alpha} \leq p} \sup_{x \in K} \abs{\partial^{\alpha} \phi(x)} \quad \text{avec } A_K = \max_{x \in K}(1 + \abs{x}) \]   
+        Ainsi $\mathcal{S}'(\mathbf{R}^N) \subset \mathcal{D}'(\mathbf{R}^N)$.
+
+        \begin{omed}{Proposition (opérations sur les distributions tempérées)}
+            Soit $T \in \mathcal{S}'(\mathbf{R}^N)$ un distribution tempérée. Alors 
+            \begin{enumerate}[label=($p_{\arabic*}$)]
+                \item pour tout multi-indice $\alpha \in \mathbf{N}^N$, $\partial^{\alpha} T \in \mathcal{S}'(\mathbf{R}^N)$ ;
+                \item pour toute fonction $f$ de classe $\mathcal{C}^{\infty}$ dont toutes les dérivées sont à croissance polynomiale, $fT \in \mathcal{S}'(\mathbf{R}^N)$ ;
+                \item pour toute distribution à support compact $S \in \mathcal{E}'(\mathbf{R}^N)$, $T \star S \in \mathcal{S}'(\mathbf{R}^N)$.
+            \end{enumerate}
+        \end{omed}
+
+        En pratique, pour déterminer si une distribution $T \in \mathcal{D}'(\mathbf{R}^N)$, on verra dans un premier temps si elle appartient à des classes connues qui sont inclues dans $\mathcal{S}'(\mathbf{R}^N)$ (les distributions à support compact ($\mathcal{E}'(\mathbf{R}^N)$), les fonctions de $L^p(\mathbf{R}^N)$, les fonctions à croissance polynomiale\ldots). Si ce n’est pas le cas, on peut aussi vérifier si sa dérivée, d’ordre quelconque, est dans ces classes. On dispose en plus de cela d’une caractérisation des distributions tempérées :
+
+        \begin{omed}{Théorème (caractérisation de $\mathcal{S}'(\mathbf{R}^N)$)}
+            Pour toute distribution tempérée $T \in \mathcal{S}'(\mathbf{R}^N)$, il existe un multi-indice $\alpha \in \mathbf{N}^N$, un entier naturel $n$ et une fonction continue bornée $f$ tels que 
+            \[ T = \partial^\alpha\left((1 + \abs{x}^2)^n f\right) \]   
+        \end{omed}
+
+        Si on voit facilement que le membre de droite est une distribution tempérée, il est moins évident que toute distribution tempérée sur $\mathbf{R}^N$ puisse s’écrire sous cette forme. On admettra ce résultat.
+
+        \begin{omed}{Définition (convergence dans $\mathcal{S}'(\mathbf{R}^N)$)}
+            Une suite $(T_n)$ de distributions tempérées de $\mathcal{S}'(\mathbf{R}^N)$ converge vers $T \in \mathcal{S}'(\mathbf{R}^N)$ si 
+            \[ \spr{T_n}{\phi} \underset{n \to \infty}{\longrightarrow} \spr{T}{\phi} \quad \forall \phi \in \mathcal{S}'(\mathbf{R}^N) \]   
+        \end{omed}
+
+        \begin{omed}{Proposition (opérations sur les distributions tempérées convergentes)}
+            Soit $(T_n)_{n \geq 1}$ une suite de distributions tempérées de $\mathcal{S}'(\mathbf{R}^N)$ convergeant vers $T \in \mathcal{S}'(\mathbf{R}^N)$. 
+            \begin{enumerate}[label=($p_{\arabic*}$)]
+                \item Pour tout multi-indice $\alpha \in \mathbf{N}^N$, 
+                \[ \partial^{\alpha} T_n \underset{n \to \infty}{\longrightarrow} \partial^{\alpha} T \quad \text{dans } \mathcal{S}'(\mathbf{R}^N) \]   
+                \item Pour toute fonction $f$ de classe $\mathcal{C}^{\infty}$ dont les dérivées sont toutes à croissance polynomiale, 
+                \[ f T_n \underset{n \to \infty}{\longrightarrow} f T \quad \text{dans } \mathcal{S}'(\mathbf{R}^N) \]
+            \end{enumerate}
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            On a que 
+            \[ \spr{\partial^{\alpha} T_n}{\phi} - \spr{\partial^{\alpha} T}{\phi} = (-1)^{\abs{\alpha}}\spr{(T_n - T)}{\partial^{\alpha} \phi} \underset{n \to \infty}{\longrightarrow} 0 \]    
+            puisque $T_n \to T$ dans $\mathcal{S}(\mathbf{R}^N)$ et que $\partial^{\alpha}\phi \in \mathcal{S}(\mathbf{R}^N)$. De la même façon, on a 
+            \[ \spr{f T_n}{\phi} - \spr{fT}{\phi} = \spr{(T_n - T)}{f\phi} \underset{n \to \infty}{\longrightarrow} 0 \]   
+            puisque $f\phi \in \mathcal{S}(\mathbf{R}^N)$.
+        \end{demo}
+
+    \subsection{Tranformation de Fourier sur les distributions tempérées}
+
+        Nous avons précédemment défini la transformation de Fourier pour la classe de Schwartz $\mathcal{S}(\mathbf{R}^N)$, mais celle-ci est peu satisfaisante car il s’agit d’une classe très restreinte de fonctions aux propriétés fortes. 
+
+        On va donc étendre la définition à l’espace $\mathcal{S}'(\mathbf{R}^N)$ des distributions tempérées, par dualité. Pour cela, remarquons que pour toute paire de fonctions $\phi, \psi$ de la classe de Schwartz $\mathcal{S}(\mathbf{R}^N)$, 
+        \[ \int_{\mathbf{R}^N} \psi(x) \mathcal{F}\phi(x) dx = \int_{\mathbf{R}^N} \phi(x) \mathcal{F}\psi(x) dx \]   
+        par théorème de Fubini appliqué à la fonction $(x,y) \mapsto \abs{e^{- i x \cdot y} \psi(x) \phi(y)}$ intégrable sur $\mathbf{R}^N \times \mathbf{R}^N$.
+
+        \begin{omed}{Définition (tranformation de Fourier sur $\mathcal{S'}$)}
+            À toute distribution tempérée $T \in \mathcal{S}'(\mathbf{R}^N)$ on associe la transformée de Fourier $\mathcal{F}T$ qui est la distribution tempérée définie par 
+            \[ \spr{\mathcal{F}T}{\phi} = \spr{T}{\mathcal{F}\phi} \quad \forall \phi \in \mathcal{S}(\mathbf{R}^N) \]  
+        \end{omed}
+
+        \begin{omed}{Proposition ($\mathcal{F}[\mathcal{S}']$ et opérations)}[prop:operationstransfofourierSp]
+            Soit $T \in \mathcal{S}'(\mathbf{R}^N)$ une distribution tempérée. 
+            \begin{enumerate}[label=($p_{\arabic*}$)]
+                \item Pour tout $k \in \intEN{1}{N}$, 
+                \[ \mathcal{F}[\partial_{x_k} T] = i \xi_k \mathcal{F}T \]   
+                \item Pour tout $k \in \intEN{1}{N}$, 
+                \[ \mathcal{F}[{x_k} T] = i \partial_{\xi_k} \mathcal{F}T \]
+                \item Pour tout $a \in \mathbf{R}^N$, 
+                \[ \mathcal{F}[T \circ \tau_a] = e^{i a \cdot \xi} \mathcal{F}T \]   
+                \item Pour tout $a \in \mathbf{R}^N$, 
+                \[ \mathcal{F}[e^{-i a \cdot x}T] = \mathcal{F}[T] \circ \tau_a \] 
+            \end{enumerate} 
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Pour la première proposition, remarquons que, pour toute fonction $\phi \in \mathcal{S}(\mathbf{R}^N)$,
+            \begin{align*}
+                \spr{\mathcal{F}(\partial_{x_k} T)}{\phi} 
+                &= \spr{\partial_{x_k}}{\mathcal{F}\phi} \\
+                &= - \spr{T}{\partial_{x_k} \mathcal{F}\phi} \\
+                &= - \spr{T}{\mathcal{F}[-i\xi_k\phi]} \\
+                &= \spr{\mathcal{F}T}{i \xi_k \phi} \\
+                &= \spr{i \xi_k \mathcal{F}T}{\phi}
+            \end{align*}
+            Les autres points se montrent d’une façon similaire.
+        \end{demo}
+
+        On retrouve les propriétés vues sur la classe de Schwartz, puisque l’on reporte (comme pour la plupart des opérations sur les distributions) les opérations sur la fonction $\phi \in \mathcal{S}(\mathbf{R}^N)$. L’intérêt de la transformation de Fourier pour les distributions tempérées est que le cadre des distributions permet de dériver autant de fois que nécessaire, et que toute dérivée partielle après transformation correspond à la multiplication par un monôme.
+
+        \begin{omed}{Proposition (continuité séquentielle de $\mathcal{F}$ sur $\mathcal{S}'(\mathbf{R}^N)$)}
+            Soit $(T_n)$ une suite de distributions tempérées convergeant vers $T$ dans $\mathcal{S}'(\mathbf{R}^N)$. 
+
+            Alors $\mathcal{F}T_n \underset{n \to \infty}{\longrightarrow} \mathcal{F}T$ dans $\mathcal{S}'(\mathbf{R}^N)$.
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Pour tout $\phi \in \mathcal{S}(\mathbf{R}^N)$, 
+            \[ \spr{\mathcal{F}T_n}{\phi} = \spr{T_n}{\mathcal{F}\phi} \underset{n \to \infty }{\longrightarrow} \spr{T}{\mathcal{F}\phi} = \spr{\mathcal{F}T}{\phi} \]   
+        \end{demo}
+
+        Nous avons fait le choix de définir la transformation de Fourier sur $\mathcal{S}'$ à travers la transformation de Fourier sur $\mathcal{S}$. Dans le cas des distributions à support compact de $\mathcal{E}'(\mathbf{R}^N) \subset \mathcal{S}'(\mathbf{R}^N)$, on aurait pu définir une transformation de Fourier en copiant celle sur les fonctions de la classe de Schwartz : $\mathcal{F}T(\xi) = \spr{T}{e_{-\xi}}$ où $e_{\xi}$ est la fonction de $\mathcal{C}^{\infty}(\mathbf{R}^N)$ définie par $e_{\xi}(x) = e^{i \xi \cdot x}$. Cela revient à définir $\mathcal{F}T$ comme une fonction et non une distribution, mais le théorème suivant montre que ces deux points de vue coïncident dans $\mathcal{E}'(\mathbf{R}^N)$.
+
+        \begin{omed}{Théorème (Transformée de Fourier sur $\mathcal{E}'(\mathbf{R}^N)$)}[theo:tranfoFourierdistribsupportcompact]
+            Pour toute distribution à support compact $T \in \mathcal{E}'(\mathbf{R}^N)$, la distribution tempérée $\mathcal{F}T$ est la distribution définie par la fonction 
+            \[ \mathbf{R}^N \ni \xi \longmapsto \spr{T}{e_{-\xi}} \]   
+            $\mathcal{F}T$ est de classe $\mathcal{C}^{\infty}$ sur $\mathbf{R}^N$, et toutes ses dérivées sont à croissance polynomiale.
+        \end{omed}
+
+        \begin{demo}{Démonstration}
+            Vérifions d’abord que la transformation de Fourier vue au sens des distributions tempérées (dont font partie les distributions à support compact) est bien en accord avec cette définition :
+            \begin{align*}
+                \spr{\spr{T}{e_{-\xi}}}{\phi} 
+                &= \int_{\mathbf{R}^N} \spr{T}{e_{-\xi}} \phi(\xi) d\xi \\
+                &= \spr{T}{\int_{\mathbf{R}^N} e_{-\xi}\phi(\xi)d\xi} \\
+                &= \spr{T}{\mathcal{F}\phi} = \spr{\mathcal{F}T}{\phi}
+            \end{align*}
+            par intégration sous le crochet de dualité (\ref{prop:integrationsouscrochet}). D’après le théorème de dérivation sous le crochet de dualité (\ref{prop:derivationsouscrochet}), $\mathcal{F}T$ est de classe $\mathcal{C}^{\infty}$ sur $\mathbf{R}^N$ et pour tout multi-indice $\alpha \in \mathbf{N}^N$, 
+            \[ \partial_{\xi}^{\alpha} \mathcal{F}T(\xi) = \partial_{\xi}^{\alpha} \spr{T}{e_{-\xi}} = \spr{T}{\partial_{\xi}^{\alpha} e_{-\xi}} \]   
+            puisque $(x, \xi) \mapsto e_{-\xi}(x)$ est de classe $\mathcal{C}^{\infty}$ sur $\mathbf{R}^N \times \mathbf{R}^N$.
+
+            Enfin, la propriété de continuité des distributions à support compact implique que 
+            \begin{align*}
+                \abs{\spr{T}{e_{-\xi}}} 
+                &\leq C \max_{\abs{\alpha} \leq p} \sup_{\abs{x} \leq R} \abs{\partial_x^{\alpha} e_{\xi}(x)} \\
+                = C \max_{\abs{\alpha} \leq p} \sup_{\abs{x} \leq R} \abs{(i\xi)^{\alpha} e_{\xi}(x)} \\
+                = C \max_{\abs{\alpha} \leq p} \sup_{\abs{x} \leq R} \abs{\xi^{\alpha}} \\
+                &\leq C \left(\frac{1 + \abs{\xi}^2}{2}\right)^p
+            \end{align*}
+            où $p$ est l’ordre de $T$ et $R> 0$ est tel que $\text{supp}(T) \subset B(0,R)$. Ainsi, $\mathcal{F}T$ est à croissance polynomiale sur $\mathbf{R}^N$, et il en va de même pour toutes ses dérivées puisque 
+            \[ \partial^{\alpha}_{\xi} \mathcal{F}T = \mathcal{F}[(-ix)^{\alpha} T] \]   
+            et que la distribution $(-ix)^{\alpha} T$ est également à support compact.
+        \end{demo}
+
+        \begin{demo}{Exemple (masses de Dirac)}
+            D’après le théorème ci-dessus, on trouve que 
+            \[ \mathcal{F}\delta_0 = 1 \text{ dans } \mathcal{S}'(\mathbf{R}^N) \]   
+            et plus généralement, pour $a \in \mathbf{R}^N$, 
+            \[ \mathcal{F}\delta_a(\xi) = e^{-i \xi \cdot a} \quad \xi \in \mathbf{R}^N \]
+            Les opérations sur la transformation de Fourier dans $\mathcal{S}'$ (\ref{prop:operationstransfofourierSp}) donnent de plus
+            \[ \mathcal{F}[\partial^{\alpha}\delta_0](\xi) = (i \xi)^{\alpha} \quad \xi \in \mathbf{R}^N \]
+            et 
+            \[ \mathcal{F}[\partial^{\alpha}\delta_a](\xi) = (i \xi)^{\alpha} e^{-i \xi \cdot \alpha} \quad \xi \in \mathbf{R}^N \]
+        \end{demo}
+
+        Rappelons nous que la transformation $\mathcal{F}$ échange régularité et décroissance à l’infini, et que dans le cas d’une fonction de $L^1(\mathbf{R}^N)$, cela implique que la transformation tend vers 0 à l’infini. Pour la masse de Dirac, dont le support est le plus petit possible ($\left\{0\right\}$), \textit{i.e.} est ce qui tend vers 0 le plus vite possible à l’infini, on obtient donc comme transformation la fonction la plus régulière qu’il soit (une fonction constante).
+        
+        La transformation de Fourier d’une distribution à support compact est de façon générale, suivant ce principe, une fonction de classe $\mathcal{C}^{\infty}$. Mais plus encore, c’est une fonction analytique (dans le cas des distributions à support dans $\mathbb{K}$).
+
+        \begin{omed}{Théorème}
+            Soit $T \in \mathcal{E}'(\mathbf{R})$ une distribution à support compact sur $\mathbf{R}$. Alors $\mathcal{F}T \in \mathcal{C}^{\infty}(\mathbf{R})$ se prolonge en une fonction holomorphe sur $\mathcal{C}$.
+        \end{omed}
+
+        Nous allons désormais énoncer le théorème d’inversion dans le cadre des distributions :
+
+        \begin{omed}{Théorème (inversion de Fourier dans $\mathcal{S}'(\mathbf{R}^N)$)}[theo:inversionFourierdistrib]
+            La tranformation de Fourier $\mathcal{F}$ est un automorphisme de $\mathcal{S}'(\mathbf{R}^N)$, d’inverse 
+            \[ \mathcal{F}^{-1} : \mathcal{S}'(\mathbf{R}^N) \ni T \longmapsto \frac{1}{(2\pi)^N} \widetilde{\mathcal{F}T} \]
+            où pour toute distribution $S \in \mathcal{D}'(\mathbf{R}^N)$, $\tilde{S} = S \circ (-\text{id}_{\mathbf{R}^N})$ \textit{i.e.} pour $\phi \in \mathcal{D}(\mathbf{R}^N)$, 
+            \[ \spr{\tilde{S}}{\phi} = \spr{S}{\phi \circ (-\text{id}_{\mathbf{R}^N})} = \spr{S}{\phi(-\cdot)} \]
+        \end{omed}
+
+        \begin{demo}{Démonstration}
+            Pour tout $\phi \in \mathcal{S}(\mathbf{R}^N)$, 
+            \begin{align*}
+                \spr{\mathcal{F}[\mathcal{F}T]}{\phi} 
+                &= \spr{\mathcal{F}T}{\mathcal{F}\phi} \\
+                &= \spr{T}{\mathcal{F}[\mathcal{F}\phi]} \\
+                &= \spr{T}{(2\pi)^N \phi \circ (-\text{id}_{\mathbf{R}^N})} \\
+            \end{align*}
+            en utilisant le théorème d’inversion de Fourier sur la classe de Schwartz $\mathcal{S}(\mathbf{R}^N)$, d’où $\mathcal{F}[\mathcal{F}T] = (2\pi)^N \tilde{T}$.
+        \end{demo}
+
+        \begin{demo}{Exemple (transformation de Fourier des polynômes)}
+            Dans $\mathcal{S}'(\mathbf{R}^N)$, on a que $\mathcal{F}[\delta_0] = 1$ donc 
+            \[ \mathcal{F}[1] = (2\pi)^N \delta_0 \]   
+            et, sachant que $\mathcal{F}[\partial^{\alpha} \delta_0] = (ix)^{\alpha} \times 1$,
+            \[ \mathcal{F}[x^{\alpha}] = (2\pi)^N i^{\abs{\alpha}} \partial^{\alpha} \delta_0 \quad \alpha \in \mathbf{N}^N \]
+        \end{demo}
+
+        En utilisant la formule d’inversion de Fourier (\ref{theo:inversionFourierdistrib}) et le théorème sur la transformée de Fourier sur les distributions à support compact (\ref{theo:tranfoFourierdistribsupportcompact}), on obtient une caractérisation des distributions à support compact :
+
+        \begin{omed}{Théorème (structure des distributions à support compact)}
+            Toute distribution à support compact sur $\mathbf{R}^N$ est une somme finie de dérivées itérées au sens des distributions d’une fonction continue bornée sur $\mathbf{R}^N$
+        \end{omed}
+
+        L’une des principales vertus des la transformation de Fourier des fonctions est de transformer un produit de convolution en un produit ponctuel, ce qui reste vrai dans le cadre des distributions :
+
+        \begin{omed}{Théorème (transformation de Fourier et convolution)}
+            Soient deux distributions $T \in \mathcal{S}'(\mathbf{R}^N)$ et $S \in \mathcal{E}'(\mathbf{R}^)$. 
+            \[ \mathcal{F}[S \star T] = \mathcal{F}S \cdot \mathcal{F}T \quad \text{dans } \mathcal{S}'(\mathbf{R}^N) \]
+        \end{omed}
+
+        \begin{demo}{Démonstration}
+            On traite dans un premier temps le cas particulier avec $f \in \mathcal{D}(\mathbf{R}^N)$. D’après \ref{prop:operationsclasseSchwartz}, $S \star f \in \mathcal{S}(\mathbf{R}^N)$. Ainsi, pour $\xi \in \mathbf{R}^N$,
+            \begin{align*}
+                \mathcal{F}[S \star f](\xi)
+                &= \int_{\mathbf{R}^N} e^{- i \xi \cdot x} \spr{S}{f(x - \cdot)} dx \\
+                &= \spr{S}{\int_{\mathbf{R}^N} e^{-i \xi \cdot x} f(x - \cdot) dx} \\
+                &= \spr{S}{\mathcal{F}[f](\xi) e_{- \xi}} \\
+                &= \mathcal{F}[f](\xi) \spr{S}{e_{-\xi}} = \mathcal{F}[f](\xi) \mathcal{F}[S](\xi) 
+            \end{align*}
+            par intégration sous le crochet de dualité et sachant que $\int_{\mathbf{R}^N} e^{- i \xi \cdot x} f(x - y)dx = \mathcal{F}[f](\xi)e_{-\xi}(y)$.
+
+            Considérons désormais le cas général. D’une part $S \star T \in \mathcal{S}'(\mathbf{R}^N)$, donc $\mathcal{F}[S \star T] \in \mathcal{S}'(\mathbf{R}^N)$. D’autre part, $\mathcal{F}T \mathcal{F}S \in \mathcal{S}'(\mathbf{R}^N)$ puisque $\mathcal{F}T \in \mathcal{S}'(\mathbf{R}^N)$ et que $\mathcal{F}S$ est une fonction de classe $\mathcal{C}^{\infty}$ sur $\mathbf{R}^N$ dont toutes les dérivées sont à croissance polynomiale. Soit $\phi \in \mathcal{D}(\mathbf{R}^N)$.
+            \begin{align*}
+                \spr{\mathcal{F}[S \star T]}{\phi} 
+                &= \spr{S \star T}{\mathcal{F}\phi} \\
+                &= \spr{S \star T}{(2\pi)^N \widetilde{F^{-1}\phi}} \\
+                &= \spr{T}{(2\pi)^N \widetilde{S \star \mathcal{F}^{-1} \phi}} \\
+                &= \spr{T}{\mathcal{F}\mathcal{F}(S \star \mathcal{F}^{-1}\phi)} \\ 
+                &= \spr{\mathcal{F}T}{\mathcal{F}[\mathcal{S \star \mathcal{F}^{-1}\phi}]} \\
+            \end{align*}
+            Sachant que $\mathcal{F}^{-1}\phi \in \mathcal{S}(\mathbf{R}^N)$, on obtient d’après le cas particulier précédent 
+            \[ \mathcal{F}[S \star \mathcal{F}^{-1}\phi] = \mathcal{F}[S] \mathcal{F}[\mathcal{F}^{-1}\phi] = \mathcal{F}[S] \phi \]   
+            donc 
+            \[ \spr{\mathcal{F}[S \star T]}{\phi} = \spr{\mathcal{F}T}{\mathcal{F}S \phi} = \spr{\mathcal{F}S \mathcal{F}T}{\phi} \]   
+            Par densité de $\mathcal{D}(\mathbf{R}^N)$ dans $\mathcal{S}(\mathbf{R}^N)$, on en déduit le résultat.
+        \end{demo}
+
+
+        

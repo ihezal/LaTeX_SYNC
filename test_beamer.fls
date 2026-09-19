@@ -380,6 +380,7 @@ INPUT ./test_beamer.nav
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 INPUT ./_Images/poly-vert-colorless.pdf
 INPUT ./_Images/poly-vert-colorless.pdf
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 INPUT ./_Images/poly-armes-colorless.pdf
 INPUT ./_Images/poly-armes-colorless.pdf
 INPUT ./_Images/poly-filet-colorless.pdf

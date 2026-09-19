@@ -268,6 +268,8 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 INPUT c:/texlive/2023/texmf-dist/tex/latex/tabularray/tabularray.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/array.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/comment/comment.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/ccicons/ccicons.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/multicol.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
@@ -293,7 +295,6 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/base/atveryend-ltx.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT ./_Template/Preambule_SC.tex
-INPUT c:/texlive/2023/texmf-dist/tex/latex/ccicons/ccicons.sty
 INPUT ./PHY_Quantique.aux
 OUTPUT PHY_Quantique.aux
 INPUT c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -309,6 +310,7 @@ INPUT ./_Images/poly-vert-colorless.pdf
 INPUT ./_Images/poly-vert-colorless.pdf
 INPUT ./_Images/poly-armes-colorless.pdf
 INPUT ./_Images/poly-armes-colorless.pdf
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
@@ -318,6 +320,8 @@ OUTPUT PHY_Quantique.toc
 INPUT ./PHY/Quantique/Principes_fondamentaux.tex
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./PHY/Quantique/Outils_mathematiques.tex
+INPUT ./_Images/poly-filet-colorless.pdf
+INPUT ./PHY/Quantique/Oscillateur_harmonique.tex
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./PHY/Quantique/Methodes_dapproximation.tex
 INPUT ./_Images/poly-filet-colorless.pdf
@@ -332,6 +336,8 @@ INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./PHY/Quantique/Atome_hydrogene.tex
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./PHY/Quantique/Particules_indiscernables.tex
+INPUT ./_Images/poly-filet-colorless.pdf
+INPUT ./PHY/Quantique/Magnetique.tex
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./PHY_Quantique.aux
 INPUT ./PHY_Quantique.out

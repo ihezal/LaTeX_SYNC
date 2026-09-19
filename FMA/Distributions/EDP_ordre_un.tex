@@ -1,0 +1,107 @@
+\newpage
+
+\section{Équation aux dérivées partielles d’ordre un}
+
+    Les équations aux dérivées partielles sont le principal champ d’application de la théorie de la distribution et sa motivation première. En les étudiant, nous comprendrons en quoi les distributions sont un outil à considérer pour les résoudre.
+
+    \subsection{L’équation de transport}
+
+        Cette équation a pour écriture 
+        \[ \partial t + v \cdot \nabla_x f = 0 \]   
+        où l’inconnu $f: (t,x) \mathbf{R} \times \mathbf{R}^N \mapsto f(t,x) \in \mathbf{R}$ est une fonction à valeurs réelles de classe $\mathcal{C}^1$ définie sur $\mathbf{R} \times \mathbf{R}^N$ et où $v \in \mathbf{R}^N$ est un vecteur donné.
+
+        En notant $v = (v_1,\ldots, v_n)$, on obtient que 
+        \[ v \cdot \nabla_x f = \sum_{i=1}^N v_k \partial_{x_k} f \]   
+
+        Soient $y \in \mathbf{R}^N$ et $\gamma : t \mapsto y + tv$ qui est une application de classe $\mathcal{C}^1(\mathbb{R}, \mathbf{R}^N)$ vérifiant 
+        \[ \frac{\text{d}\gamma}{\text{d}t} (t) = v \]   
+
+        \begin{omed}{Définition}
+            L’ensemble $\left\{(t, \gamma(t)), t \in \mathbf{R}\right\}$ est une droite de $\mathbf{R} \times \mathbf{R}^N$ appelée \textbf{courbe caractéristique issue de $y$ pour l’opération de tranport} $\partial_t + v \cdot \nabla_x$.
+        \end{omed}
+
+        Soit $f \in \mathcal{C}^1(\mathbf{R}_+ \times \mathbf{R}^N)$ une solution de l’équation de transport. L’application $t \mapsto f(t, \gamma(t))$ est de classe $\mathcal{C}^1(\mathbb{R}_+)$ par composition, et vérifie 
+        \begin{align*}
+            \frac{\text{d}}{\text{d}t} f(t,\gamma(t))
+            &= \partial_t f(t, \gamma(t)) + \sum_{k=1}^N \partial_{x_k}f(t,\gamma(t))\frac{\text{d}\gamma_k}{\text{d}t} (t) \\
+            &= (\partial_t f + v \cdot \nabla_x f)(t, \gamma(t)) = 0
+        \end{align*}
+        Toute solution de l’équation de transport reste donc constante le long de chaque courbe caractéristique pour $y \in \mathbf{R}^N$.
+
+        \begin{omed}{Théorème}
+            Soit $f^{\text{in}} \in \mathcal{C}^1(\mathbf{R}^N)$. Le problème de Cauchy d’inconnée $f$
+            \[ \left\{ \begin{array}{lc}
+                \partial_t f(t,x) + v \cdot f(t,x) = 0 & x \in \mathbf{R}^N, t>0 \\
+                f(0,x) = f^{\text{in}}(x) & x \in \mathbf{R}^N \\
+            \end{array} \right. \kern-\nulldelimiterspace \] 
+            admet une unique solution $f \in \mathcal{C}^1(\mathbf{R}_+ \times \mathbf{R}^N)$ donnée par la formule, pour tout $x \in \mathbf{R}^N$ et $t \in \mathbf{R}_+$,
+            \[ f(t,x) = f^{\text{in}}(x - tv) \]   
+        \end{omed}
+
+        \begin{demo}{Démonstration}
+            Si $f$ est une solution de classe $\mathcal{C}^1$, alors elle est constante le long de ses courbes caractéristiques, donc 
+            \[ f(t, y + tv) = f(0, y) = f^{\text{in}}(y) \quad \forall t > 0, y \in \mathbf{R}^N \]   
+            Réciproquement, l’application $(t,x) \mapsto f^{\text{in}}(x - tv)$ est de classe $\mathcal{C}^1$ sur $\mathbf{R} \times \mathbf{R}^N$, et 
+            \begin{align*}
+                \partial_t(f^{\text{in}}(x - tv)) 
+                &= - \sum_{i =1}^N v_i (\partial_{x_i} f^{\text{in}})(x - tv) \\
+                &= - v \cdot (\nabla f^{\text{in}})(x - tv) \\
+                &= - v \cdot \nabla_x(f^{\text{in}}(x - tv)) 
+            \end{align*}
+            donc est solution de l’équation de transport.
+        \end{demo}
+
+        Si $f^{\text{in}}$ n’est pas dérivable, la formule 
+        \[ f(t,x) = f^{\text{in}}(x - v) \]    
+        conserve un sens, et définit encore une solution de l’équation de transport en un sens, qui nécessite donc la théorie des distributions.
+
+        \begin{demo}{Exemple}
+            Pour $N = 1$, prenons $f^{\text{in}}$ en escalier définie par 
+            \[ \left\{      \begin{array}{lc}
+                f^{\text{in}}(x) = 1 & x \leq 0 \\
+                f(x) = 0 & x > 0
+            \end{array} \right. \kern-\nulldelimiterspace \]   
+            La solution de l’équation de transport modélise dans ce cas une onde de choc se propageant à la vitesse $v$.
+        \end{demo}
+
+    \subsection{Cas à coefficients variables}
+
+        La vitesse de propagation n’est, en physique, pas nécessairement indépendante da la position ou du temps. L’équation de transport plus générale à considérer est donc 
+        \[ \partial_t f(t,x) + V(t,x) \cdot \nabla_x f(t,x) = 0 \quad 0 < t < T, x \in \mathbf{R}^N \]   
+        où $V : \intFF{0}{T} \times \mathbf{R}^N \to \mathbf{R}^N$ est un champ de vecteurs admettant des dérivées partielles d’ordre un par rapport aux variables $x_j$ vérifiant les hypothèses suivantes : 
+        \begin{enumerate}[label=($h_{\arabic*}$)]
+            \item $V$ et $\nabla_x V$ sont continues sur $\intFF{0}{T} \times \mathbf{R}^N$ ;
+            \item il existe $\kappa > 0$ tel que 
+            \[ \abs{V(t,x)} \leq \kappa(1 + \abs{x}) \quad (t,x) \in \intFF{0}{T} \times \mathbf{R}^N  \]
+        \end{enumerate}
+
+        L’hypothèse première sur le champ de vecteurs $V$ assure, d’après le théorème de Cauchy-Lipschitz, l’existence locale d’une unique courbe intégrale de $V$ passant par le point $x$ à l’instant $t$.
+
+        \begin{omed}{Définition}
+            Soit la courbe intégrale $\gamma$ de $V$ passant par $x$ à l’instant $t$, \textit{i.e.} la solution du système différentiel 
+            \begin{align*}
+                \frac{\text{d}\gamma}{\text{d}s} (s) &= V(s, \gamma(s)) \\
+                \gamma(t) &= x \\
+            \end{align*}
+            Alors on appelle \textbf{courbe caractéristique de l’opérateur} $\partial_t + V(t,x) \cdot \nabla_x$ \textbf{passant par $x$ à l’instant $t$} la courbe de $\mathbf{R} \times \mathbf{R}^N$ paramétrée par $s$ et définie par 
+            \[ s \mapsto (s, \gamma(s)) \]   
+        \end{omed}
+
+        On s’inspire du cas où $V$ est une constante pour exploiter la notion de courbe caractéristique pour l’opérateur de transport à coefficients variables, afin d’aboutir à une formule semi-explicite pour les solutions de l’équation à coefficients variables.
+
+        \begin{omed}{Théorème}
+            Soit $V$ un champ de vecteurs vérifiant les hypothèses  
+            \begin{enumerate}[label=($h_{\arabic*}$)]
+            \item $V$ et $\nabla_x V$ sont continues sur $\intFF{0}{T} \times \mathbf{R}^N$ ;
+            \item il existe $\kappa > 0$ tel que 
+            \[ \abs{V(t,x)} \leq \kappa(1 + \abs{x}) \quad (t,x) \in \intFF{0}{T} \times \mathbf{R}^N  \]
+        \end{enumerate}
+        et soit $f^{\text{in}} \in \mathcal{C}^1(\mathbf{R}^N)$. Alors le problème de Cauchy pour l’équation de transport à coefficients variables 
+        \[ \left\{ \begin{array}{lc}
+            \partial_t f(t,x) + V(t,x) \cdot \nabla_x f(t,x) = 0 & 0 < t < T, x \in \mathbf{R}^N \\
+            f(0,x) = f^{\text{in}}(x) & x \in \mathbf{R}^N
+        \end{array} \right. \kern-\nulldelimiterspace \]    
+        admet une unique solution $f \in \mathcal{C}^1(\intFF{0}{T}, \times \mathbf{R}^N)$, donnée par la formule 
+        \[ f(t,x) = f^{\text{in}}(X(0,t,x)) \]   
+        où $X$ est le \textbf{flot caractéristique} du champ $V$ (\textit{i.e.} $s \mapsto X(s,t,x)$ est la courbe intégrale du champ $V$ passant par $t$ à l’instant $x$).
+        \end{omed}

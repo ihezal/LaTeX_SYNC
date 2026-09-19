@@ -1,7 +1,7 @@
 % Mise en page beamer
 \setbeamersize{
-  text margin left=.25in,
-  text margin right=.25in
+  text margin left=.2in,
+  text margin right=.2in
 }
 
 % Police pour beamer
@@ -21,16 +21,16 @@
 % Titlepage
 \setbeamertemplate{title page}{
   \begin{tikzpicture}[overlay, remember picture]
-    \fill[couleurmatiere] (current page.north west) rectangle ($(current page.south west) + (1.5in,0)$);
-    \node[anchor=north, couleurmatiere!50!white] at ($(current page.north west) + (.5in, -.25in)$) {\includegraphics[width=.5in]{_Images/poly-vert-colorless.pdf}};
-    \node[anchor=center, couleurmatiere!10!white] at ($(current page.south west) + (2.25in,.75in)$) {\includegraphics[width=3in]{_Images/poly-armes-colorless.pdf}};
+    \fill[couleurmatiere] (current page.north west) rectangle ($(current page.south west) + (1in,0)$);
+    \node[anchor=north west, couleurmatiere!50!white, inner sep=0pt] at ($(current page.north west) + (.25in, -.25in)$) {\includegraphics[width=.5in]{_Images/poly-vert-colorless.pdf}};
+    \node[anchor=south, couleurmatiere!50!white, inner sep=0pt] at ($(current page.south west) + (.5in, .25in)$) {\fontsize{8pt}{10pt}\selectfont\ccbync};
+    \node[anchor=center, couleurmatiere!5!white] at ($(current page.center) + (0in, 0in)$) {\includegraphics[width=3in]{_Images/poly-armes-colorless.pdf}};
 
 
-    \node[anchor=center, black] at ($(current page.north) + (.75in,-.5in)$) {\resizebox{!}{.2in}{\itshape\bfseries \inserttitle}};
-    \node[anchor=center, black] at ($(current page.north) + (.75in,-1.6in)$) {\resizebox{!}{.1in}{\insertsubtitle}};
-    \node[anchor=center, couleurmatiere] at ($(current page.north) + (.75in, -2in)$) {\includegraphics[width=3in]{_Images/poly-filet-colorless.pdf}};
-    \node[anchor=center, black] at ($(current page.north) + (.75in,-2.4in)$) {\resizebox{!}{.1in}{\bfseries\fontfamily{lmr} \insertauthor}};
-    \node[anchor=center, black] at ($(current page.north) + (.75in,-2.6in)$) {\resizebox{!}{.1in}{\oldstylenums{\today}}};
+    \node[anchor=center, align=center, inner sep=0pt, text width=4in] at (current page.center) {% 
+    {\fontsize{18pt}{18pt}\selectfont\itshape\bfseries\inserttitle}\\[.08in] {\fontsize{10pt}{10pt}\selectfont\itshape\insertsubtitle}\\[.12in] {\color{couleurmatiere}\includegraphics[width=2in]{_Images/poly-filet-colorless.pdf}}\\[.12in] {\fontsize{12pt}{12pt}\selectfont\bfseries\insertauthor}\\[.05in] {\fontsize{8pt}{8pt}\selectfont\oldstylenums{\today}}};
+
+    \node[anchor=south, text width=4in, gray, align=justify, inner sep=0pt] at ($(current page.south) + (0in, .25in)$) {\fontsize{8pt}{10pt}\selectfont\itshape Ce document est mis à disposition selon les termes de la licence \href{https://creativecommons.org/licenses/by-nc/4.0/}{Attribution - Utilisation non commerciale 4.0 International}, Olivier Allard 2026.};
   \end{tikzpicture}
 }
 
@@ -38,19 +38,13 @@
 % Sectionpage
 \setbeamertemplate{section page}{
   \begin{tikzpicture}[overlay, remember picture]
-    \fill[couleurmatiere] (current page.north west) rectangle ($(current page.south west) + (1.5in,0)$);
-    \node[anchor=south, couleurmatiere!50!white] at ($(current page.south west) + (.5in, .25in)$) {\includegraphics[width=.5in]{_Images/poly-vert-colorless.pdf}};
+    \fill[couleurmatiere] (current page.north west) rectangle ($(current page.south west) + (1in,0)$);
+    \node[anchor=south, couleurmatiere!50!white, inner sep=0pt] at ($(current page.south west) + (.5in, .25in)$) {\includegraphics[width=.5in]{_Images/poly-vert-colorless.pdf}};
     \node[anchor=west, couleurmatiere!50!white, font=\fontsize{50}{55}\selectfont\bfseries] at ($(current page.west) + (.25in, 1in)$) {\insertsectionnumber};
 
-    \node[anchor=north, couleurmatiere, font=\fontsize{28}{32}\selectfont\bfseries] at ($(current page.north) + (0in, -.5in)$) {\insertsection};
-    \node[anchor=center, couleurmatiere] at ($(current page.north) + (0in, -1in)$) {\includegraphics[width=1.5in]{_Images/poly-filet-colorless.pdf}};
+    \node[anchor=center, align=center, inner sep=0pt, text width=4in] at (current page.center) {% 
+    {\fontsize{18pt}{18pt}\selectfont\itshape\bfseries\insertsection}\\[.1in]  {\color{couleurmatiere}\includegraphics[width=2in]{_Images/poly-filet-colorless.pdf}}\\[.15in] {\fontsize{10pt}{10pt}\selectfont\tableofcontents[currentsection, sectionstyle=hide, subsectionstyle=show]}};
   \end{tikzpicture}
-  \hspace*{1in}
-  \begin{center}
-    \begin{minipage}{.5\paperwidth}
-      \tableofcontents[currentsection, sectionstyle=hide, subsectionstyle=show]
-    \end{minipage}
-  \end{center}
 }
 
 \AtBeginSection[]{

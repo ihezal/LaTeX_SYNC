@@ -268,6 +268,8 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 INPUT c:/texlive/2023/texmf-dist/tex/latex/tabularray/tabularray.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/array.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/comment/comment.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/ccicons/ccicons.sty
+INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/multicol.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
@@ -295,7 +297,6 @@ INPUT c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT ./_Template/Preambule_DC.tex
 INPUT c:/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
-INPUT c:/texlive/2023/texmf-dist/tex/latex/ccicons/ccicons.sty
 INPUT c:/texlive/2023/texmf-dist/tex/luatex/luatexja/luatexja.sty
 INPUT c:/texlive/2023/texmf-dist/tex/luatex/luatexja/luatexja-core.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/everyhook/everyhook.sty

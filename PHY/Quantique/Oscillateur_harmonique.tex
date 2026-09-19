@@ -1,0 +1,92 @@
+\section{Oscillateur harmonique en physique quantique}
+
+    \subsection{Oscillateur harmonique classique}
+
+        \subsubsection{Cas général}
+
+        On considère une particule dans un puits de potentiel de la forme $V(x) = \frac{1}{2} kx^2$. D’après le principe fondamental de la dynamique, 
+        \[ m \frac{\text{d}^2 x}{\text{d}t^2} = - \frac{\text{d}V}{\text{d}x} = - kx \]   
+        Cette équation admet les solutions de la forme $x = x_M \cos(\omega t - \varphi)$ où $\omega = \sqrt{\frac{k}{m}}$ et les constantes d’intégration $x_M$ et $\varphi$ dépendent des conditions initiales. L’énergie de la particule est alors 
+        \begin{align*}
+            E 
+            &= T + V \\
+            &= \frac{p^2}{2m} + \frac{1}{2} m \omega^2 x^2 \\
+            &= \frac{1}{2} m \omega^2 x_M^2
+        \end{align*} 
+        Il est notable que l’énergie de la particule dans ce puits de potentiel soit indépendante du temps.
+
+        \subsubsection{Mouvement autour d’une position d’équilibre}
+
+        On considère un potentiel $V(x)$ quelconque présentant un mimimum en $x = x_0$ :
+        \begin{align*}
+            V(x) 
+            &= V(x_0) + \frac{1}{2} \left(\frac{\text{d}^2 V}{\text{d}x^2}\right)_{x = x_0}(x - x_0)^2 + o_{x \to x_0} \left((x - x_0)^2\right) \\
+            &:= a + b (x - x_0)^2 + o_{x \to x_0} \left((x - x_0)^2\right) \\
+        \end{align*}
+        Le point $x = x_0$ correspond à une position d’équilibre stable pour la particule puisque $F_x$ est nulle pour $x = x_0$ et de signe opposé à $x-x_0$ sinon. Pour un mouvement d’amplitude suffisamment petite pour que le terme en $(x - x_0)^3$ soit négligeable, on a alors affaire à un oscillateur harmonique puisque le principe de la dynamique s’écrit 
+        \[ m \frac{\text{d}^2 x}{\text{d}t^2} \approx -2b(x-x_0) \]   
+        La pulsation associée à cet oscillateur harmonique est alors 
+        \[ \omega = \sqrt{\frac{1}{m} \left(\frac{\text{d}^2 V}{\text{d}x^2}\right)_{x = x_0}}  \]
+
+    \subsection{Oscillateur harmonique quantique}
+
+        Plaçons nous désormais dans le cadre de la mécanique quantique, avec $V(\hat{x}) = \frac{1}{2} m \omega^2 \hat{x}^2$. L’hamiltonien s’écrit alors 
+        \[ \hat{H} = \frac{\hat{p}^2}{2m} + \frac{1}{2} m \omega^2 \hat{x}^2 \]   
+        et l’équation aux valeurs propres associée 
+        \[\left( - \frac{\hbar^2}{2m} \frac{\text{d}^2}{\text{d}x^2} + \frac{1}{2} m \omega^2 x^2  \right) \varphi(x) = E \varphi(x) \]
+        On remarque que $E \geq 0$, et que le puits de potentiel étant symétrique, les fonctions d’onde solutions sont nécessairement de parité définie.
+
+        \subsubsection{Les opérateurs $\hat{X}$, $\hat{P}$, $\hat{a}$ et $\hat{N}$}
+
+        Cherchons à nous ramener à des grandeurs sans dimension, en posant 
+        \begin{align*}
+            \hat{X} &= \sqrt{\frac{m\omega}{\hbar}}X \\
+            \hat{P} &= \frac{1}{\sqrt{m\hbar\omega}}P
+        \end{align*}
+        L’hamiltonien peut alors s’écrire 
+        \[ \hat{H} = \frac{\hbar\omega }{2}\left(\hat{X}^2 + \hat{P}^2\right) \]   
+        On pose ensuite les opérateurs
+        \begin{align*}
+            \hat{a} &= \frac{1}{\sqrt{2}}\left(\hat{X} + i \hat{P}\right) \\
+            \hat{a}^{\dagger} &= \frac{1}{\sqrt{2}}\left(\hat{X} - i \hat{P}\right) \\
+        \end{align*}
+        qui permettent de réécrire les opérateurs $\hat{X} = \frac{1}{\sqrt{2}}(a^{\dagger} + \hat{a})$ et $\hat{P}= \frac{1}{\sqrt{2}}(a^{\dagger} - \hat{a})$, ainsi que l’hamiltonien 
+        \begin{align*}
+            \hat{H} 
+            &= \hbar \omega \left(\frac{1}{2} +  a^{\dagger} \hat{a}\right) \\
+            &:= \hbar \omega \left(\frac{1}{2} + \hat{N}\right)
+        \end{align*}
+        La recherche des vecteurs propres de $\hat{H}$ se fait donc à travers celle de $\hat{N}$. Calculons les commutateurs utiles pour cette étude :
+        \begin{align*}
+            \left[a, a^{\dagger}\right] 
+            &= \frac{i}{2} \left[\hat{P}, \hat{X}\right] - \frac{i}{2} \left[\hat{X}, \hat{P}\right]  \\
+            &= 1 \\
+            \left[\hat{N}, \hat{a}\right] 
+            &= \hat{a}^{\dagger} \left[\hat{a}, \hat{a}\right] + \left[a^{\dagger}, \hat{a} \right] \hat{a} \\
+            &= - \hat{a} \\
+            \left[\hat{N}, \hat{a}^{\dagger}\right] 
+            &= \hat{a}^{\dagger} \left[\hat{a}, \hat{a}^{\dagger}\right] + \left[a^{\dagger}, \hat{a}^{\dagger}\right] \hat{a} \\
+            &= \hat{a}^{\dagger} \\
+        \end{align*}
+
+        \subsubsection{Spectre de $\hat{N}$ et de $\hat{H}$}
+
+        Les valeurs propres de $\hat{N}$ sont dans $\mathbf{R}_+$ car pour tout vecteur propre $\ket{\psi_{n}}$ de $\hat{N}$, 
+        \[ \nor{\hat{a} \ket{\psi_n}}^2 = E_n \geq 0 \]
+        Considérons maintenant l’effet de $\hat{a}$ et $\hat{a}^{\dagger}$ sur un vecteur propre de $\hat{N}$ $\ket{\psi_n}$. D’après les relation de commutation,
+        \begin{align*}
+            \hat{N} \hat{a}\ket{\psi_n} 
+            &= \hat{a} \hat{N} \ket{\psi_n} - \hat{a} \ket{\psi_n} \\
+            &= (E_n - 1) \hat{a}\ket{\psi_n} \\
+            \hat{N} \hat{a}^{\dagger}\ket{\psi_n} 
+            &= \hat{a}^{\dagger} \hat{N} \ket{\psi_n} + \hat{a}^{\dagger} \ket{\psi_n} \\
+            &= (E_n + 1) \hat{a}^{\dagger} \ket{\psi_n} \\
+        \end{align*}
+        On appelle $\hat{a}$ l’\textbf{opérateur annihilation} et $\hat{a}^{\dagger}$ l’\textbf{opérateur création}, dont les actions respectives font descendre ou grimper d’une unité dans les valeurs propres de $\hat{N}$. Il est impossible qu’un vecteur propre soit associée à une énergie non-entière, auquel cas les applications successives de $\hat{a}$ nous fournirait à terme une énergie $E < 0$. Ainsi, tout énergie associée à $\hat{N}$ est entière. Par applications de $\hat{a}$ ou $\hat{a}^{\dagger}$, on peut donc obtenir n’importe quelle valeur d’énergie dans $\mathbf{N}$ : 
+        \[ \text{Sp}(\hat{N}) = \mathbf{N} \]
+        Les valeurs propres de l’hamiltonien seront alors de la forme 
+        \[ E_n = \hbar \omega \left(n + \frac{1}{2}\right) \]
+        En mécanique quantique, l’énergie de l’oscillateur harmonique est \textit{quantifiée}.
+
+
+        

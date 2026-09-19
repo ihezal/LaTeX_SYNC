@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.16)  16 SEP 2026 20:33
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.16)  19 SEP 2026 12:29
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/o-all/Desktop/LaTeX_SYNC/test_beamer.tex
@@ -619,11 +619,11 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 File: gloss-french.ldf polyglossia: module for French
 Module polyglossia Info: Language data for french
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            hyphenation	
 (polyglossia)            loader	loadhyph-fr.tex
-(polyglossia)            synonyms	patois,francais
+(polyglossia)            righthyphenmin	2
+(polyglossia)            hyphenation	
 (polyglossia)            patterns	hyph-fr.pat.txt
-(polyglossia)            righthyphenmin	2 on input line 17
+(polyglossia)            synonyms	patois,francais on input line 17
 Module polyglossia Info: Language french was not yet loaded; created with id 2 on input line 17
 Lua-only attribute polyglossia_punct = 4
 Package polyglossia Info: Option: French, variant=french.
@@ -1240,14 +1240,14 @@ LaTeX Font Info:    ... okay on input line 28.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(18.06749pt, 419.1091pt, 18.06749pt)
+* h-part:(L,W,R)=(14.45377pt, 426.33655pt, 14.45377pt)
 * v-part:(T,H,B)=(0.0pt, 256.0748pt, 0.0pt)
 * \paperwidth=455.24408pt
 * \paperheight=256.0748pt
-* \textwidth=419.1091pt
+* \textwidth=426.33655pt
 * \textheight=227.62207pt
-* \oddsidemargin=-54.2025pt
-* \evensidemargin=-54.2025pt
+* \oddsidemargin=-57.81622pt
+* \evensidemargin=-57.81622pt
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
@@ -1363,6 +1363,8 @@ File: _Images/poly-vert-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-vert-colorless.pdf>
 Package luatex.def Info: _Images/poly-vert-colorless.pdf  used on input line 37.
 (luatex.def)             Requested size: 36.135pt x 62.70705pt.
+LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
+(Font)              scaled to size 8.0pt on input line 37.
 <_Images/poly-armes-colorless.pdf, id=68, 598.235pt x 788.9475pt>
 File: _Images/poly-armes-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-armes-colorless.pdf>
@@ -1372,7 +1374,7 @@ Package luatex.def Info: _Images/poly-armes-colorless.pdf  used on input line 37
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 37.
-(luatex.def)             Requested size: 216.81pt x 3.78459pt.
+(luatex.def)             Requested size: 144.54pt x 2.52304pt.
 
 Package fontspec Info: Font family 'LibertinusSerif(1)' created for font
 (fontspec)             'Libertinus Serif' with options
@@ -1420,7 +1422,7 @@ Package luatex.def Info: _Images/poly-vert-colorless.pdf  used on input line 55.
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 55.
-(luatex.def)             Requested size: 108.405pt x 1.89217pt.
+(luatex.def)             Requested size: 144.54pt x 2.52304pt.
  (./test_beamer.toc
 LaTeX Info: Redefining \rmfamily on input line 2.
 LaTeX Info: Redefining \sffamily on input line 2.
@@ -1429,7 +1431,11 @@ LaTeX Info: Redefining \ttfamily on input line 2.
 
 Package polyglossia Warning: Failed to patch part for French on input line 2.
 
-)
+) [3
+
+] [4
+
+]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Erewhon-Math' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -1789,11 +1795,7 @@ Package microtype Info: Character `textquestiondown ' is missing
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (c:/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [3
-
-] [4
-
-] [5
+) [5
 
 ] [6
 
@@ -1805,7 +1807,7 @@ Package luatex.def Info: _Images/poly-vert-colorless.pdf  used on input line 73.
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 73.
-(luatex.def)             Requested size: 108.405pt x 1.89217pt.
+(luatex.def)             Requested size: 144.54pt x 2.52304pt.
  (./test_beamer.toc
 LaTeX Info: Redefining \rmfamily on input line 2.
 LaTeX Info: Redefining \sffamily on input line 2.
@@ -1826,7 +1828,7 @@ Package luatex.def Info: _Images/poly-vert-colorless.pdf  used on input line 79.
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 79.
-(luatex.def)             Requested size: 108.405pt x 1.89217pt.
+(luatex.def)             Requested size: 144.54pt x 2.52304pt.
  (./test_beamer.toc
 LaTeX Info: Redefining \rmfamily on input line 2.
 LaTeX Info: Redefining \sffamily on input line 2.
@@ -1849,7 +1851,7 @@ Package luatex.def Info: _Images/poly-vert-colorless.pdf  used on input line 93.
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 93.
-(luatex.def)             Requested size: 108.405pt x 1.89217pt.
+(luatex.def)             Requested size: 144.54pt x 2.52304pt.
  (./test_beamer.toc
 LaTeX Info: Redefining \rmfamily on input line 2.
 LaTeX Info: Redefining \sffamily on input line 2.
@@ -1882,19 +1884,19 @@ Package rerunfilecheck Info: File `test_beamer.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46583 strings out of 476506
+ 46587 strings out of 476506
  100000,1977958 words of node,token memory allocated
- 6272 words of node memory still in use:
-   80 hlist, 14 vlist, 14 rule, 19 disc, 6 local_par, 8 math, 117 glue, 32 kern, 27 penalty, 4 margin_kern, 181 glyph, 490 attribute, 66 glue_spec, 283 attribute_list, 11 write, 3 save_pos, 78 pdf_literal, 7 pdf_start_link, 7 pdf_end_link, 7 pdf_action, 78 pdf_colorstack nodes
-   avail lists: 1:3,2:849,3:447,4:304,5:94,6:18,7:815,8:1,9:432,10:8,11:44
- 67308 multiletter control sequences out of 65536+600000
- 66 fonts using 27456523 bytes
- 128i,16n,116p,1069b,1005s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-BoldItalic.otf><c:/texlive/2023/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb>
-Output written on test_beamer.pdf (13 pages, 157211 bytes).
+ 6284 words of node memory still in use:
+   80 hlist, 14 vlist, 14 rule, 19 disc, 6 local_par, 8 math, 117 glue, 32 kern, 27 penalty, 4 margin_kern, 181 glyph, 492 attribute, 66 glue_spec, 284 attribute_list, 11 write, 3 save_pos, 78 pdf_literal, 7 pdf_start_link, 7 pdf_end_link, 8 pdf_action, 78 pdf_colorstack nodes
+   avail lists: 1:3,2:685,3:355,4:302,5:94,6:18,7:1398,8:1,9:373,10:8,11:115
+ 67312 multiletter control sequences out of 65536+600000
+ 78 fonts using 35438071 bytes
+ 128i,16n,116p,1069b,1006s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-BoldItalic.otf><c:/texlive/2023/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb>
+Output written on test_beamer.pdf (13 pages, 161925 bytes).
 
-PDF statistics: 374 PDF objects out of 1000 (max. 8388607)
- 237 compressed objects within 3 object streams
+PDF statistics: 383 PDF objects out of 1000 (max. 8388607)
+ 244 compressed objects within 3 object streams
  31 named destinations out of 1000 (max. 131072)
  288 words of extra memory for PDF output out of 10000 (max. 100000000)
 

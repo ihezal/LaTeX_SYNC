@@ -1,0 +1,208 @@
+\newpage
+
+\section{Fonctions test}
+
+        Dans cette section, on développe des résultats essentiels à la théorie de la mesure, concernant les fonctions test, \textit{i.e.} les fonctions de classe $\mathcal{C}^{\infty}$ à support compact.
+
+    \subsection{Préliminaires}
+
+        \begin{omed}{Définition (support)}
+            Soient $X$ un espace topologique et $\phi : X \to \mathbf{K}$. Le \textbf{support} de $\phi$ est l’ensemble 
+            \[ \text{supp}(\phi) := \overline{\left\{x \in X, \phi(x) \neq 0 \right\}} \]
+        \end{omed}
+
+        Ces fonctions ont un rôle prépondérant en analyse :
+        \begin{itemize}
+            \item Approcher les fonctions localement intégrables par des fonctions de classe $\mathcal{C}^{\infty}$ ;
+            \item Elles servent à localiser les fonctions sans en dégrader les hypothèses de régularité ;
+            \item Étendre les propriétés du calcul différentiel des fonctions aux distributions.
+        \end{itemize}
+
+        Construisons quelques fonctions $\mathcal{C}_c^{\infty}$ sur la droite réelle : 
+        \begin{enumerate}
+            \item On pose la fonction $E$ définie de $\mathbf{R}$ dans $\mathbf{R}$ par 
+            \[ x \mapsto \left\{      \begin{array}{lc}
+                0 & \text{si } x \geq 0 \\
+                \exp(\frac{1}{x}) & \text{si } x < 0
+            \end{array} \right. \kern-\nulldelimiterspace \]   
+            De façon évidente, $E \in \mathcal{C}^{\infty}(\mathbf{R}*)$. Pour tout $n \geq 0$, on a 
+            \[ E^{(n)}(x) = P_n\left(\frac{1}{x}\right)e^{\frac{1}{x}} \quad \forall x < 0 \] 
+            où $P_n$ est la suite de polynômes définie par $P_0(X) = 1$ et $P_{n+1}(X) = - X^2(P_n'(X) + P_n(X))$. Ainsi, 
+            \[ E^{(n)}(x) \underset{x \to 0^-}{\longrightarrow} 0 \quad \forall n \geq 0 \]  
+            Ainsi, $E \in \mathcal{C}^{\infty}(\mathbf{R})$. Le support de $E$ de $\mathbb{R}_-$
+            \item On veut, à partir de $E$, construire une fonction $F$ de classe $\mathcal{C}^{\infty}$ sur $\mathbb{R}$ à support dans un segment $\intFF{a}{b}$. On pose, pour $x \in \mathbf{R}$,
+            \begin{align*}
+                F(x) 
+                &= E(a-x)E(x-b) \\
+                &= \left\{      \begin{array}{lc}
+                0 & \text{si } x \in \intOF{-\infty}{a} \cup \intFO{b}{+\infty} \\
+                \exp\left(-\frac{b-a}{(b-x)(x-a)}\right) & \text{si } x \in \intOO{a}{b}
+            \end{array} \right. \kern-\nulldelimiterspace 
+            \end{align*}
+            \item De façon analogue, on construit une fonction $G \in \mathcal{C}^{\infty}(\mathbf{R}^N)$ à support compact $\intFF{a_1}{b_1} \times \cdots \times \intFF{a_N}{b_N}$ par 
+            \[ G(x) = \prod_{i=1}^{N} E(a_k - x_k)E(x_k - b_k) \quad \forall x \in \mathbf{R}^N \] 
+            \item On peut aussi définir la fonction $H$ sur $\mathbf{R}^N$ dans $\mathbf{R}$ par 
+            \begin{align*}
+                H(x)
+                &= E(\abs{x}^2 - 1) \\
+                &= \left\{  \begin{array}{lc}
+                0 & \text{si } \abs{x} \geq 1 \\
+                \exp\left(\frac{1}{\abs{x}^2 - 1}\right) & \text{si } \abs{x} < 1
+            \end{array} \right. \kern-\nulldelimiterspace 
+            \end{align*}
+            où $\abs{.}$ désigne la norme euclidienne dans $\mathbf{R}^N$. $H \in \mathcal{C}^{\infty}$ comme composée de la fonction $E$ et de la fonction $x \in \mathbf{R}^N \mapsto \abs{x}^2 - 1 \in \mathbb{R}$, toutes deux de classe $\mathcal{C}^{\infty}$. De plus, 
+            \[ \text{supp}(H) = \overline{B(0,1)} = \left\{x \in \mathbf{R}^N, \abs{x} \leq 1\right\} \]   
+            \item De nouveau sur $\mathbf{R}$, on définit la fonction $I$ donnée par 
+            \[ I(x) = \frac{\int_{-\infty}^x F(z)dz}{\int_{-\infty}^{\infty}F(z)dz} \quad \forall x \in \mathbf{R} \]
+            Sachant que la fonction $F$ est continue et vérifie $F > 0$ sur $\int00{a}{b}$ d’où $\int_{-\infty}^{\infty} F(z)dz > 0$. La fonction $I$ est donc $\mathcal{C}^{\infty}(\mathbb{R})$ et satisfait les conditions $0 \leq I \leq 1$, $I \Big|\vphantom{\big|}_{\intOF{-\infty}{a}} = 0$ et $I \Big|\vphantom{\big|}_{\intFO{b}{\infty}} = 0$.
+        \end{enumerate}
+
+    \subsection{Régularisation des fonctions}
+
+        Le procédé le plus courant de régularisation de fonctions localement intégrables sur $\mathbf{R}^N$ utilise la notion de produit de convolution par une suite régularisante.
+
+        \subsubsection{Convolution des fonctions}
+
+        .
+
+        \subsubsection{Régularisation par convolution}
+
+        Commençons par introduire la notion de suites régularisantes, qui permettra ensuite de régulariser des fonctions par convolution. 
+
+        \begin{omed}{Définition}
+            On appelle \textbf{suite régularisante} une famille de fonctions $(\zeta_{\varepsilon})_{0 < \varepsilon < \varepsilon_0}$ définies sur $\mathbf{R}^N$ vérifiant, pour tout $\varepsilon \in \intOO{0}{\varepsilon_0}$, 
+            \begin{enumerate}[label=($h_{\arabic*}$)]
+                \item $\zeta_{\varepsilon} \in \mathcal{C}^{\infty}(\mathbf{R}^N)$ ;
+                \item $\text{supp}(\zeta_{\varepsilon}) \subset \overline{B(0,r_{\varepsilon})}$ ;
+                \item $\zeta_{\varepsilon} \geq 0$ ;
+                \item $\int_{\mathbf{R}^N} \zeta_{\varepsilon}(x)dx = 1$.
+            \end{enumerate}
+            où $r_{\varepsilon} \underset{\varepsilon \downarrow 0}{\longrightarrow} 0$. 
+        \end{omed}
+
+        Une suite régularisante est donc une suite de \textbf{fonctions tests} dont le support est de plus en plus court autour de l’origine. 
+
+        \begin{demo}{Exemple}
+        H est $\mathcal{C}^{\infty}$ et à support compact $\text{supp}(H) = \overline{B(0,1)}$.
+
+        On définit ensuite la fonction définie sur $\mathbf{R}^N$ par 
+        \[ \zeta(x) = \frac{H(x)}{\int_{\mathbf{R}^N} H(z)dz} \]   
+        qui est, à l’instar de $H$, $\mathcal{C}^{\infty}(\mathbf{R}^N)$ et de support compact $\overline{B(0,1)}$. On définit ainsi une fonction test qui est une densité, ce qui nous intéresse pour les suites régularisantes. 
+
+        Finalement, on pose, pour tout $\varepsilon > 0$, la fonction $\zeta_{\varepsilon}$ définie sur $\mathbf{R}^N$ par 
+        \[ \zeta_{\varepsilon}(x) = \frac{1}{\varepsilon^N} \zeta\left(\frac{x}{\varepsilon}\right) \] 
+        Cette définition de $(\zeta_{\varepsilon})$ est compatible avec la notion de suite régularisante car $\text{supp}(\zeta_{\varepsilon}) = \overline{B(0,\varepsilon)}$. 
+        \end{demo}
+
+        \begin{omed}{Théorème (densité de $\mathcal{C}_c^{\infty}$ dans $\mathcal{C}_c$)}[theo:densiteCcinfdansCc]
+            Soit $f \in \mathcal{C}_c(\mathbf{R}^N)$ et $(\zeta_{\varepsilon})$ une suite régularisante. 
+
+            Alors 
+            \begin{enumerate}[label=($p_{\arabic*}$)]
+                \item si $\varepsilon > 0$, $\zeta_{\varepsilon} \star f \in \mathcal{C}_c^{\infty}(\mathbf{R}^N)$ ;
+                \item $\zeta_{\varepsilon} \star f \underset{\varepsilon \downarrow 0}{\longrightarrow} f$ uniformément sur $\mathbf{R}^N$.
+            \end{enumerate}
+        \end{omed}
+
+        \begin{demo}{Démonstration}
+            On suppose que $\text{supp}(f) \subset B(0,R)$. On a que, pour tout $\varepsilon \in \intOO{0}{\varepsilon_0}$, 
+            \begin{align*}
+                \text{supp}(\zeta_{\varepsilon} \star f) 
+                &\subset B(0,R) + B(0,r_{\varepsilon}) \\
+                &\subset B(0,R + r_{\varepsilon})
+            \end{align*}
+            De plus, la fonction $\zeta_{\varepsilon} \star f \in \mathcal{C}^{\infty}(\mathbf{R}^N)$. Pour l’uniforme continuité, remarquons que 
+            \begin{align*}
+                \zeta_{\varepsilon} \star f(x) - f(x)
+                &= \int_{\mathbf{R}^N} \zeta_{\varepsilon}(y)f(x-y)dy - f(x) \\
+                &= \int_{\mathbf{R}^N} \zeta_{\varepsilon}(y)(f(x-y)dy - f(x)) dy \\
+            \end{align*}
+            car $\int_{\mathbf{R}^N} \zeta_{\varepsilon}(y)dy = 1$. Comme $\zeta_{\varepsilon}$ est à support dans $\overline{B(0,r_{\varepsilon})}$, 
+            \begin{align*}
+                \abs{\zeta_{\varepsilon} \star f(x) - f(x)} 
+                &\leq \int_{\mathbf{R}^N} \zeta_{\varepsilon}(y)\abs{f(x-y) - f(y)} dy \\
+                &\leq \sup_{\abs{y} \leq r_{\varepsilon}} \abs{f(x-y) - f(x)} \int_{B(0,r_{\varepsilon})} \zeta_{\varepsilon}(y)dy \\
+                = \sup_{\abs{y} \leq r_{\varepsilon}} \abs{f(x-y) - f(x)}
+            \end{align*}
+            $f$ est continue à support compact donc elle est uniformément continue sur $\mathbf{R}^N$ d’après le théorème de Heine. Ainsi, étant donné que $r_{\varepsilon} \underset{\varepsilon \to 0^+}{\longrightarrow} 0$, 
+            on a 
+            \[ \sup_{x \in \mathbf{R}^N, \abs{y} \leq r_{\varepsilon}} \abs{f(x-y) - f(x)} \underset{\varepsilon \to 0^{+}}{\longrightarrow} 0 \]   
+            et on en déduit que 
+            \[ \sup_{x \in \mathbf{R}^N} \abs{\zeta_{\varepsilon} \star f(x)-f(x)} \underset{\varepsilon \to 0^+}{\longrightarrow} 0 \]
+        \end{demo}
+
+        Ainsi, on a prouvé que $\mathcal{C}_c^{\infty}(\mathbf{R}^N)$ est dense dans $\mathcal{C}^c(\mathbf{R}^N)$ pour la norme uniforme, puisqu’on a trouvé une suite de fonctions tests qui converge uniformément vers une fonction $f$ quelconque à support compact.
+
+        \begin{omed}{Théorème}[theo:densiteCinfLpRN]
+            Soit $f \in L^p(\mathbf{R}^N)$ avec $1 \leq p < \infty$. 
+            \begin{enumerate}[label=($p_{\arabic*}$)]
+                \item Pour toute suite régularisante $(\zeta_{\varepsilon})$, on a 
+                \[ \nor{f - \zeta_{\varepsilon} \star f}_{L^p(\mathbf{R}^N)} \underset{\varepsilon \to 0^+}{\longrightarrow} 0 \]   
+                \item Pour tout $\eta > 0$, il existe une fonction $f_{\eta} \in \mathcal{C}^{\infty}_c(\mathbf{R}^N)$ telle que 
+                \[ \nor{f - f_{\eta}}_{L^p(\mathbf{R}^N)} < \eta \]
+            \end{enumerate}
+        \end{omed}
+
+    \subsection{Partition de l’unité}
+
+        Pour étudier des propriétés de régularité d’une fonction, on veut bien souvent la localiser dans une certaine partie de l’espace. On cherche donc un procédé qui la localise sans modifier sa régularité. Pour cela, on cherche des fonctions à support compact dans un ouvert $\Omega \subset \mathbf{R}^N$ qui valent 1 sur un compact $K \subset \Omega$. 
+
+        \begin{omed}{Lemme (fonctions plateaux)}[lem:fonctionsplateaux]
+            Soient $\Omega \subset \mathbf{R}^N$ ouvert et $K \subset \Omega$ un compact. Il existe une fonction $\phi$ de classe $\mathcal{C}^{\infty}$ sur $\mathbf{R}^N$ vérifiant 
+            \begin{enumerate}[label=($h_{\arabic*}$)]
+                \item $0 \leq \phi \leq 1$ ;
+                \item $\text{supp}(\phi) \subset \Omega$ ;
+                \item $\phi = 1$ sur un voisinage de $K$ ;
+            \end{enumerate}
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Pour tout $x \in K$, il existe $r_{x} > 0$ tel que $\overline{B(x,r_x)} \subset \Omega$. On note alors la fonction $\chi_x$ de classe $\mathcal{C}^{\infty}$ sur $\mathbf{R}^N$ définie par 
+            \[ \chi_x(y) = 2eH\left(\frac{y-x}{r_x}\right) \]
+            On a ainsi $\text{supp}(\chi_x) = \overline{B(x, r_x)}$, $\chi_x > 0$ sur $B(x,r_x)$ et $\chi_x(x) = 2$. On définit pour tout $x \in K$ l’ouvert
+            \[ U_x = \left\{y \in \Omega \middle| \chi_x(y) > 1\right\} \]
+            $(U_x)_{x \in K}$ est un recouvrement ouvert de $K$, donc il existe $x_1, \ldots, x_n \in K$ tels que 
+            \[ K \subset \bigcup_{i = 1}^n U_{x_i} \]   
+            La fonction 
+            \[ f = \sum_{j=1}^n \chi_{x_j} \]    
+            est de classe $\mathcal{C}^{\infty}$, 
+            \[ \text{supp}(f) \subset \bigcup_{i=1}^n \overline{B(x_i, r_{x_i})} \]   
+            qui est un compact de $\Omega$, et $f > 1$ sur $V = \cup_{1 \leq i \leq n} U_{i_i}$. On considère $I$ la fonction introduite dans les préliminaires, avec $a = 0$ et $b = 1$, vérifiant $I \in \mathcal{C}^{\infty}(\mathbf{R})$, $I' \geq 0$, $I \Big|\vphantom{\big|}_{\mathbb{R_-}} = 0$ et $I \Big|\vphantom{\big|}_{\intFO{1}{\infty}} = 1$. La fonction $\phi = I \circ f$ répond à la question.
+        \end{demo}
+
+        La première application de ce résultat est la densité de $\mathcal{C}_c^{\infty}(\Omega)$ dans $L^p(\Omega)$.
+
+        \begin{omed}{Théorème (densité de $\mathcal{C}_c^\infty(\Omega)$ dans $L^p(\Omega)$)}
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert, $p \in \intFO{1}{\infty}$ et $f \in L^p(\Omega)$. 
+
+            Pour tout $\eta > 0$, il existe $f_{\eta} \in \mathcal{C}_c^{\infty}(\Omega)$ telle que 
+            \[ \nor{f - f_{\eta}}_{L^p(\Omega)} < \eta \]   
+        \end{omed}
+
+        \begin{demo}{Démonstration}
+            Soit $F \in L^p(\mathbf{R}^N)$ définie par $f$ sur $\Omega$ et $0$ ailleurs. D’après le théorème \ref{theo:densiteCinfLpRN}, il existe $G \in \mathcal{C}^{\infty}_c(\mathbf{R}^N)$ telle que 
+            \[ \nor{F - G}_{L^p(\mathbf{R}^N)} < \frac{1}{2} \eta \]   
+            
+            Pour tout $n \geq 1$, on considère le fermé borné 
+            \[ K_n = \left\{x \in \Omega \middle| \text{d}(x,\partial\Omega) \geq \frac{1}{n} \land \abs{x} \leq n \right\} \]   
+            et donc compact dans $\mathbf{R}^N$. D’après le lemme \ref{lem:fonctionsplateaux}, pour tout $n \geq 1$, il existe $\phi_n \in \mathcal{C}^{\infty}(\mathbf{R}^N)$ telle que $\text{supp}(\Phi_n) \subset \Omega$, $\phi_n \Big|\vphantom{\big|}_{K_n} = 1$ et $0 \leq \phi_n \leq 1$.  On a donc $\mathbb{1}_{K_n} \leq \phi_n \leq \mathbb{1}_{\Omega}$. 
+
+            On définit $G_n = \Phi_n G$. Étant donné que $\mathbb{1}_{K_n} \underset{n \to \infty}{\uparrow} \mathbb{1}_{\Omega}$, on a que $\phi_n(x) \underset{n \to \infty}{\longrightarrow} \mathbb{1}_{\Omega}(x)$ pour tout $x \in \Omega$. On a ainsi, pour $x \in \Omega$, $G_n(x) \to G(x)$.
+
+            $G \in L^p(\mathbf{R}^N)$ et $\abs{G(x) - G_n(x)}^p \leq \abs{G(x)}^p$ pour tout $x \in \Omega$ donc, par convergence dominée, 
+            \[ \nor{G_n - G}_{L^p(\Omega)}^p = \int_{\Omega} \abs{G_n(x) - G(x)}^p dx \underset{n \to \infty}{\longrightarrow} \int_{\Omega} \lim_{n \to \infty} \abs{G_n(x) - G(x)}dx = 0 \]   
+            On peut donc trouver $n_1$ tel que 
+            \[ \nor{G_{n_1} - G}_{L^p(\Omega)} < \frac{1}{2}\eta \]
+
+            Par construction, $G_{n_1} \in \mathcal{C}^{\infty}(\mathbf{R}^N)$ est à support compact dans $\Omega$, donc $f_{\eta} =  G_{n_1} \big|\vphantom{|}_{\Omega} \in \mathcal{C}_c^{\infty}(\Omega)$. De plus, 
+            \begin{align*}
+                \nor{f - f_{\eta}}_{L^p(\Omega)} 
+                &= \nor{F - G_{n_1}}^{L^p(\Omega)} \\
+                &\leq \nor{F - G}_{L^p(\Omega)} + \nor{G - G_{n_1}}_{L^p(\Omega)} \\
+                &\leq \nor{F - G}_{L^p(\mathbf{R}^N)} + \nor{G - G_{n_1}}_{L^p(\Omega)} \\
+                &< \eta
+            \end{align*} 
+        \end{demo}
+
+
+

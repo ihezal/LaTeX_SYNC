@@ -1,0 +1,36 @@
+\documentclass[12pt, a4paper]{article}
+
+\input{_Template/Preambule_zero.tex}
+\input{_Template/Preambule_SC.tex}
+
+\newcommand{\myauthor}{Olivier Allard}
+\newcommand{\matiere}{mathématiques fondamentales}
+\newcommand{\cours}{Distributions}
+\newcommand{\code}{FMA-42032}
+\definecolor{couleurmatiere}{HTML}{A92021}
+
+\begin{document}
+
+\input{_Template/Titlepage.tex}
+
+\tableofcontents
+
+\vspace{2cm}
+
+Ce cours est une copie du cours \textit{Distributions, analyse de Fourier, équations aux dérivées partielles} de \textbf{François Golse}, dispensé à l’École polytechnique.
+
+Registre des notations employées tout au long de ce cours :
+\begin{itemize}
+    \item $\mathbf{K}$ le corps $\mathbf{R}$ ou $\mathbf{C}$.
+    \item Pour un ouvert $\Omega$, $\mathcal{D}(\Omega) = \mathcal{C}_c^{\infty}(\Omega)$ et $\mathcal{D}'(\Omega)$ l’ensemble des distributions sur $\Omega$.
+    \item Pour un ouvert $\Omega$, $\mathcal{E}(\Omega) = \mathcal{C}^{\infty}(\Omega)$ et $\mathcal{E}'(\Omega)$ l’ensemble des distributions sur $\Omega$ à support compact dans $\Omega$.
+    \item $\mathcal{S}(\mathbf{R}^N)$ l’espace de Schwartz sur $\mathbf{R}^N$.
+\end{itemize}
+
+\input{FMA/Distributions/Fonctions_test.tex}
+\input{FMA/Distributions/EDP_ordre_un.tex}
+\input{FMA/Distributions/Calcul_distributions.tex}
+\input{FMA/Distributions/Support_et_convolution.tex}
+\input{FMA/Distributions/Transformation_Fourier.tex}
+
+\end{document}

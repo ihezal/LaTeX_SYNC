@@ -1,17 +1,24 @@
 \section{Milieux diélectriques}
 
-    Un \textbf{milieu diélectrique} est un milieu isolant, par opposition aux milieux dits conducteurs vus dans le cadre des équations de Maxwell. Il s’agit par exemple de papier, verre, céramique, bois sec, plastique ou encore de gaz ou liquide. La distinction entre conducteur et diélectrique n’est pas nette, puisque la conductivité électrique d’un milieu varie sur des dizaines d’ordres de grandeur, et on ne peut pas décider d’une limite artificielle. 
+    Un \textbf{milieu diélectrique} est un milieu isolant, par opposition aux milieux dits conducteurs vus dans le cadre des équations de Maxwell. Il s’agit par exemple de papier, verre, céramique, bois sec, plastique ou encore de gaz ou liquide. La distinction entre conducteur et diélectrique n’est pas nette, puisque la conductivité électrique d’un milieu varie sur des dizaines d’ordres de grandeur, et on ne peut pas décider d’une limite stricte entre les deux propriétés. 
 
     \subsection{Polarisation de la matière et dipôle électrique}
 
-    Lorsque l’on applique un champ électrique à la matière, les charges électriques $\pm q$ des atomes se déplacent. Dans le cas d’un matériau isolant, il n’y a pas de déplacement macroscopique des charges, et celles-ci reste au voisinage de leur position d’équilibre en l’absence de champ. Mais localement, les charges de signe opposé se séparent et des dipôles électriques se forment : il s’agit de la \textbf{polarisation de la matière}.
+    Lorsque l’on applique un champ électrique à la matière, les charges électriques $\pm q$ des atomes se déplacent. Dans le cas d’un matériau isolant, il n’y a pas de déplacement macroscopique des charges, et celles-ci reste au voisinage de leur position d’équilibre en l’absence de champ. Mais localement, les charges de signe opposé se séparent et des dipôles électriques se forment : il s’agit de la \textbf{polarisation de la matière}.
 
-    Il est donc important de s’attarder sur la notion de dipôle électrique, qui entre en jeu dans la description de la matière polarisée. Un dipôle électrique est constitué de deux charges $\pm q$ séparées du vecteur $\textbf{a}$ qui pointe de $-q$ vers $+q$. On définit le \textbf{moment dipolaire} par $\mathbf{p} = q \mathbf{a}$. Le potentiel créé par ces deux charges en un point $M(\mathbf{r})$ où $\mathbf{r}$ est le vecteur position par rapport à l’origine située entre les deux charges $\pm q$ est 
-    \[ V(\mathbf{r}) = \frac{q}{4\pi\varepsilon_0}\frac{1}{\abs{\mathbf{r} - \frac{\mathbf{a}}{2}}} - \frac{q}{4\pi\varepsilon_0}\frac{1}{\abs{\mathbf{r} + \frac{\mathbf{a}}{2}}} \]   
-    Si $\abs{\mathbf{r}} \geq \abs{\mathbf{a}}$ (\textbf{approximation dipolaire}), 
-    \[ V(r) \equiv \frac{1}{4\pi\varepsilon_0} q \mathbf{a} \cdot \nabla \frac{1}{r} = \frac{\mathbf{p} \cdot \mathbf{e}_r}{4\pi\varepsilon_0 r^2} \]
-    On en déduit le champ électrique créé par un dipôle électrique lorsque l’on se situe dans l’approximation dipolaire :
-    \[ \mathbf{E}(\mathbf{r}) = - \nabla V(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \frac{3 (\mathbf{e}_r \cdot \mathbf{p})\mathbf{e}_r - \mathbf{p}}{r^3} \]
+    Il est donc important de s’attarder sur la notion de dipôle électrique, qui entre en jeu dans la description de la matière polarisée. Un dipôle électrique est constitué de deux charges $\pm q$ séparées du vecteur $\textbf{a}$ qui pointe de $-q$ vers $+q$. On définit le \textbf{moment dipolaire} par $\mathbf{p} = q \mathbf{a}$. Le potentiel créé par ces deux charges en un point $M(\mathbf{r})$ où $\mathbf{r}$ est le vecteur position par rapport à l’origine située entre les deux charges $\pm q$ est, dans l’approximation dipolaire ($\abs{\mathbf{r}} \geq \abs{\mathbf{a}}$)
+    \begin{align*}
+        V(\mathbf{r}) 
+        &= \frac{q}{4\pi\varepsilon_0}\frac{1}{\abs{\mathbf{r} - \frac{\mathbf{a}}{2}}} - \frac{q}{4\pi\varepsilon_0}\frac{1}{\abs{\mathbf{r} + \frac{\mathbf{a}}{2}}} \\
+        &\approx \frac{1}{4\pi\varepsilon_0} q \mathbf{a} \cdot \nabla \frac{1}{r} \\
+        &= \frac{\mathbf{p} \cdot \mathbf{e}_r}{4\pi\varepsilon_0 r^2}
+    \end{align*}
+    On en déduit la valeur du champ électrique créé :
+    \begin{align*}
+        \mathbf{E}(\mathbf{r}) 
+        &= - \nabla V(\mathbf{r}) \\
+        &= \frac{1}{4\pi\varepsilon_0} \frac{3 (\mathbf{e}_r \cdot \mathbf{p})\mathbf{e}_r - \mathbf{p}}{r^3} \\
+    \end{align*}
     L’énergie d’interaction de ce dipôle avec un champ $\mathbf{E}$ est 
     \[ U = - \mathbf{p} \cdot \mathbf{E} \]   
     et le couple exercé par le champ sur le dipôle vaut 
@@ -20,10 +27,59 @@
     \subsection{Description microscopique de la polarisation}
 
     Pour étudier les propriétés des milieux diélectriques, on introduit le \textbf{vecteur polarisation} $\mathbf{P}$, défini comme la moyenne spatiale des dipôles microscopiques $\mathbf{p}_n$ sur un volume $V$, centré en $\mathbf{r}$, grand devant la distance caractéristique des fluctuations de charges (taille d’un atome) et petit devant celle du phénomène étudié, \textit{i.e.} d’échelle mésoscopique :
-    \begin{equation}
+    \begin{equation*}
         \mathbf{P}(\mathbf{r},t)=\frac{1}{V} \sum_{n \in V(\mathbf{r})} \mathbf{p}_n(t)
-    \end{equation}
-    Dans une description continue de la matière, ce vecteur correspond à un moment dipolaire par unité de volume, en $\left[\text{C} / \text{m}^2\right]$.
+    \end{equation*}
+    Dans une description continue de la matière, ce vecteur correspond à un moment dipolaire par unité de volume, en $\text{C}.\text{m}^{-2}$.
 
+    Considérons l’application d’un champ électrique sur la matière. Les charges $q$ et $-q$ se séparent de $d\mathbf{r}$ dans la direction du champ, si bien que la charge qui s’accumule sur une surface $dS$ est 
+    \[ dQ_{\text{pol}} = n (q d\mathbf{r}) \cdot \mathbf{n} dS \]   
+    où $\mathbf{n}$ est la normale à la surface plane et $n$ est la densité volumique de charges dans le matériau. Cela conduit à une densité de charge surfacique en $\text{C}.\text{m}^{-2}$ 
+    \begin{align*}
+        \sigma_{\text{pol}} 
+        &= \frac{d Q_{\text{pol}}}{dS} \\
+        &= n(qd\mathbf{r})\cdot \mathbf{n} \\
+        &= \mathbf{P} \cdot \mathbf{n} 
+    \end{align*}
+    Si la polarisation est inhomogène, il apparaît une densité de charge volumique en $\text{C}.\text{m}^{-3}$ 
+    \[ \rho_{\text{pol}} = - \nabla \cdot \mathbf{P} \]   
+
+    Pour décrire le mileu diélectrique, on peut donc au choix utiliser le vecteur polarisation $\mathbf{P}$, ou utiliser les grandeurs $\sigma_{\text{pol}}$ et $\rho_{\text{pol}}$. Le potentiel scalaire créé en tout point de l’espace est, à l’intérieur ou à l’extérieur d’un diélectrique de volume $\mathcal{V}$ entouré par une surface fermée $\Sigma$ :
+    \begin{align*}
+        V(\mathbf{r}) 
+        &= \frac{1}{4\pi\varepsilon_0} \int_{\mathcal{V}} \frac{\rho_{\text{pol}}}{\abs{\mathbf{r} - \mathbf{r}'}}d^3 \mathbf{r}' + \frac{1}{4\pi\varepsilon_0} \oint_{\Sigma} \frac{\sigma_{\text{pol}}}{\abs{\mathbf{r} - \mathbf{r}'}} d^2 \mathbf{r}' \\
+        &= - \frac{1}{4\pi\varepsilon_0} \int_{\mathcal{V}} \frac{\nabla \cdot \mathbf{P}}{\abs{\mathbf{r} - \mathbf{r}'}}d^3 \mathbf{r}' + \frac{1}{4\pi\varepsilon_0} \oint_{\Sigma} \frac{\mathbf{P}}{\abs{\mathbf{r} - \mathbf{r}'}} \cdot d\mathbf{S} \\
+        &= - \frac{1}{4\pi\varepsilon_0} \int_{\mathcal{V}} \frac{\nabla \cdot \mathbf{P}}{\abs{\mathbf{r} - \mathbf{r}'}}d^3 \mathbf{r}' + \frac{1}{4\pi\varepsilon_0} \int_{\mathcal{V}} \nabla \cdot \left[\frac{\mathbf{P}}{\abs{\mathbf{r} - \mathbf{r}'}} \right] d^3 \mathbf{r}' \\
+        &= \frac{1}{4\pi\varepsilon_0} \int_{\mathcal{V}} \frac{\mathbf{P}(\mathbf{r}') \cdot (\mathbf{r} - \mathbf{r}')}{\abs{\mathbf{r} - \mathbf{r}'}^3} d^3 \mathbf{r}'
+    \end{align*}
+
+    \subsection{Équations de Maxwell dans les diélectriques}
+
+    Rappelons que dans le cas des équations de Maxwell dans la matière, les champs et sources considérés sont moyennés spatialement, même si nous omettrons la notation $\left<.\right>$. On introduit un nouveau champ vectoriel appelé \textbf{déplacement électrique} en $\text{C}.\text{m}^{-2}$ et ayant pour formule 
+    \[ \mathbf{D} = \varepsilon_0 \mathbf{E} + \mathbf{P} \]   
+
+    Dans un milieu diélectrique contenant des charges libres en plus des charges de polarisation, $\rho = \rho_{\text{pol}} + \rho_{\text{libre}}$ et les équations de Maxwell s’écrivent :
+    \begin{align*}
+        \nabla \cdot \mathbf{B} &= 0 \\
+        \nabla \times E &= - \frac{\partial \mathbf{B}}{\partial t} \\
+        \nabla \cdot \mathbf{D} &= \rho_{\text{libre}} \\
+        \nabla \times \frac{\mathbf{B}}{\mu_0} &= \mathbf{j}_{\text{libre}} + \frac{\partial \mathbf{D}}{\partial t} \\ 
+    \end{align*}
+
+    Nous avons donc maintenant 3 champs pour décrire le système, ce qui se traduira par une équation supplémentaire dite \textbf{relation constitutive} du milieu, guidée par l’expérience.
+
+    \subsection{Relations constitutives des diélectriques}
+
+        \begin{itemize}
+            \item \textbf{Milieux linéaires isotropes :} Avec par exemple les gaz et liquides, la relation de dispersion est
+            \[ \mathbf{P}(\mathbf{r}) = \varepsilon_0 \chi(\mathbf{r}) \mathbf{E}(\mathbf{r}) \]   
+            où $\chi(\mathbf{r})$ est la \textbf{susceptibilité électrique} du milieu.
+            \item \textbf{Milieux linéaires anisotropes :} Avec par exemple des cristaux (quartz, sucre), le vecteur polarisation n’est plus parallèle au champ appliqué, et la relation de dispersion est matricielle 
+            \[ \mathbf{P}(\mathbf{r}) = \varepsilon_0 [\chi(\mathbf{r})] \mathbf{E}(\mathbf{r}) \]   
+            où $P_i = \varepsilon_0 \sum_{j=1}^3 \chi_{ij}E_j$.
+            \item \textbf{Milieux non linéaires homogènes isotropes :} Lorsque le champ appliqué est très élevé, la matière répond de façon non linéaire, et on a 
+            \[ \mathbf{P} = \varepsilon_0 \chi(E) \mathbf{E} \]   
+            où $\chi(E) = \chi_0 + \beta E + \gamma E^2 + \cdots$.
+        \end{itemize}
 
 

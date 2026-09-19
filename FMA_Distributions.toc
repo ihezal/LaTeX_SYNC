@@ -1,0 +1,25 @@
+\xpginauxfiletrue 
+\selectlanguage *{french}
+\contentsline {section}{1\hspace {1em}Fonctions test}{3}{section.1}%
+\contentsline {subsection}{1.1\hspace {1em}Préliminaires}{3}{subsection.1.1}%
+\contentsline {subsection}{1.2\hspace {1em}Régularisation des fonctions}{4}{subsection.1.2}%
+\contentsline {subsection}{1.3\hspace {1em}Partition de l’unité}{7}{subsection.1.3}%
+\contentsline {section}{2\hspace {1em}Équation aux dérivées partielles d’ordre un}{10}{section.2}%
+\contentsline {subsection}{2.1\hspace {1em}L’équation de transport}{10}{subsection.2.1}%
+\contentsline {subsection}{2.2\hspace {1em}Cas à coefficients variables}{12}{subsection.2.2}%
+\contentsline {section}{3\hspace {1em}Calcul des distributions}{14}{section.3}%
+\contentsline {subsection}{3.1\hspace {1em}Introduction}{14}{subsection.3.1}%
+\contentsline {subsection}{3.2\hspace {1em}Définition et exemples}{16}{subsection.3.2}%
+\contentsline {subsection}{3.3\hspace {1em}Convergence des suites de distributions}{22}{subsection.3.3}%
+\contentsline {subsection}{3.4\hspace {1em}Opérations sur les distributions}{27}{subsection.3.4}%
+\contentsline {section}{4\hspace {1em}Support et convolution des distributions}{39}{section.4}%
+\contentsline {subsection}{4.1\hspace {1em}Distribution à support compact}{39}{subsection.4.1}%
+\contentsline {subsection}{4.2\hspace {1em}Convolution d’une fonction test avec une distribution}{42}{subsection.4.2}%
+\contentsline {subsection}{4.3\hspace {1em}Nouvelles opérations sur les distributions}{47}{subsection.4.3}%
+\contentsline {subsection}{4.4\hspace {1em}Produit de convolution des distributions}{50}{subsection.4.4}%
+\contentsline {section}{5\hspace {1em}Transformation de Fourier}{53}{section.5}%
+\contentsline {subsection}{5.1\hspace {1em}La classe de Schartz}{53}{subsection.5.1}%
+\contentsline {subsection}{5.2\hspace {1em}La transformation de Fourier sur l’espace de Schwartz}{56}{subsection.5.2}%
+\contentsline {subsection}{5.3\hspace {1em}Les distributions tempérées}{60}{subsection.5.3}%
+\contentsline {subsection}{5.4\hspace {1em}Tranformation de Fourier sur les distributions tempérées}{62}{subsection.5.4}%
+\xpginauxfilefalse 

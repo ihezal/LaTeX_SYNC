@@ -88,8 +88,89 @@
 
         \subsubsection{Invariance de jauge}
 
-        Il peut sembler étonnant que l’hamiltonien puisse dépendre du potentiel vecteur $\vec{A}$ défini à une condition de jauge près. Montrons que les hamiltoniens $\hat{H}$ et $\hat{H}'$ associés respectivement aux potentiels vecteurs $\vec{A}$ et $\vec{A}'$ reliés par le changement de jauge $\chi(\vec{r})$ décrivent la même situation physique.
+        Il peut sembler étonnant que l’hamiltonien puisse dépendre du potentiel vecteur $\vec{A}$ défini à une condition de jauge près. Soit $\hat{H}$ et $\hat{H}'$ les hamiltoniens associés respectivement aux potentiels vecteurs $\vec{A}$ et $\vec{A}'$ reliés par le changement de jauge $\chi(\vec{r})$. Montrons qu’en introduisant un opérateur qui modifie le ket décrivant l’état du système lors d’un changement de jauge, on retombe bien sur les descriptions équivalentes. On introduit la transformation unitaire $\hat{T}$ définie par 
+        \[ \psi'(\vec{r},t) := \hat{T} \psi(\vec{r},t) = \exp\left(i \frac{q \chi(\vec{r})}{\hbar}\right) \psi(\vec{r},t) \]   
+        L’action de l’opérateur impulsion sur la nouvelle fonction d’onde $\psi'$ est donc 
+        \begin{align*}
+            \hat{\vec{p}} \psi'(\vec{r},t) 
+            &= \frac{\hbar}{i} \vec{\nabla} \exp\left(i \frac{q \chi(\vec{r})}{\hbar}\right) \psi(\vec{r},t) \\
+            &= \exp\left(i \frac{q \chi(\vec{r})}{\hbar}\right) \left(\hat{\vec{p}} + q \vec{\nabla} \chi\right) \psi(\vec{r},t) \\
+        \end{align*}
+        Sachant que $A' = A + \vec{\nabla} \chi$, on trouve alors
+        \begin{align*}
+            \left(\hat{\vec{p}} - q \vec{A}'(\hat{\vec{r}},t)\right) \psi'(\vec{r},t) 
+            &= \exp\left(i \frac{q \chi(\vec{r})}{\hbar}\right) \left(\hat{\vec{p}} - q \vec{A}(\hat{\vec{r}},t)\right) \psi(\vec{r},t) \\
+            \left(\hat{\vec{p}} - q \vec{A}'(\hat{\vec{r}},t)\right)^2 \psi'(\vec{r},t) 
+            &= \exp\left(i \frac{q \chi(\vec{r})}{\hbar}\right) \left(\hat{\vec{p}} - q \vec{A}(\hat{\vec{r}},t)\right)^2 \psi(\vec{r},t) \\
+        \end{align*}
+        Comme le potentiel électrique $U(\vec{r},t)$ est inchangé, 
+        \begin{align*}
+            \hat{H}' \exp\left(i \frac{q \chi(\vec{r})}{\hbar}\right) \psi(\vec{r},t) &= \exp\left(i \frac{q \chi(\vec{r})}{\hbar}\right) \hat{H} \psi(\vec{r},t) \\
+            \hat{H}' \hat{T} &\overset{\Updownarrow}{=} \hat{T} \hat{H} \\
+        \end{align*}
+        On peut alors établir l’équation de Schrödinger pour les grandeurs prime.
+        \begin{align*}
+            i\hbar \frac{\text{d}\ket{\psi'}}{\text{d}t} 
+            &=  i\hbar \frac{\text{d}\hat{T}\ket{\psi}}{\text{d}t} \\
+            &= \hat{T} \hat{H} \ket{\psi} \\
+            &= \hat{H}' \ket{\psi'} 
+        \end{align*}
+        Pour s’assurer que l’état du système est bien conservé, on doit aussi vérifier les grandeurs physiques du système ne diffèrent pas entre les deux fonctions d’onde. Premièrement, $\abs{\psi'}^2 = \abs{\psi}^2$ par l’unitarité de $\hat{T}$. Ensuite, en reprenant les calculs précédent et en multipliant par $\psi'^*(\vec{r},t)$, on obtient que 
+        \begin{align*}
+            \psi'^*(\vec{r},t) \left(\hat{\vec{p}}- q \vec{A}'(\vec{r},t)\right) \psi'(\vec{r},t) &= \psi*(\vec{r},t) \left(\hat{\vec{p}}- q \vec{A}(\vec{r},t)\right)\psi(\vec{r},t) \\
+            \bra{\psi'} \hat{\vec{v}}' \ket{\psi'} &\overset{\Updownarrow}{=} \bra{\psi} \hat{\vec{v}} \ket{\psi} \\
+        \end{align*}
+        Ces calculs, montrant que la vitesse (et donc la quantité de mouvement) est bien une grandeur mesurable, indépendamment du choix de jauge, mettent aussi en valeur le fait que l’impulsion n’est pas une grandeur observable puisque
+        \[ \bra{\psi'} \hat{\vec{p}}' \ket{\psi'} = \bra{\psi} \hat{\vec{p}} \ket{\psi} - q \left<\vec{\nabla} \chi(\vec{r})\right> \]
+
+        On peut étendre ces résultats à un changement de jauge dépendant du temps.
 
     \subsection{L’effet Aharonov-Bohm}
+
+        L’introduction du potentiel vecteur fait apparaître un paradoxe à première vue : ce potentiel peut être non-nul dans des régions où le champ magnétique est rigoureusement nul. Or ce potentiel vecteur apparaît directement dans l’hamiltonien d’une particule chargée, ce qui signifie que son énergie peut dépendre d’un champ $\hat{B}$ sans jamais pénétrer dans les régions où ce champ est non-nul. L’expérience d’Aharonov et Bohm met en lumière cet effet.
+        
+        \subsubsection{Principe de l’expérience}
+
+        L’expérience repose sur le principe des franges d’Young, où un faisceau d’électrons peut suivre deux chemins possibles pour atteindre un écran. On introduit alors un solénoïde au milieu de l’interféromètre, où la probabilité de présence des électrons est strictement nulle. On voit tout de même un décalage des franges proportionnel au champ magnétique implémenté. Cela confirme que la grandeur pertinente dans l’hamiltonien est bien le potentiel vecteur $\vec{A}$ et pas le champ magnétique $\vec{B}$.
+
+        \subsubsection{Interprétation}
+
+            \paragraph{Sans champ magnétique} 
+        
+        L’hamiltonien du système est 
+        \[ \hat{H}_0 = \frac{\hat{p}^2}{2m} + V(\hat{\vec{r}}) \]   
+        Considérons un état propre $\ket{\psi_1} $ d’énergie $E$ tel que sa probabilité de présence prenne des valeurs non-nulles uniquement dans un des bras de l’interféromètre, noté $(1)$, ainsi qu’un état propre $\ket{\psi_2}$ de même énergie $E$ qui passe strictement dans l’autre bras, noté $(2)$. La superposition linéaire $\psi(\vec{r}) \propto \psi_1(\vec{r}) + \psi_2(\vec{r})$ est également fonction propre de $\hat{H_0}$ pour la valeur propre $E$, et sa densité de probabilité s’écrit :
+        \begin{align*}
+            \abs{\psi(\vec{r})}^2 
+            &\propto \abs{\psi_1(\vec{r}) + \psi_2(\vec{r})}^2 \\
+            &= \abs{\psi_1(\vec{r})}^2 + \abs{\psi_2(\vec{r})}^2 + 2 \abs{\psi_1^*(\vec{r}) \psi_2(\vec{r})} \cos\left(\theta_2(\vec{r}) - \theta_1(\vec{r})\right)
+        \end{align*} 
+        où $\theta_{\alpha}(\vec{r})$ est la phase de $\psi_{\alpha}(\vec{r})$. Le terme en cosinus est évidemment le responsable des interférences entre les deux ondes.
+
+            \paragraph{Avec champ magnétique}
+
+            On applique désormais un champ magnétique $\vec{B}$ au sein du solénoïde. L’hamiltonien prend alors la forme
+            \[ \hat{H} = \frac{(\hat{\vec{p}} - q \vec{A}(\hat{\vec{r}}))^2}{2m} + V(\hat{\vec{r}}) \]   
+            Dans chacune des zones $(\alpha)$, le champ magnétique est nul donc le potentiel vecteur est irrotationnel. On peut donc l’écrire comme le gradient d’une fonction dépendant de $\vec{r}$ : $\vec{A}(\vec{r}) = \vec{\nabla} \chi_{\alpha}(\vec{r})$ où le choix de $\chi_{\alpha}(\vec{r})$ est par exemple 
+            \[ \chi_{\alpha}(\vec{r}) = \int_{\vec{r_{a}}, \alpha}^{\vec{r}} \vec{A}(\vec(r)') d\vec{r}' \]
+            où $a$ est un point d’origine tel que les chemins suivis par les intégrales restent contenu dans la zone $(\alpha)$. On a alors, le long d’un contour encerclant le solénoïde,
+            \begin{align*}
+                \chi_2(\vec{r}) - \chi_1(\vec{r})
+                &= \oint_{\mathcal{C}} \vec{A}(\vec{r}')d\vec{r}' \\
+                &= \iint_{\Sigma} \vec{B}(\vec{r}) \cdot d\vec{S} \\
+                &:= \Phi
+            \end{align*}
+            On peut donc considérer que les hamiltoniens $\hat{H}_0$ et $\hat{H}$ décrivement le même problème, à un changement de jauge près. Ainsi, connaissant les fonctions propres $\psi_{\alpha}(\vec{r})$ de $\hat{H}_0$, on peut directement écrire les fonctions propres $\psi_{\alpha}'(\vec{r})$ de $\hat{H}$ avec la formule 
+            \[ \psi_{\alpha}'(\vec{r}) = \exp\left(\frac{iq}{\hbar}\chi_{\alpha}(\vec(r))\right)\psi_{\alpha}(\vec(r)) \]   
+            Le terme d’interférence se voit alors transformé car 
+            \begin{align*}
+                \psi_{1}'^*(\vec{r}) \psi_{2}'(\vec{r})
+                &= \exp\left(\frac{iq}{\hbar}(\chi_2(\vec{r}) - \chi_1(\vec{r}))\right)\psi_{1}^*(\vec{r}) \psi_2(\vec{r}) \\
+                &= \exp\left(\frac{iq}{\hbar}\Phi\right)\psi_{1}^*(\vec{r}) \psi_2(\vec{r}) \\
+            \end{align*}
+            Un déphasage en plus se rajoute par rapport à l’expérience d’Young habituelle, de valeur 
+            \[ \delta \varphi = \frac{q\Phi}{\hbar} \propto \nor{\vec{B}} \]
+
+    
 
         

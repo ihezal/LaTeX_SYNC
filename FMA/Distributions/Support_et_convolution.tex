@@ -1,0 +1,350 @@
+\newpage
+
+\section{Support et convolution des distributions}
+
+    \subsection{Distribution à support compact}
+
+        Les distributions à support compact jouent un rôle majeu dans la théorie des distributions, car possède un certain nombre de propriétés confortables.
+
+        \subsubsection{Support d’une distribution}
+
+        Encore une fois, nous sommes confrontés au problème qu’on ne peut pas considérer la valeur d’une distribution en un point, et qu’on ne peut donc pas étendre simplement la définition du support d’une fonction. On doit donc se ramener à un critère ensembliste :
+
+        \begin{omed}{Définition (support d’une distribution)}
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert et $T \in \mathcal{D}'(\Omega)$ une distribution sur $\Omega$. On définit le \textbf{support} de $T$ $\text{supp}(T)$ comme le plus petit fermé $F$ de $\Omega$ tel que $T \Big|\vphantom{\big|}_{\Omega \backslash F} = 0$, \textit{i.e.}
+            \[ \text{supp}(T) = \bigcap_{F \subset \Omega \text{ fermé}, T \big|\vphantom{|}_{\Omega \backslash F} = 0} F \]
+        \end{omed}
+
+        \begin{omed}{Proposition (opérations et supports)}[prop:operationsupportdistribution]
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert et $T, S \in \mathcal{D}'(\Omega)$ deux distributions sur $\Omega$. 
+            \begin{enumerate}[label=($p_{\arabic*}$)]
+                \item $T \Big|\vphantom{\big|}_{\Omega \backslash \text{supp}(T)} = 0$ ;
+                \item pour toute fonction test $\phi \in \mathcal{D}(\Omega)$, 
+                \[ \text{supp}(\phi) \cap \text{supp}(T) = \neq \implies \spr{T}{\phi} = 0 \]   
+                \item $\text{supp}(T + S) \subset \text{supp}(T) \cup \text{supp(S)}$ ;
+                \item pour toute fonction $a \in \mathcal{D}(\Omega)$, 
+                \[ \text{supp}(aT) \subset \text{supp}(a) \cap \text{supp}(T) \]   
+                \item pour tout multi-indice $\alpha \in \mathbf{N}^N$, 
+                \[ \text{supp}(\partial^{\alpha} T) \subset \text{supp}(T) \]   
+            \end{enumerate}
+        \end{omed}
+
+        \begin{demo}{Exemple (support d’une masse de Dirac)}
+            Pour tout $x_0 \in \mathbf{R}^N$ et multi-indice $\alpha \in \mathbf{N}^N$, on a 
+            \[ \text{supp}(\partial^{\alpha} \delta_{x_0}) = \left\{x_0\right\} \]   
+        \end{demo}
+
+        \subsubsection{Distribution à support compact}
+
+        Soit $\Omega \subset \mathbf{R}^N$ un ouvert. On note 
+        \[ \mathcal{E}'(\Omega) = \left\{T \in \mathcal{D}'(\Omega) \middle| \text{supp}(T) \text{ compact}\right\} \]
+        qui est un $\mathbf{K}$-sous-espace vectoriel de $\mathcal{D}'(\Omega)$. Une distribution à support compact est une forme linéaire sur l’espace des fonctions $\mathcal{C}^{\infty}$ à support compact dans $\Omega$. Mais comme le support de la distribution est lui-même compact, on peut ignorer les fonctions tests en dehors de ce support, et considérer cette dualité sur l’ensemble de l’espace des fonctions $\mathcal{C}^{\infty}(\Omega) = \mathcal{E}(\Omega)$ muni de la \textbf{topologie de la convergence uniforme sur tout compact de leurs dérivées de tout ordre}.
+
+        \begin{omed}{Proposition (dualité de $\mathcal{E}'$-$\mathcal{C}^{\infty})$}
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert et $T \in \mathcal{E}'(\Omega)$. Pour toute fonction $\phi \in \mathcal{E}(\Omega)$, la valeur de $\spr{T}{\chi \phi}$ est indépendante du choix de $\chi \in \mathcal{D}(\Omega)$ vérifiant $\chi = 1$ sur un voisinage ouvert de $\text{supp}(T)$.
+
+            On définira donc $\spr{T}{\phi} = \spr{T}{\chi \phi}$ pour toute telle fonction $\chi$.
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Soient $\chi_1, \chi_2 \in \mathcal{D}(\Omega)$ deux fonctions tests telles que, sur deux voisinages ouverts $V_1$ et $V_2$ de $\text{supp}$ dans $\Omega$, 
+            \[ \chi_1 \big|\vphantom{|}_{V_1} = 1 \quad \text{et} \quad \chi_2 \big|\vphantom{|}_{V_2} = 1 \]
+            Alors $(\chi_1 - \chi_2) \big|\vphantom{|}_{V_1 \cap V_2}$ avec $V_1 \cap V_2$ un voisinage ouvert de $\text{supp}(T)$ dans $\Omega$. Ainsi, pour toute fonction $\phi \in \mathcal{C}^{\infty}(\Omega)$, la fonction $(\chi_1 - \chi_2) \phi$ est de classe $\mathcal{C}^{\infty}$ sur $\Omega$ et vérifie 
+            \[ \text{supp}((\chi_1 - \chi_2)\phi) \cap \text{supp}(T) = \emptyset \] 
+            donc par la proposition (\ref{prop:operationsupportdistribution}) 
+            \[ \spr{T}{(\chi_1 - \chi 2) \phi} = 0 \textit{ i.e. } \spr{T}{\chi_1 \phi} = \spr{T}{\chi_2 \phi} \]  
+        \end{demo}
+
+        \begin{omed}{Proposition (propriété de continuité pour $\mathcal{E}'$)}
+            Soit $\Omega \subset \mathbf{R}^N$ un ouvert. Alors 
+            \begin{enumerate}[label=($p_{\arabic*}$)]
+                \item toute distribution à support compact sur $\Omega$ $T \in \mathcal{E}(\Omega)$ est d’ordre fini ;
+                \item pour toute distribution à support compact $T \in \mathcal{E}'(\Omega)$, il existe un compact $K \subset \Omega$, un entier $p \geq 0$ et une constante $C > 0$ tels que pour toute fonction $\phi \in \mathcal{E}(\Omega)$, 
+                \[ \abs{\spr{T}{\phi}} \leq C \max_{\abs{\alpha} \leq p} \sup_{x \in K} \abs{\partial^{\alpha} \phi(x)} \] 
+                \item si $(\phi_n)$ est une suite de fonctions de $\mathcal{E}(\Omega)$ telle que $\partial^{\alpha} \phi \to \partial^{\alpha} \phi$ pour tout multi-indice $\alpha \in \mathbb{N}^N$, alors pour toute distribution à support compact $T \in \mathcal{E}'(\Omega)$, 
+                \[ \spr{T}{\phi_n} \underset{n \to \infty}{\longrightarrow} \spr{T}{\phi} \]   
+            \end{enumerate}
+        \end{omed}
+
+        Nous allons montrer la seconde proposition, qui implique les deux autres : 
+
+        \begin{demo}{Démonstration}
+            Soit $\eta = \frac{1}{2} \text{d}\left(\text{supp}(T), \partial \Omega\right) > 0$. On pose 
+            \[ O = \bigcup_{x \in \text{supp}(T)} B(x, \eta) \quad \text{et} \quad K = \bar{O} \]   
+            $O$ est un ouvert incluse dans $\Omega$ comme réunion d’ouverts et $K \subset \Omega$ (par choix de $\eta)$ est un compact car fermé et borné dans $\mathbf{R}^N$. 
+
+            Soit $\chi \in \mathcal{D}'(\Omega)$ à support dans $O$ et valant identiquement 1 sur un voisinage ouvert de $\text{supp}(T)$. Alors pour tout $\phi \in \mathcal{E}(\Omega)$, 
+            \[ \spr{T}{\phi} = \spr{T}{\chi\phi} \]   
+            et d’après la propriété de continuité des distributions appliquée au compact $K$, il existe $p_K \in \mathbf{N}$ et $C_K > 0$ tels que 
+            \[ \abs{\spr{T}{\phi}} = \abs{\spr{T}{\chi\psi}} \leq C_K \max_{\abs{\alpha} \leq p_K} \sup_{x \in K} \abs{\partial^{\alpha} (\chi\phi)(x)} \]   
+            La formule de Leibnitz pour la dérivation d’un produit montre que 
+            \[ sup_{x \in K} \abs{\partial^{\alpha} (\chi\phi)(x)} \leq \sum_{\beta \leq \alpha} \binom{\alpha}{\beta} \sup_{x \in K} \abs{\partial^{\beta} \chi(x)} \sup_{x \in K} \abs{\partial^{\alpha - \beta}\phi(x)} \]   
+            ce qui entraîne le point 2 avec $p = p_K$ et 
+            \[ C = C_K \max_{\abs{\alpha} \leq p_K} \sum_{\beta \leq \alpha} \binom{\alpha}{\beta} \sup_{x \in K} \abs{\partial^{\beta} \chi(x)} \]     
+        \end{demo}
+
+    \subsection{Convolution d’une fonction test avec une distribution}
+
+        On s’inspire là encore de la définition introduite pour la convolution d’une fonction test $\phi \in \mathcal{D}(\mathbf{R}^N)$ avec une fonction de $L^1_{\text{loc}}(\mathbf{R}^N)$ :
+        \[ \phi \star u(x) = \int_{\mathbf{R}^N} \phi(x-y)u(y)dy \quad \forall x \in\mathbf{R}^N \]
+
+        \begin{omed}{Définition (convolution $\mathcal{C}_c^{\infty} \star \mathcal{D}'$)}
+            Pour toute distribution $T \in \mathcal{D}'(\mathbf{R}^N)$ et toute fonction test $\phi \in \mathcal{D}(\mathbf{R}^N$), on définit 
+            \[ T \star \phi(x) = \spr{T}{\phi(x - \cdot)} = \spr{T}{(\tau_x)_* \tilde{\phi}} \quad \forall x \in \mathbf{R}^N \]
+            où $(\tau_x)_{*}f(y) = f \circ \tau_{-x}(y) = f(y - x)$ (dite opération de \textbf{pushforward} en anglais) et $\tilde{\phi}(x) = \phi(-x)$.
+        \end{omed}
+
+        Dans ce nouveau cadre, la majoration habituelle du support du produit de convolution reste valable, et ceci en accord avec l’utilisation des distributions dans le cas des fonctions localement intégrables :
+
+        \begin{omed}{Proposition (majoration du support)}
+            Pour toute distrubution $T \in \mathcal{D}'(\mathbf{R}^N)$ et toute fonction test $\phi \in \mathcal{D}(\mathbf{R}^N)$, 
+            \[ \text{supp}(T \star \phi) \subset \text{supp}(T) + \text{supp}(\phi) \]   
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Si $x \in \mathbf{R}^N \backslash \left(\text{supp}(T) + \text{supp}(\phi)\right)$, alors 
+            \[ \text{supp}(\phi(x - \cdot)) = \{x\} - \text{supp}(\phi) \]   
+            et donc 
+            \[ \text{supp}(\phi(x - \cdot)) \text{supp}(T) = \emptyset \]   
+            et d’après la proposition \ref{prop:operationsupportdistribution}, ceci implique que 
+            \[ T \star \phi(x) = \spr{T}{\phi(x - \cdot)} = 0 \]   
+            donc $T \star \phi$ est nulle sur l’ouvert $\mathbf{R}^N \backslash \left(\text{supp}(T) + \text{supp}(\phi)\right)$, ce qui montre que cet ouvert est inclus dans le complémentaire du support $T \star \phi$. Par passage au complémentaire, on obtient le résultat.
+        \end{demo}
+
+        De la même façon que pour le cas de la convolution d’une fonction localement intégrable par une fonction test, on peut dériver au sens des distributions le produit de convolution d’une distribution par une fonction test en faisans porter l’opération sur n’importe lequel de ces deux facteurs :
+
+        \begin{omed}{Proposition (régularité pour $\mathcal{D} \star \mathcal{D}'$)}[prop:regulariteconvolution]
+            Soient $T \in \mathcal{D}'(\mathbf{R}^N)$ une distribution et $\phi \in \mathcal{D}(\mathbf{R}^N)$. Le produit de convolution est de classe $\mathcal{C}^{\infty}$ sur $\mathbf{R}^N$ et pour tout multi-indice $\alpha \in \mathbf{N}^N$, 
+            \[ \partial^{\alpha}(T \star \phi) = (\partial^{\alpha} T) \star \phi = T \star (\partial^{\alpha} \phi) \]    
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            D’une part, 
+            \begin{align*}
+                (\partial^{\alpha} T) \star \phi(x) 
+                &= \spr{\partial^{\alpha} T}{\phi(x - \cdot)} \\
+                &= (-1)^{\abs{\alpha}}\spr{T}{\partial^{\alpha}(\phi(x - \cdot))} \\
+                &= \spr{T}{(\partial^{\alpha} \phi) (x - \cdot)} = T \star (\partial^{\alpha} \phi)(x)
+            \end{align*}
+            D’autre part, soit $x_0 \in \mathbf{R}^N$ et $\chi \in \mathcal{D}(\mathbf{R})$ une fonction plateau telle que $\chi=1$ sur $B(x_0,1)$ (\ref{lem:fonctionsplateaux}). La fonction de classe $\mathcal{C}^{\infty}$ $(x, y) \mapsto \chi(x) \phi(x-y)$ est à support dans $\text{supp}(\chi) \times (\text{supp}(\chi) + \text{supp}(\phi))$. D’après la proposition \ref{prop:derivationsouscrochet} de dérivation sous le crochet de dualité, la fonction $x \mapsto \spr{T}{\chi(x)\phi(x - \cdot)}$ est de classe $\mathcal{C}^{\infty}$ sur $\mathbf{R}^N$ et 
+            \[ \partial^{\alpha} \spr{T}{\chi(x) \phi(x - \cdot)} = \spr{T}{\partial^{\alpha} (\chi(x) \phi(x - \cdot))} \]   
+            Sur $B(x_0,1)$, cette fonction coïncide avec $T \star \phi$, si bien que cela montre qu’elle est de classe $\mathcal{C}^{\infty}$ sur $B(x_0,1)$, et que pour $x \in B(x_0,1)$, 
+            \begin{align*}
+                T \star (\partial^{\alpha} \phi)(x) 
+                &= \spr{T}{(\partial^{\alpha} \phi)(x - \cdot)} \\
+                &= \spr{T}{\partial^{\alpha}(\phi(x - \cdot))} \\
+                &= \partial^{\alpha} \spr{T}{\phi(x - \cdot)} \\
+                &= \partial^{\alpha} (T \star \phi)
+            \end{align*}
+            Ceci vaut pour tout $x_0 \in \mathbf{R}^N$ donc sur tout $\mathbf{R}^N$.
+        \end{demo}
+
+        De la même façon, on peut évidemment définir le produit de convolution entre les distributions à support compact de $\mathcal{E}'$ et les fonctions de l’espace $\mathcal{E}$ :
+
+        \begin{omed}{Proposition (convolution $\mathcal{E}' \star \mathcal{C}^{\infty}$)}
+            Pour $S \in \mathcal{E}'(\mathbf{R}^N)$ et $\psi \in \mathcal{E}(\mathbf{R}^N)$, on pose 
+            \[ S \star \psi(x) = \spr{S}{\psi(x - \cdot)} \quad \forall x \in \mathbf{R}^N \]   
+        \end{omed}
+
+        Les propriétés de cette convolution se montrent de la même façon que dans le cas précédent, et on obtient que $S \star \psi \in \mathcal{C}^{\infty}(\mathbf{R}^N)$ et pour multi-indice $\alpha$, 
+        \[ \partial^{\alpha} (S \star \psi) = (\partial^{\alpha} S) \star \psi  = S \star (\partial^{\alpha} \psi) \]   
+
+        De la même façon que dans la section 1 où l’on a régularisé des fonctions à l’aide de suites régularisantes par convolution, on peut régulariser des distributions :
+
+        \begin{omed}{Théorème (régularisation des distributions)}
+            Soient $T \in \mathcal{D}'(\mathbf{R}^N)$ et $(\zeta_{\varepsilon})$ une suite régularisante, \textit{i.e.} $\zeta_{\varepsilon}(x) = \varepsilon^{-N} \zeta\left(\frac{x}{\varepsilon}\right)$ avec $\zeta \in \mathcal{D}(\mathbf{R}^N)$ à support dans $B(0,1)$, $\zeta \geq 0$ et $\int_{\mathbf{R}^N}\zeta(x)dx = 1$. 
+
+            En posant $T_{\varepsilon} = T \star \zeta_{\varepsilon}$, on a, pour tout $\varepsilon > 0$, $T_{\varepsilon} \in \mathcal{C}^{\infty}(\mathbf{R}^N)$ et 
+            \[ T_{\varepsilon} \underset{\varepsilon \to 0^+}{\longrightarrow} T \]
+        \end{omed}
+
+        \begin{demo}{Démonstration}
+            L’appartenance de $T_{\varepsilon}$ à $\mathcal{C}^{\infty}(\mathbf{R}^N)$ découle de la proposition ci-dessus (prop:regulariteconvolution). Remarquons ensuite que, pour toute fonction test $\phi \in \mathcal{D}(\mathbf{R}^N)$,
+            \begin{align*}
+                \spr{T_{\varepsilon}}{\phi} 
+                &= \int_{\mathbf{R}^N} \spr{T}{\zeta_{\varepsilon}(x - \cdot)} \phi(x) dx \\
+                &= \spr{T}{\int_{\mathbf{R}^N} \zeta_{\varepsilon}(x - \cdot) \phi(x) dx} \\
+                &= \spr{T}{\tilde{\zeta_{\varepsilon}} \star \phi}
+            \end{align*}
+            par intégration sous le crochet de dualité (\ref{prop:integrationsouscrochet}). Ainsi, pour tout $\varepsilon \in \intOO{0}{1}$, 
+            \[ \text{supp}(\tilde{\zeta_{\varepsilon}} \star \phi) \subset K := \left\{x \in \mathbf{R}^N \middle| \text{d}(x, \text{supp}(\phi) \leq 1)\right\} \]
+            où $K$ est compact car fermé et borné dans $\mathbf{R}^N$. 
+            \begin{align*}
+                \partial^{\alpha} \left(\tilde{\zeta_{\varepsilon}} \star \phi\right)
+                &\overset{\ref{prop:regulariteconvolution}}{=} \tilde{\zeta_{\varepsilon}} \star (\partial^{\alpha}\phi) \\
+                &\overset{\ref{theo:densiteCcinfdansCc}}{\longrightarrow} \partial^{\alpha} \phi \text{ uniformément sur } K \text{ quand } \varepsilon \downarrow 0 
+            \end{align*}
+            En particulier, $\tilde{\zeta}_{\varepsilon} \star \phi \underset{\varepsilon \to 0^+}{\longrightarrow} \phi$ dans $\mathcal{C}_c^{\infty}(\mathbf{R}^N) $ donc d’après la proposition \ref{prop:continuitesequentielledistribution} de continuité séquentielle des distributions, 
+            \[ \spr{T_{\varepsilon}}{\phi} = \spr{T}{\tilde{\zeta_{\varepsilon}} \star \phi} \underset{\varepsilon \to 0^+}{\longrightarrow} \spr{T}{\phi} \]
+            Ceci vaut pour toute fonction test $\phi \in \mathcal{D}(\mathbf{R}^N)$ donc $T_{\varepsilon} \to T$.
+        \end{demo}
+
+        Ce théorème de régularisation dans $\mathbf{R}^N$ se localise à un ouvert quelconque de $\mathbf{R}^N$ :
+
+        \begin{omed}{Théorème (densité de $\mathcal{D}(\Omega)$ dans $\mathcal{D}'(\Omega)$)}[theo:densiteCcinfdansDprime]
+            Soient $\Omega \subset \mathbf{R}^N$ un ouvert et $T \in \mathcal{D}'(\Omega)$ une distribution sur $\Omega$. Il existe une suite $(T_n)$ de fonctions de classe $\mathcal{C}_c^{\infty}(\Omega)$ telle que 
+            \[ T_n \underset{n \to \infty}{\longrightarrow} T \text{ dans } \mathcal{D}'(\Omega) \]               
+        \end{omed}
+
+        De même que la convolution par une fonction de classe $\mathcal{C}^{\infty}$ transforme les distributions en fonctions de classe $\mathcal{C}^{\infty}$, elle transforme la convergence au sens des distributions en convergence uniforme :
+
+        \begin{omed}{Proposition (convolution et convergence)}
+            Soient $\phi \in \mathcal{D}(\mathbf{R}^N)$ une fonction test et $(T_n)_{n \geq 1}$ une suite de distributions sur $\mathbf{R}^N$ convergeant vers $T$ au sens des distributions. 
+
+            Alors, pour tout multi-indice $\alpha \in \mathbf{N}^N$, 
+            \[ \partial^{\alpha} (T_n \star \phi) \underset{n \to \infty}{\longrightarrow} \partial^{\alpha} (T \star \phi) \text{ uniformément sur tout compact } K \subset \mathbf{R}^N \]
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Sans perte de généralité, on suppose que $T = 0$. Il suffit de montrer que $T_n \star \phi \to 0$ uniformément sur tout compact de $\mathbf{R}^N$ puis d’appliquer par récurrence cet énoncé en changeant $T_n$ en $\partial^{\alpha} T_n$ puisque d’après la proposition \ref{prop:regulariteconvolution} de régularité par convolution, $\partial (T_n \star \phi) = (\partial^{\alpha} T) \star \phi$.
+
+            Pour tout $x \in \mathbf{R}^N$, $\spr{T_n}{\phi(x - \cdot)} \to 0$ lorsque $n \to \infty$. Soit $R > 0$ et 
+            \[ K:= \overline{B(0,R)} + \text{supp}(\tilde{\phi}) \]   
+            qui est compact dans $\mathbf{R}^N$ car $\overline{B(0,R)}$ est compact (fermé borné) et $\text{supp}(\tilde{\phi})$ est fermé. D’après le principe de borne uniforme (\ref{theo:ppeborneuniforme}), il existe $C > 0$ et $p \in \mathbf{N}$ tels que 
+            \begin{align*}
+                \sup_{\abs{x} \leq R} \abs{T_n \star \phi(x)} 
+                &= \sup_{\abs{x} \leq R} \abs{\spr{T_n}{\phi(x - \cdot)}} \\
+                &\leq C \max_{\abs{\alpha} \leq R} \sup_{z \in K} \abs{\partial^{\alpha} \phi(z)} 
+            \end{align*}
+            Si nous n’avons pas $\sup_{\abs{x} \leq R} \abs{T_n \star \phi(x)} \to 0$ lorsque $n \to \infty$, alors il existe $\eta > 0$ et $(x_n)$ une suite de $\overline{B(0,R)}$ tels que $\abs{T_n \star \phi(x_n)} > \eta$ pour tout $n \geq 1$. Comme $\overline{B(0,R)}$ est compacte, il existe une sous-suite $(x_{\varphi(n)})$ convergeant vers $x^*$ et alors
+            \begin{align*}
+                \abs{T_{\varphi(n)} \star \phi(x^*)} 
+                &\geq \abs{T_{\varphi(n)} \star \phi(x_{\varphi(n)})} - \abs{T_{\varphi(n)} \star \phi(x_{\varphi(n)}) - T_{\varphi(n)} \star \phi(x^*)} \\
+                &\geq \eta - N \abs{x^* - x_{\varphi(n)}} \max_{1 \leq j \leq N} \sup_{\abs{y} \leq R} \abs{T_n \star \partial_j \phi(y)} \\ 
+                &\geq \geq \eta - N \abs{x^* - x_{\varphi(n)}} \max_{1 \leq j \leq N} C \max_{\abs{\alpha} \leq p} \sup_{\abs{z} \leq R} \abs{T_n \star \partial^{\alpha}\partial_j \phi(z)} \\
+                &\geq \eta - C' \abs{x^* - x_{\varphi(n)}} \geq \frac{\eta}{2}
+            \end{align*}
+            avec $C' = NC \max_{1 \leq j \leq N} \max_{\abs{\alpha} \leq p} \sup_{\abs{z} \leq R} \abs{T_n \star \partial^{\alpha}\partial_j \phi(z)}$, la deuxième inégalité découlant du théorème des accroissements finis et la troisième de l’estimation uniforme sur $T_n \star \phi$. Il y a donc une contradiction, donc on a bien convergence uniforme sur $\overline{B(0,R)}$ pour tout $R > 0$.
+        \end{demo}
+
+    \subsection{Nouvelles opérations sur les distributions}
+
+        La densité de $\mathcal{C}^{\infty}$ dans l’espace des distributions introduit ci-dessus (théorème \ref{theo:densiteCcinfdansDprime}) va nous permettre de définir de nouvelles opérations sur les distributions.
+
+        \subsubsection{Produit tensoriel de deux distributions}
+
+        On ne peut pas définir de façon générale le produit de deux distributions. Toutefois, on peut tout de même effectuer ce produit dans le cas de distributions aux variables différentes, à l’aide du produit tensoriel.
+
+        \begin{omed}{Définition (produit tensioriel de deux distributions)}
+            Soient $\Omega_1 \subset \mathbf{R}^m$ et $\Omega_2 \subset \mathbf{R}^n$ deux ouverts, et $S \in \mathcal{D}'(\Omega_1)$ et $T \in \mathcal{D}'(\Omega_2)$ deux distributions. On définit la distribution $S \otimes T$ sur l’ouvert $\Omega_1 \times \Omega_2$ de $\mathbf{R}^m \times \mathbf{R}^n$ par la formule
+            \[ \spr{S \otimes T}{\phi} = \spr{S}{\spr{T}{\phi(x_1, \cdot)}} = \spr{T}{\spr{S}{\phi(\cdot, x_2)}} \]    
+            pour toute fonction test $\phi \in \mathcal{D}(\Omega_1 \times \Omega_2)$.
+        \end{omed}
+
+        On peut vérifier que ces deux définitions sont bien équivalentes, et définissent bien une distribution, ce que l’on admettra ici.
+
+        \subsubsection{Composition d’une distribution et d’une fonction test}
+
+        Dans la section précédente, nous nous sommes attardés sur le produit de composition entre une distribution $T \in \mathcal{D}'(V)$ par un difféomorphisme $\chi : U \to V$ de classe $\mathcal{C}^{\infty}$, où $U$ et $V$ sont deux ouverts de $\mathbf{R}^N$.
+
+        Plus généralement, nous allons définir le produit de composition d’une distribution $T \in \mathcal{D}'(V)$ par une application $f : U \to V$ de classe $\mathcal{C}^{\infty}$ entre deux ouverts $U$ et $V$ de $\mathbf{R}^N$ et $\mathbf{R}^n$ respectivement, avec $n < N$. Nous traiterons ici du cas $n = 1$, qui est le plus important.
+
+        Supposons dans un premier temps que pour un certain $x_0 \in U$, $\partial_{x_1}f(x_0) \neq 0$, et considérons l’application 
+        \[ F : U \to \mathbf{R}^N, x \mapsto \left(f(x), x_2, \ldots, x_N\right) \]   
+        qui est de classe $\mathcal{C}^{\infty}$ sur $U$ et de matrice jacobienne 
+        \[ J_F(x) = \begin{bmatrix}
+            \partial_{x_1} f(x) & * \\
+            0 & I_{N-1}
+        \end{bmatrix} \quad \forall x \in U \]
+        Cette matrice est inversible en $x_0$, donc il existe un voisinage ouvert $O_{x_0}$ de $x_0$ dans $U$ tel que $F$ induise un $\mathcal{C}^{\infty}$-difféomorphisme de $O_{x_0}$ sur $F(O_{x_0})$ qui est ouvert dans $V \times \mathbf{R}^{N-1}$. 
+
+        Pour toute distribution $T \in \mathcal{D}'(V)$, on définit $T \circ f \in \mathcal{D}'(O_{x 0})$  par la formule 
+        \[ T \circ f = \left(T \otimes \mathbb{1}_{\mathbb{R^{N-1}}}\right) \circ F \]  
+
+        Lorsque $T$ est de la forme $T_u$ où $u$ est une fonction localement intégrable sur $V$, pour toute fonction test $\phi \in \mathcal{D}(O_{x_0})$, la formule du changement de variable pour les distributions (\ref{def:changementvariableRNRN}) montre que 
+        \begin{align*}
+            \spr{T_u \circ f}{\phi}
+            &= \spr{T_u \otimes \mathbb{1}_{\mathbb{R^{N-1}}}}{F_* (\phi)} \\
+            &= \int_{F(O_{x_0})} (u \otimes \mathbb{1}_{\mathbb{R^{N-1}}})(y) \phi(F^{-1}(y)) \abs{\det(J_F(F^{-1}(y)))}^{-1} dy \\
+            &= \int_{O_{x_0}} \left((u \otimes \mathbb{1}_{\mathbb{R^{N-1}}}) \circ F \right)(x)\phi(x) dx \\
+            &= \int_{O_{x_0}} u(f(x)) \phi(x) dx = \spr{T_{u \circ f}}{\phi}
+        \end{align*}
+        ce qui est bien le résultat attendu par composition sur les fonctions.
+
+        Supposons désormais que $\partial_{x_1} f(x) \neq 0$ pour tout $x \in U$. On peut associer à chaque point $x \in U$ un voisinage ouvert $O_{x}$ de $x$ tel que $T \circ f$ définisse une distribution sur $O_x$ pour tout $T \in \mathcal{D}'(V)$ que l’on notera $T_x$.
+
+        La famille de distributions $(T_x)_{x \in U}$ vérifie les hypothèses du principe de recollement (\ref{prop:principerecollement}), donc il existe une unique distribution $T \circ f$ sur $U$ telle que 
+        \[ T \circ f \big|\vphantom{|}_{O_x} = T_x \quad \forall x \in U \]
+
+        Plus généralement, on suppose que $\text{d}f(x) \neq 0$ pour tout $x \in U$, et on pose 
+        \[ U_k := \left\{x \in U \middle| \partial_{x_k} f(x) \neq 0\right\} \quad k \in \intEN{1}{N} \]   
+        qui sont des ouverts (comme image réciproque de $\mathbf{R}^*$ par les applications continues $\partial_{x_k}f$). Comme $\text{d}f$ ne s’annule en aucun point de $U$, 
+        \[ U \subset \bigcup_{k=1}^N U_k \]
+        Soit $K \subset \mathbf{U}$ un compact de $\mathbf{R}^N$, et une partition $\psi_1, \ldots, \psi_N$ subordonnée au recouvrement de $K$ formé des ouverts $U_1, \ldots, U_N$, \textit{i.e.} 
+        \[ \psi_{k} \in \mathcal{D}(U_k) \quad \text{et} \quad \psi_k \geq 0 \quad \forall k \in \intEN{1}{N} \]   
+        et $\sum_{k=1}^N \psi_k = 1$ sur un voisinage ouvert de $K$. 
+
+        Pour toute fonction test $\phi \in \mathcal{D}(U)$ à support compact inclus dans $K$, on a alors $\phi = \sum_{k=1}^N \psi_k \phi$, et on définit donc 
+        \[ \spr{T \circ f}{\phi} = \sum_{k=1}^N \spr{T \circ f \big|\vphantom{|}_{U_k}}{\psi_k \phi} \]   
+
+        Par le procédé décrit précédemment sur $U_1$, on pose sur chaque $U_k$ la fonction 
+        \[ F_k : U_k \ni x \mapsto F_k(x) = (x_1, \ldots, x_{k-1}, f(x), \ldots, x_N) \in \mathbf{R}^N \]   
+        qui admet le déterminant jacobien par blocs, pour $x \in U_k$,
+        \[ \det(J_{F_k}(x)) = \begin{vmatrix}
+            I_{k - 1} & & \\
+            & \partial_{x_k} f(x) & \\
+            & & I_{N-k}
+        \end{vmatrix} = \partial_{x_k}f(x) \neq 0 \]   
+        On définit alors l’élément de $\mathcal{D}'(U_k)$ 
+        \[ T \circ f \big|\vphantom{|}_{U_k} = \left(\mathbb{1}_{\mathbf{R}^{k-1}}\otimes T \otimes \mathbb{1}_{\mathbf{R}^{N-k}}\right)  \circ F_k \]   
+        
+        Finalement, on a l’écriture 
+        \[ T \circ f = \sum_{k=1}^N \psi_k \left(\mathbb{1}_{\mathbf{R}^{k-1}}\otimes T \otimes \mathbb{1}_{\mathbf{R}^{N-k}}\right)  \circ F_k \]   
+        sur $\mathcal{D}'(U)$. On admettra que cette définition ne dépend pas du choix de la partition de l’unité $\psi_1, \ldots, \psi_N$, ni de celui des difféomorphismes $F_k$.
+
+    \subsection{Produit de convolution des distributions}
+
+        Nous avons précédemment définit le produit de convolution entre une fonction $\mathcal{C}_c^{\infty}$ et une distribution, qui donnait une fonction de classe $\mathcal{C}^{\infty}$. Nous allons étendre ce produit au cas de deux distributions par un argument de tranposition pour la dualité $\mathcal{E}'-\mathcal{C}^{\infty}$.
+
+        Pour toute distribution $T \in \mathcal{D}'(\mathbf{R}^N)$, on notera $\tilde{T}$ la composée de $T$ avec l’antipodie $x \mapsto -x$, \textit{i.e.}
+        \[ \tilde{T} = T \circ (-\text{id}_{\mathbf{R}^N}) \]   
+        qui est telle que, pour toute fonction test $\phi \in \mathcal{D}(\mathbf{R}^N)$, $\spr{\tilde{T}}{\phi} = \spr{T}{\tilde{phi}}$.
+
+        \begin{omed}{Définition (produit de convolution $\mathcal{D}' \star \mathcal{E}'$)}
+            Pour tout $T \in \mathcal{D}'(\mathbf{R}^N)$ et tout $S \in \mathcal{E}'(\mathbf{R}^N$), on définit le produit de convolution $T \star S \in \mathcal{D}'(\mathbf{R}^N)$ par la formule 
+            \[ \spr{T \star S}{\phi} = \spr{T}{\tilde{S} \star \phi} \]   
+            pour toute fonction test $\phi \in \mathcal{D}(\mathbf{R}_N)$.
+        \end{omed}
+
+        Cette définition s’accompagne, comme dans le cas de la convolution entre une fonction test et une distribution, d’une majoration du support :
+
+        \begin{omed}{Proposition (majoration du support)}
+            Pour toutes distributions $T \in \mathcal{D}'(\mathbf{R}^N)$ et $S \in \mathcal{E}'(\mathbf{R}^N)$, 
+            \[ \text{supp}(T \star S) \subset \text{supp}(T) + \text{supp}(S) \]  
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            $\text{supp}(T) + \text{supp}(S)$ est fermé dans $\mathbf{R}^N$ car $\text{supp}(S)$ est compact par hypothèse et $\text{supp}(T)$ est fermé par définition.
+
+            Soient $O = \mathbf{R}^N \backslash (\text{supp}(T) + \text{supp}(S))$ et $\phi \in \mathcal{D}(\mathbf{R}^N)$ à support inclus dans l’ouvert $O$. $\tilde{S} \star \phi$ est une fonction de classe $\mathcal{C}^{\infty}$ à support dans 
+            \[ \text{supp}(\tilde{S}) + \text{supp}(\phi) \]    
+            Or 
+            \[ \text{supp}(T) \cap \left(\text{supp}(\tilde{S}) + \text{supp}(\phi)\right) = \emptyset \]   
+            donc 
+            \[ \spr{T \star S}{\phi} = \spr{T}{\tilde{S} \star \phi} = 0 \]   
+            d’où la majoration annoncée.
+        \end{demo}
+
+        Remarquons que la définition aurait très bien pu prendre la forme 
+        \[ \spr{S \star T}{\phi} = \spr{S}{\tilde{T} \star \phi} \]   
+        puisque $\tilde{T} \star \phi$ est une fonction de $\mathcal{E}(\mathbf{R}^N)$ et $S$ une distribution à support compact $\mathcal{E}'(\mathbf{R}^N)$. La définition garde donc un sens grâce à l’extension de la dualité de $\mathcal{E}'$ à $\mathcal{C}^{\infty}(\mathbf{R}^N)$.
+
+        \begin{omed}{Proposition (commutativité du produit de convolution)}
+            Soient $T \in \mathcal{D}'(\mathbf{R}^N)$ et $S \in \mathcal{E}'(\mathbf{R}^N)$ deux distributions. 
+            \begin{enumerate}[label=($p_{\arabic*}$)]
+                \item pour toute fonction test $\phi \in \mathcal{D}(\mathbf{R}^N)$, 
+                \[ \spr{S}{\tilde{T} \star \phi} = \spr{T}{\tilde{S} \star \phi} \] 
+                \item si on définit la distribution $S \star T$ par la formule 
+                \[ \spr{S \star T}{\phi} = \spr{S}{\tilde{T} \star \phi} \]   
+                pour toute fonction test $\phi \in \mathcal{D}(\mathbf{R}^N)$,  alors $S \star T = T \star S$.
+            \end{enumerate}
+        \end{omed}
+
+        \begin{omed}{Théorème (continuité séquentielle de la convolution)}
+            Soient des suites de distributions $(T_n)$ de $\mathcal{D}'(\mathbf{R}^N)$ et $(S_n)$ de $\mathcal{E}'(\mathbf{R}^N)$ telles que, dans $\mathcal{D}'(\mathbf{R}^N)$,
+            \[ T_n \underset{n \to \infty}{\longrightarrow} T \quad \text{et} \quad S_n \underset{n \to \infty}{\longrightarrow} S\]   
+            On suppose qu’il existe un compact $K \subset \mathbf{R}^N$ tel que, pour tout $n \in \mathbf{N}*$, 
+            \[ \text{supp}(S_n ) \subset K \]   
+            Alors 
+            \[ T_n \star S_n \underset{n \to \infty}{\longrightarrow} T \star S \quad \text{dans } \mathcal{D}'(\mathbf{R}^N) \]   
+        \end{omed}
