@@ -335,9 +335,13 @@ INPUT ./PHY/Quantique/Moment_cinetique_intrinseque.tex
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./PHY/Quantique/Atome_hydrogene.tex
 INPUT ./_Images/poly-filet-colorless.pdf
+INPUT ./PHY/Quantique/Magnetique.tex
+INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./PHY/Quantique/Particules_indiscernables.tex
 INPUT ./_Images/poly-filet-colorless.pdf
-INPUT ./PHY/Quantique/Magnetique.tex
+INPUT ./PHY/Quantique/Operateurs_particules_identiques.tex
+INPUT ./_Images/poly-filet-colorless.pdf
+INPUT ./PHY/Quantique/Opérateur_champ.tex
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./PHY_Quantique.aux
 INPUT ./PHY_Quantique.out

@@ -1,0 +1,48 @@
+\section{Opérateur champ}
+
+    Cette section a pour objectif de généraliser l’usage des espaces de Fock aux cas d’espaces de bases continues.
+
+    \subsection{Définition de l’opérateur champ}
+
+    L’\textbf{opérateur champ} est défini comme opérateur d’annihilation $\hat{a}_{k}$, mais relatif à une base d’états individuels faisant intervenir l’indice de position continu $\mathbf{r}$ plutôt qu’un indice discret $k$. La relation de changement de base discrète (d’une base $\left\{\ket{u_k}\right\}$ à $\left\{v_{\ell}\right\}$) est :
+    \[ \hat{a}_{v_{\ell}} = \sum_{k} \spr{v_{\ell}}{u_k} \hat{a}_{u_k} \]   
+
+        \subsubsection{Définition}
+
+        On commence par définir l’opérateur champ pour des particules sans spin avant de généraliser.
+
+            \paragraph{Particules sans spin}
+
+            Considérons la base des positions $\left\{\ket{\mathbf{r}}\right\}$. L’opérateur $\hat{a}_{\ell}$ devient alors un opérateur dépendant d’un indice continu $\mathbf{r}$. La notation que nous utiliserons est $\Psi(\mathbf{r})$, que nous définissons par analogie au cas discret, en posant $u_k(\mathbf{r}) = \spr{\mathbf{r}}{u_k}$ :
+            \[ \Psi(\mathbf{r}) = \sum_{k} u_k(\mathbf{r}) \hat{a}_{k} \]
+            De la même façon que l’opérateur $\hat{a}_{\ell}$ annihile une particule dans l’état $\ket{v_{\ell}}$, l’opérateur $\Psi(\mathbf{r})$ annihile une particule au point $\mathbf{r}$. 
+
+            Son conjugué hermitique est l’opérateur de création d’une particule au point $\mathbf{r}$, et a pour expression 
+            \[ \Psi^{\dagger}(\mathbf{r}) = \sum_{k} u_k^*(\mathbf{r}) \hat{a}_k^{\dagger} \]   
+            On peut vérifier son action sur le ket vide :
+            \begin{align*}
+                \Psi^{\dagger}(\mathbf{r})\ket{0} 
+                &=  \sum_{k} u_k^*(\mathbf{r}) \hat{a}_k^{\dagger} \ket{0} \\
+                &=  \sum_{k} u_k^*(\mathbf{r}) \ket{u_k} \\
+                &=  \sum_{k} \ket{u_k} \spr{u_k}{\mathbf{r}} \\
+                &= \ket{\mathbf{r}}
+            \end{align*}
+
+            On peut inverser les formules pour obtenir l’expression des opérateurs initiaux :
+            \begin{align*}
+                \int d^3 r u_k^*(\mathbf{r}) \Psi(\mathbf{r}) 
+                &= \int d^3 r u_k^*\mathbf{r} \sum_{k'} u_{k'}(\mathbf{r}) \hat{a}_{k'} \\
+                &= \sum_{k'} \delta_{kk'} \hat{a}_{k'} \\
+                &= \hat{a}_{k} \\
+                \int d^3 r u_k(\mathbf{r}) \Psi^{\dagger}(\mathbf{r}) 
+                &= \hat{a}_k^{\dagger}
+            \end{align*}
+
+            \paragraph{Particules à spin}
+
+            On se place désormais dans la base $\left\{\ket{\mathbf{r}, \nu}\right\}$ où $\nu$ est l’inde de spin qui peut prendre $2 S + 1$ valeurs discrètes distinctes entre $-S$ et $S$. On doit donc maintenant ajouter une sommation sur les valeurs de l’indive $\nu$ de spin :
+            \[ \ket{u_i} = \sum_{\nu = -S}^S \int d^3r u_k(\mathbf{r}, \nu) \ket{\mathbf{r}, \nu} \]
+            où $u_k(\mathbf{r}, \nu) = u_k^{\nu}(\mathbf{r}) = \spr{\mathbf{r}, \nu}{u_k}$. La seconde écriture permet de se rappeler que $\mathbf{r}$ et $\nu$ ne jouent pas le même rôle car l’un est continu et l’autre discret. De façon inverse, on a 
+            \[ \Psi_{\nu}(\mathbf{r}) = \sum_{k} u_k^{\nu}(\mathbf{r}) \hat{a}_{k} \]   
+            Cet opérateur champ à composante de spin détruit une particule de spin $\nu$ au point $\mathbf{r}$. Son conjugué hermitique créé une telle particule, avec l’expression 
+            \[ \Psi_{\nu}^{\dagger}(\mathbf{r}) = \sum_{k} u_k^{\nu *}(\mathbf{r}) \hat{a}^{\dagger}_{k} \]

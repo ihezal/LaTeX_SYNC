@@ -1,0 +1,126 @@
+\section{Opérateurs de création et d’annihilation pour des particules identiques}
+
+    \subsection{Formalisme général}
+
+        
+
+        \subsubsection{États et espace de Fock}
+
+        Considérons l’espace de Hilbert 
+        \[ \mathcal{E}_N = \bigotimes_{k \in \intEN{1}{N}} \mathcal{E}_1^{(k)} \]
+        associé aux états d’un système de $N$ particules identiques \textit{discernables}. $\mathcal{E}_1$ décrit l’état d’une de ces particules, et admet la base $\left\{\ket{u_k}\right\}$ de dimension éventuellement infinie.
+
+        \begin{omed}{Remarque}
+            Dans ce chapitre, nous aurons à distinguer :
+            \begin{itemize}
+                \item les indices des vecteurs de la base $\left\{\ket{u_k}\right\}$ de l’espace $\mathcal{E}_1$, que nous repérerons par $\mathbf{i} = (i_1, \ldots, i_N)$ où $i_k \in \intEN{1}{\text{dim}(\mathcal{E}_1)}$ ;
+                \item les indices des nombres d’occupation non-nuls repérés par $\mathbf{j} = (j_1, \ldots, j_J)$ ;
+                \item les indices des particules numérotées, que nous repérerons par la permutation de $\intEN{1}{N}$ $\alpha = (\alpha_1, \ldots, \alpha_N)$.
+            \end{itemize} 
+        \end{omed}
+
+        Construisons une base de l’espace des états à $N$ particules $\mathcal{E}_N$ à partir des kets de la forme 
+        \[ \left\{\ket{1 : u_{i_1}, \ldots, N : u_{i_N}}\right\}_{\mathbf{i}} \]
+        L’espace physique des états est l’un des sous-espaces $\mathcal{E}_S(N)$ (cas des bosons) ou $\mathcal{E}_{A}(N)$ (cas des fermions), on applique les opérateurs $\hat{\mathcal{S}}$ ou $\hat{\mathcal{A}}$ à l’ensemble des kets de la base  pour obtenir une base du système réel. 
+        
+        En prenant par exemple un vecteur $\ket{\varphi}$ quelconque de $\mathcal{E}_S$, on a
+        \[ \ket{\varphi} = \sum_{\mathbf{i}} a_{\mathbf{i}} \ket{1 : u_{i_1}, \ldots, N : u_{i_N}} \]
+        Or $\hat{\mathcal{S}}_N \ket{\varphi} = \ket{\varphi}$ donc 
+        \[ \ket{\varphi} = \sum_{\mathbf{i}} a_{i} \hat{\mathcal{S}}_N \ket{1 : u_{i_1}, \ldots, N : u_{i_N}} \]
+        Le ket $\ket{\varphi}$ s’exprime donc en fonction des divers kets $\hat{\mathcal{S}}_N \ket{1 : u_{i_1}, \ldots, N : u_{i_N}}$. Or ces kets ne sont pas indépendants. On introduit alors le \textbf{nombre d’occupation} $n_{k}$ d’un état individuel $\ket{u_k}$ comme le nombre d’apparition de cet état dans le ket $\ket{1 : u_{i_1}, \ldots, N : u_{i_n}}$ (avec $\sum_k n_k = N$). Deux kets différents pour lesquels les nombres d’occupation sont similaires peuvent s’obtenir par permutation, et donnent après action des opérateurs symétriseur ou antisymétriseur le même état physique, noté $\ket{n_{1}, \ldots, n_{\text{dim}(\mathcal{E}_1)}}$.
+
+        De façon générale, certains des $n_k$ sont nuls. Il est donc commode de ne spécifier que les nombres d’occupation non nuls, que l’on repèrera par $\mathbf{j} = (j_1, \ldots, j_J)$ de dimension $J$ égale au nombre de nombres d’occupation non-nuls.
+
+            \paragraph{Pour des bosons identiques}
+
+            Dans le cas des bosons, les vecteurs de base de l’espace $\mathcal{E}_S(N)$ s’écrivent selon la formule 
+            \[ \ket{n_{j_1}, \ldots, n_{j_J}} = c_{\mathbf{j}} \hat{\mathcal{S}}_N \ket{1 : u_{j_1}, \ldots, n_{j_1} : u_{j_1}, n_{j_1} + 1 : u_{j_2}, \ldots n_{j_1} + n_{j_2} : u_{j_2} \ldots} \]
+            où $c_{\mathbf{j}}$ est un coefficient de normalisation. Le membre de droite comprend $N!$ termes provenant de chacune des permutations figurant dans $S_N$. Toutes les permutations $\hat{P}_{\alpha}$ qui conduisent à une redistribution des $n_{j_1}$ premières particules entre elles, des $n_{j_2}$ particules suivantes entre elles,\dots redonnent le ket initial (et sont au nombre de $n_{j_1}!\cdots n_{J}!$). En revanche, avec toutes les permutations qui changent l’état individuel d’au moins une particule, on obtient un ket distinct et orthogonal au ket initial (il y en a $\frac{N!}{n_{j_1}!\cdots n_{J}!}$ différentes, chacunes  répétées $n_{j_1}!\cdots n_{J}!$ fois). La constante de normalisation est donc 
+            \[ c_{\mathbf{j}} = \sqrt{\frac{N!}{n_{j_1}!\cdots n_J!}} \]
+            On appelle \textbf{états de Fock} les états ainsi obtenus.
+
+            \paragraph{Pour des fermions identiques}
+
+            Pour des fermions, en appliquant l’opérateur $\hat{\mathcal{A}}_N$ à un ket où deux (ou plus) particules occupent le même état individuel, le résultat est nul : aucun état n’est obtenu dans l’espace physique $\mathcal{E}_A(N)$. Ainsi, les nombres d’occupation valent toujours 1 ou 0, et $J = N$ :
+            \[ \ket{u_{j_1}, \ldots, u_{j_N}} = \sqrt{N!} \hat{\mathcal{A}}_N \ket{1 : u_{j_1}, 2 : u_{j_2}, \ldots, N : u_{j_N}} \]
+            Ici, la donnée des nombres d’occupation ne rentre plus vraiment en compte, il s’agit surtout de savoir si un état est occupé ou non.
+
+            \paragraph{Espace de Fock}
+
+            Les \textbf{espaces de Fock} constituent les briques élémentaires de l’étude de particules bosoniques ou fermioniques :
+            \begin{align*}
+                \mathcal{E}_S^{\text{Fock}} &= \bigoplus_{n} \mathcal{E}_S(n) \\
+                \mathcal{E}_A^{\text{Fock}} &= \bigoplus_{n} \mathcal{E}_A(n) \\
+            \end{align*}
+            Pour les bosons comme les fermions, une base orthonormée de l’espace de Fock est obtenue en prenant les états de Fock $\ket{n_1, n_2, \ldots}$ pour des nombres d’occupation pouvant prendre n’import quelles valeurs. Certains des vecteurs de l’espace de Fock comme les superpositions linéaires de kets contenant un nombre de particules différentes n’ont pas de signification physique particulière, et seront utilisés comme simples intermédiaires de calcul.
+
+        \subsubsection{Opérateurs de création $\hat{a}^{\dagger}$}
+
+        Pour une base donnée d’états individuels $\left\{\ket{u_k}\right\}$, on définit dans l’espace de Fock l’\textbf{opérateur de création} $\hat{a}_{u_k}^{\dagger}$ d’une particule dans l’état $\ket{u_k}$
+
+            \paragraph{Bosons}
+
+            L’action de l’opératieur linéaire $\hat{a}_{u_k}^{\dagger}$ est :
+            \[ \hat{a}_{u_k}^{\dagger} \ket{n_1, \ldots, n_k, \ldots} = \sqrt{n_k + 1} \ket{n_1, \ldots, n_k + 1, \ldots} \]   
+            Cet opérateur est bien défini dans l’espace de Fock, et fait passer un ket de l’espace $\mathcal{E}_{S}(N)$ à l’espace $\mathcal{E}_{S}(N+1)$. Les opérateurs de création permettent d’exprimer les états à partir l’état vide $\ket{0}$ de $\mathcal{E}_{S}(0)$ :
+            \[ \ket{n_1, \ldots, n_k, \ldots} = \frac{1}{\sqrt{n_1!\cdots n_k!\cdots}} \left(\hat{a}_{u_1}^{\dagger}\right)^{n_1} \cdots \left(\hat{a}_{u_k}^{\dagger}\right)^{n_k}\cdots \ket{0} \]
+
+            \paragraph{Fermions}
+
+            L’action de l’opérateur linéaire $\hat{a}_{u_k}^{\dagger}$ est :
+            \[ \hat{a}_{u_k}^{\dagger} \ket{u_{j_1}, \ldots u_{j_J}} = \ket{u_k, u_{j_1}, \ldots, u_{j_J}} \]   
+            Si l’état individuel $\ket{u_k}$ est déjà présent une fois dans l’état de Fock, alors l’opération de $\hat{a}_{u_k}^{\dagger}$ aboutit au ket nul $\ket{0}$. Les relations précédemments formulées pour des bosons sont également valable pour les fermions, à la condition que les nombres d’occupation valent 0 ou 1.
+
+        \subsubsection{Opérateur d’annihilation $\hat{a}$}
+
+        L’opérateur hermitique conjugué de $\hat{a}_{u_k}^{\dagger}$, noté $\hat{a}_{u_k}$, est l’\textbf{opérateur d’annilihation} d’une particule, afin que l’application des deux opérateurs successivement nous ramène à l’état initial.
+
+            \paragraph{Bosons}
+
+            La formule de création pour $\hat{a}_{u_k}^{\dagger}$ nous informe que ses seuls éléments de matrice non nuls sont :
+            \[ \bra{n_1, \ldots, n_k + 1, \ldots} \hat{a}_{u_k}^{\dagger} \ket{n_1, \ldots, n_k, \ldots} = \sqrt{n_k + 1} \]   
+            On en déduit que les éléments non nuls de la matrice de $\hat{a}_{u_k}$ sont :
+            \[ \bra{n_1, \ldots, n_k, \ldots} \hat{a}_{u_k} \ket{n_1, \ldots, n_k + 1, \ldots} = \sqrt{n_k + 1} \]  
+            La base étant complète, on en déduit l’action de $\hat{a}_{u_k}$ sur les kets de l’espace de Fock :
+            \[ \hat{a}_{u_k} \ket{n_1, \ldots, n_k} = \sqrt{n_k} \ket{n_1, \ldots, n_k - 1} \]    
+            Cet opérateur donne le ket $\ket{0}$ s’il est appliqué à un état de Fock où aucune particule n’est dans l’état $\ket{u_k}$.
+
+            \paragraph{Fermions}
+
+            De la même façon que dans le cas des bosons, on peut expliciter les seuls éléments de matrice non nuls de $\hat{a}_{u_k}^{\dagger}$ :
+            \[ \bra{u_k, u_{j_1}, \ldots, u_{j_J}} \hat{a}_{u_k}^{\dagger} \ket{u_{j_1}, \ldots, u_{j_J}} = 1 \] 
+            L’action de conjugaison hermitique donne alors l’action de l’opérateur d’annihilation correspondant :
+            \[ \hat{a}_{u_k}^{\dagger} \bra{u_k, u_{j_1}, \ldots, u_{j_J}} = \ket{u_{j_1}, \ldots, u_{j_J}} \]   
+            Si l’état $\ket{u_k}$ n’est pas occupé, alors on obtient le ket $\ket{0}$. Les formules obtenues pour les bosons restent vraies dans le cas des formions, avec toujours la même contrainte sur les nombres d’occupation valant 0 ou 1. 
+
+            Remarquons que si l’état $\ket{u_k}$ est occupé mais n’est pas en première position, il faut l’y amener par une permutation impaire, ce qui cause l’apparition d’un changement de signe. Par exemple, 
+            \[ \hat{a}_{u_2} \ket{u_1, u_2} = - \ket{u_1} \]   
+
+        \subsubsection{Opérateur nombre d’occupation $\hat{n}$}
+
+        On définit l’opérateur $\hat{n}_{u_k}$ par 
+        \[ \hat{n}_{u_k} = \hat{a}_{u_k}^{\dagger} \hat{a}_{u_k} \]   
+        Pour des bosons et des fermions, on constate avec les formules que cet opérateur redonne le même état de Fock, multiplié par son nombre d’occupation $n_k$. Les vecteurs propres de l’opérateur $\hat{n}_{u_k}$ sont donc les états de Fock, associés aux valeurs propres qui sont le nombre d’occupation $n_k$ correspondant. L’opérateur $\hat{N}$ associé au nombre total de particules est donc simplement la somme 
+        \[ \hat{N} = \sum_{k} \hat{n}_{u_k} = \sum_{k}  \hat{a}_{u_k}^{\dagger} \hat{a}_{u_k} \]
+
+        \subsubsection{Relations de commutation et anticommutation}
+
+        Les opérateurs de création et d’annihilation possèdent des propriétés de commutation (pour les bosons) ou d’anticommutation (pour les fermions) plutôt simples. On notera pour simplifier $\hat{a}_i := \hat{a}_{u_i}$ lorsqu’il n’y a pas d’ambiguïté.
+
+            \paragraph{Bosons}
+
+            On obtient après calculs que 
+            \begin{align*}
+                [\hat{a}_i, \hat{a}_j] &= 0 \\
+                [\hat{a}_i^{\dagger}, \hat{a}_j^{\dagger}] &= 0 \\
+                [\hat{a}_i, \hat{a}_j^{\dagger}] &= \delta_{ij} \\
+            \end{align*}
+
+            \paragraph{Fermions}
+
+            On obtient après calculs que 
+            \begin{align*}
+                \{\hat{a}_i, \hat{a}_j\} &= 0 \\
+                \{\hat{a}_i^{\dagger}, \hat{a}_j^{\dagger}\} &= 0 \\
+                \{\hat{a}_i, \hat{a}_j^{\dagger}\} &= \delta_{ij} \\
+            \end{align*}

@@ -18,27 +18,91 @@
     \end{align*}
     Il faut donc introduire un nouveau postulat de physique quantique permettant de différencier ces systèmes.
 
-    \subsection{Postulat de symétrisation}
+    \subsection{Opérateurs de permutation}
 
-        \subsubsection{Opérateur d’échange}
+        \subsubsection{Système de deux particules}
 
-        Considérons deux particules indiscernables appelées 1 et 2 et plaçons-nous dans l’espace produit $\mathcal{E}_H = \mathcal{E}_1 \otimes \mathcal{E}_2$. On introduit l’\textbf{opérateur d’échange} $\hat{P}_{12}$ qui échange l’état des deux particules. 
+        Considérons deux particules indiscernables appelées 1 et 2 et plaçons-nous dans l’espace produit $\mathcal{E}_H = \mathcal{E}_1 \otimes \mathcal{E}_2$.
 
-        On a évidemment que cet opérateur est involutif : $\hat{P}_{12} = \hat{I}$, et qu’il est auto-adjoint. Il est par conséquent unitaire, de valeurs propres $\pm 1$, respectivement associées aux \textbf{états symétriques} et aux \textbf{états antisymétriques}.
+            \paragraph{Opérateur d’échange}
 
-        \subsubsection{Opérateurs de symétrisation}
+            On introduit l’\textbf{opérateur d’échange} $\hat{P}_{21}$ qui échange l’état des deux particules. 
 
-        On considère les projecteurs sur les deux sous-espaces propres de l’opérateur d’échange, respectivement les opérateurs \textbf{symétrisation} $\hat{\mathcal{S}}$ et \textbf{antisymétrisation} $\hat{\mathcal{A}}$, définis par les relations
+            On a évidemment que cet opérateur est involutif : $\hat{P}_{21} = \hat{I}$, et qu’il est auto-adjoint. Il est par conséquent unitaire, de valeurs propres $\pm 1$, respectivement associées aux \textbf{états symétriques} et aux \textbf{états antisymétriques}.
+
+            \paragraph{Opérateurs de symétrisation}
+
+            On considère les projecteurs sur les deux sous-espaces propres de l’opérateur d’échange, respectivement les opérateurs \textbf{symétrisation} $\hat{\mathcal{S}}$ et \textbf{antisymétrisation} $\hat{\mathcal{A}}$, définis par les relations
         \begin{align*}
-            \hat{\mathcal{S}} &= \frac{\hat{I} + \hat{P}_{12}}{2} \\
-            \hat{\mathcal{S}} &= \frac{\hat{I} - \hat{P}_{12}}{2} \\
+            \hat{\mathcal{S}} &= \frac{\hat{I} + \hat{P}_{21}}{2} \\
+            \hat{\mathcal{S}} &= \frac{\hat{I} - \hat{P}_{21}}{2} \\
         \end{align*}
 
-        \subsubsection{Invariance de l’hamiltonien}
+            \paragraph{Invariance de l’hamiltonien}
 
-        Pour deux particules indiscernables, l’énergie du système doit rester inchangée leur de leur échange par $\hat{P}_{12}$. On peut voir l’action d’échange comme un invariant du système, ce qui nous donne la commutation entre l’opérateur d’échange et l’hamiltonien :
-        \[ \left[\hat{H}, \hat{P}_{12}\right] = 0 \]   
+            Pour deux particules indiscernables, l’énergie du système doit rester inchangée leur de leur échange par $\hat{P}_{21}$. On peut voir l’action d’échange comme un invariant du système, ce qui nous donne la commutation entre l’opérateur d’échange et l’hamiltonien :
+            \[ \left[\hat{H}, \hat{P}_{12}\right] = 0 \]  
 
+            \paragraph{Transformation des observables par permutation}
+
+            On considère une observable $\hat{B}_1$ définie initialement dans $\mathcal{E}_2$ et prolongée dans $\mathcal{E}_{H}$. On considère la base $\left\{\ket{u_k}\right\}$ de $\mathcal{E}_1$ constituée des vecteurs propres de $\hat{B}_1$. Calculons l’action de l’opérateur $\hat{P}_{21} \hat{B}_1 \hat{P}_{21}^{\dagger}$ sur un ket de cette base :
+            \begin{align*}
+                \hat{P}_{21} \hat{B}_1 \hat{P}_{21}^{\dagger} \ket{1 : u_i, 2 : u_j} 
+                &= \hat{P}_{21} \hat{B}_1 \ket{1 : u_j, 2 : u_i} \\
+                &= b_j \hat{P}_{21} \ket{1 : u_j, 2 : u_i} \\
+                &= b_j \ket{1 : u_i, 2 : u_j} \\
+            \end{align*}
+            On remarque alors que $\hat{B}_1 = \hat{B}_2$. De façon plus générale, on note $\hat{\mathcal{O}}(1,2)$ toute observable qui s’expriment comme addition ou produit d’observables agissant dans $\mathcal{E}_1$ ou $\mathcal{E}_2$ et $\hat{\mathcal{O}}(2,1) = \hat{P}_{21} \hat{\mathcal{O}}(1,2) \hat{P}_{21}^{\dagger}$ l’observable obtenue en inversant les actions des opérateurs entre les espaces $\mathcal{E}_1$ et $\mathcal{E}_2$. On dit qu’une observable $\hat{\mathcal{O}}(1,2)$ est \textit{symétrique} si $\hat{\mathcal{O}}(2,1) = \hat{\mathcal{O}}(1,2)$. Ces observables commutent avec l’opérateur de permutation.
+
+        \subsubsection{Système d’un nombre quelconque de particules}
+
+            Dans l’espace constitué de $N$ particules identiques, on peut définir $N!$ opérateurs de permutation, dont les propriétés sont plus complexes que celles de $\hat{P}_{21}$. 
+
+            \paragraph{Définition des opérateurs}
+
+            On considère un système de $N$ particules identiques. Il existe dans ce cas $N!$ opérateurs de permutation que nous noterons $\hat{P}_{\alpha}$ où $\alpha$ est une permutation, tels que
+            \[ \hat{P}_{\alpha}\ket{1 : \psi_1, \ldots, N : \psi_N} = \ket{\alpha_1 : \psi_1, \ldots, \alpha_N : \psi_N} \]
+
+            \paragraph{Propriétés}
+
+            L’ensemble des opérateurs de permutation constitue un groupe, non commutatif. Toute permutation peut être décomposé en un produit d’opérateurs de transposition (qui permutent uniquement deux états entre eux). On appelle alors \textit{parité} d’un opérateur de permutation le nombre de transpositions en lequel elle se décompose.
+
+            Les opérateurs de permutation sont unitaires (comme produit d’opérateurs translation unitaires) mais pas nécessairement hermitiques car les opérateurs de translation ne commutent pas nécessairement entre eux.
+
+            \paragraph{Kets complètement symétriques ou antisymétriques, symétriseur et antisymétriseur} 
+
+            Les opérateurs de permutation ne permutant pas pour $N > 2$, on ne peut pas construire une base formée de vecteurs propres communs à ces opérateurs. Toutefois, il existe des kets qui sont simultanément vecteurs propres de tous les opérateurs de permutation. 
+
+            \begin{omed}{Définition (kets complètement (anti-)symétriques)}
+                On appelle
+                \begin{itemize}
+                    \item ket \textbf{complèment symétrique} un ket $\ket{\psi_s}$ tel que, pour toute permutation $\alpha$,
+                    \[ \hat{P}_{\alpha}\ket{\psi_s} = \ket{\psi_s} \]
+                    \item ket \textbf{complèment antisymétrique} un ket $\ket{\psi_a}$ tel que, pour toute permutation $\alpha$,
+                    \[ \hat{P}_{\alpha}\ket{\psi_a} = \varepsilon_{\alpha} \ket{\psi_a} \]
+                    où $\varepsilon_{\alpha} = 1$ si $P_{\alpha}$ est une permutation paire et $\varepsilon_{\alpha} = -1$ sinon.
+                \end{itemize} 
+            \end{omed}
+
+            L’ensemble des kets complètement symétriques constitue un sous-espace vectoriel $\mathcal{E}_S$ de l’espace des états, et l’ensemble des kets complètement antisymétriques un sous-espace $\mathcal{E}_{A}$. Les projecteurs de l’espace des états sur les sous-espaces $\mathcal{E}_S$ et $\mathcal{E}_A$ sont respectivement 
+            \begin{align*}
+                \hat{\mathcal{S}} &= \frac{1}{N!} \sum_{\alpha} \hat{P}_{\alpha} \\
+                \hat{\mathcal{A}} &= \frac{1}{N!} \sum_{\alpha} \varepsilon_{\alpha} \hat{P}_{\alpha} \\
+            \end{align*}
+            Ces opérateurs, appelés \textbf{symétrisateur} et \textbf{antisymétrisateur}, sont hermitiques, et commutent avec les opérateurs permutations. En effet, si on considère une permutation $\alpha_0$, on remarque que l’ensemble des permutations $\hat{P}_{\beta} = \hat{P}_{\alpha_0} \hat{P}_{\alpha}$ nous redonne toutes les perturbations du groupe une à une. Ainsi,
+            \begin{align*}
+                \hat{P}_{\alpha_0} \hat{\mathcal{S}} = \frac{1}{N!} \sum{\beta} \hat{P}_{\beta} = \hat{\mathcal{S}} \\
+                \hat{P}_{\alpha_0} \hat{\mathcal{A}} = \frac{1}{N!} \sum{\beta} \hat{P}_{\beta} = \varepsilon_{\alpha_0} \hat{\mathcal{A}} \\
+            \end{align*}
+
+            \paragraph{Transformation des observables dans les permutations}
+
+            On peut définir les observables $\hat{\mathcal{O}}(1,\ldots,N)$ qui sont résultat d'additions ou produits d’observables agissant dans les espaces respectifs $\mathcal{E}_1, \ldots, \mathcal{E}_N$. On définit alors les opérateurs 
+            \[ \hat{\mathcal{O}}(\alpha_1, \ldots, \alpha_n) = \hat{P}_{\alpha} \hat{\mathcal{O}}(1,\ldots,N) \hat{P}_{\alpha}^{\dagger} \]   
+            Une observable sera dite dans ce cas complètement symétrique si celle-ci commute avec toutes les permutations $\hat{P}_{\alpha}$.
+
+        \subsection{Postulat de symétrisation}
+    
         \subsubsection{Énoncé}
 
         \begin{omed}{Postulat de symétrisation}
@@ -83,7 +147,8 @@
         \[ \hat{P}_{ab}\ket{\Psi} = (-1)^{N_f} \ket{\Psi} \] 
         \end{demo}
 
-    \subsection{Cas de deux particules indiscernables indépendantes}
+
+        \subsection{Cas de deux particules indiscernables indépendantes}
 
     On considère un système constitué de deux particules indiscernables indépendantes, ce qui signifie que son hamiltonien pourra s’écrire comme la somme de deux opérateurs agissant respectivement dans $\mathcal{E}^{(1)}$ et $\mathcal{E}^(2)$ :
     \[ \hat{H} = \hat{h}^{(1)} \otimes \hat{I}^{(2)} +  \hat{I}^{(1)} \otimes \hat{h}^{(2)} \]   
