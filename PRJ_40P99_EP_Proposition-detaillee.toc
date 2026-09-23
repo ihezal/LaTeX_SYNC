@@ -1,0 +1,16 @@
+\xpginauxfiletrue 
+\selectlanguage *{french}
+\contentsline {section}{1\hspace {1em}Motivation et enjeux}{2}{section.1}%
+\contentsline {section}{2\hspace {1em}État de l’art}{3}{section.2}%
+\contentsline {section}{3\hspace {1em}Objectif \& Échéances intermédiaires}{5}{section.3}%
+\contentsline {subsection}{3.1\hspace {1em}Septembre 2026 -- Octobre 2026}{5}{subsection.3.1}%
+\contentsline {subsection}{3.2\hspace {1em}Novembre 2026}{5}{subsection.3.2}%
+\contentsline {subsection}{3.3\hspace {1em}Décembre 2026 -- Février 2027}{5}{subsection.3.3}%
+\contentsline {subsection}{3.4\hspace {1em}Mars 2027 -- Avril 2027}{6}{subsection.3.4}%
+\contentsline {section}{4\hspace {1em}Organisation du travail}{7}{section.4}%
+\contentsline {subsection}{4.1\hspace {1em}Mécanique}{7}{subsection.4.1}%
+\contentsline {subsection}{4.2\hspace {1em}Optique}{7}{subsection.4.2}%
+\contentsline {section}{5\hspace {1em}Moyens nécessaires}{7}{section.5}%
+\contentsline {section}{6\hspace {1em}Contributions partenaires}{8}{section.6}%
+\contentsline {section}{7\hspace {1em}Bibliographie}{8}{section.7}%
+\xpginauxfilefalse 

@@ -21,7 +21,7 @@
   \iftitlepagehook
     \begin{tikzpicture}[remember picture, overlay]
         \draw[gbox] ($(current page.north west) + (1in , -1in)$) rectangle ($(current page.south west) + (1.5in, 1in)$);
-        \node[couleurmatiere] at ($(current page.north west) + (1.25in, -1.2in)$) {\href{https://creativecommons.org/licenses/by-nc/4.0/}{\small \ccbync}};
+        %\node[couleurmatiere] at ($(current page.north west) + (1.25in, -1.2in)$) {\href{https://creativecommons.org/licenses/by-nc/4.0/}{\small \ccbync}};
         \node[couleurmatiere] at ($(current page.south west) + (1.25in, +1.2in)$) {\thepage};
         \node[anchor=east, couleurmatiere] at ($(current page.north east) + (-2in, -1.2in)$) {\itshape\rightmark};
         \node[anchor=west, couleurmatiere] at ($(current page.north west) + (2in, -1.2in)$) {\itshape\cours};
@@ -41,7 +41,7 @@
 \renewcommand*\section{\@ifstar{\starsection}{\nostarsection}}
 \newcommand*\starsection[1]{\stdsection*{#1}}
 \newcommand*\nostarsection[1]{%
-  \clearpage
+  %\clearpage
   \refstepcounter{section}
   \addcontentsline{toc}{section}{\thesection\hspace{1em}#1}
   \markright{#1}

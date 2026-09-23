@@ -1,0 +1,131 @@
+\documentclass[a4paper, 12pt]{article}
+
+\input{_Template/Preambule_zero.tex}
+\input{_Template/Preambule_SC.tex}
+\newcommand{\cours}{\textbf{Proposition détaillée}}
+\definecolor{couleurmatiere}{HTML}{AC145A}
+
+\begin{document}
+
+\begin{titlepage}
+    \titlepagehookfalse
+    \begin{tikzpicture}[overlay, remember picture]
+        \fill[couleurmatiere] (current page.north west) rectangle ($(current page.south west) + (3in,0)$);
+        \node[anchor=north, couleurmatiere!50!white] at ($(current page.north west) + (1in, -.5in)$) {\includegraphics[width=1in]{_Images/poly-vert-colorless.pdf}};
+        \node[anchor=center, couleurmatiere!50!white, rotate=90] at ($(current page.west) + (1in,-.75in)$) {\resizebox{!}{1in}{\bfseries PRJ-40P99}};
+        \node[anchor=center, couleurmatiere!15!white] at ($(current page.center) + (1.5in,-3in)$) {\includegraphics[width=8in]{_Images/poly-armes-colorless.pdf}};
+
+
+        \node[anchor=center, black, text width = 4in, align = center] at ($(current page.north) + (1.5in,-1in)$) {\fontsize{33}{33}\selectfont\itshape\bfseries Proposition détaillée};
+        \node[anchor=center, black, text width=4in, align = center] at ($(current page.north) + (1.5in,-1.5in)$) {\LARGE\textit{PSC d’optique quantique}};
+        \node[anchor=center, couleurmatiere] at ($(current page.north) + (1.5in, -2in)$) {\includegraphics[width=4in]{_Images/poly-filet-colorless.pdf}};
+        \node[anchor=center, black, text width=4in, align = justify] at ($(current page.north) + (1.5in,-2.6in)$) {\Large\bfseries Olivier Allard, Florian Gregory, Maewenn Josselin, Faralahy Lorrain, Salim Zeroug};
+        \node[anchor=center, black] at ($(current page.north) + (1.5in,-3.3in)$) {\Large\oldstylenums{\today}};
+    \end{tikzpicture}
+\end{titlepage}
+
+\tableofcontents
+
+\clearpage
+
+\section{Motivation et enjeux}
+
+Marqués par les expériences et possibilités du cours de physique quantique de première année, notre groupe s’est formé naturellement autour de l’idée d’approfondir la théorie avec une pratique expérimentale de haut niveau. Ce PSC, encadré par \textit{Manuel Joffre} (LOB, École polytechnique) et \textit{Sylvain Schwartz} (Onera), s’inscrit dans une idée continue depuis plusieurs années de reproduire certaines expériences fondamentales de la physique quantique.
+Les groupes des promotions X21 et X22 ont par exemple reproduit l’expérience démontrant la violation des inégalités de Bell, qui a valu à Alain Aspect et Philippe Grangier leur prix Nobel.
+
+Le groupe de PSC X23 a ensuite élaboré une source de photons uniques dans un but d’observer des interférences, notamment avec un interféromètre de Mach-Zehnder, et a entamé l’expérience sur l’effet Hong-Ou-Mandel, sur lequel le groupe de l’année précédente (promotion X24) a fourni un travail remarquable.
+
+Précisément, ils ont mis en place le montage optique fibré, optimisé le signal pour atteindre environ 700 coïncidences (détection simulanée de photons) par seconde, et développé un logiciel d'acquisition complet en Python. Cependant, ils n'ont pas pu observer le « creux » caractéristique de Hong-Ou-Mandel (HOM dip) à cause d'une importante dérive mécanique survenue lors des balayages manuels de 6 heures.
+
+Notre motivation principale est d'apporter les solutions mécaniques et optiques manquantes identifiées par nos prédécesseurs afin d'automatiser le balayage, de stabiliser le montage, et de réussir enfin à mesurer ce phénomène quantique fondamental.
+
+\clearpage
+\section{État de l’art}
+
+L'effet Hong-Ou-Mandel est un effet d'interférence à deux photons en optique quantique qui a été démontré en 1987 par Chung Ki Hong, Zheyu Jeff Ou et Leonard Mandel à l'université de Rochester \textbf{[2]}. Cet effet se produit lorsque deux photons identiques pénètrent dans un séparateur de faisceau, une lame semi-réfléchissante par exemple, chacun par une entrée différente. L’expérience montre que plus l’arrivée des photons au niveau du séparateur est synchronisée, plus leur coïncidence d’un même côté du séparateur est probable : plus la différence de temps entre l’arrivée des deux photons identiques sur le séparateur est courte, plus il est probable que les photons suivent le même “chemin de sortie”. Ainsi, lorsque les deux photons identiques arrivent simultanément dans le séparateur, ils empruntent le même mode de sortie. Plus précisément, les photons sortent ensemble et ont 50\% de chances de sortir dans l'un ou l'autre mode. Au contraire, s'ils se distinguent, par exemple parce qu'ils arrivent à des moments différents ou avec des longueurs d'onde différentes, la probabilité qu'ils se dirigent chacun vers un détecteur différent augmente.
+
+Pour mettre en évidence ce phénomène, le procédé utilisé est de comptabiliser le nombre d’arrivées en coïncidence sur des détecteurs placés aux deux sorties du séparateur de faisceau, en faisant varier la différence de chemin optique entre les deux photons. La courbe résultante présente un minimum caractéristique, appelé « Hong-Ou-Mandel dip », dont la profondeur et la largeur fournissent des informations sur l'indiscernabilité des photons et leur longueur de cohérence.
+
+Par ailleurs, les montages classiques en espace libre pour l'expérience HOM peuvent s'avérer complexes à aligner en raison de la précision requise pour assurer l'indiscernabilité des photons. Les longueurs de cohérence typiques des paires de photons produites par conversion paramétrique descendante spontanée (SPDC) sont de l'ordre de quelques dizaines de microns, imposant des contraintes d'alignement très strictes. Dans ce contexte, un article récent de Bjurlin et Chmiel \textbf{[3]} propose une approche plus accessible, en tirant parti de ibres optiques à maintien de polarisation. Ce montage utilise notamment un coupleur à fibres optiques comme séparateur de faisceau. Cette architecture simplifie grandement les procédures d'alignement et améliore la robustesse de l'expérience.
+
+Enfin, l’article fondateur \textbf{[2]} précise la possibilité d'une application à ce phénomène : celle de mesurer avec précision le délai entre l’arrivée des deux photons. En effet, l’évaluation du nombre de coïncidences, que l’on compare à une courbe de référence, permet de caractériser avec une grande finesse des différences de chemin optique ou des intervalles de temps très courts. Cette perspective de métrologie de précision est confirmée par l’analyse de l’état de l’art réalisé par F. Bouchard et al. \textbf{[4]} : des mesures en dessous de la picoseconde ont été réalisées et il serait théoriquement possible d’atteindre la femtoseconde.
+
+Dans le cadre de la reproduction expérimentale de l'effet Hong-Ou-Mandel, le groupe de PSC de la promotion X24 a complètement repensé le système de collection optique \textbf{[5]}. La principale contribution technique de ce projet a consisté à remplacer des collimateurs à distance fixe par un système d'injection ajustable (lentille et entrée de fibre), permettant de mutiplier l'intensité récoltée par un facteur 3. Cette optimisation mécanique, couplée à un développement d'un logiciel d'acquisition en Python fonctionnant en temps réel, a permis de faire passer le taux de coïncidences en fibres monomodes de 0 à environ 700 par seconde. Bien que l'observation effective du creux HOM n'ait pas été achevée — principalement en raison de défis techniques liés au couplage monomode et à des problèmes de polarisation au niveau du coupleur fibré —, le groupe a mis en place un protocole d'alignement reproductible et documenté.
+
+\clearpage
+\section{Objectif \& Échéances intermédiaires}
+
+\subsection{Septembre 2026 -- Octobre 2026}
+
+\begin{itemize}
+    \item Se familiariser avec l’expérience, qui demande de comprendre et de savoir manipuler le montage réalisé par les X24. Le but est d’observer avec une fibre multimode -- moins restrictive qu’une fibre monomode que nous utiliserons ensuite -- un maximum d’interférences.
+    \item Explorer des premiers axes d’amélioration du montage : mise en place d’un translateur XYZ sur le deuxième bras dans l’espace libre en sortie du BBO pour avoir plus de contrôle sur les symétries de l’expérience, rotation des collimateurs pour pouvoir effectuer une translation avec un angle de 3° par rapport à la table, pour rester dans l’axe BBO – collimateur – entrée de la fibre.
+\end{itemize}
+
+\subsection{Novembre 2026}
+
+\begin{itemize}
+    \item Remplacer la fibre multimode par la fibre monomode, qui demande encore plus de précision dans les alignements du montage et donc une meilleure maitrise.
+    \item Essayer d’atteindre un nombre de coïncidences du même ordre que celui obtenu en monomode.
+\end{itemize}
+
+\subsection{Décembre 2026 -- Février 2027}
+
+\begin{itemize}
+    \item En considérant plus en détail les questions de polarisation des photons le long du montage, s’assurer que ceux-ci entrent dans la fibre dans le même état, afin d’observer le creux initialement mis en lumière dans l’article de Hong-Ou-Mandel.
+    \item Remise du rapport intermédiaire.
+    \item Discuter l’utilisation ou non d’un translateur motorisé pour obtenir un graphique plus clair. L’introduction d’une nouvelle platine XYZ – trop lourde pour être translatée par le moteur actuel -- pour améliorer le montage implique de trouver un nouveau constituant motorisé, peut-être à travers une vis de translation motorisée.
+\end{itemize}
+
+\subsection{Mars 2027 -- Avril 2027}
+
+\begin{itemize}
+    \item Une fois les derniers ajouts fait au montage, effectuer des mesures satisfaisantes à l’aide du translateur motoriser (ou à défaut à la main), pour pouvoir quantifier la largeur du creux de Hong-Ou-Mandel, et retrouver les résultats théoriques.
+    \item Remise du rapport final.
+\end{itemize}
+
+\clearpage
+
+\section{Organisation du travail}
+
+Le projet sera divisé en différentes tâches menées en binômes ou trinômes afin de paralléliser l’avancement.
+
+\subsection{Mécanique}
+
+\begin{itemize}
+    \item Conception du support de l’axicon.
+    \item Réorganisation du montage pour assurer une translation dans l’axe parallère à celui des photons émis en sortie du cristal de BBO.
+\end{itemize}
+
+\subsection{Optique}
+
+\begin{itemize}
+    \item Réalignement du montage, optimisation du couplage lors de l’utilisation d’une fibre monomode.
+    \item Étude du couplage en fibre monomede pour s’assurer de la concordance de la polarisation des photons sur les deux voies.
+\end{itemize}
+
+\section{Moyens nécessaires}
+
+Nous héritons de la quasi-totalité du montage expérimental réalisé par le groupe de PSC de l’année passée.
+
+Le laser utilisé est de classe 3B est est invisible à l’oeil nu, et présente des risques sévères pour la vue. Nous avons donc suivi une formation de sécurité avec M. Joffre avant de débuter les manipulations. Nous nous engageons donc à porter systématiquement des lunettes de protection adaptées,  à appliquer la règle du cross-check (vérifications mutuelles du respect des règles de sécurité), et à utiliser l’avertisseur lumineux situé à l’entrée de la salle lorsque le laser est allumé.
+
+\clearpage
+
+\section{Contributions partenaires}
+
+La réalisation de notre projet est principalement possible grâce au département de physique de l'École. Nous aurons à disposition un local de manipulation ainsi que du matériel optique et électronique de précision.
+
+Afin de fabriquer des pièces dont nous pourrions avoir besoin pour l’expérience, nous ferons appel au FabLab du Drahi X-novation center, notamment en impression 3D.
+Le coupleur fibré à maintien de polarisation est prêté par le laboratoire de l’ONERA.
+
+\section{Bibliographie}
+
+\begin{itemize}
+    \item[\textbf{[1]}] A. Gogo, W. D. Snyder, and M. Beck, (2005). \textit{Comparing quantum and classical correlations in a quantum eraser}, Physical Review 052103, DOI: \href{https://doi.org/10.1103/PhysRevA.71.052103}{10.1103/PhysRevA.71.052103}.
+    \item[\textbf{[2]}] Hong, C. K., Ou, Z. Y., \& Mandel, L. (1987). \textit{Measurement of subpicosecond time intervals between two photons by interference}. Physical Review Letters, 59(18), 2044. DOI: \href{https://doi.org/10.1103/PhysRevLett.59.2044}{10.1103/PhysRevLett.59.2044}.
+    \item[\textbf{[3]}] Bjurlin, C., \& Chmiel, T. (2024). \textit{A Versatile Hong-Ou-Mandel Interference Experiment in Optical Fiber for the Undergraduate Laboratory}. arXiv preprint \href{https://doi.org/10.48550/arXiv.2403.20272}{arXiv.2403.20272}.
+    \item[\textbf{[4]}] Frédéric Bouchard et al (2021). \textit{Two-photon interference: the Hong–Ou–Mandel effect}. Rep. Prog. Phys. 84 012402. DOI : \href{https://doi.org/10.1088/1361-6633/abcd7a}{10.1088/1361-6633/abcd7a}
+\end{itemize}
+
+\end{document}

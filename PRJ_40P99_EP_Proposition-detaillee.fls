@@ -1,7 +1,7 @@
 PWD c:/Users/o-all/Desktop/LaTeX_SYNC
 INPUT c:/texlive/2023/texmf-var/web2c/luahbtex/lualatex.fmt
-INPUT c:/Users/o-all/Desktop/LaTeX_SYNC/PHY_Principes-variationnels.tex
-OUTPUT PHY_Principes-variationnels.log
+INPUT c:/Users/o-all/Desktop/LaTeX_SYNC/PRJ_40P99_EP_Proposition-detaillee.tex
+OUTPUT PRJ_40P99_EP_Proposition-detaillee.log
 INPUT c:/texlive/2023/texmf-dist/tex/latex/tex-ini-files/lualatexquotejobname.lua
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/ltluatex.lua
 INPUT c:/texlive/2023/texmf-dist/tex/luatex/luaotfload/luaotfload-main.lua
@@ -263,7 +263,7 @@ INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/ti
 INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
 INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
 INPUT c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
-OUTPUT PHY_Principes-variationnels.pdf
+OUTPUT PRJ_40P99_EP_Proposition-detaillee.pdf
 INPUT c:/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 INPUT c:/texlive/2023/texmf-dist/tex/latex/tabularray/tabularray.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/tools/array.sty
@@ -295,33 +295,31 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/base/atveryend-ltx.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT ./_Template/Preambule_SC.tex
-INPUT ./PHY_Principes-variationnels.aux
-OUTPUT PHY_Principes-variationnels.aux
+INPUT ./PRJ_40P99_EP_Proposition-detaillee.aux
+OUTPUT PRJ_40P99_EP_Proposition-detaillee.aux
 INPUT c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT c:/texlive/2023/texmf-dist/tex/latex/ninecolors/ninecolors.sty
-INPUT ./PHY_Principes-variationnels.out
-INPUT ./PHY_Principes-variationnels.out
-INPUT ./PHY_Principes-variationnels.out
-OUTPUT PHY_Principes-variationnels.out
-INPUT ./_Template/Titlepage.tex
+INPUT ./PRJ_40P99_EP_Proposition-detaillee.out
+INPUT ./PRJ_40P99_EP_Proposition-detaillee.out
+INPUT ./PRJ_40P99_EP_Proposition-detaillee.out
+OUTPUT PRJ_40P99_EP_Proposition-detaillee.out
 INPUT ./_Images/poly-vert-colorless.pdf
 INPUT ./_Images/poly-vert-colorless.pdf
 INPUT ./_Images/poly-armes-colorless.pdf
 INPUT ./_Images/poly-armes-colorless.pdf
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT ./PHY_Principes-variationnels.toc
-OUTPUT PHY_Principes-variationnels.toc
-INPUT ./PHY/Principes variationnels/Principes_variationnels.tex
+INPUT ./PRJ_40P99_EP_Proposition-detaillee.toc
+OUTPUT PRJ_40P99_EP_Proposition-detaillee.toc
 INPUT ./_Images/poly-filet-colorless.pdf
-INPUT ./PHY/Principes variationnels/Mecanique-analytique_Calcul-variationnel.tex
 INPUT ./_Images/poly-filet-colorless.pdf
-INPUT ./PHY/Principes variationnels/Theorie_lagrangienne_emag.tex
 INPUT ./_Images/poly-filet-colorless.pdf
-INPUT ./PHY_Principes-variationnels.aux
-INPUT ./PHY_Principes-variationnels.out
-INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb
+INPUT ./_Images/poly-filet-colorless.pdf
+INPUT ./_Images/poly-filet-colorless.pdf
+INPUT ./_Images/poly-filet-colorless.pdf
+INPUT ./_Images/poly-filet-colorless.pdf
+INPUT ./PRJ_40P99_EP_Proposition-detaillee.aux
+INPUT ./PRJ_40P99_EP_Proposition-detaillee.out

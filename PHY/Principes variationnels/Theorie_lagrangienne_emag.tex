@@ -1,0 +1,35 @@
+\section{Théorème lagrangienne de l’électromagnétisme}
+
+    \subsection{Lagrangien d’une particule relativiste}
+
+    On se restreint au cas d’une particule massive placée dans un champ électromagnétiqu. Le principe de moindre action n’a de sens que s’il détermine le mouvement de la particule qu’importe le référentiel inertiel choisi. Déterminons donc le trajet parcouru pour aller de $(t_1, \mathbf{r}_1)$ à $(t_2, \mathbf{r}_2)$ en minimisant l’action.
+
+        \subsubsection{Particule libre}
+
+        \begin{align*}
+            \mathcal{L} &= - m c^2 \sqrt{1 - \frac{v^2}{c^2}} \\
+            S &= - mc^2 \int_{t_1}^{t_2} \sqrt{1 - \frac{v^2}{c^2}} \\
+        \end{align*}
+
+        \subsubsection{Impulsion et énergie d’une particule libre}
+
+        Le moment conjugué s’écrit 
+        \[ \mathbf{p}_{\text{lib}} = \frac{\partial \mathcal{L}}{\partial \mathbf{v}} = \frac{m\mathbf{v}}{\sqrt{1 - \frac{v^2}{c^2}}} \]   
+        et l’énergie 
+        \[ \mathcal{E}_{\text{lib}} = \mathbf{p}_{\text{lib}} \cdot \mathbf{v} - \mathcal{L} = \frac{mc^2}{\sqrt{1- \frac{v^2}{c^2}}} \]
+        Ces deux grandeurs sont reliées par la relation 
+        \[ \left(\frac{\mathcal{E}_{\text{lib}}}{c}\right)^2 - \mathbf{p}_{\text{lib}}^2 = m^2 c^2 \]   
+        En supposant que l’ensemble $\left(\frac{\mathcal{E}_{\text{lib}}}{c}, \mathbf{p}_{\text{lib}}\right) := p_{\text{lib}}^{\mu}$ soit un \textit{quadrivecteur}, que l’on appelle \textbf{quadrimpulsion}, on remarque son carré au sens de Minkowski est un invariant relativiste, proportionnel à la masse au carré de la particule, ce qui est en accord avec l’hypothèse de départ. Celle-ci est aussi confirmé par le fait que $\mathcal{L} dt$ est un invariant relativiste, et
+        \begin{align*}
+            - \mathcal{L} dt 
+            &= \left(\mathbf{p}_{\text{lib}} \cdot \mathbf{v} - \mathcal{L}\right) - \mathbf{p}_{\text{lib}} \cdot d\mathbf{x} \\
+            &= \mathcal{E}_{\text{lib}} dt - \mathbf{p}_{\text{lib}} \cdot d\mathbf{x} \\
+            &= p_{\text{lib}}^{\mu} dx_{\mu} \\
+        \end{align*}
+        où le produit des quadrivecteurs $p_{\text{lib}}^{\mu}$ et $dx^{\mu} = (cdt, d\mathbf{x})$ est $p_{\text{lib}}^{\mu} dx_{\mu} = g_{\mu\nu} p_{\text{lib}}^{\mu} dx^{\mu} $ où $g_{\mu\nu} := (+,-,-,-)$ est la convention métrique. Ce produit étant invariant, on a montré que $p_{\text{lib}}$ est un quadrivecteur du genre temps.
+
+        \subsubsection{Particule chargée dans un champ électromagnétique}
+
+            \paragraph{Interaciton avec un champ électromagnétique}
+
+            Considérons désormais une particule de charge $q$ et de masse $m$ placée dans un champ électromagnétique.
