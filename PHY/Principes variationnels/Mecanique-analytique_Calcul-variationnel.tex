@@ -1,0 +1,154 @@
+\section{Mécanique analytique et calcul variationnel}
+
+    Le \textbf{calcul variationnel} est le calcul permettant de minimiser la valeur de l’intégrale d’une fonction (ici de l’action).
+
+    \subsection{Équation d’Euler Lagrange}
+
+    On cherche dans le cadre de la mécanique la fonction $x(t)$ minimisant l’intégrale 
+    \[ S = \int_{t_1}^{t_2} \mathcal{L}(x(t), \dot{x}(t), t) dt \]   
+
+    \begin{omed}{Équation d’Euler Lagrange}
+        L’équation du mouvement qui détermine la trajectoire effectivement suivie est l’équation du second ordre d’\textbf{Euler-Lagrange} :
+        \[ \frac{\text{d}}{\text{d}t}\left(\frac{\partial \mathcal{L}}{\partial \dot{x}} \right) = \frac{\partial \mathcal{L}}{\partial x} \]   
+    \end{omed}
+
+    \begin{demo}{Démonstration}
+        Supposons qu’il existe une solution (la vraie trajectoire donc) $X(t)$, et considérons une autre trajectoire $x(t)$ infiniment voisine de $X(t)$ :  $x(t) = X(t) + \delta x(t)$ avec par hypothèse $\delta x(t_1) = \delta x(t_2) = 0$. Au premier ordre en $\delta x$, la variation de $S$ est :
+        \begin{align*}
+            \delta S 
+            &= \int_{t_1}^{t_2} \left(\frac{\partial \mathcal{L}}{\partial x} \delta x(t) + \frac{\partial \mathcal{L}}{\partial \dot{x}} \delta \dot{x}(t) \right) dt \\
+            &\overset{\text{IPP}}{=} \int_{t_1}^{t_2} \left(\frac{\partial \mathcal{L}}{\partial x} - \frac{\text{d}}{\text{d}t} \frac{\partial \mathcal{L}}{\partial \dot{x}} \right) \delta x(t)  dt
+        \end{align*}
+        On déduit du princie du moindre action que $\delta S$ doit être nul qu’importe la variation infinitésimale $\delta x(t)$. 
+    \end{demo}
+
+    Dans le cas simple d’une particule évoluant dans un champ de potentiel $V(x,t)$, le lagrangien est $\mathcal{L}(x,\dot{x},t) = \frac{1}{2} m \dot{x}^2 - V(x,t)$, donc l’équation d’Euler-Lagrange s’écrit :
+    \[ m \frac{\text{d} \dot{x}}{\text{d}t} = - \frac{\partial V}{\partial x} := f \]   
+    On retrouve dans ce cas le principe fondamental de la dynamique.
+
+    La généralisation à $s$ degrés de liberté $(x_i, \dot{x}_i)_{i \in \intEN{1}{s}}$ est immédiate : le lagrangien $\mathcal{L}(\left\{x_i\right\}, \left\{\dot{x}_i\right\},t)$ dépend de $\{x_i\}$ et $\{\dot{x}_i\}$ ainsi que de $t$, et on dispose de $s$ équations de Euler-Lagrange 
+    \[ \frac{\text{d}}{\text{d}t} \left(\frac{\partial \mathcal{L}}{\partial \dot{x}_i} \right) = \frac{\partial \mathcal{L}}{\partial x_i} \] 
+
+    Pour une particule dans l’espace $\mathbf{R}^3$, nous emploierons les notations $\mathbf{r}$ et $\mathbf{v}$, ainsi que la notation spécifique du gradient $\frac{\partial \mathcal{L}}{\partial \mathbf{a}} := \symbf{\nabla}_{\mathbf{a}} \mathcal{L} = \left(\frac{\partial \mathcal{L}}{\partial a_x}, \frac{\partial \mathcal{L}}{\partial a_y}, \frac{\partial \mathcal{L}}{\partial a_z}\right)$ afin que l’équation d’Euler-Lagrange s’écrive 
+    \[ \frac{\text{d}}{\text{d}t} \left(\frac{\partial \mathcal{L}}{\partial \mathbf{v}} \right) = \frac{\partial \mathcal{L}}{\partial \mathbf{r}}  \]
+
+    \subsection{Le lagrangien}
+
+        \subsubsection{Non-unicité}
+
+        Il peut paraître \textit{a priori} dérangeant que plusieurs lagrangiens puissent être associés à un même système : on constate en effet que si on ajoute au lagrangien une dérivée droite par rapport au temps d’une fonction quelconque $f(x,t)$, $\mathcal{L}' = \mathcal{L} + \frac{\text{d}}{\text{d}t} f(x,t)$, les équations du mouvement sont inchangées. Le terme ajouté ne change effectivement pas dans une variation de $x(t)$ qui satisfait $\delta x(t_1) = \delta x(t_2) = 0$.
+
+        \subsubsection{Forme du lagrangien}
+
+        Pour trouver le lagrangien d’un système physique, on suit des principes logiques jusqu’à arriver à une forme convenable. Par exemple, pour une particule libre dans l’espace $\mathbf{R}^3$, 
+        \begin{itemize}
+            \item Il n’y a pas d’origine des temps privilégiée donc 
+            \[ \frac{\partial \mathcal{L}}{\partial t} = 0 \]   
+            \item Il n’y a pas d’origine d’espace privilégiée, donc 
+            \[ \frac{\partial \mathcal{L}}{\partial x_i} = 0 \]   
+            \item Il n’y a pas de direction dans l’espace privilégiée, \textit{i.e.} il y a invariance par rotation. Ainsi, $\mathcal{L}$ ne dépend que du carré de la vitesse : $\mathcal{L} := K \mathbf{v}^2$. On obtient après le choix $K = \frac{m}{2}$ 
+            \[ \mathcal{L} = \frac{m}{2} \mathbf{v}^2 \]
+            \item Dans un référentiel animé d’une vitesse constante $\mathbf{V}$ par rapport au premier, le lagrangien devient alors 
+            \[ \mathcal{L}' = \frac{m}{2} (\mathbf{v} - \mathbf{V})^2 = \mathcal{L} + \frac{\text{d}}{\text{d}t} (-m \mathbf{r} \cdot \mathbf{V} + \frac{m \mathbf{V}^2 t}{2}) \] 
+        \end{itemize}
+        Plus généralement, si on introduit un potentiel $V(\mathbf{r})$ dans l’espace, le lagrangien devient 
+        \[ \mathcal{L} = \frac{m}{2} \mathbf{v}^2 - V(\mathbf{r}) \]   
+        qui se généralise à un ensemble de $N$ points matériels dans un référentiel inertiel exposés au potentiel $V(\mathbf{r}_1, \ldots, \mathbf{r}_N, t)$ qui inclut les potentiels d’interaction entre particules sous la forme 
+        \[ \mathcal{L} = \sum_{i =1}^N m_i \dot{\mathbf{r}}_i^2 - V(\mathbf{r}_1, \ldots, \mathbf{r}_N, t) \]    
+
+    \subsection{Invariances et lois de conservation}
+
+    Les lois d’\textit{invariance} des phénomères physiques sont fondamentales puisqu’elles forment l’ensemble de ce que l’on sait \textit{a priori} sur la physique d’un problème. Elles impliquent des \textit{lois de conservation} qui traduisent la conservation d’une quantité lors de l’évolution temporelle, et permettent notamment de supputer une forme au lagrangien.
+        
+        \subsubsection{Changement de coordonnées, moment conjugué et variable cyclique}
+
+        \begin{omed}{Moment conjugué et équations d’Euler-Lagrange}
+            On appelle \textbf{moment conjugué} de la variable $x_i$ pour un lagrangien donné les quantités
+            \[ \mathbf{p}_i = \frac{\partial \mathcal{L}}{\partial \dot{\mathbf{r}}_i} \]   
+            Ces grandeurs permettent de reformuler les équations d’Euler-Lagrange sous la forme plus compacte
+            \[ \dot{\mathbf{p}}_i = \frac{\partial \mathcal{L}}{\partial \mathbf{r}_i} \]   
+        \end{omed}
+
+        Dans le cas de l’étude de particules dans un potentiel $V(\mathbf{r}_1, \ldots, \mathbf{r}_N,t)$ en coordonnées cartésiennes, $\mathbf{p}_i = m \dot{\mathbf{r}}_i$, mais cette relation n’est plus vérifiée lorsque l’on ne considère plus des coordonnées cartésiennes ou lorsque les forces dépendent de la vitesse. 
+
+        On peut procéder dans le formalisme Lagrangien à n’importe quel changement de variable $(x_1, \ldots, x_N) \to (q_1, \ldots, q_N)$, donnant
+        \[ \tilde{\mathcal{L}}\left(\{q_i\}, \{\dot{q}_i\}, t\right) := \mathcal{L}\left(\{x_i\}(\{q_i\}), \{\dot{x}_i\}(\{q_i\}, \{\dot{q}\}_i), t\right) \]    
+        On appelle \textbf{coordonnées généralisées} un ensemble quelconque de coordonnées $q_i$, et on définit dans ce cas l’\textbf{impulsion généralisée} par -- en omettant le tilde -- 
+        \[ p_i := \frac{\partial \mathcal{L}}{\partial \dot{q_i}} \]   
+        qui donne une forme généralisée de la loi de Newton sous la forme 
+        \[ \dot{p}_i = \frac{\partial \mathcal{L}}{\partial q_i} \]
+        On appelle \textbf{variable cyclique} une coordonnée généralisée $q_i$ qui ne figure pas explicitement dans le lagrangien $\mathcal{L}$, \textit{i.e.} $\frac{\partial \mathcal{L}}{\partial q_i} =0$. Dans ce cas, le moment conjugué à cette variable est conservé : $p_i = \frac{\partial \mathcal{L}}{\partial \dot{q}_i} = C$.
+
+        \subsubsection{Énergie et translation dans le temps}
+
+        Considérons un système isolé (invariable par translation dans le temps), \textit{i.e.} $\frac{\partial \mathcal{L}}{\partial t} = 0$. Évaluons l’évolution de $\mathcal{L}(x,\dot{x})$ le long de la trajectoire effectivement suivie :
+        \begin{align*}
+            \frac{\text{d}}{\text{d}t}\mathcal{L}(x, \dot{x}) 
+            &= \dot{x}(t) \frac{\partial \mathcal{L}}{\partial x} + \ddot{x}(t) \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
+            &\overset{E-L}{=} \dot{x}(t) \frac{\text{d}}{\text{d}t} \frac{\partial \mathcal{L}}{\partial \dot{x}}  + \ddot{x}(t) \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
+            &= \frac{\text{d}}{\text{d}t} \left(\dot{x}(t) \frac{\partial \mathcal{L}}{\partial \dot{x}} \right)
+        \end{align*}
+        
+        \begin{omed}{Définition (énergie)}
+            On appelle \textbf{énergie} la quantité $\dot{x} \frac{\partial \mathcal{L}}{\partial \dot{x}} - \mathcal{L}$ le long de la trajectoire physique, que l’on généralise en
+            \begin{align*}
+                E &:= \sum_{i=1}^s \dot{x}_i \frac{\partial \mathcal{L}}{\partial \dot{x}_i} - \mathcal{L} \\
+                &= \sum_{i} p_i \dot{x}_i - \mathcal{L}
+            \end{align*}
+        \end{omed}
+
+        Cette définition est, on le voit, ainsi tournée afin que lorsqu’il y a invariance par translation dans le temps, l’énergie est conservée.
+
+        \subsubsection{Impulsion et translations dans l’espace}
+
+        \begin{omed}{Proposition}
+            L’impulsion totale d’un système invariant par translation dans l’espace est \textit{conservée}.
+        \end{omed}
+
+        \begin{demo}{Démonstration}
+            Considèrons un système inviariable par translation dans l’espace. C’est le cas d’un ensemble de particules dont les interactions ne dépendent que des coordonnées relatives. Pour toute transformation infinitésimale $\symbf{\varepsilon}$ des coordonnées le lagrangien est invariant,
+            \[ \delta \mathcal{L} = \sum_{i} \frac{\partial \mathcal{L}}{\partial \mathbf{r}_i} \cdot \symbf{\varepsilon} = 0 \]   
+            d’où on déduit $\sum_{i} \frac{\partial \mathcal{L}}{\partial \mathbf{r}_i} = 0$, ce qui se réécrit à l’aide des impulsions généralisées et les équations d’Euler-Lagrange comme 
+            \[ \frac{\text{d}}{\text{d}t}  \sum_{i = 1}^N \mathbf{p}_i = \frac{\text{d}}{\text{d}t} \mathbf{P} = 0 \]   
+        \end{demo}
+
+        \subsubsection{Moment cinétique et rotations}
+
+        \begin{omed}{Définition-Proposition (moment cinétique)}
+            On appelle \textbf{moment cinétique} la grandeur 
+            \[ \mathbf{L}_i = \mathbf{r}_i \times \mathbf{p}_i \]   
+            et \textbf{moment cinétique total d’un système} 
+            \[ \mathbf{L} = \sum_{i} \mathbf{L}_i \]   
+            Le moment cinétique totat d’un système invariant par rotation dans l’espace est \textit{conservée}.
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Considérons une rotation infinitésimal d’un angle $\delta \phi$ autour d’un axe porté par $\mathbf{u}$ :
+            \begin{align*}
+                \mathbf{r}_i &\to \mathbf{r}_i + \delta \phi \mathbf{u} \times \mathbf{r_i} \\
+                \dot{\mathbf{r}}_i &\to \dot{\mathbf{r}}_i + \delta \phi \mathbf{u} \times \dot{\mathbf{r}}_i \\
+            \end{align*}
+            La variation du lagrangien associée à cette transformation est 
+            \begin{align*}
+                \delta \mathcal{L} 
+                &= \sum_{i} \left(\frac{\partial \mathcal{L}}{\partial \mathbf{r}_i} \cdot (\delta \mathbf{u} \times \mathbf{r}_i) + \frac{\partial \mathcal{L}}{\partial \dot{\mathbf{r}}_i} \cdot (\delta \mathbf{u} \times \mathbf{r}_i)\right) \\
+                &= \left(\sum_i \mathbf{r_i} \times \frac{\partial \mathcal{L}}{\partial \mathbf{r}_i} + \dot{\mathbf{r}}_i \times \frac{\partial \mathcal{L}}{\partial \dot{\mathbf{r}}_i} \right) \cdot \mathbf{u} \delta \phi \\
+                &= \left(\sum_i \mathbf{r}_i \times \dot{\mathbf{p}}_i + \dot{\mathbf{r}}_i \times \mathbf{p}_i\right) \cdot \mathbf{u} \delta \phi \\ 
+                &= \frac{\text{d}}{\text{d}t} \mathbf{L} \cdot \mathbf{u} \delta \phi 
+            \end{align*}
+            Ceci est vrai pour toute rotaton infinitésimale, donc $\frac{\text{d}}{\text{d}t} \mathbf{L} = 0$.
+        \end{demo}
+
+    \subsection{Multiplicateurs de Lagrange}
+
+    
+
+
+
+
+
+
+
+
+
+    

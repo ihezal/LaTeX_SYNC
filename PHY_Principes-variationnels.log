@@ -1,8 +1,8 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.16)  21 SEP 2026 21:49
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.16)  23 SEP 2026 08:15
  restricted system commands enabled.
  file:line:error style messages enabled.
-**c:/Users/o-all/Desktop/LaTeX_SYNC/PHY_Quantique.tex
-(c:/Users/o-all/Desktop/LaTeX_SYNC/PHY_Quantique.tex
+**c:/Users/o-all/Desktop/LaTeX_SYNC/PHY_Principes-variationnels.tex
+(c:/Users/o-all/Desktop/LaTeX_SYNC/PHY_Principes-variationnels.tex
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-11>
 Lua module: luaotfload 2023-08-31 3.26 Lua based OpenType font support
@@ -113,10 +113,10 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 File: gloss-french.ldf polyglossia: module for French
 Module polyglossia Info: Language data for french
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            righthyphenmin	2
+(polyglossia)            loader	loadhyph-fr.tex
 (polyglossia)            patterns	hyph-fr.pat.txt
 (polyglossia)            hyphenation	
-(polyglossia)            loader	loadhyph-fr.tex
+(polyglossia)            righthyphenmin	2
 (polyglossia)            synonyms	patois,francais on input line 17
 Module polyglossia Info: Language french was not yet loaded; created with id 2 on input line 17
 Lua-only attribute polyglossia_punct = 4
@@ -1020,8 +1020,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 Package hyperref Info: Option `colorlinks' set `true' on input line 105.
 ) (./_Template/Preambule_SC.tex
 \c@omedcounter=\count376
-) (./PHY_Quantique.aux)
-\openout1 = PHY_Quantique.aux
+) (./PHY_Principes-variationnels.aux)
+\openout1 = PHY_Principes-variationnels.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -1101,10 +1101,10 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 )
 Package hyperref Info: Link coloring ON on input line 12.
- (./PHY_Quantique.out) (./PHY_Quantique.out)
+ (./PHY_Principes-variationnels.out) (./PHY_Principes-variationnels.out)
 \@outlinefile=\write5
 
-\openout5 = PHY_Quantique.out
+\openout5 = PHY_Principes-variationnels.out
 LaTeX Info: Redefining \rmfamily on input line 12.
 LaTeX Info: Redefining \sffamily on input line 12.
 LaTeX Info: Redefining \ttfamily on input line 12.
@@ -1116,19 +1116,19 @@ Removing  `luaotfload.harf.finalize_hlist' from `hpack_filter'.
 Inserting `polyglossia-punct.process' in `hpack_filter'.
 Inserting `luaotfload.node_processor' in `hpack_filter'.
 Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'. (./_Template/Titlepage.tex
-<_Images/poly-vert-colorless.pdf, id=272, 345.29pt x 599.23875pt>
+<_Images/poly-vert-colorless.pdf, id=79, 345.29pt x 599.23875pt>
 File: _Images/poly-vert-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-vert-colorless.pdf>
 Package luatex.def Info: _Images/poly-vert-colorless.pdf  used on input line 5.
 (luatex.def)             Requested size: 72.26999pt x 125.4141pt.
-<_Images/poly-armes-colorless.pdf, id=273, 598.235pt x 788.9475pt>
+<_Images/poly-armes-colorless.pdf, id=80, 598.235pt x 788.9475pt>
 File: _Images/poly-armes-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-armes-colorless.pdf>
 Package luatex.def Info: _Images/poly-armes-colorless.pdf  used on input line 7.
 (luatex.def)             Requested size: 578.15999pt x 762.52136pt.
 LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
 (Font)              scaled to size 17.28pt on input line 8.
-<_Images/poly-filet-colorless.pdf, id=274, 124.21407pt x 2.1681pt>
+<_Images/poly-filet-colorless.pdf, id=81, 124.21407pt x 2.1681pt>
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 13.
@@ -1162,7 +1162,7 @@ Package fontspec Info: Font family 'LibertinusSerif(1)' created for font
 
  [1
 
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}<./_Images/poly-vert-colorless.pdf><./_Images/poly-armes-colorless.pdf><./_Images/poly-filet-colorless.pdf>]) (./PHY_Quantique.toc
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}<./_Images/poly-vert-colorless.pdf><./_Images/poly-armes-colorless.pdf><./_Images/poly-filet-colorless.pdf>]) (./PHY_Principes-variationnels.toc
 LaTeX Info: Redefining \rmfamily on input line 2.
 LaTeX Info: Redefining \sffamily on input line 2.
 LaTeX Info: Redefining \ttfamily on input line 2.
@@ -1521,243 +1521,61 @@ Package microtype Info: Character `textexclamdown ' is missing
 Package microtype Info: Character `textquestiondown ' is missing
 (microtype)             in font `TU/Erewhon-Math(3)/m/n/6.6'.
 (microtype)             Ignoring protrusion settings for this character.
-
-warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
-LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
-(Font)              scaled to size 10.95pt on input line 28.
-[1] [2])
+)
 \tf@toc=\write6
 
-\openout6 = PHY_Quantique.toc
- [3] [4
-
-] (./PHY/Quantique/Principes_fondamentaux.tex [5
+\openout6 = PHY_Principes-variationnels.toc
+ ("./PHY/Principes variationnels/Principes_variationnels.tex"
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
+(Font)              scaled to size 10.95pt on input line 1.
+[1]
+File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
+<use _Images/poly-filet-colorless.pdf>
+Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
+(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
+) ("./PHY/Principes variationnels/Mecanique-analytique_Calcul-variationnel.tex" [2
 
 ]
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
 (luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [6
+ [3
 
-] [7] [8] [9] [10]) (./PHY/Quantique/Outils_mathematiques.tex [11]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [12
-
-] [13] [14] [15] [16] [17]) (./PHY/Quantique/Oscillateur_harmonique.tex [18]
-Underfull \hbox (badness 3312) in paragraph at lines 1--1
-[][]\TU/LibertinusSerif(0)/b/sc/17.28 Os-cil-la-teur har-mo-nique en phy-
+] [4]
+Underfull \hbox (badness 1270) in paragraph at lines 67--69
+\TU/LibertinusSerif(0)/m/n/12 Ces gran-deurs per-mettent de re-for-mu-ler les équa-tions
  []
 
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
-[19
-
-] [20] [21]) (./PHY/Quantique/Methodes_dapproximation.tex [22]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [23
-
-] [24]
-Overfull \hbox (40.5846pt too wide) detected at line 58
-[]
+[5]
+Underfull \hbox (badness 3568) in paragraph at lines 72--73
+[]\TU/LibertinusSerif(0)/m/n/12 Dans le cas de l’étude de par-ti-cules dans un po-ten-tiel
  []
 
-
-Overfull \hbox (17.2196pt too wide) detected at line 68
-[]
- []
-
-[25]
-Overfull \hbox (10.42471pt too wide) detected at line 82
-[]
- []
-
-
-Overfull \hbox (0.97183pt too wide) detected at line 86
-[] [] \TU/Erewhon-Math(1)/m/n/12 + [] [] = 𝐸[] [] + 𝐸[] [] + 𝐸[] []
- []
-
-[26]
-Overfull \hbox (16.97159pt too wide) detected at line 103
-[]
- []
-
-
-Overfull \hbox (13.33618pt too wide) detected at line 124
-[] [] \TU/Erewhon-Math(1)/m/n/12 = 𝛿𝐸[] []
- []
-
-[27] [28]) (./PHY/Quantique/Symetrie.tex [29]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [30
-
-] [31] [32] [33] [34] [35] [36] [37]) [38] (./PHY/Quantique/Moment_cinetique.tex [39
-
-]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [40
-
-] [41]
-Overfull \hbox (2.45998pt too wide) detected at line 76
-[]
- []
-
-[42]
-Overfull \hbox (0.77148pt too wide) detected at line 91
-[] [] \TU/Erewhon-Math(1)/m/n/12 = []ℏ []
- []
-
-[43] [44] [45] [46] [47] [48]) (./PHY/Quantique/Moment_cinetique_orbital.tex [49]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [50
-
-] [51] [52]
-Overfull \hbox (38.61055pt too wide) detected at line 81
-[]
- []
-
-[53] [54] [55] [56]) (./PHY/Quantique/Moment_cinetique_intrinseque.tex [57]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [58
-
-] [59] [60] [61] Excluding 'comment' comment. [62]) (./PHY/Quantique/Atome_hydrogene.tex [63]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [64
-
-] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75]
-Overfull \hbox (23.5947pt too wide) detected at line 227
-[] \TU/Erewhon-Math(1)/m/n/12 = [] [] − [][][] ⋅ [][] []
- []
-
-
-Overfull \hbox (32.51114pt too wide) detected at line 233
-[]
- []
-
-[76]) (./PHY/Quantique/Magnetique.tex [77]
-Underfull \hbox (badness 1466) in paragraph at lines 1--1
-[][]\TU/LibertinusSerif(0)/b/sc/17.28 Par-ti-cule dans un champ ma-gné-
- []
-
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
-[78
-
-] [79] [80] [81]
-Overfull \hbox (7.8602pt too wide) detected at line 105
-[]
- []
-
-[82]
-Overfull \hbox (25.50102pt too wide) detected at line 122
-[]
- []
-
-[83]
-Overfull \hbox (35.63101pt too wide) detected at line 147
-[]
- []
-
-[84]) [85] (./PHY/Quantique/Particules_indiscernables.tex [86
-
-]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [87
-
-] [88] [89] [90] [91] [92] [93] [94]) (./PHY/Quantique/Operateurs_particules_identiques.tex [95]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [96
-
-]
-Underfull \hbox (badness 2547) in paragraph at lines 29--31
-\TU/LibertinusSerif(0)/m/n/12 Le ket $[]$ s’ex-prime donc en fonc-tion des di-vers kets
- []
-
-
-Overfull \hbox (71.6088pt too wide) detected at line 37
-[] \TU/Erewhon-Math(1)/m/n/12 = 𝑐[][] []
- []
-
-[97] [98]
-Underfull \hbox (badness 5578) in paragraph at lines 76--77
-[]\TU/LibertinusSerif(0)/m/n/12 L’opé-ra-teur her-mi-tique conju-gué de $[]$, no-té $[]$, est
- []
-
-[99] [100] [101] [102] [103]) (./PHY/Quantique/Opérateur_champ.tex [104]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [105
-
-] [106]) [107] (./PHY/Quantique/Rappels_electrodynamique.tex [108
-
-]
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [109
-
-] [110]
-Underfull \hbox (badness 1057) in paragraph at lines 62--62
-[][]\TU/LibertinusSerif(0)/b/sc/12 Des-crip-tion des phé-no-mènes dans l’es-pace ré-ci-
- []
-
-[111]) [112] (./PHY_Quantique.aux)
+[6] [7] [8]) [9] (./PHY_Principes-variationnels.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-11>
  ***********
-Package rerunfilecheck Info: File `PHY_Quantique.out' has not changed.
-(rerunfilecheck)             Checksum: 1370F702CBEA31FB6767C83861F1A272;13113.
+Package rerunfilecheck Info: File `PHY_Principes-variationnels.out' has not changed.
+(rerunfilecheck)             Checksum: 2AB3EB77090BF5A02AFB08DC780D9521;1904.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43182 strings out of 476506
+ 41985 strings out of 476506
  125038,1977958 words of node,token memory allocated
- 5110 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 1 local_par, 13 glue, 5 kern, 2 penalty, 65 sub_mlist, 109 glyph, 986 attribute, 60 glue_spec, 531 attribute_list, 2 write, 24 pdf_literal, 3 pdf_action, 24 pdf_colorstack nodes
-   avail lists: 1:3,2:2839,3:1632,4:242,5:500,6:74,7:4852,8:69,9:1223,10:22,11:375
- 63819 multiletter control sequences out of 65536+600000
- 68 fonts using 32871971 bytes
- 107i,14n,105p,1043b,1198s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 1714 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 1 local_par, 5 glue, 5 kern, 2 penalty, 2 sub_mlist, 17 glyph, 158 attribute, 59 glue_spec, 117 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 1:3,2:3184,3:1405,4:220,5:336,6:29,7:3563,8:48,9:874,10:17,11:261
+ 63020 multiletter control sequences out of 65536+600000
+ 61 fonts using 27512331 bytes
+ 107i,13n,105p,1057b,1077s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-BoldItalic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf><c:/texlive/2023/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb>
-Output written on PHY_Quantique.pdf (113 pages, 651382 bytes).
+Output written on PHY_Principes-variationnels.pdf (10 pages, 201045 bytes).
 
-PDF statistics: 1355 PDF objects out of 1440 (max. 8388607)
- 1132 compressed objects within 12 object streams
- 323 named destinations out of 1000 (max. 131072)
- 712 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 323 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
+ 33 named destinations out of 1000 (max. 131072)
+ 328 words of extra memory for PDF output out of 10000 (max. 100000000)
 

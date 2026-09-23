@@ -45,7 +45,7 @@
   \refstepcounter{section}
   \addcontentsline{toc}{section}{\thesection\hspace{1em}#1}
   \markright{#1}
-  {\Large\bfseries\scshape
+  {\Large\bfseries\itshape
   \par\vspace{1.5ex}
   \marge{\thesection}{black}%
   #1
@@ -59,7 +59,7 @@
 \renewcommand{\subsection}[1]{%
   \refstepcounter{subsection}
   \addcontentsline{toc}{subsection}{\thesubsection \hspace{1em}#1}
-  {\large\bfseries\scshape
+  {\large\bfseries\itshape
   \par\vspace{1.5ex}
   \marge{\thesubsection}{black}%
   #1
@@ -68,7 +68,7 @@
 }
 \renewcommand{\subsubsection}[1]{%
   \refstepcounter{subsubsection}
-  {\normalsize\bfseries\scshape 
+  {\normalsize\bfseries\itshape 
   \par\vspace{1.5ex}
   \marge{\thesubsubsection}{black}%
   #1

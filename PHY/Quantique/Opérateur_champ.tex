@@ -46,3 +46,42 @@
             \[ \Psi_{\nu}(\mathbf{r}) = \sum_{k} u_k^{\nu}(\mathbf{r}) \hat{a}_{k} \]   
             Cet opérateur champ à composante de spin détruit une particule de spin $\nu$ au point $\mathbf{r}$. Son conjugué hermitique créé une telle particule, avec l’expression 
             \[ \Psi_{\nu}^{\dagger}(\mathbf{r}) = \sum_{k} u_k^{\nu *}(\mathbf{r}) \hat{a}^{\dagger}_{k} \]
+
+        \subsubsection{Relations de commutation ou d’anticommutation}
+
+        Ces relations sont analogues à celles rencontrés dans le cas discret. On pose $\left[\hat{A}, \hat{B}\right]_{-\eta} = AB - \eta BA$ où $\eta = 1$ pour des bosons et $\eta = -1$ pour des fermions.
+
+            \paragraph{Particules sans spin}
+
+            \begin{align*}
+                \left[\Psi(\mathbf{r}), \Psi(\mathbf{r}')\right]_{- \eta} 
+                &= \sum_{i,j} u_i(\mathbf{r}) u_j(\mathbf{r}') \left[\hat{a_i}, \hat{a_j}\right]_{- \eta} = 0 \\
+                \left[\Psi^{\dagger}(\mathbf{r}), \Psi^{\dagger}(\mathbf{r}')\right]_{- \eta} 
+                &= \sum_{i,j} u_i^*(\mathbf{r}) u_j^*(\mathbf{r}') \left[\hat{a_i}^{\dagger}, \hat{a_j}^{\dagger}\right]_{- \eta} = 0 \\ 
+                \left[\Psi(\mathbf{r}), \Psi^{\dagger}(\mathbf{r}')\right]_{- \eta} 
+                &= \sum_{i,j} u_i(\mathbf{r}) u_j^*(\mathbf{r}') \left[\hat{a_i}, \hat{a_j}^{\dagger}\right]_{- \eta} \\ 
+                &= \sum_{i,j} u_i(\mathbf{r}) u_j^*(\mathbf{r}') \\
+                &= \spr{\mathbf{r}}{\mathbf{r}'} = \delta(\mathbf{r} - \mathbf{r}') \\
+            \end{align*}
+
+            \paragraph{Particules avec spin}
+
+            Les deux premières égalités restent vraies, et seulement la dernière impose aussi que les spins soient égaux :
+
+            \begin{align*}
+                \left[\Psi_{\nu}(\mathbf{r}), \Psi_{\nu'}(\mathbf{r}')\right]_{- \eta} 
+                &= \sum_{i,j} u_i^{\nu}(\mathbf{r}) u_j^{\nu'}(\mathbf{r}') \left[\hat{a_i}, \hat{a_j}\right]_{- \eta} = 0 \\
+                \left[\Psi_{\nu}^{\dagger}(\mathbf{r}), \Psi_{\nu'}^{\dagger}(\mathbf{r}')\right]_{- \eta} 
+                &= \sum_{i,j} u_i^{\nu *}(\mathbf{r}) u_j^{\nu'*}(\mathbf{r}') \left[\hat{a_i}^{\dagger}, \hat{a_j}^{\dagger}\right]_{- \eta} = 0 \\ 
+                \left[\Psi_{\nu}(\mathbf{r}), \Psi_{\nu'}^{\dagger}(\mathbf{r}')\right]_{- \eta} 
+                &= \sum_{i,j} u_i^{\nu}(\mathbf{r}) u_j^{\nu'*}(\mathbf{r}') \left[\hat{a_i}, \hat{a_j}^{\dagger}\right]_{- \eta} \\ 
+                &= \sum_{i,j} u_i^{\nu}(\mathbf{r}) u_j^{\nu'*}(\mathbf{r}') \\
+                &= \spr{\mathbf{r}, \nu}{\mathbf{r}', \nu'} = \delta_{\nu \nu'} \delta(\mathbf{r} - \mathbf{r}') \\
+            \end{align*}
+
+    \subsection{Opérateurs symétriques}
+
+    Dans la section précédente, nous avons exprimé les opérateurs symétriques à une particule à l’aide des opérateurs création et annihilation. Dans une base continue, on utilise alors l’opérateur champ et son conjugué hermitique.
+
+
+       

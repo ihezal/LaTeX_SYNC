@@ -124,3 +124,69 @@
                 \{\hat{a}_i^{\dagger}, \hat{a}_j^{\dagger}\} &= 0 \\
                 \{\hat{a}_i, \hat{a}_j^{\dagger}\} &= \delta_{ij} \\
             \end{align*}
+
+        \subsubsection{Changements de base}
+
+        Étudions les effets sur les opérateurs création et annihilation d’un changement de base pour les états individuels. Pour intuiter ce changement, on s’inspire de l’effet des opérateurs de création sur le ket d’état du vide $\ket{0}$, pour les bases orthonormées $\left\{\ket{u_k}\right\}$ et $\left\{\ket{v_{\ell}}\right\}$ :
+            \begin{align*}
+                \hat{a}_{v_{\ell}}^{\dagger} \ket{0} 
+                &= \ket{1:v_{\ell}} \\
+                &= \sum_{k} \spr{u_{k}}{v_{\ell}} \ket{1: u_{k}} \\
+                &= \sum_{k} \spr{u_k}{v_{\ell}} \hat{a}_{u_k}^{\dagger} \ket{0}
+            \end{align*}
+        En on déduit la relation linéaire 
+        \[ \hat{a}_{v_{\ell}}^{\dagger} = \sum_{k} \spr{u_k}{v_{\ell}} \hat{a}_{u_k}^{\dagger} \]   
+        et la relation hermitique conjuguée 
+        \[ \hat{a}_{v_{\ell}} = \sum_{k} \spr{v_{\ell}}{u_k} \hat{a}_{u_k}\]  
+            
+    \subsection{Opérateurs symétriques à une particule}
+
+    L’utilisation des opérateurs $\hat{a}$ et $\hat{a}^{\dagger}$ facilite considérablement la manipulation des opérateurs physiques (qui sont toujours complètement symétriques, que l’espace considéré soit $\mathcal{E}_S$ ou $\mathcal{E}_A$), que l’on étudie dans l’espace de Fock. Les opérateurs les plus simples sont ceux agissant sur une seule particule à la fois.
+
+            \subsubsection{Définition}
+
+            Un opérateur symétrique à une particule agissant dans l’espace $\mathcal{E}_{S}(N)$ (pour les bosons) ou $\mathcal{E}_{A}(N)$ (pour les fermions) est de la forme 
+            \[ \hat{F}^{(N)} = \sum_{q = 1}^N \hat{f}(q) \]   
+            où $\hat{f}$ est un opérateur agissant sur les états individuels et $q$ l’indice de la particule considérée. On définira alors l’opérateur $\hat{F}$ agissant dans l’espace de Fock comme celui qui agit comme $\hat{F}^{(N)}$ dans chacun des espaces $\mathcal{E}_{S,A}(N)$.
+
+            \subsubsection{Expression en termes des opérateurs $\hat{a}$ et $\hat{a}^{\dagger}$}
+
+            Soit $\left\{\ket{u_k}\right\}$ une base de l’espace des états individuels. Les éléments de matrice de l’opérateur $\hat{f}$ s’écrivent
+            \[ f_{ij} = \bra{u_i} \hat{f} \ket{u_j} \]   
+            d’où l’expression de l’opérateur pour la particule $q$ : 
+            \[ \hat{f}(q) = \sum_{i,j} f_{ij} \ket{q : u_i} \bra{q : u_j} \]   
+
+            En reportant l’expression de $\hat{f}(q)$ dans $\hat{F}^{(N)}$, on obtient 
+            \[ \hat{F}^{(N)} = \sum_{ij} f_{ij} \sum_{q = 1}^N \ket{q : u_i} \bra{q : u_j} \]
+            L’opérateur $\left[\sum_{q = 1}^N  \ket{q : u_i} \bra{q : u_j}\right]$ étant symétrique, il commute avec les opérateurs $\hat{\mathcal{S}}_N$ et $\hat{\mathcal{N}}$. On peut montrer que cet opérateur est équivalent à l’opérateur $\hat{a}_i^{\dagger} \hat{a}_j$, d’où 
+            \[ \hat{F}^{(N)} = \sum_{i,j} f_{ij} \hat{a}_i^{\dagger} \hat{a}_j \]
+
+            Cette expression ne faisant pas intervenir la valeur de $N$, on peut simplement écrire 
+            \[ \hat{F} = \sum_{i,j} f_{ij} \hat{a}_i^{\dagger} \hat{a}_j \]   
+
+            \subsubsection{Exemples}
+
+            \begin{itemize}
+                \item Remarquons d’abord que la forme de l’opérateur $\hat{N}$ est en accord avec la formule proposée :
+            \[ \hat{N} = \sum_{k} \hat{n}_k = \sum_{k} \hat{a}_k^{\dagger} \hat{a}_k \]   
+                \item Pour une particule sans spin, on peut définir l’opérateur correspondant à la densité de probabilité au point $\mathbf{r}_0$ par la formule 
+                \[ \hat{f} = \ket{\mathbf{r}_0} \bra{\mathbf{r}_0} \]   
+                qui conduit à l’opérateur « densité locale de particules » 
+                \[ \hat{D}(\mathbf{r}_0) = \sum_{i,j} u_i^*(\mathbf{r}_0) u_j (\mathbf{r}_0) \hat{a}_i^{\dagger} \hat{a}_j \]  
+                \item Dans la base des vecteurs propres $\ket{\mathbf{k}_i}$ de l’impulsion $\hbar \mathbf{k}_i$ d’une particule, l’opérateur impulsion totale du système s’écrit 
+                \[ \hat{\mathbf{P}} = \sum_{\mathbf{k}_i} \hbar \mathbf{k_i} \hat{a}_{\mathbf{k}_i}^{\dagger} \hat{a}_{\mathbf{k}_i} = \sum_{\mathbf{k}_i} \hbar \mathbf{k_i} \hat{n}_{\mathbf{k}_i} \]
+                Quant à l’énergie cinétique, elle est donnée par 
+                \[ \hat{H}_0 = \sum_{\mathbf{k}_i} \frac{\hbar^2 \mathbf{k}_i^2}{2m} \hat{a}_{\mathbf{k}_i}^{\dagger} \hat{a}_{\mathbf{k}_i} = \sum_{\mathbf{k}_i} \frac{\hbar^2 \mathbf{k}_i^2}{2m} \hat{n}_{\mathbf{k}_i} \]
+            \end{itemize}
+            
+            \subsubsection{Opérateur densité réduit à une particule}
+
+            On considère la valeur moyenne de l’opérateur $\hat{F}$ :
+            \[ \left<\hat{F}\right> = \sum_{i,j} \bra{u_i} \hat{f} \ket{u_j} \left<\hat{a}_i^{\dagger} \hat{a}_j\right> \]   
+            En introduisant l’opérateur « densité réduit à une particule » $\hat{\rho}_1$ dont les éléments de matrice s’écrivent 
+            \[ \bra{u_j} \hat{\rho}_1 \ket{u_i} := \left<\hat{a}_i^{\dagger} \hat{a}_j\right> \]    
+            on obtient que 
+            \[ \left<\hat{F}\right> = \sum_{i,j} \bra{u_i} \hat{f} \ket{u_j} \bra{u_j} \hat{\rho}_1 \ket{u_i} = \text{Tr}\left[\hat{f} \hat{\rho}_1\right] \]
+            où la trace est prise dans l’espace des états d’une particule unique.
+
+

@@ -112,18 +112,41 @@
   },
   "rot": {
     "prefix": "@rot",
-    "body": "\\nabla \times \\mathbf{${1:}} $0"
+    "body": "\\symbf{\\nabla} \\times \\mathbf{${1:}} $0"
   },
   "div": {
     "prefix": "@div",
-    "body": "\\nabla \\cdot \\mathbf{${1:}} $0"
+    "body": "\\symbf{\\nabla} \\cdot \\mathbf{${1:}} $0"
   }, 
   "grad": {
     "prefix": "@grd",
-    "body": "\\nabla \\mathbf{${1:}} $0"
+    "body": "\\symbf{\\nabla} ${1:}"
+  },
+  "rt": {
+    "prefix": "@rt",
+    "body": "(\\mathbf{r}, t) $0"
+  },
+  "kt": {
+    "prefix": "@kt",
+    "body": "(\\mathbf{k}, t) $0"
+  },
+  "champ réciproque": {
+    "prefix": "@cr",
+    "body": "\\tilde{${1:}}(\\mathbf{k}, t) $0"
+  },
+  "composante champ réciproque": {
+    "prefix": "@ccr",
+    "body": "\\tilde{\\mathbf{${1:}}}_{${2:}}(\\mathbf{k}, t) $0"
   },
 
-
+  "coordonnées lagrangien": {
+    "prefix": "@cl",
+    "body": "\\left( x, \\dot{x}, t \\right) $0"
+  },
+  "coordonnées multiples lagrangien": {
+    "prefix": "@cml",
+    "body": "\\left( \\{x_i \\\\}, \\{\\dot{x}_i \\\\}, t \\right) $0"
+  },
 
 
 
@@ -143,5 +166,4 @@
     "prefix": "@hv",
     "body": "\\hat{\\vec{${1:}}}$0"
   },
-
 }

@@ -1,0 +1,90 @@
+\section{Rappels d’électrodynamique classique}
+
+    À partir de désormais, nous allons appliquer au champ électromagnétique l’utilisation d’opérateur de champ quantique. Pour cela, on constatera que la dynamique des différents modes du champ est semblable à celle d’une série d’oscillateurs harmoniques, ce qui fera apparaître une quantification par une méthode similaire que celle appliquée à ces oscillateurs harmoniques.
+
+    \subsection{Électrodynamique classique}
+
+        \subsubsection{Équations et relations fondamentales}
+
+        \paragraph{Équations de Maxwell dans le vide} 
+
+        \begin{align*}
+            \symbf{\nabla} \cdot \mathbf{E} &= \frac{1}{\varepsilon_0} \rho(\mathbf{r},t) \\
+            \symbf{\nabla} \cdot \mathbf{B} &= 0 \\
+            \symbf{\nabla} \times \mathbf{E}(\mathbf{r},t) &= - \frac{\partial \mathbf{B}(\mathbf{r},t)}{\partial t} \\
+            \symbf{\nabla} \times \mathbf{B}(\mathbf{r},t) &= \frac{1}{c^2} \frac{\partial \mathbf{E}(\mathbf{r},t)}{\partial t} +  \frac{1}{\varepsilon_0 c^2} \mathbf{j}(\mathbf{r},t) -  \\
+        \end{align*}
+
+        où les densités de charge et $\rho(\mathbf{r},t)$ et de courant $\mathbf{j}(\mathbf{r},t)$ sont définies dans la limite non relativiste par 
+        
+        \begin{align*}
+            \rho(\mathbf{r},t) &= \sum_{a} q_a \delta(\mathbf{r} - \mathbf{r}_a(t)) \\
+            \mathbf{j}(\mathbf{r},t) &= \sum_{a} q_a \mathbf{v}_a(t) \delta(\mathbf{r} - \mathbf{r}_a(t)) \\
+        \end{align*}
+
+        \paragraph{Équations de Lorentz}
+
+        Ces équations décrivent la dynamique de chaque particule $a$ sous l’effet des forces électriques et magnétiques exercées sur celles-ci :
+        \[ m_a \frac{\text{d}^2\mathbf{r}_a(t)}{\text{d}t^2} = q_a \left[\mathbf{E}(\mathbf{r}_a(t), t) + \mathbf{v}_a(t) \times \mathbf{B}(\mathbf{r}_a(t), t)\right] \]
+
+        Les particules et leurs mouvements (sources des champs) et les champs sont couplés : les particules évoluent sous les forces exercées par le champ et le champ évolue du fait de la modification des sources.
+
+        \paragraph{Constantes du mouvement}
+
+        On appelle \textbf{équation de continuité} d’une grandeur la relation liant une densité volumique à son courant, ici :
+        \[ \frac{\partial \rho(\mathbf{r},t)}{\partial t}  + \symbf{\nabla} \cdot \mathbf{j} (\mathbf{r}, t) = 0 \]
+        qui implique l’invariance de la quantité de charge au cours du temps :
+        \[ Q = \int \rho(\mathbf{r}, t) d^3r = \sum_a q_a \]   
+
+        Les autres constantes du mouvement sont l’énergie totale $H$, l’impulsion totale $\mathbf{P}$ et le moment cinétique total $\mathbf{J}$ du système « champ + particules », respectivement données par :
+        \begin{align*}
+            H &= \sum_{a} \frac{1}{2} m_a \mathbf{v}_a^2(t) + \frac{\varepsilon_0}{2} \int \left[\mathbf{E}^2(\mathbf{r}, t) + c^2 \mathbf{B}^2(\mathbf{r}, t)\right] d^3 r \\
+            \mathbf{P} &= \sum_a m_a \mathbf{v}_a(t) + \varepsilon_0 \int \mathbf{E}(\mathbf{r}, t) \times \mathbf{B}(\mathbf{r}, t) d^3 r \\
+            \mathbf{J} &= \sum_a \mathbf{r}_a(t) \times m_a \mathbf{v}_a(t) + \varepsilon_0 \int \mathbf{r} \times \left[\mathbf{E}(\mathbf{r}, t) \times \mathbf{B}(\mathbf{r}, t)\right] d^3r \\
+        \end{align*}
+        On peut le vérifier à l’aide des équations de Maxwell et de Lorentz.
+
+        \paragraph{Potentiels scalaire et vecteur} 
+
+        Les champs $\mathbf{E}(\mathbf{r}, t)$ et $\mathbf{B}(\mathbf{r}, t) $ peuvent toujours être écrits sous la forme 
+        \begin{align*}
+            \mathbf{E}(\mathbf{r}, t) &= - \nabla U(\mathbf{r}, t) - \frac{\partial }{\partial t} \mathbf{A}(\mathbf{r}, t) \\
+            \mathbf{B}(\mathbf{r}, t) &= \symbf{\nabla} \times \mathbf{A} (\mathbf{r}, t) \\
+        \end{align*}
+        où $\mathbf{A}(\mathbf{r},t)$ et $U(\mathbf{r}, t) $ sont les potentiels vecteur et scalaire, définis à un choix de jauge près. En effet, on peut montrer que, pour une grandeur $\chi(\mathbf{r},t)$ appelée changement de jauge, les potentiels 
+        \begin{align*}
+            \mathbf{A}'(\mathbf{r}, t) &= \mathbf{A}(\mathbf{r}, t) + \symbf{\nabla} \chi(\mathbf{r}, t) \\
+            U'(\mathbf{r}, t) &= U(\mathbf{r}, t) - \frac{\partial }{\partial t} \chi((\mathbf{r}, t) ) \\
+        \end{align*}
+        conduisent aux mêmes expressions de $\mathbf{E}(\mathbf{r},t)$ et de $\mathbf{B}(\mathbf{r}, t) $. La \textbf{jauge de Coulomb} choisie dans cette étude du champ électromagnétique est telle que 
+        \[ \symbf{\nabla} \cdot \mathbf{A} (\mathbf{r}, t) = 0 \]
+
+        \subsubsection{Description des phénomènes dans l’espace réciproque}
+
+            \paragraph{Équations de Maxwell dans l’espace réciproque}
+
+            Les équations de Maxwell, qui prennent une forme plus simple dans l’espace réciproque, permettent d’identifier plus clairement les différences entre les composantes longitudinales $\tilde{\mathbf{V}}_{||}(\mathbf{k}, t)$ (parallèle en tout point $\mathbf{k}$ au vecteur $\mathbf{k}$) et tranverses $\tilde{\mathbf{V}}_{\perp}(\mathbf{k}, t)$ d’un champ $\tilde{\mathbf{V}}(\mathbf{k}, t)$. En notant $\symbf{\kappa} = \frac{\mathbf{k}}{k}$, on a 
+            \begin{align*}
+                \tilde{\mathbf{V}}(\mathbf{k}, t) &= \tilde{\mathbf{V}}_{||}(\mathbf{k}, t) + \tilde{\mathbf{V}}_{\perp}(\mathbf{k}, t) \\
+                \tilde{\mathbf{V}}_{||}(\mathbf{k}, t) &= \left(\symbf{\kappa} \cdot \tilde{\mathbf{V}}(\mathbf{k}, t)\right) \symbf{\kappa} \\
+            \end{align*}
+
+            Les équations de Maxwell dans l’espace réciproque sont de la forme 
+            \begin{align*}
+                i \mathbf{k} \cdot \tilde{\mathbf{E}}(\mathbf{k}, t) &= \frac{1}{\varepsilon_0} \tilde{\rho}(\mathbf{k}, t) \\
+                i \mathbf{k} \cdot \tilde{\mathbf{B}}(\mathbf{k}, t) &= 0 \\
+                i \mathbf{k} \times \tilde{\mathbf{E}}(\mathbf{k}, t) &= - \frac{\partial }{\partial t} \tilde{\mathbf{B}}(\mathbf{k}, t) \\
+                i \mathbf{k} \times \tilde{\mathbf{E}}(\mathbf{k}, t) &= \frac{1}{c^2} \frac{\partial }{\partial t} \tilde{\mathbf{E}}(\mathbf{k}, t) + \frac{1}{\varepsilon_0 c^2} \tilde{\mathbf{j}}(\mathbf{k}, t) \\
+            \end{align*}
+
+            \paragraph{Champs électrique et magnétique longitudinaux}
+
+            On déduit directement les formes des composantes longitudinales des champs $\tilde{\mathbf{E}}(\mathbf{k}, t)$ et $\tilde{\mathbf{B}}(\mathbf{k}, t) $ en projetant selon l’axe $\mathbf{k}$ les deux premières équations de Maxwell dans l’espace réciproque :
+            \begin{align*}
+                \tilde{\mathbf{E}}_{||}(\mathbf{k}, t) &= -\frac{i}{\varepsilon_0} \tilde{\rho}(\mathbf{k}, t) \frac{\mathbf{k}}{k^2} \\
+                \tilde{\mathbf{B}}_{||}(\mathbf{k}, t) &= 0 \\
+            \end{align*}
+            
+
+    \subsection{Description du champ transverse comme un ensemble d’oscillateurs harmoniques}
+
