@@ -1,0 +1,115 @@
+\section{Fondements de la relativité restreinte}
+
+    \subsection{Postulats d’Einstein}
+
+    \begin{omed}{Postulats}
+        \begin{enumerate}
+            \item Toutes les lois de la physique sont les mêmes dans tout référentiel inertiel.
+            \item Dans le vide, la lumière se propage toujours avec la même vitesse, indépendamment de la vitesse de la source.
+        \end{enumerate}
+    \end{omed}
+
+    Considérons deux référentiels inertiels $\mathcal{R}$ et $\mathcal{R}'$. Un événement $\mathcal{E}$ est repéré par ses coordonnées $(t,x,y,z)$ dans $\mathcal{R}$ et $(t', x', y', z')$ dans $\mathcal{R}'$. Pour simplifier, on considèrera que les origines spatiales des deux référentiels $O$ et $O'$ coïncident, ainsi que leurs origines temporelles $t = 0$ et $t' = 0$.
+
+    Considérons un flash de lumière émis en $t = 0$ à l’origine $O$ de $\mathcal{R}$. Un signal lumineux se propage sphériquement autour de l’origine à la vitesse de la lumière $c$ :
+    \[ c^2 t^2 - x^2 - y^2 - ^2 = 0 \]   
+    Dans le référentiel $\mathcal{R}'$, la même équation est vérifiée :
+    \[ c^2 t'^2 - x'^2 - y'^2 - z'^2 = 0 \]
+    En remplaçant les coordonnées de $\mathcal{R}'$ par leurs expressions dans $\mathcal{R}$, on définit la forme quadratique :
+    \begin{align*}
+        Q(t,x,y,z) 
+        &:= c^2 t'^2 - x'^2 - y'^2 - z'^2 \\
+        &= \sum_{i,j} \mathcal{A}_{ij} x^i x^j + \sum_{i} \mathcal{B}_{i} x^i(ct) + \mathcal{C} (ct)^2 \\
+    \end{align*}
+    où les coefficients $\mathcal{A}_{ij}$, $\mathcal{B}_i$ et $\mathcal{C}$ dépendent des référentiels $\mathcal{R}$ et $\mathcal{R}'$ et où les $x^i$ représentent les trois coordonnées spaciales.
+
+    Tout point spacial de coordonneés $(x,y,z)$ sera atteint par le signal lumineux à l’intant $t_{\ell}$ défini par $ct_{\ell} = \sqrt{x^2 + y^2 + z^2}$, valeur pour laquelle la forme quadratique $Q(t,x,y,z)$ s’annule. Le signal atteignant au même instant les points $(x,y,z)$ et $(-x,-y,-z)$ symétriques par rapport à $O$, on sait aussi que $Q(t_{\ell}, -x, -y, -z) = 0$, ce qui montre que les coefficients $\mathcal{B}_i$ sont nuls.
+
+    Si on suppose de plus que l’espace est \textit{isotrope}, on remarque que la matrice $A = (\mathcal{A}_{ij})$ doit être proportionnelle à l’identité (pas de direction privilégiée). Ainsi, $Q$ s’exprime nécessairement sous la forme 
+    \[ Q(t,x,y,z) = \mathcal{C}\left((ct)^2 - x^2 - y^2 - z^2\right) \]   
+    Sachant que la seule grandeur qui caractérise ces deux référentiels \textit{relativement} l’un à l’autre est la vitesse relative $\mathbf{v}$, et par isotropie de l’espace, on voit que $\mathcal{C}$ ne peut dépendre que de la norme de cette vitesse relative. Pour obtenir sa valeur, on remarque que 
+    \[ \mathcal{C}\left(\nor{\mathbf{v}_{\mathcal{R}''/\mathcal{R}}}\right) = \mathcal{C}\left(\nor{\mathbf{v}_{\mathcal{R}''/\mathcal{R}'}}\right)\mathcal{C}\left(\nor{\mathbf{v}_{\mathcal{R}'/\mathcal{R}}}\right) \]
+    La norme de $\mathbf{v}_{\mathcal{R}''/\mathcal{R}}$ dépendant non seulement des deux autres normes mais aussi de l’angle entre celles-ci, on a nécessairement $\mathcal{C} = 1$. Les deux postulats d’Einstein, combinés aux hypothèses d’homogénéité et d’isotropie de l’espace, conduisent donc à la relation
+    \[ c^2 t^2 - x^2 - y^2 - z^2 = c^2 t'^2 - x'^2 - y'^2 - z'^2 \]
+    entre les coordonnées de tout événement repéré dans $\mathcal{R}$ et $\mathcal{R}'$. Ces tranformations de coordonnées sont appelées \textbf{transformations de Lorentz}.
+
+    \subsection{Le groupe Lorentz}
+
+    \begin{omed}{Définition (transformation de Lorentz)}
+        On appelle \textbf{transformation de Lorentz} toute transformation linéaire 
+        \begin{align*}
+            x'^{\mu} &= \sum_{\nu = 0}^3 \Lambda_{\nu}^{\mu} x^{\nu} \\
+            x'^{\mu} &\overset{\Updownarrow}{=} \symbf{\Lambda} x^{\nu} \\
+        \end{align*}
+        reliant par la matrice carrée $\symbf{\Lambda}$ les quadrivecteurs $x'^{\mu} = (ct', x', y', z')$ et $x^{\mu} = (ct,x,y,z)$ vérifiant la relation 
+        \begin{align*}
+            c^2 t^2 - x^2 - y^2 - z^2 &= c^2 t'^2 - x'^2 - y'^2 - z'^2 \\
+            x'^{\mu}^{\top} \mathbf{G} x'^{\mu} &\overset{\Updownarrow}{=} x^{\mu\top} \mathbf{G} x^{\mu} \\
+        \end{align*}
+        où $\mathbf{G} = \text{diag}(1, -1, -1, -1)$.
+    \end{omed}
+
+    \begin{omed}{Définition-Proposition (groupe de Lorentz)}
+        Les matrices $\symbf{\Lambda}$ satisfaisant les conditions ci-dessus forment un groupe, dit \textbf{groupe de Lorentz}.
+    \end{omed}
+
+    \begin{demo}{Preuve}
+        En combinant les deux égalités de la transformation de Lorentz, on obtient la relation 
+        \[ x^{\mu\top} \symbf{\Lambda}^{\top} \mathbf{G} \symbf{\Lambda} x^{\mu} =  x^{\mu\top} \mathbf{G} x^{\mu} \]
+        Celle-ci étant valable pour tout $x^{\mu}$, on en déduit que $ \symbf{\Lambda}^{\top} \mathbf{G}  \symbf{\Lambda} = \mathbf{G}$, ce qui permet de vérifier que ces matrices forment un groupe. Leur symétrique s’écrit $\symbf{\Lambda}^{-1} = \mathbf{G} \symbf{\Lambda}^{\top} \mathbf{G}$ (étant donné aussi que $\mathbf{G}^2 = \mathbf{I}$), et l’élément neutre est $\mathbf{I}$.
+    \end{demo}
+
+    \subsection{Transformations de Lorentz spéciales}
+
+        \subsubsection{Transformation de Lorentz le long de l’axe des $x$}
+
+        \begin{omed}{Transformation de Lorentz spéciale le long de l’axe $x$}
+            \begin{align*}
+                ct' &= \gamma(ct - \beta x) \\
+                x' &= \gamma(x - \beta ct) \\
+                y' &= y \\
+                z' &= z \\
+            \end{align*}
+            où on a les coefficients adimensionnes
+            \begin{align*}
+                \beta &= \frac{v}{c} \\
+                \gamma &= \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}
+            \end{align*}
+        \end{omed}
+
+        \begin{omed}{Démonstration}
+            Considérons que deux des trois coordonnées spatiales restent inchangées : $y' = y$ et $z' = z$. On a alors 
+            \[ c^2 t^2 - x^2 = c^2 t'^2 - x'^2 \]   
+            La transformation linéaire la plus générale reliant $(ct, x)$ à $(ct', x')$ s’écrit 
+        \begin{align*}
+            ct' &= \lambda_1 ct + \lambda_2 x \\
+            x' &= \lambda_3 x + \lambda_4 ct \\
+        \end{align*}
+        Pour satisfaire la transformation de Lorentz, il faut alors que
+        \begin{align*}
+            \lambda_1^2 - \lambda_4^2 &= 1 \\
+            \lambda_3^2 - \lambda_2^2 &= 1 \\
+            \lambda_1 \lambda_2 - \lambda_3 \lambda_4 &= 0 \\
+        \end{align*}
+        La trajectoire de l’origine $O'$ de $\mathcal{R}'$ est caractérisée par $x' = 0$, \textit{i.e.} $\lambda_3 x + \lambda_4 ct = 0$, qui nous dit que la vitesse de $O'$ selon $\mathcal{R}$ est parallèle à l’axe des $x$ et de valeur $v = -c \frac{\lambda_4}{\lambda_3}$. La solution de ces équations est
+        \begin{align*}
+            \lambda_1 = \lambda_3 &= \left(1 - \frac{v^2}{c^2}\right)^{-\frac{1}{2}} := \gamma \\
+            \lambda_2 = \lambda_4 &= - \frac{v}{c} \lambda_1 := - \beta \gamma \\
+        \end{align*}
+        \end{omed}
+
+        \subsubsection{Transformation de Lorentz d’axe quelconque}
+
+        \begin{omed}{Transformation de Lorentz d’axe quelconque}
+            Sous forme matricielle, la transformation de Lorentz spéciale de paramètre $\symbf{\beta} = \frac{\mathbf{v}}{c}$ s’écrit 
+            \[ \symbf{\Lambda}_{\text{boost}}(\symbf{\beta}) = \begin{bmatrix}
+                \gamma & -\gamma \beta_x & - \gamma \beta_y & - \gamma \beta_z \\
+                -\gamma \beta_x & 1 + \frac{\gamma - 1}{\beta^2} \beta_x^2  & \frac{\gamma - 1}{\beta^2} \beta_x \beta_y & \frac{\gamma - 1}{\beta^2} \beta_x \beta_z \\
+                -\gamma \beta_y & \frac{\gamma - 1}{\beta^2} \beta_x \beta_y & 1 + \frac{\gamma - 1}{\beta^2} \beta_y^2 & \frac{\gamma - 1}{\beta^2} \beta_y \beta_z \\
+                -\gamma \beta_z & \frac{\gamma - 1}{\beta^2} \beta_x \beta_z & \frac{\gamma - 1}{\beta^2} \beta_y \beta_z & 1 + \frac{\gamma - 1}{\beta^2} \beta_z^2 \\
+            \end{bmatrix} \]
+        \end{omed}
+
+    \subsection{Conséquences de la transformation de Lorentz}
+
+        

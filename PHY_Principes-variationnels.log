@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.16)  23 SEP 2026 20:55
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.16)  24 SEP 2026 13:45
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/o-all/Desktop/LaTeX_SYNC/PHY_Principes-variationnels.tex
@@ -112,12 +112,12 @@ Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 ) (c:/texlive/2023/texmf-dist/tex/latex/polyglossia/gloss-french.ldf
 File: gloss-french.ldf polyglossia: module for French
 Module polyglossia Info: Language data for french
+(polyglossia)            righthyphenmin	2
+(polyglossia)            hyphenation	
 (polyglossia)            synonyms	patois,francais
 (polyglossia)            loader	loadhyph-fr.tex
-(polyglossia)            hyphenation	
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            patterns	hyph-fr.pat.txt
-(polyglossia)            righthyphenmin	2 on input line 17
+(polyglossia)            patterns	hyph-fr.pat.txt on input line 17
 Module polyglossia Info: Language french was not yet loaded; created with id 2 on input line 17
 Lua-only attribute polyglossia_punct = 4
 Package polyglossia Info: Option: French, variant=french.
@@ -1101,7 +1101,6 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 )
 Package hyperref Info: Link coloring ON on input line 12.
- (./PHY_Principes-variationnels.out) (./PHY_Principes-variationnels.out)
 \@outlinefile=\write5
 
 \openout5 = PHY_Principes-variationnels.out
@@ -1116,19 +1115,19 @@ Removing  `luaotfload.harf.finalize_hlist' from `hpack_filter'.
 Inserting `polyglossia-punct.process' in `hpack_filter'.
 Inserting `luaotfload.node_processor' in `hpack_filter'.
 Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'. (./_Template/Titlepage.tex
-<_Images/poly-vert-colorless.pdf, id=87, 345.29pt x 599.23875pt>
+<_Images/poly-vert-colorless.pdf, id=43, 345.29pt x 599.23875pt>
 File: _Images/poly-vert-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-vert-colorless.pdf>
 Package luatex.def Info: _Images/poly-vert-colorless.pdf  used on input line 5.
 (luatex.def)             Requested size: 72.26999pt x 125.4141pt.
-<_Images/poly-armes-colorless.pdf, id=88, 598.235pt x 788.9475pt>
+<_Images/poly-armes-colorless.pdf, id=44, 598.235pt x 788.9475pt>
 File: _Images/poly-armes-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-armes-colorless.pdf>
 Package luatex.def Info: _Images/poly-armes-colorless.pdf  used on input line 7.
 (luatex.def)             Requested size: 578.15999pt x 762.52136pt.
 LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
 (Font)              scaled to size 17.28pt on input line 8.
-<_Images/poly-filet-colorless.pdf, id=89, 124.21407pt x 2.1681pt>
+<_Images/poly-filet-colorless.pdf, id=45, 124.21407pt x 2.1681pt>
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 13.
@@ -1162,10 +1161,18 @@ Package fontspec Info: Font family 'LibertinusSerif(1)' created for font
 
  [1
 
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}<./_Images/poly-vert-colorless.pdf><./_Images/poly-armes-colorless.pdf><./_Images/poly-filet-colorless.pdf>]) (./PHY_Principes-variationnels.toc
-LaTeX Info: Redefining \rmfamily on input line 2.
-LaTeX Info: Redefining \sffamily on input line 2.
-LaTeX Info: Redefining \ttfamily on input line 2.
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}<./_Images/poly-vert-colorless.pdf><./_Images/poly-armes-colorless.pdf><./_Images/poly-filet-colorless.pdf>])
+No file PHY_Principes-variationnels.toc.
+\tf@toc=\write6
+
+\openout6 = PHY_Principes-variationnels.toc
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+[1] ("./PHY/Principes variationnels/Principes_variationnels.tex"
+File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
+<use _Images/poly-filet-colorless.pdf>
+Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
+(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Erewhon-Math' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -1521,60 +1528,35 @@ Package microtype Info: Character `textexclamdown ' is missing
 Package microtype Info: Character `textquestiondown ' is missing
 (microtype)             in font `TU/Erewhon-Math(3)/m/n/6.6'.
 (microtype)             Ignoring protrusion settings for this character.
-)
-\tf@toc=\write6
+) ("./PHY/Principes variationnels/Mecanique-analytique_Calcul-variationnel.tex" [2
 
-\openout6 = PHY_Principes-variationnels.toc
- ("./PHY/Principes variationnels/Principes_variationnels.tex"
+]
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
 (luatex.def)             Requested size: 113.81102pt x 1.98651pt.
-
-warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
-[1]) ("./PHY/Principes variationnels/Mecanique-analytique_Calcul-variationnel.tex"
-File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
-<use _Images/poly-filet-colorless.pdf>
-Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
-(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [2] [3] [4]
+ [3] [4]
 Underfull \hbox (badness 1270) in paragraph at lines 67--69
 \TU/LibertinusSerif(0)/m/n/12 Ces gran-deurs per-mettent de re-for-mu-ler les équa-tions
  []
 
-
+[5]
 Underfull \hbox (badness 3568) in paragraph at lines 72--73
 []\TU/LibertinusSerif(0)/m/n/12 Dans le cas de l’étude de par-ti-cules dans un po-ten-tiel
  []
 
-[5] [6] [7]) ("./PHY/Principes variationnels/Theorie_lagrangienne_emag.tex"
+[6] [7] [8]) ("./PHY/Principes variationnels/Theorie_lagrangienne_emag.tex"
 File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
 <use _Images/poly-filet-colorless.pdf>
 Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
 (luatex.def)             Requested size: 113.81102pt x 1.98651pt.
- [8] [9]) [10] (./PHY_Principes-variationnels.aux)
- ***********
-LaTeX2e <2023-11-01>
-L3 programming layer <2023-12-11>
- ***********
-Package rerunfilecheck Info: File `PHY_Principes-variationnels.out' has not changed.
-(rerunfilecheck)             Checksum: 3E219A65AA113718C7ABD998C2898F6A;2488.
-)
+ [9]) [10] ("./PHY/Principes variationnels/Fondements_relativite_restreinte.tex"
+File: _Images/poly-filet-colorless.pdf Graphic file (type pdf)
+<use _Images/poly-filet-colorless.pdf>
+Package luatex.def Info: _Images/poly-filet-colorless.pdf  used on input line 1.
+(luatex.def)             Requested size: 113.81102pt x 1.98651pt.
+ [11
 
-Here is how much of LuaTeX's memory you used:
- 42027 strings out of 476506
- 125038,1977958 words of node,token memory allocated
- 1732 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 1 local_par, 5 glue, 5 kern, 2 penalty, 2 sub_mlist, 17 glyph, 164 attribute, 59 glue_spec, 120 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 1:3,2:3784,3:1776,4:219,5:398,6:49,7:3671,8:48,9:809,10:19,11:262
- 63046 multiletter control sequences out of 65536+600000
- 60 fonts using 27392811 bytes
- 107i,13n,105p,1057b,1181s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/erewhon-math/Erewhon-Math.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Regular.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Italic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-BoldItalic.otf><c:/texlive/2023/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf><c:/texlive/2023/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb>
-Output written on PHY_Principes-variationnels.pdf (11 pages, 207621 bytes).
-
-PDF statistics: 326 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
- 40 named destinations out of 1000 (max. 131072)
- 344 words of extra memory for PDF output out of 10000 (max. 100000000)
-
+]
+./PHY/Principes variationnels/Fondements_relativite_restreinte.tex:35: error:  (linebreak): invalid list tail, probably missing glue
+./PHY/Principes variationnels/Fondements_relativite_restreinte.tex:35:  ==> Fatal error occurred, no output PDF file produced!

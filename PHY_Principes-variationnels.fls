@@ -301,9 +301,6 @@ INPUT c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT c:/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT c:/texlive/2023/texmf-dist/tex/latex/ninecolors/ninecolors.sty
-INPUT ./PHY_Principes-variationnels.out
-INPUT ./PHY_Principes-variationnels.out
-INPUT ./PHY_Principes-variationnels.out
 OUTPUT PHY_Principes-variationnels.out
 INPUT ./_Template/Titlepage.tex
 INPUT ./_Images/poly-vert-colorless.pdf
@@ -314,7 +311,6 @@ INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/ccicons/ccicons.tfm
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT ./PHY_Principes-variationnels.toc
 OUTPUT PHY_Principes-variationnels.toc
 INPUT ./PHY/Principes variationnels/Principes_variationnels.tex
 INPUT ./_Images/poly-filet-colorless.pdf
@@ -322,6 +318,5 @@ INPUT ./PHY/Principes variationnels/Mecanique-analytique_Calcul-variationnel.tex
 INPUT ./_Images/poly-filet-colorless.pdf
 INPUT ./PHY/Principes variationnels/Theorie_lagrangienne_emag.tex
 INPUT ./_Images/poly-filet-colorless.pdf
-INPUT ./PHY_Principes-variationnels.aux
-INPUT ./PHY_Principes-variationnels.out
-INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/ccicons/ccicons.pfb
+INPUT ./PHY/Principes variationnels/Fondements_relativite_restreinte.tex
+INPUT ./_Images/poly-filet-colorless.pdf
