@@ -6,10 +6,16 @@
 
         \subsubsection{Particule libre}
 
-        \begin{align*}
+        \begin{omed}{}
+            \begin{align*}
             \mathcal{L} &= - m c^2 \sqrt{1 - \frac{v^2}{c^2}} \\
             S &= - mc^2 \int_{t_1}^{t_2} \sqrt{1 - \frac{v^2}{c^2}} \\
         \end{align*}
+        \end{omed}
+
+        Nous avons vu dans le cas d’une particule libre de masse $m$ que, pour des raisons de symétries, le lagrangien ne devait être que fonction du carré de la vitesse $v^2$ de la particule. Cherchons donc cette fonction sous une forme qui rende l’action $S$ qui s’y associe invariante de Lorentz.
+
+        
 
         \subsubsection{Impulsion et énergie d’une particule libre}
 
@@ -19,17 +25,19 @@
         \[ \mathcal{E}_{\text{lib}} = \mathbf{p}_{\text{lib}} \cdot \mathbf{v} - \mathcal{L} = \frac{mc^2}{\sqrt{1- \frac{v^2}{c^2}}} \]
         Ces deux grandeurs sont reliées par la relation 
         \[ \left(\frac{\mathcal{E}_{\text{lib}}}{c}\right)^2 - \mathbf{p}_{\text{lib}}^2 = m^2 c^2 \]   
-        En supposant que l’ensemble $\left(\frac{\mathcal{E}_{\text{lib}}}{c}, \mathbf{p}_{\text{lib}}\right) := p_{\text{lib}}^{\mu}$ soit un \textit{quadrivecteur}, que l’on appelle \textbf{quadrimpulsion}, on remarque son carré au sens de Minkowski est un invariant relativiste, proportionnel à la masse au carré de la particule, ce qui est en accord avec l’hypothèse de départ. Celle-ci est aussi confirmé par le fait que $\mathcal{L} dt$ est un invariant relativiste, et
+        En supposant que l’ensemble $\left(\frac{\mathcal{E}_{\text{lib}}}{c}, \mathbf{p}_{\text{lib}}\right) := P_{\text{lib}}$ soit un \textit{quadri-vecteur}, que l’on appelle \textbf{quadri-mpulsion}, on remarque son carré au sens de Minkowski est un invariant relativiste, proportionnel à la masse au carré de la particule, ce qui est en accord avec l’hypothèse de départ. Celle-ci est aussi confirmé par le fait que $\mathcal{L} dt$ est un invariant relativiste, et
         \begin{align*}
             - \mathcal{L} dt 
             &= \left(\mathbf{p}_{\text{lib}} \cdot \mathbf{v} - \mathcal{L}\right) - \mathbf{p}_{\text{lib}} \cdot d\mathbf{x} \\
             &= \mathcal{E}_{\text{lib}} dt - \mathbf{p}_{\text{lib}} \cdot d\mathbf{x} \\
-            &= p_{\text{lib}}^{\mu} dx_{\mu} \\
+            &= P_{\text{lib}} \cdot dX \\
         \end{align*}
-        où le produit des quadrivecteurs $p_{\text{lib}}^{\mu}$ et $dx^{\mu} = (cdt, d\mathbf{x})$ est $p_{\text{lib}}^{\mu} dx_{\mu} = g_{\mu\nu} p_{\text{lib}}^{\mu} dx^{\mu} $ où $g_{\mu\nu} := (+,-,-,-)$ est la convention métrique. Ce produit étant invariant, on a montré que $p_{\text{lib}}$ est un quadrivecteur du genre temps.
+        où l’on considère le pseudo-produit scalaire de Minkowski.
 
         \subsubsection{Particule chargée dans un champ électromagnétique}
 
-            \paragraph{Interaciton avec un champ électromagnétique}
+            \paragraph{Interaction avec un champ électromagnétique}
 
-            Considérons désormais une particule de charge $q$ et de masse $m$ placée dans un champ électromagnétique.
+            Considérons désormais une particule de charge $q$ et de masse $m$ placée dans un champ électromagnétique. Dans le cas où le champ est purement électrostatique et dérive du potentiol $q \phi$, on sait que 
+            \[ \mathcal{L} = \frac{mv^2}{2} - q \phi \]
+            Il faut donc chercher le lagrangien complet sous la forme $\mathcal{L}_{\text{libre}} + \mathcal{L}_{I}$ où $\mathcal{L}_{I}$ décrit d’interaction de la particule et du champ.

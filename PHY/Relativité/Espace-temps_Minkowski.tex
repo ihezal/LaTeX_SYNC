@@ -1,0 +1,178 @@
+\section{Espace-temps de Minkowski}
+
+    \subsection{Géométrie quadri-dimensionnelle}
+
+    On définit l’espace quadri-dimensionnel appelé \textbf{espace-temps}, dont les points sont des quadri-vecteurs repérés par leurs quatre coordonnées suivantes : 
+    \[ x^{\mu} = \left\{ct, x, y, z\right\} \quad \text{ou} \quad \mu = 0,1,2,3 \]
+    En notant $\left\{e_0, e_1, e_2, e_3\right\}$ la base canonique de l’espace-temps, on peut à tout événement $\mathcal{E}$ de coordonnées $(ct, x, y, z)$ associer un \textbf{quadri-vecteur position} 
+    \[ X := \sum_{\mu = 0}^3 x^{\mu} e_{\mu} \]
+    que l’on peut noter avec la notation d’Einstein sous la forme 
+    \[ X := x^{\mu} e_{\mu} \]   
+
+
+        \subsubsection{Produit scalaire}
+
+        On adapte le produit scalaire à l’expression quadratique invariante en relativité : le \textbf{produit scalaire de Minkowski} (qui en est en réalité un pseudo car non défini positif), définit par son action sur les quatres vecteurs de base :
+        \[ e_{\mu} \cdot e_{\nu} =  \eta_{\mu\nu} \]   
+        où $G = \text{diag}(1, -1, -1, -1) = (\eta_{\mu\nu})$. Le produit scalaire de $X = (x^0, \mathbf{x})$ par $Y = (y^0, \mathbf{y})$ s’écrit alors 
+        \begin{align*}
+            X \cdot Y 
+            &= X^{\mu} Y^{\nu} \eta_{\mu\nu} \\
+            &= x^0 y^0 - \mathbf{x} \cdot \mathbf{y}
+        \end{align*}
+        En particulier, dans le cas du quadri-vecteur position, 
+        \[ X^2 = c^2 t^2 - x^2 -y^2 - z^2 \]   
+        qui est la forme quadratique apparaissant dans l’invariant relativiste.
+
+        \subsubsection{Changement de base}
+
+        Considérons l’expression du quadri-vecteur position $X = x'^{\mu} e'_{\mu}$ dans une nouvelle base $\left\{e'_{\mu}\right\}$. On s’intéressera uniquement aux nouvelles bases qui sont, comme $\left\{e_{\mu}\right\}$, pseudo-orthonormales, \textit{i.e.} qui vérifient 
+        \[ e'_{\mu} \cdot e'_{\nu} = \eta_{\mu\nu} \]
+        La matrice de changement de base telle que $x'^{\mu} = \Lambda_{\nu}^{\mu} x^{\nu}$ fait qu’en remplaçant les grandeurs prime dans l’égalité 
+        \[ X \cdot Y = \eta_{\mu\nu} x'^{\mu} y'^{\nu} = \eta_{\mu\nu} x^{\mu} y^{\nu} \]   
+        on obtient la relation suivante :
+        \[ \eta_{\mu\nu} \lambda^{\mu}_{\rho} \lambda^{\nu}_{\sigma} = \eta_{\rho\sigma} \]   
+        Cette condition sur les coefficients de la matrice $\symbf{\Lambda}$ est équivalente à l’invariance de la forme quadratique qui caractérise les transformations de Lorentz. 
+    \subsection{Genre des quadri-vecteurs}
+
+    Le produit scalaire de Minkowski n’étant pas défini positif, le carré scalaire de vecteurs non nuls peut prendre n’importe quelle valeur. On peut ainsi classer les quadri-vecteurs de l’espace-temps en trois catégories.
+
+        \subsubsection{Quadri-vecteurs de genre temps}
+
+        \begin{omed}{Définition (quadri-vecteur de genre temps)}
+            On appelle \textbf{quadri-vecteur de genre temps} un quadri-vecteur $X$ tel que 
+            \begin{align*}
+                X^2 &> 0 \\
+                \abs{x^0} &\overset{\Updownarrow}{>} \nor{\mathbf{x}} \\
+            \end{align*}
+        \end{omed}
+
+        Si cette propriété est vérifiée dans un référentiel, elle le reste dans tout autre. De plus, il est possible de trouver un référentiel particuler dans lequel la composante spatiale est nulle ($\mathbf{x}' = 0$). Montrons-le pour un vecteur $X = (x^0, x^1, 0, 0)$ (cas auquel on peut toujours se ramener par rotation du repère spatial par rapport au référentiel initial). Dans une transformations de Lorentz le long de l’axe $x$, les composantes de $X$ deviennent 
+        \begin{align*}
+            x'^0 &= \gamma (x^0 - \beta x^1) \\
+            x'^1 &= \gamma (x^1 - \beta x^0) \\
+        \end{align*}
+        Comme $\abs{x^1} < \abs{x^0}$ par hypothèse, on peut obtenir un nouveau référentiel tel que $\beta = \frac{x^1}{x^0}$, dans lequel on aura bien $\mathbf{x}' = 0$. On peut donc éliminer la composante spatiale de tout quadri-vecteur du genre temps, mais pas sa composante temporelle.
+
+        Ainsi, si deux événements de l’espace temps $\mathcal{E}_1$ et $\mathcal{E}_2$ sont séparés par un quadri-vecteur $S = X_2 - X_1$ qui est de genre temps, alors il existe un référentiel dans lequel ces deux événements ont la même position spatiale.
+
+        \subsubsection{Quadri-vecteurs du genre espace}
+
+        \begin{omed}{Définition (quadri-vecteur de genre espace)}
+            On appelle \textbf{quadri-vecteur de genre espace} un quadri-vecteur $X$ tel que 
+            \begin{align*}
+                X^2 &< 0 \\
+                \abs{x^0} &\overset{\Updownarrow}{<} \nor{\mathbf{x}} \\
+            \end{align*}
+        \end{omed}
+
+        À l’inverse des quadri-vecteurs du genre temps, il est toujours possible de trouver un référentiel dans lequel la composante temporelle est réduite à zéro (il suffit de faire en sorte que $\beta = \frac{x^0}{x^1}$). Autrement dit, pour deux événements séparés par un quadri-vecteur de genre espace, il existe toujours un référentiel dans lequel ces deux événements sont simultanés.
+
+        \subsubsection{Quadri-vecteurs de genre lumière}
+
+        \begin{omed}{Définition (quadri-vecteur de genre lumière)}
+            On appelle \textbf{quadri-vecteur de genre lumière} un quadri-vecteur $X$ tel que 
+            \begin{align*}
+                X^2 &= 0 \\
+                \abs{x^0} &\overset{\Updownarrow}{=} \nor{\mathbf{x}} \\
+            \end{align*}
+        \end{omed}
+
+        Un tel quadri-vecteur est relié à l’origine par un signal lumineux parce que $\nor{\mathbf{x}} = ct$, d’où son nom.
+
+        \subsubsection{Causalité}
+
+        Remarquons que dans le cas où deux événements $\mathcal{E}_1$ et $\mathcal{E}_2$ sont séparés par un quadri-vecteur $X$ de genre espace, alors il est possible, en changeant de référentiel, de faire passer la composante temporelle de $X$ du signe positif au signe négatif et inversement. Autrement dit, pour certains observateurs, $\mathcal{E}_1$ se déroule avant $\mathcal{E}_2$, et pour d’autre après. Toutefois, il faut se rassurer du fait que cela n’empêche pas le principe de causalité, fondamental en physique : si les deux événements sont séparés d’un quadri-vecteur espace, il est impossible de les relier par un signal se propageant à une vitesse inférieure ou égale à celle de la lumière. La causalité est donc sauve car l’information ne peut pas circuler plus vite que la lumière.
+
+        On peut donc évaluer l’importance de la classification des quadri-vecteurs, en considérant un événement $\mathcal{E}_1$ et en découpant l’espace en quatre régions :
+        \begin{itemize}
+            \item Les événements $\mathcal{E}$ séparés de $\mathcal{E}_1$ par un quadri-vecteur $S = X - X_1$ de genre temps ; Si $s^0 > 0$, alors $\mathcal{E}$ se situe dans le \textbf{futur} de $\mathcal{E}_1$. Si $s^0 < 0$, $\mathcal{E}$ se situe au contraire dans le \textbf{passé} de $\mathcal{E}_1$.
+            \item Les événements $\mathcal{E}$ séparés de $\mathcal{E}_1$ par un quadri-vecteur lumière $S = X - X_1$ qui défisissent un cône appelé \textbf{cône de lumière}, d’équation 
+            \[ (s^0)^2 - (s^1)^2 - (s^2)^2 - (s^3)^2 = 0 \]  
+            \item Les événements séparés de $\mathcal{E}_1$ par un quadri-vecteur de genre espace, qui sont causalement indépendants de l’événement $\mathcal{E}_1$. Ils sont situés à l’extérieur du cône de lumière.  
+        \end{itemize}
+
+    \subsection{Trajectoire d’espace-temps}
+
+    En mécanique newtonienne, le mouvement d’une particule est décrit par l’expression de $\mathbf{x}(t)$, fonction du temps. En relativité restreinte, on aimerait décrire la trajectoire d’une particule dans l’espace-temps. Le temps devient alors une coordonnée à part entière, et l’on doit introduire un nouveau paramètre noté $\lambda$ tel que 
+    \[ X = X(\lambda) = \left(x^{\mu}(\lambda)\right)_{\mu \in \intEN{0}{3}} \]
+
+    Une trajectoire n’est physiquement acceptable seulement si elle correspond à un mouvement dont la vitesse reste bornée par la vitesse de la lumière, ce qui se traduit par la condition que le \textbf{quadri-vecteur tangent} $T$ de composantes $T^{\mu} = \frac{\text{d}x^{\mu}}{\text{d}\lambda}$ reste toujours confiné à l’intérieur du cône de lumière.  
+    
+    Pour une particule massive, ne pouvant jamais atteindre la vitesse de la lumière, le quadri-vecteur tangent est strictement à l’intérieur du cône de lumière, et est par conséquent du genre temps ($\eta_{\mu\nu} T^{\mu} T^{\nu} > 0$). 
+
+    Pour une particule de masse nulle tel les photons, le quadri-vecteur tangent est de genre lumière en tout point de la trajectoire.
+
+        \subsubsection{Temps propre et quadri-vecteur vitesse}
+
+
+        Le paramètre $\lambda$ le long de la trajectoire est \textit{a priori} arbitraire, mais il est commode dans le cas d’une particule massive de se restreindre à un paramètre noté $\uptau$ et appelé \textbf{temps propre}, pour lequel le vecteur tangent à la trajectoire est \textit{normalisé} :
+        \[ \eta_{\mu\nu} \frac{\text{d}x^{\mu}}{\text{d}\uptau} \frac{\text{d}x^{\nu}}{\text{d}\uptau} = c^2 \]
+        En étudiant deux points voisins de la trajectoire, de coordonnées respectives $x^{\mu}$ et $x^{\mu} + dx^{\mu}$, on peut écrire 
+        \[ c^2 d\uptau^2 = c^2 dt^2 - dx^2 - dy^2 - dz^2 \]   
+        Le paramètre $t\uptau$ peut donc s’interpréter comme la distance au sens minkowskien le long de la trajectoire d’espace-temps.
+
+        \begin{omed}{Définition (quadri-vecteur vitesse)}
+            On appelle \textbf{quadri-vecteur vitesse} ou \textbf{quadri-vitesse} le vecteur tangent à la trajectoire dans l’espace-temps noté $U$, lorsque la trajectoire est paramétrée par le temps propre $\uptau$.
+        \end{omed}
+
+        \begin{omed}{Proposition (coordonnées de la quadri-vitesse)}
+            Les coordonnées de la quadri-vitesse prennent les expressions suivantes :
+            \begin{align*}
+                U 
+                &= \left(c \frac{\text{d}t}{\text{d}\uptau }, \frac{\text{d}x}{\text{d}\uptau } , \frac{\text{d}y}{\text{d}\uptau } , \frac{\text{d}z}{\text{d}\uptau } \right) \\
+                &= \left(c \frac{\text{d}t}{\text{d}\uptau } , \left(\frac{\text{d}t}{\text{d}\uptau }\right) \frac{\text{d}\mathbf{x}}{\text{d}t} \right) \\
+                &= \left(\gamma(\mathbf{v}) c, \gamma(\mathbf{v}) \mathbf{v}\right)
+            \end{align*}
+            où $\gamma(\mathbf{v})$ est le \textbf{facteur de Lorentz instantané}
+            \[ \gamma(\mathbf{v}) = \frac{1}{\sqrt{1 - \frac{\mathbf{v}^2}{c^2}}} \]   
+        \end{omed}
+
+        \begin{demo}{Preuve}
+            Comparons ce nouveau quadri-vecteur au quadri-vecteur vitesse ordinaire $V$ de coordonnées $(ct, \frac{\text{d}\mathbf{x}}{\text{d}t})$, où le temps est désormais une coordonnée qui dépend de $\uptau$. On remarque que
+        \begin{align*}
+            v^{i} &= \frac{\text{d}x^i}{\text{d}t} \\
+            &= \frac{\text{d}x^i}{\text{d}\uptau} \frac{\text{d}\uptau }{\text{d}t} \\
+            &= c \frac{u^i}{u^0} 
+        \end{align*}
+        On peut donc réécrire les coordonnées de la quadri-vitesse comme :
+        \begin{align*}
+            u^{\mu} 
+            &= \left(c \frac{\text{d}t}{\text{d}\uptau }, \frac{\text{d}x}{\text{d}\uptau } , \frac{\text{d}y}{\text{d}\uptau } , \frac{\text{d}z}{\text{d}\uptau } \right) \\
+            &= \left(c \frac{\text{d}t}{\text{d}\uptau } , \left(\frac{\text{d}t}{\text{d}\uptau }\right) \frac{\text{d}\mathbf{x}}{\text{d}t} \right) \\
+        \end{align*}
+        En substituant ces expressions dans la normalisation de la quadri-vitesse ($\eta_{\mu\nu} u^{\mu} u^{\nu} = c^2$), on obtient l’équation 
+        \[ \left(\frac{\text{d}t}{\text{d}\uptau} \right)^2 (c^2 - \mathbf{v}^2) = c^2 \]   
+        En utilisant la convention que le temps propre $\tau$ est croissant vers le futur, 
+        \[ \frac{\text{d}t}{\text{d}\uptau} = \frac{1}{\sqrt{1 - \frac{\mathbf{v}^2}{c^2}}} \]
+        Les composantes de la quadri-vitesse s’écrivent donc aussi 
+        \[ U = \left(\gamma(\mathbf{v}) c, \gamma(\mathbf{v}) \mathbf{v}\right) \]   
+        où l’on a introduit le facteur de Lorentz instantané.
+        \end{demo}
+
+            \paragraph{Changement de référentiel}
+
+            L’avantage de la quadri-vitesse plutôt que la vitesse ordinaire est que ses composantes sont transformées automatiquement dans un changement de référentiel grâce à la formule 
+            \[ u'^{\mu} = \Lambda_{\nu}^{\mu} u^{\nu} \]   
+            où $\symbf{\Lambda}$ est la transformation de Lorentz associée au changement de référentiel.
+
+            \begin{omed}{Référentiel inertiel instantané}
+                À toute particule en mouvement rectiligne uniforme on peut associer un référentiel inertiel dans lequel la particule est en repos, dit \textbf{référentiel inertiel instantané} et noté $\mathcal{R}_*$
+            \end{omed}
+
+            Par construction, les composantes dans $\mathcal{R}_*$ de la quadri-vitesse de la particule à l’instant $\uptau_*$ sont
+            \begin{align*}
+                u^0_*(\uptau_*) &= c \frac{\text{d}t_*}{\text{d}\uptau}(\uptau_*) = c \\
+                u^{i}_*(\uptau_*) &= 0 
+            \end{align*}
+            Le temps propre et le temps-coordonnée coïncident donc dans le référentiel $\mathcal{R}_*$ à l’intant $\uptau_*$, raison pour laquelle on appelle temps propre le paramètre $\uptau$.
+
+            
+ 
+        \subsubsection{Quadri-vecteur accélération}
+
+
+        
+
+
+        

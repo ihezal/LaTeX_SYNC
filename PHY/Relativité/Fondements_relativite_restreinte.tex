@@ -25,6 +25,7 @@
 
     Tout point spacial de coordonneés $(x,y,z)$ sera atteint par le signal lumineux à l’intant $t_{\ell}$ défini par $ct_{\ell} = \sqrt{x^2 + y^2 + z^2}$, valeur pour laquelle la forme quadratique $Q(t,x,y,z)$ s’annule. Le signal atteignant au même instant les points $(x,y,z)$ et $(-x,-y,-z)$ symétriques par rapport à $O$, on sait aussi que $Q(t_{\ell}, -x, -y, -z) = 0$, ce qui montre que les coefficients $\mathcal{B}_i$ sont nuls.
 
+\begin{comment}
     Si on suppose de plus que l’espace est \textit{isotrope}, on remarque que la matrice $A = (\mathcal{A}_{ij})$ doit être proportionnelle à l’identité (pas de direction privilégiée). Ainsi, $Q$ s’exprime nécessairement sous la forme 
     \[ Q(t,x,y,z) = \mathcal{C}\left((ct)^2 - x^2 - y^2 - z^2\right) \]   
     Sachant que la seule grandeur qui caractérise ces deux référentiels \textit{relativement} l’un à l’autre est la vitesse relative $\mathbf{v}$, et par isotropie de l’espace, on voit que $\mathcal{C}$ ne peut dépendre que de la norme de cette vitesse relative. Pour obtenir sa valeur, on remarque que 
@@ -32,6 +33,7 @@
     La norme de $\mathbf{v}_{\mathcal{R}''/\mathcal{R}}$ dépendant non seulement des deux autres normes mais aussi de l’angle entre celles-ci, on a nécessairement $\mathcal{C} = 1$. Les deux postulats d’Einstein, combinés aux hypothèses d’homogénéité et d’isotropie de l’espace, conduisent donc à la relation
     \[ c^2 t^2 - x^2 - y^2 - z^2 = c^2 t'^2 - x'^2 - y'^2 - z'^2 \]
     entre les coordonnées de tout événement repéré dans $\mathcal{R}$ et $\mathcal{R}'$. Ces tranformations de coordonnées sont appelées \textbf{transformations de Lorentz}.
+\end{comment}
 
     \subsection{Le groupe Lorentz}
 
@@ -39,19 +41,21 @@
         On appelle \textbf{transformation de Lorentz} toute transformation linéaire 
         \begin{align*}
             x'^{\mu} &= \sum_{\nu = 0}^3 \Lambda_{\nu}^{\mu} x^{\nu} \\
-            x'^{\mu} &\overset{\Updownarrow}{=} \symbf{\Lambda} x^{\nu} \\
+            x'^{\mu} &\overset{\Updownarrow}{=} \symbf{\Lambda} x^{\nu} 
         \end{align*}
         reliant par la matrice carrée $\symbf{\Lambda}$ les quadrivecteurs $x'^{\mu} = (ct', x', y', z')$ et $x^{\mu} = (ct,x,y,z)$ vérifiant la relation 
         \begin{align*}
             c^2 t^2 - x^2 - y^2 - z^2 &= c^2 t'^2 - x'^2 - y'^2 - z'^2 \\
-            x'^{\mu}^{\top} \mathbf{G} x'^{\mu} &\overset{\Updownarrow}{=} x^{\mu\top} \mathbf{G} x^{\mu} \\
+            x'^{\mu\top} \mathbf{G} x'^{\mu} &\overset{\Updownarrow}{=} x^{\mu\top} \mathbf{G} x^{\mu} 
         \end{align*}
         où $\mathbf{G} = \text{diag}(1, -1, -1, -1)$.
     \end{omed}
 
-    \begin{omed}{Définition-Proposition (groupe de Lorentz)}
+\begin{comment}
+    \begin{omed}{Proposition (groupe de Lorentz)}
         Les matrices $\symbf{\Lambda}$ satisfaisant les conditions ci-dessus forment un groupe, dit \textbf{groupe de Lorentz}.
     \end{omed}
+\end{comment}
 
     \begin{demo}{Preuve}
         En combinant les deux égalités de la transformation de Lorentz, on obtient la relation 
@@ -77,7 +81,7 @@
             \end{align*}
         \end{omed}
 
-        \begin{omed}{Démonstration}
+        \begin{demo}{Démonstration}
             Considérons que deux des trois coordonnées spatiales restent inchangées : $y' = y$ et $z' = z$. On a alors 
             \[ c^2 t^2 - x^2 = c^2 t'^2 - x'^2 \]   
             La transformation linéaire la plus générale reliant $(ct, x)$ à $(ct', x')$ s’écrit 
@@ -96,7 +100,24 @@
             \lambda_1 = \lambda_3 &= \left(1 - \frac{v^2}{c^2}\right)^{-\frac{1}{2}} := \gamma \\
             \lambda_2 = \lambda_4 &= - \frac{v}{c} \lambda_1 := - \beta \gamma \\
         \end{align*}
-        \end{omed}
+        \end{demo}
+
+        Il est parfois utile d’exprimer les coefficients $\beta$ et $\gamma$ sous la forme 
+        \begin{align*}
+            \gamma &= \text{ch}(\alpha) \\
+            \beta &= \text{th}(\alpha)
+        \end{align*}
+        où le paramètre $\alpha$ est appelé \textbf{rapidité}. La transformation de Lorentz s’écrit alors 
+        \[ \begin{bmatrix}
+            ct' \\
+            x'
+        \end{bmatrix} = \begin{bmatrix}
+            \text{ch}(\alpha) & -\text{sh}(\alpha) \\
+            -\text{sh}(\alpha) & \text{ch}(\alpha)
+        \end{bmatrix} \begin{bmatrix}
+            ct \\
+            x
+        \end{bmatrix} \]
 
         \subsubsection{Transformation de Lorentz d’axe quelconque}
 
@@ -111,5 +132,79 @@
         \end{omed}
 
     \subsection{Conséquences de la transformation de Lorentz}
+
+        \subsubsection{Relativité de la simultanéité}
+
+        Contrairement à la physique newtonienne, en relativité, deux événements se produisant simultanément dans un référentiel $\mathcal{R}$ ne sont plus nécessairement simultanées dans $\mathcal{R}'$. En effet, si on considère les deux événements $\mathcal{E}_1$ et $\mathcal{E}_2$ se réalisant à $t_1 = t_2$ dans $\mathcal{R}$, alors dans $\mathcal{R}'$ (dont la transformation de Lorentz est le long de l’axe $x$), 
+        \begin{align*}
+            \Delta t' &= t_2' - t_1' = \gamma\left(\Delta t - \frac{\beta}{c} \Delta x\right) \\
+            &= - \gamma \frac{\beta}{c} \Delta x \\
+        \end{align*}
+
+        \subsubsection{Dilatation du temps}
+
+        On suppose désormais que $\Delta x = 0$ mais que $\Delta t \neq 0$ pour deux événements $\mathcal{E}_1$ et $\mathcal{E}_2$ dans $\mathcal{R}$. On obtient cette fois-ci dans $\mathcal{R}'$ transformé selon Lorentz le long de l’axe $x$, 
+        \begin{align*}
+            \Delta t' 
+            &= t_2' - t_1' = \gamma\left(\Delta t - \frac{\beta}{c} \Delta x\right) \\
+            &= \gamma \Delta t \\
+        \end{align*}
+        Cet intervalle de temps est donc toujours supérieur dans $\mathcal{R}'$ : il y a \textbf{dilatation du temps}.
+
+        \subsubsection{Contraction des longueurs}
+
+        Intéressons-nous désormais à la longueur d’un objet : par exemple une règle immobile dans le référentiel $\mathcal{R}$ de l’observateur, et choisissons l’axe des $x$ parallèle à cette règle. Sa longueur dans $\mathcal{R}$ est définie par $L = \Delta x = x_2 - x_1$, et celle dans $\mathcal{R}'$ est $L' = \Delta x' = x'_2(t') - x'_1(t')$. Les deux extrémités dans $\mathcal{R}'$ ayant la même vitesse, $L'$ est indépendant du temps. 
+
+        Les événements $\mathcal{E}_1$ et $\mathcal{E}_2$ simultanés dans $\mathcal{R}'$ correspondant aux positions des extrémités de la règle à l’instant $t'$ et repérés respectivement par leurs coordonnées $(t', x_1')$ et $(t', x_2')$ ne sont plus simultanés dans $\mathcal{R}$, et 
+        \[ \Delta t = \beta \frac{L}{c} \]   
+        On obtient alors 
+        \begin{align*}
+            L' 
+            &= \gamma (L - \beta c \Delta t) = \gamma (1 - \beta^2) L \\
+            &= \sqrt{1- \beta^2} L = \frac{L}{\gamma}
+        \end{align*}
+        La longueur mesurée dans un référentiel quelconque est donc toujours inférieure à celle mesurée dans le référentiel particulier où l’objet est immobile : c’est la \textbf{contraction des longueurs}.
+
+    \subsection{Loi de composition des vitesses}
+
+        \subsubsection{Composition de deux transformations de Lorentz de même axe}
+
+        En notant $\symbf{\Lambda}(\alpha) = \begin{bmatrix}
+            \text{ch}(\alpha) & -\text{sh}(\alpha) \\
+            - \text{sh}(\alpha) & \text{ch}(\alpha) \\
+        \end{bmatrix}$, et en associant à la transformation de $\mathcal{R}$ à $\mathcal{R}'$ l’angle $\alpha_1$ et à la transformation $\mathcal{R}'$ à $\mathcal{R}''$ l’angle $\alpha_2$, on constate que l’on peut écrire la transformation de Lorentz selon l’axe $x$ entre $\mathcal{R}$ et $\mathcal{R}''$ par l’équation 
+        \[ \begin{bmatrix}
+            ct'' \\
+            x''
+        \end{bmatrix} = \symbf{\Lambda}(\alpha_2)\symbf{\Lambda}(\alpha_1) \begin{bmatrix}
+            ct \\
+            x
+        \end{bmatrix} \]   
+        Or $\symbf{\Lambda}(\alpha_2)\symbf{\Lambda}(\alpha_1) = \symbf{\Lambda}(\alpha_1 + \alpha_2)$. Cela correspond donc au total à une transformation de Lorentz spéciale le long de l’axe des $x$, de vitesse $V = c \text{th}(\alpha_1 + \alpha_2) = c \frac{\text{th}(\alpha_1) + \text{th}(\alpha_2)}{1 + \text{th}(\alpha_1)\text{th}(\alpha_2)}$. La vitesse relative entre $\mathcal{R}$ et $\mathcal{R}'$ est donc donnée par 
+        \[ v_{\mathcal{R}''/\mathcal{R}} = \frac{v_{\mathcal{R}''/\mathcal{R}'} + v_{\mathcal{R}'/\mathcal{R}}}{1 + \frac{v_{\mathcal{R}''/\mathcal{R}'}v_{\mathcal{R}'/\mathcal{R}}}{c^2}} \]
+        Dans le cas de vitesse faibles devant celle de la lumière, on retrouve la loi d’addition des vitesses de la physique newtonnienne.
+
+        \subsubsection{Composition des vitesses}
+
+        On considère maintenant le cas d’une particule animée d’un mouvement quelconque, de vitesse $\mathbf{w}$ et $\mathbf{w}'$ dans les référentiels intertiels $\mathcal{R}$ et $\mathcal{R}'$. En utilisant la transformation de Lorentz entre $\mathcal{R}$ et $\mathcal{R}'$, on obtient 
+        \begin{align*}
+            w_x' 
+            &= \frac{\text{d}x'}{\text{d}t'} = \frac{\gamma(dx - \beta c dt)}{\gamma(cdt - \beta dx)} \\
+            &= \frac{w_x - v}{1 - \frac{v w_x}{c^2}} \\
+        \end{align*}
+        De même, on a pour les composantes orthogonales à l’axe de la tranformation 
+        \begin{align*}
+            w_y' &= \frac{\text{d}y'}{\text{d}t'} = \frac{w_y}{\gamma\left(1 - \frac{\beta}{c} w_x\right)} \\
+            w_z' &= \frac{\text{d}z'}{\text{d}t'} = \frac{w_z}{\gamma\left(1 - \frac{\beta}{c} w_x\right)} \\
+        \end{align*}
+
+        Pour une transformation d’axe quelconque, on peut généraliser en 
+        \begin{align*}
+            \mathbf{w}_{||}' &= \frac{\mathbf{w}_{||} - \mathbf{v}}{1 - \frac{\mathbf{v} \cdot \mathbf{w}}{c^2}} \\
+            \mathbf{w}_{\perp}' &= \frac{\mathbf{w}_{\perp}}{\gamma(1 - \frac{\mathbf{v} \cdot \mathbf{w}}{c^2})} \\
+        \end{align*}
+
+
+    
 
         
